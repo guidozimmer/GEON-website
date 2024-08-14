@@ -1,5 +1,16 @@
 #navbar {
     background-color: #d6fd51 !important;
     display: grid;
-    height: 100px;
+    height: 60px;
 }
+
+.introSection {
+    display: grid;
+    background-image: url('https://geongroup.de/wp-content/uploads/2024/05/AdobeStock_2063549801-scaled.jpeg');
+    background-size: cover; /* Makes sure the background image covers the element */
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+}
+
+
+
