@@ -1,147 +1,184 @@
-#navbar {
-    background-color: #d6fd51 !important;
-    display: grid;
+/* =======================
+   Global Variables
+   ======================= */
+   :root {
+    --wwdMargin: 50px; /* Default margin for the "What We Do" section */
 }
 
+/* =======================
+   Navbar Styles
+   ======================= */
+#navbar {
+    background-color: #d6fd51 !important; /* Set background color for navbar */
+    display: grid; /* Use grid layout for navbar */
+}
+
+/* =======================
+   Intro Section Styles
+   ======================= */
 .introSection {
-    display: grid;
+    display: grid; /* Use grid layout */
     background-image: url('https://geongroup.de/wp-content/uploads/2024/05/AdobeStock_2063549801-scaled.jpeg');
-    background-size: cover; /* Makes sure the background image covers the element */
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    align-items: center;
+    background-size: cover; /* Ensure the background image covers the element */
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    grid-template-rows: 1fr 1fr; /* Two equal rows */
+    align-items: center; /* Center content vertically */
     width: 100vw; /* Full viewport width */
     height: 100vh; /* Full viewport height */
 }
 
-
-
-.introSection h1{
+.introSection h1 {
     display: flex;
     color: white;
-    grid-column: 1 / 1;
-    grid-row: 2 / 2;
-
-    justify-content: flex-end;
-    align-self: flex-start;
+    grid-column: 1 / 1; /* Position in the first column */
+    grid-row: 2 / 2; /* Position in the second row */
+    justify-content: flex-end; /* Align content to the right */
+    align-self: flex-start; /* Align content to the top */
 }
 
-.heading {
-    font-size: 60px;
+.introHeading {
+    font-size: 60px; /* Default font size for intro heading */
 }
 
-
+/* =======================
+   What We Do Section Styles
+   ======================= */
 .wwd {
-    height: 600px;
-    background-color: #ffffff;
+    display: grid;
+    height: 800px; /* Fixed height for the "What We Do" section */
+    background-color: #ffffff; /* Background color for the section */
+    grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
+    grid-template-rows: 200px auto; /* First row is fixed, second row adjusts */
+    margin-top: 50px; /* Margin above the section */
 }
 
-.wwa {
-    height: 600px;
-    background-color: #eeeeee;
+.wwdHeading {
+    grid-column: 2 / 2; /* Position heading in the center column */
+    grid-row: 1 / 1; /* Position heading in the first row */
+}
+
+.wwdHeading > h1 {
+    display: flex;
+    justify-content: center; /* Center the "What We Do" title */
+}
+
+.wwdHeading > h2 {
+    display: flex;
+    justify-content: center; /* Center the subtitle "-Our Passion-" */
+    font-family: "acumin-pro", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.wwdSolarPower {
+    margin: 0px var(--wwdMargin); /* Apply custom margin */
+    grid-column: 1 / 1; /* Position in the first column */
+    grid-row: 2 / 2; /* Position in the second row */
+}
+
+.wwdStorageSolutions {
+    margin: 0px var(--wwdMargin); /* Apply custom margin */
+    grid-column: 2 / 2; /* Position in the second column */
+    grid-row: 2 / 2; /* Position in the second row */
+}
+
+.wwdConsultingServices {
+    margin: 0px var(--wwdMargin); /* Apply custom margin */
+    grid-column: 3 / 3; /* Position in the third column */
+    grid-row: 2 / 2; /* Position in the second row */
+}
+
+div > h4 {
+    font-family: "acumin-pro", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+img {
+    margin: 10px 45%;
+}
+
+.wwdHeader {
+    display: flex;
+    justify-content: center;
+    font-family: acumin-pro, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    margin-bottom: 30px;
 }
 
 
 
 
 
-
-
-
-.entry-content .bg-light, .entry-content .bg-light h1, .entry-content .bg-light h2, .entry-content .bg-light h3 {
-    background-color: #fff;
-    color: #000;
-}
-.entry-content .bg-light {
-    padding-top: 50px;
-    padding-bottom: 50px;
-    color: #000;
-}
-.wp-block-group {
-    box-sizing: border-box;
-}
-*, *:before, *:after {
-    box-sizing: inherit;
-}
-user agent stylesheet
-div {
-    display: block;
-    unicode-bidi: isolate;
-}
-body {
-    font-size: 16px;
-    line-height: 180%;
-    color: #000;
-}
-body, button, input, select, optgroup, textarea {
-    color: #fff;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1rem;
-    line-height: 2.5;
-}
-body {
-    margin: 0;
-    color: #000;
+/* =======================
+   Lined Title Styles
+   ======================= */
+.lined-title {
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    text-align: center;
+    padding: 0 10px; /* Space inside the element to prevent overlap with the lines */
 }
 
+.lined-title::before,
+.lined-title::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 3px; /* Thickness of the lines */
+    height: 100%; /* Make the lines the same height as the text */
+    background-color: #0056b3; /* Color of the lines */
+    transform: translateY(-50%); /* Vertically center the lines */
+}
 
+.lined-title::before {
+    left: -13px; /* Position 10px away from the text, including the 3px width of the line */
+}
 
+.lined-title::after {
+    right: -13px; /* Position 10px away from the text, including the 3px width of the line */
+}
 
+/* =======================
+   Responsive Font Sizes
+   ======================= */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* Extra small devices (portrait phones, 300px and up) */
 @media (min-width: 300px) {
-    .heading {
-        font-size: 20px;
+    .introHeading {
+        font-size: 20px; /* Smaller font size for very small screens */
     }
 }
 
-/* Small devices (landscape phones, 576px and up)*/
+/* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
-    .heading {
-        font-size: 30px;
+    .introHeading {
+        font-size: 30px; /* Adjust font size for small devices */
     }
 }
 
-/* Medium devices (tablets, 768px and up)*/
-@media (min-width: 768px) { 
-
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    /* Additional styles for tablets can be added here */
 }
 
-/* Large devices (desktops, 992px and up)*/
+/* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-
+    /* Additional styles for desktops can be added here */
 }
 
-/* X-Large devices (large desktops, 1200px and up)*/
+/* X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-    .heading {
-        font-size: 40px;
+    .introHeading {
+        font-size: 40px; /* Adjust font size for larger screens */
     }
 }
 
-/* XX-Large devices (larger desktops, 1400px and up)*/
+/* XX-Large devices (larger desktops, 1400px and up) */
 @media (min-width: 1400px) {
-    .heading {
-        font-size: 60px;
+    .introHeading {
+        font-size: 60px; /* Adjust font size for the largest screens */
     }
 }
