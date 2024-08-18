@@ -1,9 +1,0 @@
-wwdSolarPowerHeading = "Solar Power";
-wwdSolarPower = "Photovoltaic energy is becoming the renewable energy source of choice, especially in regions with high insolation such as Africa. GEON has developed, financed, engineered and constructed over 30 megawatts of grid-connected photovoltaic power plants around the world. Our expertise across the PV value chain ensures that we consistently deliver reliable and cost-effective solutions for our customers."
-
-wwdStorageSolutionsPt1 = "A prerequisite for round the clock availability of green electricity is the capacity for storing energy. This is vital for achieving the climate targets in Europe: CO2-neutrality by 2050 (in the case of Germany, even by 2045)."
-wwdStorageSolutionsPt2 = "As a project developer, GEON Group is focused on two strategies for the storage of large amounts of energy with quick charging and discharging cycles: 1. Large, megawatt-class battery arrays and 2. Production, transport, and Consumption of green hydrogen."
-wwdStorageSolutionsPt3 = "GEON Group deploys these these storage technologies in its own projects. Our experts can help you develop and implement the right storage strategy for your specific applications, too."
-
-wwdConsultingServicesPt1 = "We advise our clients in finding and implementing transformation strategies in the field of energy. Our focus lies clearly on CO2-neutral energy production, storage, and deployment of readily available green energy."
-wwdConsultingServicesPt2 = "Furthermore, building on our deep roots in automotive engineering design and development, we also provide strategic and management support for our customers in the automotive and industrial sectors, helping them to streamline the planning and implementation of their projects."
