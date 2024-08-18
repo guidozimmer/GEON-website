@@ -1,16 +1,147 @@
 #navbar {
     background-color: #d6fd51 !important;
     display: grid;
-    height: 60px;
 }
 
 .introSection {
     display: grid;
     background-image: url('https://geongroup.de/wp-content/uploads/2024/05/AdobeStock_2063549801-scaled.jpeg');
     background-size: cover; /* Makes sure the background image covers the element */
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
     width: 100vw; /* Full viewport width */
     height: 100vh; /* Full viewport height */
 }
 
 
 
+.introSection h1{
+    display: flex;
+    color: white;
+    grid-column: 1 / 1;
+    grid-row: 2 / 2;
+
+    justify-content: flex-end;
+    align-self: flex-start;
+}
+
+.heading {
+    font-size: 60px;
+}
+
+
+.wwd {
+    height: 600px;
+    background-color: #ffffff;
+}
+
+.wwa {
+    height: 600px;
+    background-color: #eeeeee;
+}
+
+
+
+
+
+
+
+
+.entry-content .bg-light, .entry-content .bg-light h1, .entry-content .bg-light h2, .entry-content .bg-light h3 {
+    background-color: #fff;
+    color: #000;
+}
+.entry-content .bg-light {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: #000;
+}
+.wp-block-group {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+user agent stylesheet
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+body {
+    font-size: 16px;
+    line-height: 180%;
+    color: #000;
+}
+body, button, input, select, optgroup, textarea {
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 2.5;
+}
+body {
+    margin: 0;
+    color: #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 300px) {
+    .heading {
+        font-size: 20px;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+    .heading {
+        font-size: 30px;
+    }
+}
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) { 
+
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+
+}
+
+/* X-Large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+    .heading {
+        font-size: 40px;
+    }
+}
+
+/* XX-Large devices (larger desktops, 1400px and up)*/
+@media (min-width: 1400px) {
+    .heading {
+        font-size: 60px;
+    }
+}
