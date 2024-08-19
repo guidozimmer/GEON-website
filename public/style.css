@@ -1,0 +1,38 @@
+body {
+    height: 400vh;
+    background: black;
+    color: white;
+}
+
+
+
+
+.header-section {
+    margin: 100px auto 0;
+}
+
+svg {
+    overflow: visible;
+    margin-top: 60vh;
+}
+
+.ball {
+    fill: white;
+    visibility: hidden;
+}
+
+.line {
+    fill: none;
+    stroke: white;
+    stroke-width: 2px;
+}
+text {
+    fill: white;
+    font-size: 15px;
+    font-family: "Signika Negative", sans-serif; 
+    visibility: hidden;
+}
+
+.theOrangeLine{
+    stroke: orange;
+}

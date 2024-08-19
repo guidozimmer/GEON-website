@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Effect</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="container">
+        <svg id="svg" viewBox="0 0 100 100" preserveAspectRatio="xMinYMin meet" width="100%" height="100%">
+            
+            <path class="theOrangeLine"  
+            d="M 15, 0
+            Q 30 0 80 5
+            T 30 30
+            Q -20 40 40 40
+            T 50 60
+            C 25 70 50 80 50 90
+            Q 50 95 48 100
+            Q 46 105 48 110"
+            stroke="white" stroke-width="0.5" fill="none" stroke-linecap="round" />
+
+            <path class="theLine"  
+            d="M 15, 0
+            Q 30 0 80 5
+            T 30 30
+            Q -20 40 40 40
+            T 50 60
+            C 25 70 50 80 50 90
+            Q 50 95 48 100
+            Q 46 105 48 110"
+            stroke="white" stroke-width="0.5" fill="none" stroke-linecap="round" />
+
+
+            <circle class="ball ball01" r="20" cx="50" cy="100"></circle>
+            <circle class="ball ball02" r="20" cx="278" cy="201"></circle>
+            <circle class="ball ball03" r="20" cx="327" cy="401"></circle>
+            <circle class="ball ball04" r="20" cx="203" cy="601"></circle>
+
+        </svg>
+
+
+    </div>
+
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/DrawSVGPlugin3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/MotionPathPlugin.min.js"></script>
+    <script src="https://assets.codepen.io/16327/GSDevTools3.min.js"></script>
+
+    <script src="main.js" type="module"></script>
+
+</body>
+</html>
