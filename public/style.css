@@ -2,6 +2,8 @@ body {
     height: 400vh;
     background: black;
     color: white;
+    scroll-behavior: smooth;
+    overflow-y: auto;
 }
 
 
@@ -35,4 +37,18 @@ text {
 
 .theOrangeLine{
     stroke: orange;
+}
+
+.tester {
+    height: 2000px;
+    width: 100%;
+    background-color: white;
+}
+
+.vertical-line {
+    border-left: 1px solid orange; /* Line color */
+    height: 100vh; /* Full height of the viewport */
+    position: absolute; /* Positioning to place it wherever you need */
+    top: 0;
+    left: 50%; /* Center it horizontally */
 }

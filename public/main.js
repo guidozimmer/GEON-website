@@ -4,14 +4,16 @@ gsap.defaults({ease: "none"});
 
 const pulses = gsap.timeline({
     defaults: {
-      scale: 2,
-      autoAlpha:1,
+      scale: 0.75,
+      duration: 4,
       transformOrigin: 'center', 
-      ease: "elastic(2.5, 1)"
+      ease: "expo.out"      // Smooth deceleration
     }})
-  .to(".text01", {}, 0.84) 
-  .to(".text02", {}, 1.36)
-  .to(".text03", {}, 1.92)
+.to(".theOrangeLine", {}, 1.80) 
+.to(".theLine", {}, 1.80) 
+
+
+
   
 
 const main = gsap.timeline({
@@ -27,4 +29,28 @@ const main = gsap.timeline({
 
 .add(pulses, 0 )
 
-GSDevTools.create({animation:main})
+//GSDevTools.create({animation:main})
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Sensitivity factor: the higher the value, the slower the scrolling
+    const sensitivityFactor = 5;
+
+    // Select all elements with the class 'container'
+    const sensitiveSections = document.querySelectorAll('.container');
+
+    sensitiveSections.forEach(function(section) {
+        section.addEventListener('wheel', function(e) {
+            const originalScrollAmount = e.deltaY;
+
+            // Adjust the scroll position
+            const newScrollAmount = originalScrollAmount / sensitivityFactor;
+
+            // Apply the reduced scroll
+            section.scrollTop += newScrollAmount;
+        });
+    });
+});
