@@ -243,6 +243,68 @@ img {
 
 
 
+/* =======================
+Footer Section Styles
+======================= */
+
+
+footer {
+    height: 120px;
+    background-color: #222222;
+    display: flex;
+    text-align: center;
+    flex-direction: column; /* Stack children vertically */
+}
+
+.links {
+    margin-top: 20px;
+}
+
+.links > a {
+    text-decoration: none; /* Removes the underline from the anchor tag */
+    color: #b0aeaf; /* Change this to your desired color code */
+    padding: 0 10px;
+}
+
+
+/* Optionally, add styles for hover state */
+.links > a:hover {
+    color: #d6fd51; /* Change the color when hovering */
+}
+
+
+.copyright {
+    color: #ffffff;
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* =======================
    Responsive Font Sizes
