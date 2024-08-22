@@ -2,24 +2,30 @@
    Global Variables
    ======================= */
    :root {
-    --wwdMargin: 50px; /* Default margin for the "What We Do" section */
+    --wwdMargin: 50px; /* Default margin for sections */
 }
+
+
+
 
 /* =======================
    Navbar Styles
    ======================= */
 #navbar {
-    background-color: #d6fd51 !important; /* Set background color for navbar */
-    display: grid; /* Use grid layout for navbar */
+    background-color: #d6fd51 !important; /* Navbar background color */
+    display: grid; /* Grid layout for the navbar */
 }
+
+
+
 
 /* =======================
    Intro Section Styles
    ======================= */
 .introSection {
-    display: grid; /* Use grid layout */
+    display: grid; /* Grid layout for intro section */
     background-image: url('https://geongroup.de/wp-content/uploads/2024/05/AdobeStock_2063549801-scaled.jpeg');
-    background-size: cover; /* Ensure the background image covers the element */
+    background-size: cover; /* Background image covers the element */
     grid-template-columns: 1fr 1fr; /* Two equal columns */
     grid-template-rows: 1fr 1fr; /* Two equal rows */
     align-items: center; /* Center content vertically */
@@ -30,15 +36,18 @@
 .introSection h1 {
     display: flex;
     color: white;
-    grid-column: 1 / 1; /* Position in the first column */
-    grid-row: 2 / 2; /* Position in the second row */
-    justify-content: flex-end; /* Align content to the right */
-    align-self: flex-start; /* Align content to the top */
+    grid-column: 1; /* Position in the first column */
+    grid-row: 2; /* Position in the second row */
+    justify-content: flex-end; /* Align text to the right */
+    align-self: flex-start; /* Align text to the top */
 }
 
 .introHeading {
-    font-size: 60px; /* Default font size for intro heading */
+    font-size: 60px; /* Font size for the intro heading */
 }
+
+
+
 
 /* =======================
    What We Do Section Styles
@@ -46,15 +55,15 @@
 .wwd {
     display: grid;
     height: 1000px; /* Fixed height for the "What We Do" section */
-    background-color: #ffffff; /* Background color for the section */
+    background-color: #ffffff; /* Background color */
     grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
     grid-template-rows: 200px auto; /* First row is fixed, second row adjusts */
     margin-top: 50px; /* Margin above the section */
 }
 
 .wwdHeading {
-    grid-column: 2 / 2; /* Position heading in the center column */
-    grid-row: 1 / 1; /* Position heading in the first row */
+    grid-column: 2; /* Center heading in the middle column */
+    grid-row: 1; /* Position heading in the first row */
 }
 
 .wwdHeading > h1 {
@@ -67,35 +76,34 @@
     justify-content: center; /* Center the subtitle "-Our Passion-" */
     font-family: "acumin-pro", sans-serif;
     font-weight: 100;
-    font-style: normal;
+}
+
+.wwdSolarPower, 
+.wwdStorageSolutions, 
+.wwdConsultingServices {
+    margin: 0 var(--wwdMargin); /* Apply custom margin */
+    grid-row: 2; /* Position in the second row */
 }
 
 .wwdSolarPower {
-    margin: 0px var(--wwdMargin); /* Apply custom margin */
-    grid-column: 1 / 1; /* Position in the first column */
-    grid-row: 2 / 2; /* Position in the second row */
+    grid-column: 1; /* Position in the first column */
 }
 
 .wwdStorageSolutions {
-    margin: 0px var(--wwdMargin); /* Apply custom margin */
-    grid-column: 2 / 2; /* Position in the second column */
-    grid-row: 2 / 2; /* Position in the second row */
+    grid-column: 2; /* Position in the second column */
 }
 
 .wwdConsultingServices {
-    margin: 0px var(--wwdMargin); /* Apply custom margin */
-    grid-column: 3 / 3; /* Position in the third column */
-    grid-row: 2 / 2; /* Position in the second row */
+    grid-column: 3; /* Position in the third column */
 }
 
 div > h4 {
     font-family: "acumin-pro", sans-serif;
     font-weight: 400;
-    font-style: normal;
 }
 
 img {
-    margin: 10px 45%;
+    margin: 10px 45%; /* Center images horizontally */
 }
 
 .wwdHeader {
@@ -103,7 +111,6 @@ img {
     justify-content: center;
     font-family: acumin-pro, sans-serif;
     font-weight: 600;
-    font-style: normal;
     margin-bottom: 30px;
 }
 
@@ -118,7 +125,7 @@ img {
     position: relative;
     font-weight: bold;
     text-align: center;
-    padding: 0 10px; /* Space inside the element to prevent overlap with the lines */
+    padding: 0 10px; /* Padding inside the title */
 }
 
 .lined-title::before,
@@ -126,18 +133,18 @@ img {
     content: "";
     position: absolute;
     top: 50%;
-    width: 3px; /* Thickness of the lines */
-    height: 100%; /* Make the lines the same height as the text */
-    background-color: #0056b3; /* Color of the lines */
-    transform: translateY(-50%); /* Vertically center the lines */
+    width: 3px; /* Line thickness */
+    height: 100%; /* Line height matches text */
+    background-color: #0056b3; /* Line color */
+    transform: translateY(-50%); /* Center lines vertically */
 }
 
 .lined-title::before {
-    left: -13px; /* Position 10px away from the text, including the 3px width of the line */
+    left: -13px; /* Position left line */
 }
 
 .lined-title::after {
-    right: -13px; /* Position 10px away from the text, including the 3px width of the line */
+    right: -13px; /* Position right line */
 }
 
 
@@ -146,36 +153,32 @@ img {
 /* =======================
    Who We Are Section Styles
    ======================= */
-
-
 .wwa {
     background-color: #eeeeee;
-    height: 600px;
+    height: 600px; /* Fixed height for the "Who We Are" section */
     display: grid;
     grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
     grid-template-rows: 200px auto; /* First row is fixed, second row adjusts */
     margin-top: 50px; /* Margin above the section */
-    
 }
 
 .wwaHeading {
     margin-top: 150px;
-
-    grid-column: 2 / 2; /* Position heading in the center column */
-    grid-row: 1 / 1; /* Position heading in the first row */
+    grid-column: 2; /* Center heading in the middle column */
+    grid-row: 1; /* Position heading in the first row */
 }
 
 .wwaHeading > h1 {
     display: flex;
-    justify-content: center; /* Center the "What We Do" title */
+    justify-content: center; /* Center the "Who We Are" title */
 }
 
 .wwaHeading > h2 {
     display: flex;
-    justify-content: center; /* Center the subtitle "-Our Passion-" */
+    justify-content: center; /* Center the subtitle "-About Us-" */
     font-family: "acumin-pro", sans-serif;
     font-weight: 100;
-    font-style: normal;
+    font-style: normal; /* Keep original styling */
 }
 
 .wwaDescription {
@@ -183,9 +186,8 @@ img {
     grid-row: 2; /* Position in the second row */
     display: flex; /* Use flexbox for centering */
     justify-content: center; /* Center content horizontally */
-    padding: 100px 90px; /* Optional padding */
+    padding: 100px 90px; /* Padding inside the description */
 }
-
 
 
 
@@ -193,50 +195,47 @@ img {
 /* =======================
    Why We Do It Section Styles
    ======================= */
-
-
 .wwdi {
     display: grid;
-    height: 400px; /* Fixed height for the "What We Do" section */
-    background-color: #ffffff; /* Background color for the section */
+    height: 400px; /* Fixed height for the "Why We Do It" section */
+    background-color: #ffffff; /* Background color */
     grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
-    grid-template-rows: 150px 100px auto; /* First row is fixed, second row adjusts */
+    grid-template-rows: 150px 100px auto; /* Define three rows */
     margin-top: 50px; /* Margin above the section */
 }
 
 .wwdiHeading {
-    grid-column: 2 / 2; /* Position heading in the center column */
-    grid-row: 1 / 1; /* Position heading in the first row */
+    grid-column: 2; /* Center heading in the middle column */
+    grid-row: 1; /* Position heading in the first row */
 }
 
 .wwdiHeading > h1 {
     display: flex;
-    justify-content: center; /* Center the "What We Do" title */
+    justify-content: center; /* Center the "Why We Do It" title */
 }
 
 .wwdiHeading > h2 {
     display: flex;
-    justify-content: center; /* Center the subtitle "-Our Passion-" */
+    justify-content: center; /* Center the subtitle "-Our Mission-" */
     font-family: "acumin-pro", sans-serif;
     font-weight: 100;
-    font-style: normal;
+    font-style: normal; /* Keep original styling */
+}
+
+.wwdiDescriptionPt1,
+.wwdiDescriptionPt2 {
+    grid-column: 1 / 4; /* Span across all columns */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center content horizontally */
+    padding: 0px 50px; /* Padding inside the description */
 }
 
 .wwdiDescriptionPt1 {
-    grid-column: 1 / 4; /* Span across all columns */
     grid-row: 2; /* Position in the second row */
-    display: flex; /* Use flexbox for centering */
-    justify-content: center; /* Center content horizontally */
-    padding: 0px 50px;
 }
 
 .wwdiDescriptionPt2 {
-    grid-column: 1 / 4; /* Span across all columns */
     grid-row: 3; /* Position in the third row */
-    display: flex; /* Use flexbox for centering */
-    justify-content: center; /* Center content horizontally */
-    padding: 0px 50px;
-
 }
 
 
@@ -244,16 +243,14 @@ img {
 
 
 /* =======================
-Footer Section Styles
-======================= */
-
-
+   Footer Section Styles
+   ======================= */
 footer {
     height: 120px;
     background-color: #222222;
     display: flex;
     text-align: center;
-    flex-direction: column; /* Stack children vertically */
+    flex-direction: column; /* Stack footer content vertically */
 }
 
 .links {
@@ -261,47 +258,19 @@ footer {
 }
 
 .links > a {
-    text-decoration: none; /* Removes the underline from the anchor tag */
-    color: #b0aeaf; /* Change this to your desired color code */
-    padding: 0 10px;
+    text-decoration: none; /* Remove underline from links */
+    color: #b0aeaf; /* Link color */
+    padding: 0 10px; /* Space between links */
 }
 
-
-/* Optionally, add styles for hover state */
 .links > a:hover {
-    color: #d6fd51; /* Change the color when hovering */
+    color: #d6fd51; /* Link color on hover */
 }
-
 
 .copyright {
     color: #ffffff;
     margin-top: 10px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -322,16 +291,6 @@ footer {
     .introHeading {
         font-size: 30px; /* Adjust font size for small devices */
     }
-}
-
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-    /* Additional styles for tablets can be added here */
-}
-
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-    /* Additional styles for desktops can be added here */
 }
 
 /* X-Large devices (large desktops, 1200px and up) */
