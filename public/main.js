@@ -27,6 +27,10 @@ function injectContent(data) {
 
     document.getElementById('wwdConsultingServicesPt1').textContent = variables.wwdConsultingServicesPt1;
     document.getElementById('wwdConsultingServicesPt2').textContent = variables.wwdConsultingServicesPt2;
+
+
+    document.getElementById('wwaDescription').textContent = variables.wwaDescription;
+
 }
 
 // Load the text file and inject content

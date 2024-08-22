@@ -45,7 +45,7 @@
    ======================= */
 .wwd {
     display: grid;
-    height: 800px; /* Fixed height for the "What We Do" section */
+    height: 1000px; /* Fixed height for the "What We Do" section */
     background-color: #ffffff; /* Background color for the section */
     grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
     grid-template-rows: 200px auto; /* First row is fixed, second row adjusts */
@@ -116,7 +116,6 @@ img {
    ======================= */
 .lined-title {
     position: relative;
-    display: inline-block;
     font-weight: bold;
     text-align: center;
     padding: 0 10px; /* Space inside the element to prevent overlap with the lines */
@@ -140,6 +139,60 @@ img {
 .lined-title::after {
     right: -13px; /* Position 10px away from the text, including the 3px width of the line */
 }
+
+
+
+
+/* =======================
+   Who We Are Section Styles
+   ======================= */
+
+
+.wwa {
+    background-color: #eeeeee;
+    height: 600px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
+    grid-template-rows: 200px auto; /* First row is fixed, second row adjusts */
+    margin-top: 50px; /* Margin above the section */
+    
+}
+
+.wwaHeading {
+    margin-top: 150px;
+
+    grid-column: 2 / 2; /* Position heading in the center column */
+    grid-row: 1 / 1; /* Position heading in the first row */
+}
+
+.wwaHeading > h1 {
+    display: flex;
+    justify-content: center; /* Center the "What We Do" title */
+}
+
+.wwaHeading > h2 {
+    display: flex;
+    justify-content: center; /* Center the subtitle "-Our Passion-" */
+    font-family: "acumin-pro", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.wwaDescription {
+    grid-column: 1 / 4; /* Span across all columns */
+    grid-row: 2; /* Position in the second row */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center content horizontally */
+    padding: 100px 90px; /* Optional padding */
+}
+
+
+
+
+
+
+
+
 
 /* =======================
    Responsive Font Sizes
