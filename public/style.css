@@ -3,11 +3,7 @@ body {
     background: black;
     color: white;
     scroll-behavior: smooth;
-    overflow-y: auto;
 }
-
-
-
 
 .header-section {
     margin: 100px auto 0;
@@ -20,20 +16,8 @@ svg {
 
 .ball {
     fill: white;
-    visibility: hidden;
 }
 
-.line {
-    fill: none;
-    stroke: white;
-    stroke-width: 2px;
-}
-text {
-    fill: white;
-    font-size: 15px;
-    font-family: "Signika Negative", sans-serif; 
-    visibility: hidden;
-}
 
 .theOrangeLine{
     stroke: orange;
@@ -45,10 +29,40 @@ text {
     background-color: white;
 }
 
+
+
+
+
+
+
 .vertical-line {
     border-left: 1px solid orange; /* Line color */
-    height: 100vh; /* Full height of the viewport */
+    height: auto; /* Height is responsive to both height and width */
     position: absolute; /* Positioning to place it wherever you need */
-    top: 0;
+}
+
+
+.line01 {
+    transform: translateY(60vh); /* Verschiebt das Element um 60% der Viewporthöhe */
+    left: 15%; /* Center it horizontally */
+}
+
+.line02 {
+    transform: translateY(60vh); /* Verschiebt das Element um 60% der Viewporthöhe */
+    left: 90%; /* Center it horizontally */
+}
+
+.line03 {
+    transform: translateY(95vh); /* Verschiebt das Element um 60% der Viewporthöhe */
     left: 50%; /* Center it horizontally */
+}
+
+.line04 {
+    transform: translateY(111vh); /* Verschiebt das Element um 60% der Viewporthöhe */
+    left: 10%; /* Center it horizontally */
+}
+
+.line05 {
+    transform: translateY(118vh); /* Verschiebt das Element um 60% der Viewporthöhe */
+    right: 30%; /* Center it horizontally */
 }

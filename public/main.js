@@ -2,55 +2,56 @@ gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin, MotionPathPlugin, GSDevTools);
 
 gsap.defaults({ease: "none"});
 
-const pulses = gsap.timeline({
-    defaults: {
-      scale: 0.75,
-      duration: 4,
-      transformOrigin: 'center', 
-      ease: "expo.out"      // Smooth deceleration
-    }})
-.to(".theOrangeLine", {}, 1.80) 
-.to(".theLine", {}, 1.80) 
 
-
-
-  
-
-const main = gsap.timeline({
-    scrollTrigger: {
-        trigger: "#svg",
-        scrub: true,
-        start: "top center",
-        end: "bottom center"
-    }
-})
-
-.from(".theLine", {drawSVG:0, duration:4}, 0)
-
-.add(pulses, 0 )
 
 //GSDevTools.create({animation:main})
 
 
+document.addEventListener("DOMContentLoaded", function() {
+    const lines = document.querySelectorAll('.vertical-line');
 
 
+    function adjustHeight() {
+        lines.forEach((element) => {
+            const pageWidth = window.innerWidth;
+            const pageHeight = window.innerHeight;
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Sensitivity factor: the higher the value, the slower the scrolling
-    const sensitivityFactor = 5;
+            const newHeight = (0.01 * pageHeight) * (0.01 * pageWidth);            
+            
+            element.style.height = `${newHeight}px`;
+            element.style.borderLeft = "1px solid red";
 
-    // Select all elements with the class 'container'
-    const sensitiveSections = document.querySelectorAll('.container');
-
-    sensitiveSections.forEach(function(section) {
-        section.addEventListener('wheel', function(e) {
-            const originalScrollAmount = e.deltaY;
-
-            // Adjust the scroll position
-            const newScrollAmount = originalScrollAmount / sensitivityFactor;
-
-            // Apply the reduced scroll
-            section.scrollTop += newScrollAmount;
         });
-    });
+    }
+
+    // Call function on page load and resize
+    window.addEventListener('load', adjustHeight);
+    window.addEventListener('resize', adjustHeight);
+
+
+
+
+    // Define a global variable for scale timeline
+    const scale = gsap.timeline({
+        defaults: {
+            scale: 0.75,
+            duration: 4,
+            transformOrigin: 'center',
+            ease: "expo.out" // Smooth deceleration
+        }
+    })
+    scale.to(".container", {}, 1.80)
+
+    
+    const main = gsap.timeline({
+        scrollTrigger: {
+            trigger: "#svg",
+            scrub: true,
+            start: "top center",
+            end: "bottom center"
+        }
+    })
+    .from(".theLine", {drawSVG: 0, duration: 4}, 0)
+    .add(scale, 0); // Add the scale timeline only if it's defined
+
 });
