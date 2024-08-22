@@ -190,6 +190,56 @@ img {
 
 
 
+/* =======================
+   Why We Do It Section Styles
+   ======================= */
+
+
+.wwdi {
+    display: grid;
+    height: 400px; /* Fixed height for the "What We Do" section */
+    background-color: #ffffff; /* Background color for the section */
+    grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
+    grid-template-rows: 150px 100px auto; /* First row is fixed, second row adjusts */
+    margin-top: 50px; /* Margin above the section */
+}
+
+.wwdiHeading {
+    grid-column: 2 / 2; /* Position heading in the center column */
+    grid-row: 1 / 1; /* Position heading in the first row */
+}
+
+.wwdiHeading > h1 {
+    display: flex;
+    justify-content: center; /* Center the "What We Do" title */
+}
+
+.wwdiHeading > h2 {
+    display: flex;
+    justify-content: center; /* Center the subtitle "-Our Passion-" */
+    font-family: "acumin-pro", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.wwdiDescriptionPt1 {
+    grid-column: 1 / 4; /* Span across all columns */
+    grid-row: 2; /* Position in the second row */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center content horizontally */
+    padding: 0px 50px;
+}
+
+.wwdiDescriptionPt2 {
+    grid-column: 1 / 4; /* Span across all columns */
+    grid-row: 3; /* Position in the third row */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center content horizontally */
+    padding: 0px 50px;
+
+}
+
+
 
 
 

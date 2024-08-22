@@ -31,6 +31,10 @@ function injectContent(data) {
 
     document.getElementById('wwaDescription').textContent = variables.wwaDescription;
 
+    document.getElementById('wwdiDescriptionPt1').textContent = variables.wwdiDescriptionPt1;
+    document.getElementById('wwdiDescriptionPt2').textContent = variables.wwdiDescriptionPt2;
+
+
 }
 
 // Load the text file and inject content

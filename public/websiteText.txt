@@ -9,3 +9,7 @@ wwdConsultingServicesPt2 = "Furthermore, building on our deep roots in automotiv
 
 
 wwaDescription = "GEON is a multidisciplinary group of German companies dedicated to sustainable development in the field of solar energy and automotive engineering and development. Our team of photovoltaic experts and automotive technology innovators are committed to developing and implementing sustainable projects and technology around the globe."
+
+
+wwdiDescriptionPt1 = "Our vision of the future builds on sustainability. Whether clean energy harvested from the sun or environmentally friendly vehicles for the masses, our focus is on environmental, social and economic sustainability."
+wwdiDescriptionPt2 = "We work hard every day to facilitate the sourcing of local resources and local manpower while transferring valuable know-how to give people hope and empower them to shape their own future. Join us to make the world a brighter place. Together, we are stronger."
