@@ -1,4 +1,4 @@
-/* =======================
+k/* =======================
    Global Variables
    ======================= */
    :root {
@@ -54,7 +54,7 @@
    ======================= */
 .wwd {
     display: grid;
-    height: 1000px; /* Fixed height for the "What We Do" section */
+    height: auto; /* Fixed height for the "What We Do" section */
     background-color: #ffffff; /* Background color */
     grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
     grid-template-rows: 200px auto; /* First row is fixed, second row adjusts */
@@ -201,7 +201,7 @@ img {
     background-color: #ffffff; /* Background color */
     grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
     grid-template-rows: 150px 100px auto; /* Define three rows */
-    margin-top: 50px; /* Margin above the section */
+    margin: 75px auto; /* Margin above and below the section */
 }
 
 .wwdiHeading {
@@ -271,6 +271,75 @@ footer {
     color: #ffffff;
     margin-top: 10px;
 }
+
+
+
+
+
+
+.textBox {
+    justify-self: center;
+    margin: auto 75px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
