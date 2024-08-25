@@ -1,4 +1,4 @@
-k/* =======================
+/* =======================
    Global Variables
    ======================= */
    :root {
@@ -97,10 +97,7 @@ k/* =======================
     grid-column: 3; /* Position in the third column */
 }
 
-div > h4 {
-    font-family: "acumin-pro", sans-serif;
-    font-weight: 400;
-}
+
 
 img {
     margin: 10px 45%; /* Center images horizontally */
@@ -288,12 +285,28 @@ footer {
 
 
 
+/* =======================
+   Text Styles
+   ======================= */
 
 
+h1 {
+    font-family: "AcuminPro-Bold", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
 
+h2 {
+    font-family: acumin-pro, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
 
-
-
+h4 {
+    font-family: "acumin-pro", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
 
 
 

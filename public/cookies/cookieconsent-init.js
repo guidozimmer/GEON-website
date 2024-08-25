@@ -1,4 +1,4 @@
-import "/cookieconsent.umd.js";
+import "../cookies/cookieconsent.umd.js";
 
 /**
  * Enable suggestions
@@ -23,7 +23,7 @@ CookieConsent.run({
         }
     },
 
-    onFirstConsent: () => {
+    /*onFirstConsent: () => {
         console.log('onFirstAction fired');
     },
 
@@ -33,7 +33,7 @@ CookieConsent.run({
 
     onChange: () => {
         console.log('onChange fired ...');
-    },
+    },*/
 
     categories: {
         necessary: {

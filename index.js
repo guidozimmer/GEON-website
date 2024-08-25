@@ -9,6 +9,7 @@ const port = 3000;
 // Resolve __dirname equivalent in ES Modules
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+
 // Serve static files from the "public" directory
 app.use(express.static(path.join(__dirname, 'public')));
 
