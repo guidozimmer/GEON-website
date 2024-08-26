@@ -3,10 +3,32 @@
    ======================= */
    :root {
     --wwdMargin: 50px; /* Default margin for sections */
+    --intro-width: 100vw; /* Full viewport width */
+    --intro-height: 100vh; /* Full viewport height */
+    --intro-heading-font-size-xs: 20px; /* Font size for extra small devices */
+    --intro-heading-font-size-sm: 30px; /* Font size for small devices */
+    --intro-heading-font-size-xl: 40px; /* Font size for x-large devices */
+    --intro-heading-font-size-xxl: 60px; /* Font size for xx-large devices */
+    --wwdGrid-cols: 1fr 1fr 1fr; /* Three equal columns */
+    --wwdGrid-rows: 200px auto; /* First row is fixed, second row adjusts */
+    --wwdMargin-top: 50px; /* Margin above the section */
+    --wwdiGrid-cols: 1fr 1fr 1fr; /* Three equal columns */
+    --wwdiGrid-rows: 150px 100px auto; /* Define three rows */
+    --wwdi-margin: 75px auto; /* Margin above and below the section */
+    --wwa-bg-color: #eeeeee; /* Background color for "Who We Are" section */
+    --wwa-margin-top: 150px; /* Margin top for "Who We Are" heading */
+    --wwa-description-padding: 50px 90px; /* Padding inside the description */
+    --wwdi-description-padding: 0px 50px; /* Padding inside the description */
+    --footer-height: 120px; /* Footer height */
+    --footer-bg-color: #222222; /* Footer background color */
+    --footer-link-color: #b0aeaf; /* Link color */
+    --footer-link-hover-color: #d6fd51; /* Link color on hover */
+    --footer-margin-top: 20px; /* Margin above links in the footer */
+    --footer-copyright-color: #ffffff; /* Copyright text color */
+    --footer-copyright-margin-top: 10px; /* Margin above the copyright text */
+    --img-margin: 10px 45%; /* Center images horizontally */
+    --text-box-margin: auto 75px; /* Margin for text boxes */
 }
-
-
-
 
 /* =======================
    Navbar Styles
@@ -15,9 +37,6 @@
     background-color: #d6fd51 !important; /* Navbar background color */
     display: grid; /* Grid layout for the navbar */
 }
-
-
-
 
 /* =======================
    Intro Section Styles
@@ -29,8 +48,8 @@
     grid-template-columns: 1fr 1fr; /* Two equal columns */
     grid-template-rows: 1fr 1fr; /* Two equal rows */
     align-items: center; /* Center content vertically */
-    width: 100vw; /* Full viewport width */
-    height: 100vh; /* Full viewport height */
+    width: var(--intro-width); /* Full viewport width */
+    height: var(--intro-height); /* Full viewport height */
 }
 
 .introSection h1 {
@@ -43,11 +62,8 @@
 }
 
 .introHeading {
-    font-size: 60px; /* Font size for the intro heading */
+    font-size: var(--intro-heading-font-size-xl); /* Font size for the intro heading */
 }
-
-
-
 
 /* =======================
    What We Do Section Styles
@@ -56,9 +72,9 @@
     display: grid;
     height: auto; /* Fixed height for the "What We Do" section */
     background-color: #ffffff; /* Background color */
-    grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
-    grid-template-rows: 200px auto; /* First row is fixed, second row adjusts */
-    margin-top: 50px; /* Margin above the section */
+    grid-template-columns: var(--wwdGrid-cols); /* Three equal columns */
+    grid-template-rows: var(--wwdGrid-rows); /* First row is fixed, second row adjusts */
+    margin-top: var(--wwdMargin-top); /* Margin above the section */
 }
 
 .wwdHeading {
@@ -97,23 +113,16 @@
     grid-column: 3; /* Position in the third column */
 }
 
-
-
 img {
-    margin: 10px 45%; /* Center images horizontally */
+    margin: var(--img-margin); /* Center images horizontally */
 }
 
 .wwdHeader {
     display: flex;
     justify-content: center;
-    font-family: acumin-pro, sans-serif;
-    font-weight: 600;
+    font-family: AcuminPro-Bold, sans-serif;
     margin-bottom: 30px;
 }
-
-
-
-
 
 /* =======================
    Lined Title Styles
@@ -144,23 +153,20 @@ img {
     right: -13px; /* Position right line */
 }
 
-
-
-
 /* =======================
    Who We Are Section Styles
    ======================= */
 .wwa {
-    background-color: #eeeeee;
-    height: 600px; /* Fixed height for the "Who We Are" section */
+    background-color: var(--wwa-bg-color);
+    height: auto; /* Fixed height for the "Who We Are" section */
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
-    grid-template-rows: 200px auto; /* First row is fixed, second row adjusts */
-    margin-top: 50px; /* Margin above the section */
+    grid-template-columns: var(--wwdGrid-cols); /* Three equal columns */
+    grid-template-rows: var(--wwdGrid-rows); /* First row is fixed, second row adjusts */
+    margin-top: var(--wwa-margin-top); /* Margin above the section */
 }
 
 .wwaHeading {
-    margin-top: 150px;
+    margin-top: var(--wwdMargin-top);
     grid-column: 2; /* Center heading in the middle column */
     grid-row: 1; /* Position heading in the first row */
 }
@@ -183,22 +189,19 @@ img {
     grid-row: 2; /* Position in the second row */
     display: flex; /* Use flexbox for centering */
     justify-content: center; /* Center content horizontally */
-    padding: 100px 90px; /* Padding inside the description */
+    padding: var(--wwa-description-padding); /* Padding inside the description */
 }
-
-
-
 
 /* =======================
    Why We Do It Section Styles
    ======================= */
 .wwdi {
     display: grid;
-    height: 400px; /* Fixed height for the "Why We Do It" section */
+    height: var(--wwdi-section-height);
     background-color: #ffffff; /* Background color */
-    grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
-    grid-template-rows: 150px 100px auto; /* Define three rows */
-    margin: 75px auto; /* Margin above and below the section */
+    grid-template-columns: var(--wwdiGrid-cols); /* Three equal columns */
+    grid-template-rows: var(--wwdiGrid-rows); /* Define three rows */
+    margin: var(--wwdi-margin); /* Margin above and below the section */
 }
 
 .wwdiHeading {
@@ -224,7 +227,7 @@ img {
     grid-column: 1 / 4; /* Span across all columns */
     display: flex; /* Use flexbox for centering */
     justify-content: center; /* Center content horizontally */
-    padding: 0px 50px; /* Padding inside the description */
+    padding: var(--wwdi-description-padding); /* Padding inside the description */
 }
 
 .wwdiDescriptionPt1 {
@@ -235,52 +238,49 @@ img {
     grid-row: 3; /* Position in the third row */
 }
 
-
-
-
-
 /* =======================
    Footer Section Styles
    ======================= */
 footer {
-    height: 120px;
-    background-color: #222222;
+    height: var(--footer-height);
+    background-color: var(--footer-bg-color);
     display: flex;
     text-align: center;
     flex-direction: column; /* Stack footer content vertically */
 }
 
 .links {
-    margin-top: 20px;
+    margin-top: var(--footer-margin-top);
 }
 
 .links > a {
     text-decoration: none; /* Remove underline from links */
-    color: #b0aeaf; /* Link color */
+    color: var(--footer-link-color); /* Link color */
     padding: 0 10px; /* Space between links */
 }
 
 .links > a:hover {
-    color: #d6fd51; /* Link color on hover */
+    color: var(--footer-link-hover-color); /* Link color on hover */
 }
 
 .copyright {
-    color: #ffffff;
-    margin-top: 10px;
+    color: var(--footer-copyright-color);
+    margin-top: var(--footer-copyright-margin-top);
 }
-
-
-
-
-
 
 .textBox {
     justify-self: center;
-    margin: auto 75px;
+    align-self: center;
+    margin: var(--text-box-margin);
 }
 
-
-
+.infoBox {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Create three equal columns */
+    gap: 20px; /* Optional: Adjust the spacing between columns */
+    justify-items: center; /* Center items horizontally within each grid cell */
+    text-align: center; /* Center text inside the textBoxes */
+}
 
 
 
@@ -288,8 +288,6 @@ footer {
 /* =======================
    Text Styles
    ======================= */
-
-
 h1 {
     font-family: "AcuminPro-Bold", sans-serif;
     font-weight: 700;
@@ -303,64 +301,8 @@ h2 {
 }
 
 h4 {
-    font-family: "acumin-pro", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+    font-family: AcuminPro-Light, sans-serif;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#cookieconsent {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* =======================
    Responsive Font Sizes
@@ -369,27 +311,27 @@ h4 {
 /* Extra small devices (portrait phones, 300px and up) */
 @media (min-width: 300px) {
     .introHeading {
-        font-size: 20px; /* Smaller font size for very small screens */
+        font-size: var(--intro-heading-font-size-xs); /* Smaller font size for very small screens */
     }
 }
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
     .introHeading {
-        font-size: 30px; /* Adjust font size for small devices */
+        font-size: var(--intro-heading-font-size-sm); /* Adjust font size for small devices */
     }
 }
 
 /* X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
     .introHeading {
-        font-size: 40px; /* Adjust font size for larger screens */
+        font-size: var(--intro-heading-font-size-xl); /* Adjust font size for larger screens */
     }
 }
 
 /* XX-Large devices (larger desktops, 1400px and up) */
 @media (min-width: 1400px) {
     .introHeading {
-        font-size: 60px; /* Adjust font size for the largest screens */
+        font-size: var(--intro-heading-font-size-xxl); /* Adjust font size for the largest screens */
     }
 }
