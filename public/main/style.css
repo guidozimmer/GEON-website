@@ -14,12 +14,17 @@
     --line-color: #0056b3; /* Color for lines in lined titles */
 
     /* =======================
-       Margins
+       Margins & Paddings
        ======================= */
     --default-margin: 0px; /* Default margin for sections */
     --info-box-padding: 75px; /* Margin for info boxes (top and bottom) */
     --footer-margin-top: 20px; /* Margin above links in the footer */
     --footer-copyright-margin-top: 10px; /* Margin above the copyright text */
+    --img-margin: 10px 45%; /* Center images horizontally */
+
+    --text-box-margin: auto 30px; /* Margin for text boxes */
+    --wwa-description-padding: 50px 90px; /* Padding inside the "Who We Are" description */
+    --wwdi-description-padding: 0px 50px; /* Padding inside the "Why We Do It" description */
 
     /* =======================
        Sizes
@@ -27,10 +32,7 @@
     --intro-width: 100vw; /* Full viewport width */
     --intro-height: 100vh; /* Full viewport height */
     --footer-height: 120px; /* Footer height */
-    --img-margin: 10px 45%; /* Center images horizontally */
-    --text-box-margin: auto 20px; /* Margin for text boxes */
-    --wwa-description-padding: 50px 90px; /* Padding inside the "Who We Are" description */
-    --wwdi-description-padding: 0px 50px; /* Padding inside the "Why We Do It" description */
+
 
     /* =======================
        Grid Layouts
@@ -48,8 +50,69 @@
     --intro-heading-font-size-xl: 40px; /* Font size for x-large devices */
     --intro-heading-font-size-xxl: 60px; /* Font size for xx-large devices */
 
+
+    /* =======================
+       Font Families
+       ======================= */
+    --h1-font-family: "Acumin-Black";
+    --h2-font-family: "Acumin-Bold";
+    --h4-font-family: "Acumin-Light";
+    --a-font-family: "Acumin-Light"
 }
 
+
+
+/* =======================
+    Font Sizes
+======================= */
+
+
+@font-face {
+    font-family: "Acumin-Regular";
+    src: url("../AcuminPro/Acumin Pro Book.otf");
+}
+
+@font-face {
+    font-family: "Acumin-Black";
+    src: url("../AcuminPro/Acumin Pro Black.otf");
+}
+
+@font-face {
+    font-family: "Acumin-Bold";
+    src: url("../AcuminPro/Acumin Pro Bold.otf");
+}
+
+@font-face {
+    font-family: "Acumin-Light";
+    src: url("../AcuminPro/Acumin Pro ExtraLight.otf");
+}
+
+
+
+h1 {
+    font-family: var(--h1-font-family);
+}
+
+h2 {
+    font-family: var(--h2-font-family);
+}
+
+h4 {
+    font-family: var(--h4-font-family);
+}
+
+a, .copyright {
+    font-family: var(--a-font-family);
+}
+
+
+.nav-link {
+    font-size: 20px;
+}
+
+.logo {
+    font-size: 30px !important;
+}
 
 
 /* =======================
@@ -141,7 +204,6 @@ img {
 .wwdHeader {
     display: flex;
     justify-content: center;
-    font-family: AcuminPro-Bold, sans-serif;
     margin-bottom: 30px;
 }
 
@@ -293,5 +355,13 @@ footer {
 }
 
 .PTsection {
-    margin: 20px auto;
+    margin-bottom: 30px;
 }
+
+
+
+
+
+
+
+
