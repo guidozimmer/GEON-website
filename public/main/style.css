@@ -2,39 +2,61 @@
    Global Variables
    ======================= */
    :root {
-    --wwdMargin: 50px; /* Default margin for sections */
+    /* =======================
+       Colors
+       ======================= */
+    --navbar-bg-color: #d6fd51; /* Navbar background color */
+    --wwa-bg-color: #eeeeee; /* Background color for "Who We Are" section */
+    --footer-bg-color: #222222; /* Footer background color */
+    --footer-link-color: #b0aeaf; /* Link color */
+    --footer-link-hover-color: #d6fd51; /* Link color on hover */
+    --footer-copyright-color: #ffffff; /* Copyright text color */
+    --line-color: #0056b3; /* Color for lines in lined titles */
+
+    /* =======================
+       Margins
+       ======================= */
+    --default-margin: 0px; /* Default margin for sections */
+    --info-box-padding: 75px; /* Margin for info boxes (top and bottom) */
+    --footer-margin-top: 20px; /* Margin above links in the footer */
+    --footer-copyright-margin-top: 10px; /* Margin above the copyright text */
+
+    /* =======================
+       Sizes
+       ======================= */
     --intro-width: 100vw; /* Full viewport width */
     --intro-height: 100vh; /* Full viewport height */
+    --footer-height: 120px; /* Footer height */
+    --img-margin: 10px 45%; /* Center images horizontally */
+    --text-box-margin: auto 20px; /* Margin for text boxes */
+    --wwa-description-padding: 50px 90px; /* Padding inside the "Who We Are" description */
+    --wwdi-description-padding: 0px 50px; /* Padding inside the "Why We Do It" description */
+
+    /* =======================
+       Grid Layouts
+       ======================= */
+    --wwd-grid-cols: 1fr 1fr 1fr; /* Three equal columns for "What We Do" section */
+    --wwd-grid-rows: 150px auto; /* Grid rows for "What We Do" section */
+    --wwdi-grid-cols: 1fr 1fr 1fr; /* Three equal columns for "Why We Do It" section */
+    --wwdi-grid-rows: 150px 100px auto; /* Grid rows for "Why We Do It" section */
+
+    /* =======================
+       Font Sizes
+       ======================= */
     --intro-heading-font-size-xs: 20px; /* Font size for extra small devices */
     --intro-heading-font-size-sm: 30px; /* Font size for small devices */
     --intro-heading-font-size-xl: 40px; /* Font size for x-large devices */
     --intro-heading-font-size-xxl: 60px; /* Font size for xx-large devices */
-    --wwdGrid-cols: 1fr 1fr 1fr; /* Three equal columns */
-    --wwdGrid-rows: 200px auto; /* First row is fixed, second row adjusts */
-    --wwdMargin-top: 50px; /* Margin above the section */
-    --wwdiGrid-cols: 1fr 1fr 1fr; /* Three equal columns */
-    --wwdiGrid-rows: 150px 100px auto; /* Define three rows */
-    --wwdi-margin: 75px auto; /* Margin above and below the section */
-    --wwa-bg-color: #eeeeee; /* Background color for "Who We Are" section */
-    --wwa-margin-top: 150px; /* Margin top for "Who We Are" heading */
-    --wwa-description-padding: 50px 90px; /* Padding inside the description */
-    --wwdi-description-padding: 0px 50px; /* Padding inside the description */
-    --footer-height: 120px; /* Footer height */
-    --footer-bg-color: #222222; /* Footer background color */
-    --footer-link-color: #b0aeaf; /* Link color */
-    --footer-link-hover-color: #d6fd51; /* Link color on hover */
-    --footer-margin-top: 20px; /* Margin above links in the footer */
-    --footer-copyright-color: #ffffff; /* Copyright text color */
-    --footer-copyright-margin-top: 10px; /* Margin above the copyright text */
-    --img-margin: 10px 45%; /* Center images horizontally */
-    --text-box-margin: auto 75px; /* Margin for text boxes */
+
 }
+
+
 
 /* =======================
    Navbar Styles
    ======================= */
 #navbar {
-    background-color: #d6fd51 !important; /* Navbar background color */
+    background-color: var(--navbar-bg-color) !important; /* Navbar background color */
     display: grid; /* Grid layout for the navbar */
 }
 
@@ -72,9 +94,8 @@
     display: grid;
     height: auto; /* Fixed height for the "What We Do" section */
     background-color: #ffffff; /* Background color */
-    grid-template-columns: var(--wwdGrid-cols); /* Three equal columns */
-    grid-template-rows: var(--wwdGrid-rows); /* First row is fixed, second row adjusts */
-    margin-top: var(--wwdMargin-top); /* Margin above the section */
+    grid-template-columns: var(--wwd-grid-cols); /* Three equal columns */
+    grid-template-rows: var(--wwd-grid-rows); /* First row is fixed, second row adjusts */
 }
 
 .wwdHeading {
@@ -94,10 +115,10 @@
     font-weight: 100;
 }
 
-.wwdSolarPower, 
-.wwdStorageSolutions, 
+.wwdSolarPower,
+.wwdStorageSolutions,
 .wwdConsultingServices {
-    margin: 0 var(--wwdMargin); /* Apply custom margin */
+    
     grid-row: 2; /* Position in the second row */
 }
 
@@ -141,7 +162,7 @@ img {
     top: 50%;
     width: 3px; /* Line thickness */
     height: 100%; /* Line height matches text */
-    background-color: #0056b3; /* Line color */
+    background-color: var(--line-color); /* Line color */
     transform: translateY(-50%); /* Center lines vertically */
 }
 
@@ -160,13 +181,11 @@ img {
     background-color: var(--wwa-bg-color);
     height: auto; /* Fixed height for the "Who We Are" section */
     display: grid;
-    grid-template-columns: var(--wwdGrid-cols); /* Three equal columns */
-    grid-template-rows: var(--wwdGrid-rows); /* First row is fixed, second row adjusts */
-    margin-top: var(--wwa-margin-top); /* Margin above the section */
+    grid-template-columns: var(--wwd-grid-cols); /* Three equal columns */
+    grid-template-rows: var(--wwd-grid-rows); /* First row is fixed, second row adjusts */
 }
 
 .wwaHeading {
-    margin-top: var(--wwdMargin-top);
     grid-column: 2; /* Center heading in the middle column */
     grid-row: 1; /* Position heading in the first row */
 }
@@ -197,11 +216,10 @@ img {
    ======================= */
 .wwdi {
     display: grid;
-    height: var(--wwdi-section-height);
+    height: auto; /* Set to auto for flexible height */
     background-color: #ffffff; /* Background color */
-    grid-template-columns: var(--wwdiGrid-cols); /* Three equal columns */
-    grid-template-rows: var(--wwdiGrid-rows); /* Define three rows */
-    margin: var(--wwdi-margin); /* Margin above and below the section */
+    grid-template-columns: var(--wwdi-grid-cols); /* Three equal columns */
+    grid-template-rows: var(--wwdi-grid-rows); /* Define three rows */
 }
 
 .wwdiHeading {
@@ -230,17 +248,11 @@ img {
     padding: var(--wwdi-description-padding); /* Padding inside the description */
 }
 
-.wwdiDescriptionPt1 {
-    grid-row: 2; /* Position in the second row */
-}
-
-.wwdiDescriptionPt2 {
-    grid-row: 3; /* Position in the third row */
-}
-
 /* =======================
    Footer Section Styles
    ======================= */
+   
+
 footer {
     height: var(--footer-height);
     background-color: var(--footer-bg-color);
@@ -272,66 +284,14 @@ footer {
     justify-self: center;
     align-self: center;
     margin: var(--text-box-margin);
+    text-align: center;
 }
+
 
 .infoBox {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Create three equal columns */
-    gap: 20px; /* Optional: Adjust the spacing between columns */
-    justify-items: center; /* Center items horizontally within each grid cell */
-    text-align: center; /* Center text inside the textBoxes */
+    padding: var(--info-box-padding); /* Margin above and below the info boxes */
 }
 
-
-
-
-/* =======================
-   Text Styles
-   ======================= */
-h1 {
-    font-family: "AcuminPro-Bold", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-}
-
-h2 {
-    font-family: acumin-pro, sans-serif;
-    font-weight: 500;
-    font-style: normal;
-}
-
-h4 {
-    font-family: AcuminPro-Light, sans-serif;
-}
-
-/* =======================
-   Responsive Font Sizes
-   ======================= */
-
-/* Extra small devices (portrait phones, 300px and up) */
-@media (min-width: 300px) {
-    .introHeading {
-        font-size: var(--intro-heading-font-size-xs); /* Smaller font size for very small screens */
-    }
-}
-
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
-    .introHeading {
-        font-size: var(--intro-heading-font-size-sm); /* Adjust font size for small devices */
-    }
-}
-
-/* X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-    .introHeading {
-        font-size: var(--intro-heading-font-size-xl); /* Adjust font size for larger screens */
-    }
-}
-
-/* XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {
-    .introHeading {
-        font-size: var(--intro-heading-font-size-xxl); /* Adjust font size for the largest screens */
-    }
+.PTsection {
+    margin: 20px auto;
 }
