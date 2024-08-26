@@ -365,3 +365,22 @@ footer {
 
 
 
+/* =======================
+    Animation Style
+   ======================= */
+
+.text {
+    min-height: 50vh;
+    margin-top: 200vh;
+    font-size: 100px;
+    opacity: 1; /* Initial opacity for the animation */
+    transform: translateX(-100%); /* Start off-screen to the left */
+}
+
+.hidden {
+    min-height: 100vh;
+    justify-content: center;
+    text-align: center;
+    opacity: 0; /* Initial opacity for the animation */
+    transform: translateX(-50px); /* Start off-screen to the left */
+}
