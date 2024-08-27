@@ -8,21 +8,28 @@ const fadeInTimeline = gsap.timeline({
     defaults: {
         autoAlpha: 0,
         ease: "power2.out",
-        duration: 1.5 
+        duration: 3,
+        filter: "blur(0px)"
     }
 })
-.to(".element1", {
+
+
+// Select all elements with the class .infoBox
+document.querySelectorAll('.infoBox').forEach(function(element, index) {
+  // Add each element to the timeline with a 1-second delay between them
+  fadeInTimeline.to(element, {
     autoAlpha: 1,
-    x: "-50px", 
-    ease: "power2.out", 
-    filter: "blur(0px)", 
-}, 2)
+    x: "0",
+    duration: 5.5
+  }, index + 2.5); // `index * 1` creates a 1-second delay between each animation
+})
+
 
 
 
 const main = gsap.timeline({
   scrollTrigger: {
-    trigger: ".introSection",
+    trigger: "body",
     scrub: true,
     start: "top top",   
     end: "bottom",  
@@ -30,7 +37,7 @@ const main = gsap.timeline({
 })
 
 .add(fadeInTimeline, 0) 
-.to({}, { duration: 1.5 });
+.to({}, { duration: 6.5 });
 
 
 

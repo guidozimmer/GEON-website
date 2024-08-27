@@ -16,8 +16,7 @@
     /* =======================
        Margins & Paddings
        ======================= */
-    --default-margin: 0px; /* Default margin for sections */
-    --info-box-padding: 75px; /* Margin for info boxes (top and bottom) */
+    --info-box-padding: 200px 75px; /* Margin for info boxes (top and bottom) */
     --footer-margin-top: 20px; /* Margin above links in the footer */
     --footer-copyright-margin-top: 10px; /* Margin above the copyright text */
     --img-margin: 10px 45%; /* Center images horizontally */
@@ -342,7 +341,7 @@ footer {
     margin-top: var(--footer-copyright-margin-top);
 }
 
-.textBox {
+.textBox { 
     justify-self: center;
     align-self: center;
     margin: var(--text-box-margin);
@@ -350,7 +349,7 @@ footer {
 }
 
 
-.infoBox {
+.infoContainer {
     padding: var(--info-box-padding); /* Margin above and below the info boxes */
 }
 
@@ -369,7 +368,14 @@ footer {
     Animation Style
    ======================= */
 
-.hidden {
+.infoBox {
     opacity: 0; /* Initial opacity for the animation */
     transform: translateX(-50px); /* Start off-screen to the left */
+    filter: blur(1px)
+}
+
+
+
+html, body {
+    scroll-behavior: smooth;
 }
