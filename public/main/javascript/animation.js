@@ -4,8 +4,6 @@ gsap.defaults({ease: "none"});
 
 
 
-
-
 const fadeInTimeline = gsap.timeline({
     defaults: {
         autoAlpha: 0,
@@ -20,25 +18,11 @@ const fadeInTimeline = gsap.timeline({
     filter: "blur(0px)", 
 }, 2)
 
-.to(".element2", {
-    autoAlpha: 1,
-    x: 0, 
-    ease: "power2.out", 
-    filter: "blur(0px)", 
-}, 1.23)
-
-.to(".element3", {
-    autoAlpha: 1,
-    x: 0, 
-    ease: "power2.out", 
-    filter: "blur(0px)", 
-}, 5.61)
-
 
 
 const main = gsap.timeline({
   scrollTrigger: {
-    trigger: "body",
+    trigger: ".introSection",
     scrub: true,
     start: "top top",   
     end: "bottom",  
@@ -46,7 +30,7 @@ const main = gsap.timeline({
 })
 
 .add(fadeInTimeline, 0) 
-.to({}, { duration: 7.5 });
+.to({}, { duration: 1.5 });
 
 
 
