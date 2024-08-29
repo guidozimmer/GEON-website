@@ -45,4 +45,4 @@ const main = gsap.timeline({
 
 
 // GSDevTools for debugging
-GSDevTools.create({animation: main});
+//GSDevTools.create({animation: main});
