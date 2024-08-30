@@ -21,7 +21,7 @@ document.querySelectorAll('.infoBox').forEach(function(element, index) {
     autoAlpha: 1,
     x: "0",
     duration: 5.5
-  }, index + 2.5); // `index * 1` creates a 1-second delay between each animation
+  }, index + 1.5); // `index * 1` creates a 1-second delay between each animation
 })
 
 
