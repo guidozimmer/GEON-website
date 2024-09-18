@@ -36,8 +36,8 @@
     /* =======================
        Grid Layouts
        ======================= */
-    --wwd-grid-cols: 1fr 1fr 1fr; /* Three equal columns for "What We Do" section */
-    --wwd-grid-rows: 150px auto; /* Grid rows for "What We Do" section */
+    --ourOffer-grid-cols: 1fr 1fr 1fr; /* Three equal columns for "What We Do" section */
+    --ourOffer-grid-rows: 150px 80px auto; /* Grid rows for "What We Do" section */
     --wwdi-grid-cols: 1fr 1fr 1fr; /* Three equal columns for "Why We Do It" section */
     --wwdi-grid-rows: 150px 100px auto; /* Grid rows for "Why We Do It" section */
 
@@ -59,7 +59,9 @@
     --a-font-family: "Acumin-Light"
 }
 
-
+h1, h2, h3, h4, h5 {
+    font-family: Acumin-Regular;
+}
 
 /* =======================
     Font Sizes
@@ -149,15 +151,27 @@ a, .copyright {
     font-size: var(--intro-heading-font-size-xl); /* Font size for the intro heading */
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
 /* =======================
-   What We Do Section Styles
+   Our Offer Section Styles
    ======================= */
-.wwd {
+.ourOffer {
     display: grid;
     height: auto; /* Fixed height for the "What We Do" section */
     background-color: #ffffff; /* Background color */
-    grid-template-columns: var(--wwd-grid-cols); /* Three equal columns */
-    grid-template-rows: var(--wwd-grid-rows); /* First row is fixed, second row adjusts */
+    grid-template-columns: var(--ourOffer-grid-cols); /* Three equal columns */
+    grid-template-rows: var(--ourOffer-grid-rows); /* First row is fixed, second row adjusts */
 }
 
 .wwdHeading {
@@ -177,22 +191,22 @@ a, .copyright {
     font-weight: 100;
 }
 
-.wwdSolarPower,
-.wwdStorageSolutions,
-.wwdConsultingServices {
+.landOwners,
+.citizens,
+.investors {
     
-    grid-row: 2; /* Position in the second row */
+    grid-row: 3; /* Position in the second row */
 }
 
-.wwdSolarPower {
+.landOwners {
     grid-column: 1; /* Position in the first column */
 }
 
-.wwdStorageSolutions {
+.citizens {
     grid-column: 2; /* Position in the second column */
 }
 
-.wwdConsultingServices {
+.investors {
     grid-column: 3; /* Position in the third column */
 }
 
@@ -205,6 +219,12 @@ img {
     justify-content: center;
     margin-bottom: 30px;
 }
+
+
+
+
+
+
 
 /* =======================
    Lined Title Styles
@@ -242,8 +262,8 @@ img {
     background-color: var(--wwa-bg-color);
     height: auto; /* Fixed height for the "Who We Are" section */
     display: grid;
-    grid-template-columns: var(--wwd-grid-cols); /* Three equal columns */
-    grid-template-rows: var(--wwd-grid-rows); /* First row is fixed, second row adjusts */
+    grid-template-columns: var(--ourOffer-grid-cols); /* Three equal columns */
+    grid-template-rows: var(--ourOffer-grid-rows); /* First row is fixed, second row adjusts */
 }
 
 .wwaHeading {
@@ -378,4 +398,46 @@ footer {
 
 html, body {
     scroll-behavior: smooth;
+}
+
+
+.aboutUs {
+    background-color: #d6fd51;
+    margin: 100px 20px;
+    padding: 50px;
+    border: solid 2px black;
+}
+
+.vision {
+    margin-bottom: 40px;
+}
+
+.offerSquare {
+    background-color: #e07741;
+    margin: 5px;
+    border: solid 5px black;
+    height: 300px;
+}
+
+.ourOfferText1 {
+    background-color: #d6fd51;
+    border: solid 2px black;
+}
+
+.ourOfferText2 {
+    background-color: #d6fd51;
+    border: solid 2px black;
+    grid-column: 1 / 4; /* This makes the element stretch from column 1 to column 3 */
+    grid-row: 2;
+}
+
+
+.ourOfferSquareText {
+    background-color: #d6fd51;
+    border: solid 2px black;
+    margin: 20px;
+}
+
+.ourOfferHeader {
+    margin-top: 30px;
 }
