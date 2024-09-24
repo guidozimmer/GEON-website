@@ -1,0 +1,104 @@
+/* ===============================
+   How It Works Section Styles
+   =============================== */
+
+
+/* =======================
+   Grid
+   ======================= */
+
+.howItWorks {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 100px 50px 50px 50px 50px 50px 50px;
+
+    gap: 20px;
+}
+
+.howItWorksHeading {
+    grid-column: 1 / span 3;
+    grid-row: 1;
+    margin-bottom: 50px;
+}
+
+.howItWorksStepsText {
+    background-color: #d6fd51;
+    border: solid 2px black;
+    text-align: center;
+
+}
+
+.StepsText1 {
+    grid-column: 3; /* Place in column 3 */
+    grid-row: 2;    /* Place in row 1 */
+}
+
+.StepsText2 {
+    grid-column: 3; /* Place in column 3 */
+    grid-row: 3;    /* Place in row 2 */
+}
+
+.StepsText3 {
+    grid-column: 3; /* Place in column 3 */
+    grid-row: 4;    /* Place in row 3 */
+}
+
+.StepsText4 {
+    grid-column: 3; /* Place in column 3 */
+    grid-row: 5;    /* Place in row 4 */
+}
+
+.StepsText5 {
+    grid-column: 3; /* Place in column 3 */
+    grid-row: 6;    /* Place in row 5 */
+}
+
+.StepsText6 {
+    grid-column: 3; /* Place in column 3 */
+    grid-row: 7;    /* Place in row 6 */
+}
+
+
+
+.circle {
+    grid-column: 2; /* Place circles in column 2 */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: #000; /* Black circle */
+    justify-self: center; /* Center the circles horizontally */
+    position: relative;
+}
+
+.circle::before {
+    content: '';
+    position: absolute;
+    top: 100%; /* Start the line at the bottom of the circle */
+    left: 50%;
+    width: 2px;
+    height: 200px; /* Line between circles */
+    background-color: #000;
+    transform: translateX(-50%);
+}
+
+/* Special handling for the second ball on the gap */
+.circle.on-gap {
+    position: relative;
+    top: calc(35px); /* Halfway between row 4 and 5 */
+    grid-row: 4;
+}
+
+.circle.on-gap::before {
+    content: '';
+    position: absolute;
+    top: 50%; /* Adjust the starting point of the line for this ball */
+    left: 50%;
+    width: 2px;
+    height: 180px;
+    background-color: #000;
+    transform: translateX(-50%);
+}
+
+.circle:last-child::before {
+    display: none;
+}

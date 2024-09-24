@@ -1,0 +1,80 @@
+
+/* ===============================
+   What We Do Section Styles
+   =============================== */
+
+
+/* =======================
+   Grid
+   ======================= */
+
+
+.ourOffer {
+    display: grid;
+    height: auto; /* Fixed height for the "What We Do" section */
+    background-color: #ffffff; /* Background color */
+
+}
+
+.ourOfferHeading {
+    grid-column: 2; /* Center heading in the middle column */
+    grid-row: 1; /* Position heading in the first row */
+}
+
+
+.landOwners,
+.citizens,
+.investors {
+    
+    grid-row: 3; /* Position in the second row */
+}
+
+.landOwners {
+    grid-column: 1; /* Position in the first column */
+}
+
+.citizens {
+    grid-column: 2; /* Position in the second column */
+}
+
+.investors {
+    grid-column: 3; /* Position in the third column */
+}
+
+
+
+
+
+
+
+
+
+.ourOfferHeading > h1 {
+    display: flex;
+    justify-content: center; /* Center the "What We Do" title */
+}
+
+.ourOfferHeading > h2 {
+    display: flex;
+    justify-content: center; /* Center the subtitle "-Our Passion-" */
+    font-family: "acumin-pro", sans-serif;
+    font-weight: 100;
+}
+
+
+img {
+    margin: var(--img-margin); /* Center images horizontally */
+}
+
+.ourOfferHeader {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+
+.ourOfferInfoText {
+    font-family: Acumin-Light;
+    text-align: center;
+    margin-top: 50px;
+}
