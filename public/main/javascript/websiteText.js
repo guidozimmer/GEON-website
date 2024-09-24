@@ -19,14 +19,6 @@ export function injectContent(data) {
     });
 
     // Injecting the content into the HTML
-    //document.getElementById('wwdSolarPower').textContent = variables.wwdSolarPower;
-    
-    //document.getElementById('wwdStorageSolutionsPt1').textContent = variables.wwdStorageSolutionsPt1;
-    //document.getElementById('wwdStorageSolutionsPt2').textContent = variables.wwdStorageSolutionsPt2;
-    //document.getElementById('wwdStorageSolutionsPt3').textContent = variables.wwdStorageSolutionsPt3;
-
-    //document.getElementById('wwdConsultingServicesPt1').textContent = variables.wwdConsultingServicesPt1;
-    //document.getElementById('wwdConsultingServicesPt2').textContent = variables.wwdConsultingServicesPt2;
 
     document.getElementById('aboutUsVisionPart1').textContent = variables.aboutUsVisionPart1;
     document.getElementById('aboutUsVisionPart2').textContent = variables.aboutUsVisionPart2;
