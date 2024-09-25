@@ -48,12 +48,6 @@
 
 
 
-
-.ourOfferHeading > h1 {
-    display: flex;
-    justify-content: center; /* Center the "What We Do" title */
-}
-
 .ourOfferHeading > h2 {
     display: flex;
     justify-content: center; /* Center the subtitle "-Our Passion-" */

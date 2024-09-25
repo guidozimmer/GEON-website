@@ -4,11 +4,6 @@
 }
 
 
-.referencesHeading > h1 {
-    display: flex;
-    justify-content: center; /* Center the "What We Do" title */
-}
-
 .references {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

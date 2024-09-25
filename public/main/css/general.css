@@ -216,4 +216,6 @@ html, body {
 .heading {
     background-color: #d6fd51;
     border: solid 2px black;
+    display: flex;
+    justify-content: center; /* Center the "What We Do" title */
 }

@@ -1,0 +1,27 @@
+
+
+.contact {
+    margin: auto 100px;
+    height: 600px;
+}
+
+
+
+.contactData > h3 {
+    font-family: Acumin-Light;
+    margin-top: 50px;
+}
+
+.contactForm {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    font-size: 28px;
+    width: 300px;
+    
+}
