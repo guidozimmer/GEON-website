@@ -11,9 +11,16 @@
 /* =======================
    Navbar Styles
    ======================= */
-   #navbar {
+#navbar {
     background-color: var(--navbar-bg-color) !important; /* Navbar background color */
-    display: grid; /* Grid layout for the navbar */
+}
+
+ul {
+    margin-right: 30px;
+}
+
+li {
+    margin: auto 20px;
 }
 
 /* =======================
