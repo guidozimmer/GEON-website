@@ -1,0 +1,376 @@
+/********************************* PAGE 1 *********************************/
+
+
+
+
+
+
+
+/* top - monate */
+#monate18 {
+    font-family: Acumin-Regular !important;
+    left: 10px;
+    top: -8px;
+}
+
+#monate36 {
+    font-family: Acumin-Regular !important;
+    left: 10px;
+    top: -8px;
+}
+
+
+
+#value1_1 {
+    left: 225px;
+    top: 0px;
+}
+
+#value1_2 {
+    left: 156px;
+    top: 13px;
+}
+
+#value2_1 {
+    left: 225px;
+    top: 0px;
+}
+
+#value2_2 {
+    left: 156px;
+    top: 13px;
+}
+
+
+
+#value3_1 {
+    left: 225px;
+    top: 0px;
+}
+
+#value3_2 {
+    left: 156px;
+    top: 13px;
+}
+
+#value4_1 {
+    left: 225px;
+    top: 0px;
+}
+
+#value4_2 {
+    left: 156px;
+    top: 13px;
+}
+
+
+
+
+
+#value5_1 {
+    left: 225px;
+    top: 0px;
+}
+
+#value5_2 {
+    left: 156px;
+    top: 13px;
+}
+
+#value6_1 {
+    left: 225px;
+    top: 0px;
+}
+
+#value6_2 {
+    left: 156px;
+    top: 13px;
+}
+
+
+
+#value7_1 {
+    left: 225px;
+    top: 0px;
+}
+
+#value7_2 {
+    left: 156px;
+    top: 13px;
+}
+
+#value8_1 {
+    left: 225px;
+    top: 0px;
+}
+
+#value8_2 {
+    left: 156px;
+    top: 13px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+h6, h2 {
+   font-size: 10px;
+   position: absolute;
+   white-space: nowrap; /* Prevents text from wrapping to the next line */
+   overflow: hidden;    /* Hides overflowed content */
+   text-overflow: ellipsis; /* Adds ellipsis (…) if the text overflows */
+} 
+
+.canvas-container18 {
+    top: 20px;
+    position: relative;
+    
+}
+
+.canvas-container36 {
+    top: 23px;
+    position: relative;
+}
+
+
+h2 {
+    position: absolute;
+    display: inline-block;
+    color: #336622;
+} 
+
+
+body {
+    margin: 0;
+    padding: 0;
+
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    background: url("./img/backgroundImg.jpg") no-repeat center center fixed;
+    background-size: cover;
+    aspect-ratio: 19 / 9;
+}
+
+#overview {
+    width: 2270px;
+    height: 1270px;
+    transform: scale(0.5);
+    transform-origin: top left;    
+    transform: scale(0.85);
+}
+
+#lineCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none; /* Make sure the canvas does not interfere with other elements */
+    z-index: 9999; /* Ensure the canvas is on top of other elements */
+}
+
+
+/*********************** HEADING ***********************/
+#heading {
+    text-align: center;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.5); /* 50% transparent black */
+    border-radius: 25px;
+    color: white;
+    padding: 10px 100px;
+    height: 250px;
+    width: 581.836px;
+    margin: 135px; /* Space of 135px from div to text to div */
+}
+
+#heading > h3 {
+    font-family: Acumin-Light;
+    margin-top: 50px;
+    font-size: 35px;
+    font-weight: 400;
+}
+
+#heading > h1 {
+    font-family: Acumin-Regular;
+    font-size: 60px;
+}
+
+/*********************** SQUARES ***********************/
+.square {
+    text-align: center;
+    padding: 10px;
+    background-color: #D7FC51;
+    color: #336622;
+    border-radius: 25px;
+    margin: 10px;
+    box-sizing: border-box;
+    font-family: "Acumin-Black";
+}
+
+#uwNeu {
+    width: 60px;
+}
+
+#projektcluster-cluster {
+    width: 60px;
+}
+
+
+#projektcluster > img {
+    display: block;
+    margin: 10px auto 30px auto;
+    width: 76px;
+    height: 69px;
+}
+
+.autobahn > img {
+    display: block;
+    margin: 10px auto 30px auto;
+    width: 90px;
+}
+
+#netzanschluss > img {
+    display: block;
+    margin: 10px auto 30px auto;
+    width: 76px;
+    height: 69px;}
+
+.bahnstrecke > img {
+    display: block;
+    margin: 10px auto 30px auto;
+    width: 90px;
+}
+
+.batteriespeicher > img {
+    display: block;
+    margin: 10px auto 30px auto;
+    width: 100px;
+}
+
+.landwirtschaft > img {
+    display: block;
+    margin: 10px auto 30px auto;
+    width: 110px;
+}
+
+.square > h1 {
+    font-family: "Acumin-Black";
+    font-size: 24px;
+}
+
+.miniSquare {
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    margin: 0px;
+}
+
+.miniSquare > h5 {
+    font-family: Acumin-Regular;
+    font-size: 11.4px;
+    margin: 0px;
+    font-weight: lighter;
+}
+
+.miniSquare > h4 {
+    font-family: "Acumin-Black";
+    font-size: 32px;
+    margin: 0px;
+}
+
+.vonInsgesamt > h5 {
+    display: inline-block;
+    font-size: 13px;
+    margin-top: 25px;
+    font-weight: lighter;
+    font-family: Acumin-Regular;
+}
+
+.vonInsgesamt {
+    display: inline-block;
+}
+
+
+.autobahn-leistung,
+.bahnstrecke-leistung,
+.landwirtschaft-leistung,
+.batteriespeicher-leistung {
+    right: 15px;
+    position: absolute;
+}
+
+.autobahn-projekte,
+.bahnstrecke-projekte,
+.landwirtschaft-projekte,
+.batteriespeicher-projekte {
+    position: absolute;
+    left: 15px;
+}
+
+/*********************** LAYOUT ***********************/
+#top-squares {
+    display: flex;
+    justify-content: space-between; /* Distributes space evenly between items */
+    align-items: center; /* Center items vertically */
+    margin: auto;
+    padding: 0 20px; /* Add some padding to the container */
+    box-sizing: border-box;
+    margin-top: 50px;
+}
+
+#top-squares > div.square {
+    border: #336622 solid 5px;
+    width: 315px;
+}
+
+#bottom-squares {
+    display: flex;
+    justify-content: space-around; /* Distributes space evenly between items */
+    align-items: center; /* Center items vertically */
+    margin: auto;
+    padding: 0 20px; /* Add some padding to the container */
+    box-sizing: border-box;
+    margin-top: 50px;
+}
+
+#top-squares .square {
+    margin: 0px 130px;
+}
+
+#bottom-squares .square {
+    width: 315px;
+    height: 350px;
+}
+
+.autobahn {
+    position: absolute;
+    left: 142px;
+    bottom: 200px;
+}
+
+.bahnstrecke {
+    position: absolute;
+    left: 724px;
+    bottom: 200px;
+}
+
+.landwirtschaft {
+    position: absolute;
+    right: 724px;
+    bottom: 200px;
+}
+
+.batteriespeicher {
+    position: absolute;
+    right: 142px;
+    bottom: 200px;
+}

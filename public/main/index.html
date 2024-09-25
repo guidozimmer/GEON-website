@@ -16,6 +16,8 @@
     <!-- Include Babel for JSX transformation -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
     
     <!--CSS-->
     <link rel="stylesheet" href="https://use.typekit.net/zgv2vzq.css">
@@ -28,6 +30,7 @@
     <link rel="stylesheet" href="./css/seo.css">
     <link rel="stylesheet" href="./css/howItWorks.css">
     <link rel="stylesheet" href="./css/refrences.css">
+    <link rel="stylesheet" href="./css/potential.css">
 
 
 
@@ -156,6 +159,192 @@
     </div>
 
 
+    <!--<div id="overview">
+        <div class="container">
+            <div id="top-squares">
+                <div class="square" id="projektcluster">
+                    <h1>PROJEKTCLUSTER</h1>
+                    <img src="./img/potan.svg" width="100" height="100" alt="">
+                    <div class="miniSquare" id="projektcluster-cluster">
+                        <h5 class="miniSquareText">CLUSTER</h5>
+                        <h4>4</h4>
+                    </div>
+                    <div class="miniSquare" id="projektcluster-projekte">
+                        <h5 class="miniSquareText">PROJEKTE</h5>
+                        <h4>57</h4>
+                    </div>
+                    <div class="miniSquare" id="projektcluster-leistung">
+                        <h5 class="miniSquareText">LEISTUNG <span style="font-size: 8px;">[MW<sub>p</sub>]</span></h5>
+                        <h4>2.171</h4>
+                    </div>
+                </div>
+    
+                <div id="heading">
+                    <h3>GEON PROJEKTPOTENTIAL</h3>
+                    <h1>HEILIGENGRABE</h1>
+                </div>
+    
+                <div class="square" id="netzanschluss">
+                    <h1>NETZANSCHLUSS</h1>
+                    <img src="./img/nax.svg" width="100" height="100" alt="">
+                    <div class="miniSquare" id="uwBestand">
+                        <h5 class="miniSquareText">UW BESTAND</h5>
+                        <h4>3</h4>
+                    </div>
+                    <div class="miniSquare" id="uwNeu">
+                        <h5 class="miniSquareText">UW NEU</h5>
+                        <h4>2</h4>
+                    </div>
+                    <div class="miniSquare" id="kabeltrasse">
+                        <h5>KABELTRASSE <span style="font-size: 8px;">[km]</span></h5>
+                        <h4>4.6</h4>
+                    </div>
+                </div>
+            </div>
+    
+            <div id="bottom-squares">
+                <div class="square autobahn">
+                    <h1>AUTOBAHN</h1>
+                    <img src="./img/abk.svg" alt="image">
+                    <div class="miniSquare autobahn-projekte">
+                        <h5 class="miniSquareText">PROJEKTE</h5>
+                        <h4>13</h4>
+                        <h5>35</h5>
+                    </div>
+    
+                    <div class="vonInsgesamt">
+                        <h5>← von insgesamt →</h5>
+                    </div>
+    
+                    <div class="miniSquare autobahn-leistung">
+                        <h5 class="miniSquareText">LEISTUNG <span style="font-size: 9.694px;">[MW<sub>p</sub>]</span></h5>
+                        <h4>229</h4>
+                        <h5>1.175</h5>
+                    </div>
+                    <div class="canvas-container18">
+                        <canvas id="Chart1" style="width: 50;" height="50"></canvas>
+                        <h6 id="monate18"><span style="font-family: Acumin-Bold;">18</span> Monate</h6>
+                        <h2 id="value1_1">Value 1</h2>
+                        <h2 id="value1_2">Value 2</h2>
+                    </div>
+    
+    
+                    <div class="canvas-container36">
+                        <canvas id="Chart2" style="width: 50;" height="50"></canvas>
+                        <h6 id="monate36"><span style="font-family: Acumin-Bold;">36</span> Monate</h6>
+                        <h2 id="value2_1">Value 3</h2>
+                        <h2 id="value2_2">Value 4</h2>
+                    </div>
+                </div>
+    
+                <div class="square bahnstrecke">
+                    <h1>BAHNSTRECKE</h1>
+                    <img src="./img/bsk.svg" alt="image">
+                    <div class="miniSquare bahnstrecke-projekte">
+                        <h5 class="miniSquareText">PROJEKTE</h5>
+                        <h4>0</h4>
+                        <h5>0</h5>
+                    </div>
+    
+                    <div class="vonInsgesamt">
+                        <h5>← von insgesamt →</h5>
+                    </div>
+    
+                    <div class="miniSquare bahnstrecke-leistung">
+                        <h5 class="miniSquareText">LEISTUNG <span style="font-size: 8px;">[MW<sub>p</sub>]</span></h5>
+                        <h4>0</h4>
+                        <h5>0</h5>
+                    </div>
+                    <div class="canvas-container18">
+                        <canvas id="Chart3" style="width: 50;" height="50"></canvas>
+                        <h6 id="monate18"><span style="font-family: Acumin-Bold;">18</span> Monate</h6>
+                        <h2 id="value3_1">Value 5</h2>
+                        <h2 id="value3_2">Value 6</h2>
+                    </div>
+                    <div class="canvas-container36">
+                        <canvas id="Chart4" style="width: 50;" height="50"></canvas>
+                        <h6 id="monate36"><span style="font-family: Acumin-Bold;">36</span> Monate</h6>
+                        <h2 id="value4_1">Value 7</h2>
+                        <h2 id="value4_2">Value 8</h2>
+                    </div>
+                </div>
+    
+                <div class="square landwirtschaft">
+                    <h1>LANDWIRTSCHAFT</h1>
+                    <img src="./img/lwf.svg" alt="image">
+                    <div class="miniSquare landwirtschaft-projekte">
+                        <h5 class="miniSquareText">PROJEKTE</h5>
+                        <h4>11</h4>
+                        <h5>22</h5>
+                    </div>
+    
+                    <div class="vonInsgesamt">
+                        <h5>← von insgesamt →</h5>
+                    </div>
+    
+                    <div class="miniSquare landwirtschaft-leistung">
+                        <h5 class="miniSquareText">LEISTUNG <span style="font-size: 8px;">[MW<sub>p</sub>]</span></h5>
+                        <h4>376</h4>
+                        <h5>996</h5>
+                    </div>
+                    <div class="canvas-container18">
+                        <canvas id="Chart5" style="width: 50;" height="50"></canvas>
+                        <h6 id="monate18"><span style="font-family: Acumin-Bold;">18</span> Monate</h6>
+                        <h2 id="value5_1">Value 9</h2>
+                        <h2 id="value5_2">Value 10</h2>
+                    </div>
+                    <div class="canvas-container36">
+                        <canvas id="Chart6" style="width: 50;" height="50"></canvas>
+                        <h6 id="monate36"><span style="font-family: Acumin-Bold;">36</span> Monate</h6>
+                        <h2 id="value6_1">Value 11</h2>
+                        <h2 id="value6_2">Value 12</h2>
+                    </div>
+                </div>
+    
+                <div class="square batteriespeicher">
+                    <h1>BATTERIESPEICHER</h1>
+                    <img src="./img/bat.svg" alt="image">
+                    <div class="miniSquare batteriespeicher-projekte">
+                        <h5 class="miniSquareText">PROJEKTE</h5>
+                        <h4>24</h4>
+                        <h5>57</h5>
+                    </div>
+    
+                    <div class="vonInsgesamt">
+                        <h5>← von insgesamt →</h5>
+                    </div>
+    
+                    <div class="miniSquare batteriespeicher-leistung">
+                        <h5 class="miniSquareText">LEISTUNG <span style="font-size: 8px;">[MW<sub>p</sub>]</span></h5>
+                        <h4>605</h4>
+                        <h5>2.171</h5>
+                    </div>
+                    <div class="canvas-container18">
+                        <canvas id="Chart7" style="width: 50;" height="50"></canvas>
+                        <h6 id="monate18"><span style="font-family: Acumin-Bold;">18</span> Monate</h6>
+                        <h2 id="value7_1">Value 13</h2>
+                        <h2 id="value7_2">Value 14</h2>
+                    </div>
+                    <div class="canvas-container36">
+                        <canvas id="Chart8" style="width: 50;" height="50"></canvas>
+                        <h6 id="monate36"><span style="font-family: Acumin-Bold;">36</span> Monate</h6>
+                        <h2 id="value8_1">Value 15</h2>
+                        <h2 id="value8_2">Value 16</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <canvas id="lineCanvas"></canvas>
+    </div> -->
+
+
+
+
+
+
+
+
     <footer>
         <div class="links">
             <a href="">Contact/Disclaimer</a>
@@ -193,5 +382,7 @@
 
 
 </body>
+
+
 
 </html>
