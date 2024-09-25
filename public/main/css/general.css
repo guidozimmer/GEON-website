@@ -194,11 +194,6 @@ html, body {
     height: 300px;
 }
 
-.ourOfferText1 {
-    background-color: #d6fd51;
-    border: solid 2px black;
-}
-
 .ourOfferText2 {
     background-color: #d6fd51;
     border: solid 2px black;
@@ -215,4 +210,10 @@ html, body {
 
 .ourOfferHeader {
     margin-top: 30px;
+}
+
+
+.heading {
+    background-color: #d6fd51;
+    border: solid 2px black;
 }

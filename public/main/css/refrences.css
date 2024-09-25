@@ -1,0 +1,18 @@
+.referencesHeading {
+    grid-column: 1 / span 3; /* Center heading in the middle column */
+    grid-row: 1; /* Position heading in the first row */
+}
+
+
+.referencesHeading > h1 {
+    display: flex;
+    justify-content: center; /* Center the "What We Do" title */
+}
+
+.references {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 100px 50px 50px;
+    gap: 20px;
+    padding: var(--info-box-padding);
+}
