@@ -48,7 +48,7 @@
     <nav class="navbar navbar-expand-sm bg-body-tertiary fixed-top" id="navbar">
         <div class="container-fluid">
             <a class="navbar-brand logo" href="#">
-                <img src="./img/geonLogo.png" alt="GEON Logo" style="height: 26px;">
+                <img src="./img/geonLogoWhite.png" alt="GEON Logo" style="height: 26px;">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -59,13 +59,13 @@
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Photovoltaics</a>
+                        <a class="nav-link active" href="#">Photovoltaics</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Consulting</a>
+                        <a class="nav-link active" href="#">Consulting</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link active" href="#">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -76,37 +76,36 @@
 
     <div class="heroSection">
         <h1 class="introHeading">MOVING TO NET-ZERO</h1>
-    </div>
 
+        <div class="data">
+            <div class="dataRectangle"></div>
+            <h1 class="dataText">13 MWp PV</h1>
+            <h1 class="dataText">50ha Fläche</h1>
+            <h1 class="dataText">4 Leistung Batterie</h1>
 
-    <div class="aboutUs">
+        </div>
+
         <div class="vision">
-            <h2 id="aboutUsVisionPart1"></h2>
-            <h3 id="aboutUsVisionPart2"></h3>
+            <h3 class="visionText">... machen <span style="color: #d6fd51;">wir</span> was draus</h3>
+            <h3 class="visionText" id="aboutUsVisionPart1">... <span style="color: #d6fd51;">wir</span> wollen Ressourcennutzung nachhaltig, verantwortungsvoll und sozialgerecht gestalten, um die Lebensqualität in Deutschland im Einklang mit der Natur zu steigern auch für künftige Generationen.</h3>
+            <h3 class="visionText" id="weStandForText">... <span style="color: #d6fd51;">wir</span> stehen für Klimaschutz, Fairness, Vertrauen, Ehrlichkeit, Zuverlässigkeit, Transparenz</h3>
         </div>
 
-        <div class="weStandFor">
-            <h3 id="weStandForText"></h3>
-        </div>
+
     </div>
-
 
     <div class="ourOffer infoContainer">
-        <section class="ourOfferHeading heading">
+        <section class="ourOfferHeading">
             <h1 class="headingText" id="ourOfferText1"></h1>
+            <h1 id="dot"></h1>
         </section>
-        
-        <h3 class="ourOfferText2" id="ourOfferText2"></h3>
-        
+                
         <div class="landOwners infoBox">
             <div class="offerSquare">
                 <h2 class="ourOfferHeader" id="ourOfferLandOwnersPart1"></h2>
                 <h3 class="ourOfferSquareText" id="ourOfferLandOwnersPart2"></h3>
             </div>
 
-            <div class="ourOfferInfoText">
-                <h3 id="ourOfferLandOwnersPart3"></h3>
-            </div>
         </div>
         <div class="citizens infoBox">
             <div class="offerSquare">
@@ -114,12 +113,6 @@
                 <h3 class="ourOfferSquareText" id="ourOfferCitizensPart2"></h3>
             </div>
 
-            <div class="ourOfferInfoText">
-                <h3 id="ourOfferCitizensPart3"></h3>
-                <h3 id="ourOfferCitizensPart4"></h3>
-                <h3 id="ourOfferCitizensPart5"></h3>
-
-            </div>
         </div>
         <div class="investors infoBox">
             <div class="offerSquare">
@@ -127,10 +120,6 @@
                 <h3 class="ourOfferSquareText" id="ourOfferInvestorsPart2"></h3>
             </div>
 
-            <div class="ourOfferInfoText">
-                <h3 id="ourOfferInvestorsPart3"></h3>
-                <h3 id="ourOfferInvestorsPart4"></h3>
-            </div>
         </div>
     </div>
 
@@ -151,19 +140,15 @@
             <div class="circle" style="grid-row: 2;"></div>
 
             <!-- Circle between row 4 and row 5 (manually positioned) -->
-            <div class="circle on-gap"></div>
+            <div class="circle on-gap" style="grid-row: 7;"></div>
         
             <!-- Circle in row 7 -->
-            <div class="circle" style="grid-row: 7;"></div>
+            <div class="circle" style="grid-row: 12;"></div>
 
     </div>
 
 
-    <div class="references">
-        <section class="referencesHeading heading">
-            <h1 class="headingText" id="referencesText1">Referenzen</h1>
-        </section>
-    </div>
+
 
 
     <!--<div id="overview">
@@ -364,14 +349,7 @@
     </div>
 
 
-    
 
-    <div class="seo">
-        <section class="seoHeading heading">
-            <h1 class="headingText" id="seoText1">search engine optimaization...</h1>
-            <h1 class="headingText" id="seoText2">seo...</h1>
-        </section>
-    </div>
 
 
 
@@ -404,7 +382,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/MotionPathPlugin.min.js"></script>
     <script src="https://assets.codepen.io/16327/GSDevTools3.min.js"></script>
     
-    <script defer src="./js/animation.js"></script>
+    <!--<script defer src="./js/animation.js"></script>-->
 
 
     <!--Cookies-->

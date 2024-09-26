@@ -21,30 +21,42 @@ export function injectContent(data) {
     // Injecting the content into the HTML
 
 
-    document.getElementById('aboutUsVisionPart1').textContent = variables.aboutUsVisionPart1;
-    document.getElementById('aboutUsVisionPart2').textContent = variables.aboutUsVisionPart2;
 
-    document.getElementById('weStandForText').textContent = variables.weStandForText;
+    let dotSpan = document.createElement('span');
+
+    // Set the dot's content, font size, and color
+    dotSpan.textContent = '■';
+    dotSpan.style.fontSize = '36px'; // Set the font size
+    dotSpan.style.color = '#d6fd51';  // Replace this with your desired color
+    
+    // Adjust position to move the square down
+    dotSpan.style.position = 'relative';
+    dotSpan.style.top = '5px';  // Move it down by 20px
+
+
+
+
+
+
+    //document.getElementById('aboutUsVisionPart1').textContent = variables.aboutUsVisionPart1;
+
+    //document.getElementById('weStandForText').textContent = variables.weStandForText;
 
     document.getElementById('ourOfferText1').textContent = variables.ourOfferText1;
-    document.getElementById('ourOfferText2').textContent = variables.ourOfferText2;
+    document.getElementById('ourOfferText1').appendChild(dotSpan);
+
 
     document.getElementById('ourOfferLandOwnersPart1').textContent = variables.ourOfferLandOwnersPart1;
     document.getElementById('ourOfferLandOwnersPart2').textContent = variables.ourOfferLandOwnersPart2;
-    document.getElementById('ourOfferLandOwnersPart3').textContent = variables.ourOfferLandOwnersPart3;
+
 
     document.getElementById('ourOfferCitizensPart1').textContent = variables.ourOfferCitizensPart1;
     document.getElementById('ourOfferCitizensPart2').textContent = variables.ourOfferCitizensPart2;
-    
-    document.getElementById('ourOfferCitizensPart3').textContent = variables.ourOfferCitizensPart3;
-    document.getElementById('ourOfferCitizensPart4').textContent = variables.ourOfferCitizensPart4;
-    document.getElementById('ourOfferCitizensPart5').textContent = variables.ourOfferCitizensPart5;
+
 
 
     document.getElementById('ourOfferInvestorsPart1').textContent = variables.ourOfferInvestorsPart1;
     document.getElementById('ourOfferInvestorsPart2').textContent = variables.ourOfferInvestorsPart2;
-    document.getElementById('ourOfferInvestorsPart3').textContent = variables.ourOfferInvestorsPart3;
-    document.getElementById('ourOfferInvestorsPart4').textContent = variables.ourOfferInvestorsPart4;
 
 
 }

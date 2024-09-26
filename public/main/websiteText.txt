@@ -1,9 +1,8 @@
-aboutUsVisionPart1 = "Über uns (VISION): "
-aboutUsVisionPart2 = "Wir wollen Ressourcennutzung nachhaltig, verantwortungsvoll und sozialgerecht gestalten, um die Lebensqualität in Deutschland im Einklang mit der Natur zu steigern auch für künftige Generationen. "
+aboutUsVisionPart1 = "Wir wollen Ressourcennutzung nachhaltig, verantwortungsvoll und sozialgerecht gestalten, um die Lebensqualität in Deutschland im Einklang mit der Natur zu steigern auch für künftige Generationen. "
 
 weStandForText = "Wir stehen für Klimaschutz, Fairness, Vertrauen, Ehrlichkeit, Zuverlässigkeit, Transparenz"
 
-ourOfferText1 = "unser Angebot"
+ourOfferText1 = "Unser Angebot"
 ourOfferText2 = "Wir entwickeln maßgeschneiderte Projekte in den Bereichen Stromerzeugung und  -speicherung, die genau zu Ihren Standort passen. Dafür bringen wir alle wichtigen Partner zusammen und ermöglichen Bürgern und Gemeinden aktiv mit zu wirken."
 
 
@@ -25,3 +24,5 @@ ourOfferInvestorsPart2 = "Investieren Sie in nachhaltige Energieprojekte "
 ourOfferInvestorsPart3 = "We advise our clients in finding and implementing transformation strategies in the field of energy. Our focus lies clearly on CO₂-neutral energy production, storage, and deployment of readily available green energy."
 ourOfferInvestorsPart4 = "Furthermore, building on our deep roots in automotive engineering design and development, we also provide strategic and management support for our customers in the automotive and industrial sectors, helping them to streamline the planning and implementation of their projects."
 
+
+dot = "."

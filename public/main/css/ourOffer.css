@@ -12,13 +12,14 @@
 .ourOffer {
     display: grid;
     height: auto; /* Fixed height for the "What We Do" section */
-    background-color: #ffffff; /* Background color */
+    background-color: #1e1e1e; /* Background color */
 
 }
 
 .ourOfferHeading {
-    grid-column: 2; /* Center heading in the middle column */
-    grid-row: 1; /* Position heading in the first row */
+    color: white;
+    grid-column: 2;
+    text-align: center;
 }
 
 
@@ -61,9 +62,13 @@ img {
 }
 
 .ourOfferHeader {
-    display: flex;
-    justify-content: center;
     margin-bottom: 30px;
+    margin-top: 30px;
+    color: white;
+    justify-content: center;
+    margin-left: 40px;
+    margin-right: 10px;
+    font-family: Acumin-Black;    
 }
 
 
@@ -71,4 +76,9 @@ img {
     font-family: Acumin-Light;
     text-align: center;
     margin-top: 50px;
+}
+
+.headingText {
+    display: inline-block;
+    font-family: Acumin-Black;
 }

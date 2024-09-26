@@ -12,7 +12,7 @@
    Navbar Styles
    ======================= */
 #navbar {
-    background-color: var(--navbar-bg-color) !important; /* Navbar background color */
+    background-color: #1b1d1f !important; /* Navbar background color */
 }
 
 ul {
@@ -23,29 +23,62 @@ li {
     margin: auto 20px;
 }
 
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+    color: white !important;
+    font-family: Acumin-Black;
+}
+
+
+
+
+
 /* =======================
    Intro Section Styles
    ======================= */
 .heroSection {
-    display: grid; /* Grid layout for intro section */
-    background-image: url('https://geongroup.de/wp-content/uploads/2024/05/AdobeStock_2063549801-scaled.jpeg');
-    background-size: cover; /* Background image covers the element */
-    grid-template-columns: 1fr 1fr; /* Two equal columns */
-    grid-template-rows: 1fr 1fr; /* Two equal rows */
+    background-color: #000000;
     align-items: center; /* Center content vertically */
     width: 100vw; /* Full viewport width */
     height: 100vh; /* Full viewport height */
+    
 }
 
 .heroSection h1 {
-    display: flex;
     color: white;
-    grid-column: 1; /* Position in the first column */
-    grid-row: 2; /* Position in the second row */
-    justify-content: flex-end; /* Align text to the right */
-    align-self: flex-start; /* Align text to the top */
+}
+
+.data {
+    margin-top: 200px;
+    margin-left: 140px;
+}
+
+.dataText {
+    margin-top: 45px;
+    font-family: Acumin-Black;
+}
+
+.dataRectangle {
+    position: absolute;
+    left: 70px;
+    height: 240px;
+    width: 20px;
+    background-color: #d6fd51;
 }
 
 .introHeading {
     font-size: var(--intro-heading-font-size-xl); /* Font size for the intro heading */
+}
+
+
+.vision {
+    color: #ffffff;
+    margin: 100px 20px;
+    padding: 50px;
+    border: solid 2px black;
+}
+
+
+
+.visionText {
+    font-family: Acumin-Black;
 }

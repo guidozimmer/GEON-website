@@ -163,10 +163,16 @@ h1, h2, h4, h5 {
     Animation Style
    ======================= */
 
-   .infoBox {
-    opacity: 0; /* Initial opacity for the animation */
-    transform: translateX(-50px); /* Start off-screen to the left */
-    filter: blur(1px)
+.infoBox {
+    /*opacity: 0; /* Initial opacity for the animation */
+    /*transform: translateX(-50px); /* Start off-screen to the left */
+    /*filter: blur(1px)*/
+}
+
+#dot {
+    color: #d6fd51;
+    font-size: 100px;
+    display: inline-block;
 }
 
 
@@ -175,23 +181,15 @@ html, body {
     scroll-behavior: smooth;
 }
 
-
-.aboutUs {
-    background-color: #d6fd51;
-    margin: 100px 20px;
-    padding: 50px;
-    border: solid 2px black;
-}
-
 .vision {
     margin-bottom: 40px;
 }
 
 .offerSquare {
-    background-color: #e07741;
+    background-color: #4c4c4c;
     margin: 5px;
-    border: solid 5px black;
-    height: 300px;
+    border: solid 1px #666666;
+    height: auto;
 }
 
 .ourOfferText2 {
@@ -203,18 +201,16 @@ html, body {
 
 
 .ourOfferSquareText {
-    background-color: #d6fd51;
-    border: solid 2px black;
-    margin: 20px;
+    color: white;
+    margin-left: 40px;
+    margin-right: 10px;
+    font-family: Acumin-Light;
 }
 
-.ourOfferHeader {
-    margin-top: 30px;
-}
 
 
 .heading {
-    background-color: #d6fd51;
+    color: #d6fd51;
     border: solid 2px black;
     display: flex;
     justify-content: center; /* Center the "What We Do" title */
