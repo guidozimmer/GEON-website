@@ -11,7 +11,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 100px 150px 150px 150px 150px 150px 150px;
-    background-color: #000;
+    background-color: white;
     gap: 20px;
 }
 
@@ -22,8 +22,7 @@
 }
 
 .howItWorksStepsText {
-    color: white;
-    border: solid 2px black;
+    color: var(--howItWorks-basic-color);
     text-align: center;
 
 }

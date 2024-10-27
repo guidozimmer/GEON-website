@@ -12,7 +12,7 @@
 .ourOffer {
     display: grid;
     height: auto; /* Fixed height for the "What We Do" section */
-    background-color: #1e1e1e; /* Background color */
+    background-color: white; /* Background color */
     height: 100vh;
 
 }
