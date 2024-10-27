@@ -1,6 +1,8 @@
 /* =======================
    Global Variables
    ======================= */
+
+   
    :root {
 
     
@@ -13,7 +15,12 @@
         --heading-text-color: black;
         --basic-text-color: black;
 
-
+        
+        --very-small-font: 15px;
+        --small-font: 20px;
+        
+        --big-font: 30px;
+        --very-big-font: 45px;
 
 
 
@@ -239,9 +246,17 @@ html, body {
 h1 {
     font-family: Acumin-Black;
     color: var(--ourOffer-heading);
+    font-size: var(--very-big-font) !important;
 }
 
+h2 {
+    font-size: var(--big-font) !important;
+}
 
+h3, h4 {
+    font-family: Acumin-Light;
+    font-size: var(--small-font) !important;
+}
 
 
 
