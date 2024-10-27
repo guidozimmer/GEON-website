@@ -13,6 +13,10 @@
     --footer-copyright-color: #ffffff; /* Copyright text color */
     --line-color: #0056b3; /* Color for lines in lined titles */
 
+    --hero-basic-color: black;
+    --vision-basic-color: black;
+
+
     /* =======================
        Margins & Paddings
        ======================= */
@@ -58,6 +62,7 @@
 @font-face {
     font-family: "Acumin-Light";
     src: url("/public/AcuminPro/Acumin Pro ExtraLight.otf");
+
 }
 
 

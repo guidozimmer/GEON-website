@@ -36,20 +36,26 @@ li {
    Intro Section Styles
    ======================= */
 .heroSection {
-    background-color: #000000;
+    background-color: white;
     align-items: center; /* Center content vertically */
     width: 100vw; /* Full viewport width */
     height: 100vh; /* Full viewport height */
 }
 
 .heroSection h1 {
-    color: white;
+    color: var(--hero-basic-color);
 }
 
 .data {
     margin-top: 200px;
     margin-left: 140px;
 }
+
+
+.data > h6 {
+    color: var(--hero-basic-color) !important;
+
+} 
 
 .dataText {
     margin-top: 45px;
@@ -70,7 +76,7 @@ li {
 
 
 .vision {
-    color: #ffffff;
+    color: var(--vision-basic-color);
     /*margin: 100px 20px;*/
     margin: 0;
     padding: 50px;
@@ -83,5 +89,5 @@ li {
 
 .visionText {
     font-family: Acumin-Black;
-    color: white;
+    color: var(--vision-basic-color);
 }
