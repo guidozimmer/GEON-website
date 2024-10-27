@@ -10,6 +10,11 @@
 .contactData > h3 {
     font-family: Acumin-Light;
     margin-top: 50px;
+    color: var(--contact-basic-color);
+}
+
+.contactHeading {
+    color: var(--contact-heading-color);
 }
 
 .contactForm {
@@ -23,5 +28,6 @@
     text-decoration: none;
     font-size: 28px;
     width: 300px;
+    color: var(--contact-basic-color);
     
 }

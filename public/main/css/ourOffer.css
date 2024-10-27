@@ -12,13 +12,13 @@
 .ourOffer {
     display: grid;
     height: auto; /* Fixed height for the "What We Do" section */
-    background-color: white; /* Background color */
+    background-color: var(--ourOffer-bg); /* Background color */
     height: 100vh;
 
 }
 
 .ourOfferHeading {
-    color: var(--ourOffer-basic-color);
+    color: var(--ourOffer-heading);
     grid-column: 2;
     text-align: center;
 }
@@ -65,7 +65,7 @@ img {
 .ourOfferHeader {
     margin-bottom: 30px;
     margin-top: 30px;
-    color: var(--ourOfferSquare-basic-color);
+    color: var(--ourOffer-heading);
     justify-content: center;
     margin-left: 40px;
     margin-right: 10px;
@@ -100,7 +100,7 @@ img {
 }
 
 .ourOfferText2 {
-    background-color: #d6fd51;
+    background-color: var(--accent-color);
     border: solid 2px black;
     grid-column: 1 / 4; /* This makes the element stretch from column 1 to column 3 */
     grid-row: 2;
@@ -108,7 +108,7 @@ img {
 
 
 .ourOfferSquareText {
-    color: var(--ourOffer-basic-color);
+    color: var(--ourOfferSquare-basic-color);
     margin-left: 40px;
     margin-right: 10px;
     font-family: Acumin-Light;

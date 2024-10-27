@@ -11,7 +11,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 100px 150px 150px 150px 150px 150px 150px;
-    background-color: white;
+    background-color: var(--howItWorks-bg);
     gap: 20px;
 }
 
@@ -19,6 +19,7 @@
     grid-column: 1 / span 3;
     grid-row: 1;
     margin-bottom: 50px;
+    color: var(--ourOffer-heading) !important;
 }
 
 .howItWorksStepsText {
@@ -72,7 +73,7 @@
     border-radius: 50%;
     width: 40px;
     height: 40px;
-    background-color: #d6fd51; /* Black circle */
+    background-color: var(--howItWorks-accent-color); /* Black circle */
     justify-self: center; /* Center the circles horizontally */
     position: relative;
 }
@@ -84,22 +85,20 @@
     left: 50%;
     width: 2px;
     height: 150px; /* Line between circles */
-    background-color: #d6fd51;
+    background-color: var(--howItWorks-accent-color);
     transform: translateX(-50%);
 }
 
 
-.circle.on-gap::before {
-    content: '';
-    position: absolute;
-    top: 50%; /* Adjust the starting point of the line for this ball */
-    left: 50%;
-    width: 2px;
-    height: 260px;
-    background-color: #d6fd51;
-    transform: translateX(-50%);
-}
+
 
 .circle:last-child::before {
     display: none;
+}
+
+
+.heading {
+    color: var(--howItWorks-accent-color);
+    display: flex;
+    justify-content: center; /* Center the "What We Do" title */
 }

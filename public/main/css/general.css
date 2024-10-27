@@ -2,22 +2,58 @@
    Global Variables
    ======================= */
    :root {
+
+    
+    /* ==============================================
+                        CORE VARIABLES
+       ============================================== */
+        --accent-color: #d6fd51;
+        --light-bg: white;
+        --dark-bg: gray;
+        --heading-text-color: black;
+        --basic-text-color: black;
+
+
+
+
+
+
+
+
+
     /* =======================
        Colors
        ======================= */
-    --navbar-bg-color: #d6fd51; /* Navbar background color */
-    --wwa-bg-color: #eeeeee; /* Background color for "Who We Are" section */
+
+    /* Hero Section */
+    --hero-bg: var(--light-bg);
+    --hero-basic-color: var(--basic-text-color);
+
+    /* Vision Section */
+    --vision-bg: var(--dark-bg);
+    --vision-basic-color: var(--basic-text-color);
+
+    /* Our Offer Section */
+    --ourOffer-bg: var(--light-bg);
+    --ourOffer-basic-color: var(--basic-text-color);
+    --ourOffer-heading: var(--heading-text-color);
+    --ourOfferSquare-basic-color: var(--basic-text-color);
+
+    /* How It Works */
+    --howItWorks-bg: var(--dark-bg);
+    --howItWorks-basic-color: var(--basic-text-color);
+    --howItWorks-accent-color: var(--accent-color);
+
+    /* Contact */
+    --contact-heading-color: var(--basic-text-color);
+    --contact-basic-color: var(--basic-text-color);
+    
     --footer-bg-color: #222222; /* Footer background color */
     --footer-link-color: #b0aeaf; /* Link color */
-    --footer-link-hover-color: #d6fd51; /* Link color on hover */
+    --footer-link-hover-color: var(--accent-color); /* Link color on hover */
     --footer-copyright-color: #ffffff; /* Copyright text color */
-    --line-color: #0056b3; /* Color for lines in lined titles */
 
-    --hero-basic-color: black;
-    --vision-basic-color: black;
-    --ourOffer-basic-color: black;
-    --ourOfferSquare-basic-color: black;
-    --howItWorks-basic-color: black;
+
     
 
  
@@ -178,7 +214,7 @@ h1, h2, h4, h5 {
 }
 
 #dot {
-    color: #d6fd51;
+    color: var(--accent-color);
     font-size: 100px;
     display: inline-block;
 }
@@ -187,6 +223,7 @@ h1, h2, h4, h5 {
 
 html, body {
     scroll-behavior: smooth;
+    background-color: var(--light-bg);
 }
 
 .vision {
@@ -197,14 +234,11 @@ html, body {
 
 
 
-.heading {
-    color: #d6fd51;
-    display: flex;
-    justify-content: center; /* Center the "What We Do" title */
-}
+
 
 h1 {
     font-family: Acumin-Black;
+    color: var(--ourOffer-heading);
 }
 
 

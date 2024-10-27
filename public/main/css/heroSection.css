@@ -36,7 +36,7 @@ li {
    Intro Section Styles
    ======================= */
 .heroSection {
-    background-color: white;
+    background-color: var(--hero-bg);
     align-items: center; /* Center content vertically */
     width: 100vw; /* Full viewport width */
     height: 100vh; /* Full viewport height */
@@ -62,17 +62,20 @@ li {
     font-family: Acumin-Black;
 }
 
+.heroText {
+    font-family: Acumin-Black;
+    color: var(--hero-basic-color);
+}
+
 .dataRectangle {
     position: absolute;
     left: 70px;
     height: 240px;
     width: 20px;
-    background-color: #d6fd51;
+    background-color: var(--accent-color);
 }
 
-.introHeading {
-    font-size: var(--intro-heading-font-size-xl); /* Font size for the intro heading */
-}
+
 
 
 .vision {
@@ -81,13 +84,9 @@ li {
     margin: 0;
     padding: 50px;
     border: solid 2px black;
-    background-color: grey;
+    background-color: var(--vision-bg);
     height: 100vh;
 }
 
 
 
-.visionText {
-    font-family: Acumin-Black;
-    color: var(--vision-basic-color);
-}
