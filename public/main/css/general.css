@@ -56,12 +56,12 @@
 
 @font-face {
     font-family: "Acumin-Bold";
-    src: url(".//AcuminPro/Acumin Pro Bold.otf");
+    src: url("./AcuminPro/Acumin Pro Bold.otf");
 }
 
 @font-face {
     font-family: "Acumin-Light";
-    src: url(".//AcuminPro/Acumin Pro ExtraLight.otf");
+    src: url("./AcuminPro/Acumin Pro ExtraLight.otf");
 
 }
 
