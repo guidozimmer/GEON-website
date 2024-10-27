@@ -33,6 +33,10 @@
     grid-row: 2;    /* Place in row 1 */
 }
 
+.StepsText1 > span{
+    text-align: left !important; 
+}
+
 .StepsText2 {
     grid-column: 3; /* Place in column 3 */
     grid-row: 3;    /* Place in row 2 */
