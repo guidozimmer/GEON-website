@@ -214,9 +214,6 @@ html, body {
     border: solid 2px black;
     display: flex;
     justify-content: center; /* Center the "What We Do" title */
-<<<<<<< HEAD
-}
-=======
 }
 
 h1 {
@@ -231,4 +228,4 @@ h1 {
     display: block;
 }
 
->>>>>>> b77ca68 (Apply changes from cef1d90)
+
