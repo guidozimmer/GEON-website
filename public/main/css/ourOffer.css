@@ -13,6 +13,7 @@
     display: grid;
     height: auto; /* Fixed height for the "What We Do" section */
     background-color: #1e1e1e; /* Background color */
+    height: 100vh;
 
 }
 
@@ -81,4 +82,11 @@ img {
 .headingText {
     display: inline-block;
     font-family: Acumin-Black;
+}
+
+
+.infoText {
+    grid-column: 1 / span 3;
+    text-align: center;
+    color: white;
 }

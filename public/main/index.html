@@ -44,7 +44,7 @@
 
 </head>
 
-<body>
+<body style="scroll-snap-type: y mandatory;">
     <nav class="navbar navbar-expand-sm bg-body-tertiary fixed-top" id="navbar">
         <div class="container-fluid">
             <a class="navbar-brand logo" href="#">
@@ -59,13 +59,32 @@
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Photovoltaics</a>
+                        <a class="nav-link active" href="#vision">Über uns</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#ourOffer" id="offerDropdown" role="button" aria-expanded="false">
+                          Unser Angebot
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="offerDropdown">
+                          <li><a class="dropdown-item" href="#">Landeigentümer</a></li>
+                          <li><a class="dropdown-item" href="#">Gemeinden / Bürger</a></li>
+                          <li><a class="dropdown-item" href="#">Investoren</a></li>
+                        </ul>
+                    </li>
+                    
+
+
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#howItWorks">So funktioniert's</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#img">Referenzen</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Consulting</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Contact</a>
+                        <a class="nav-link active" href="#contact">Kontakt</a>
                     </li>
                 </ul>
             </div>
@@ -75,7 +94,7 @@
     
 
     <div class="heroSection">
-        <h1 class="introHeading">MOVING TO NET-ZERO</h1>
+        <h1 style="margin-top: 100px; margin-left: 70px;">HOME</h1>
 
         <div class="data">
             <div class="dataRectangle"></div>
@@ -83,27 +102,40 @@
             <h1 class="dataText">50ha Fläche</h1>
             <h1 class="dataText">4 Leistung Batterie</h1>
 
-        </div>
+            <h3 class="visionText" style="margin-top: 200px;">... machen <span style="color: #d6fd51;">wir</span> was draus</h3>
+            <h6 style="color: white; opacity: 0.75;">gemeinsam für klimaneutrale Stromerzeugung in Deutschland</h6>
+            <h6 style="color: white; opacity: 0.75;">gemeinsam für ein klimaneutrales Deutschland</h6>
+            <h6 style="color: white; opacity: 0.75;">80 % erneuerbare Stromerzeugung bis 2030</h6>
 
-        <div class="vision">
-            <h3 class="visionText">... machen <span style="color: #d6fd51;">wir</span> was draus</h3>
-            <h3 class="visionText" id="aboutUsVisionPart1">... <span style="color: #d6fd51;">wir</span> wollen Ressourcennutzung nachhaltig, verantwortungsvoll und sozialgerecht gestalten, um die Lebensqualität in Deutschland im Einklang mit der Natur zu steigern auch für künftige Generationen.</h3>
-            <h3 class="visionText" id="weStandForText">... <span style="color: #d6fd51;">wir</span> stehen für Klimaschutz, Fairness, Vertrauen, Ehrlichkeit, Zuverlässigkeit, Transparenz</h3>
-        </div>
 
+        </div>
 
     </div>
 
-    <div class="ourOffer infoContainer">
+
+    <div id="vision" style="position: absolute; top: 900px;"></div>
+    <div class="vision">
+        <h1>Über uns</h1>
+        <h3 class="visionText" id="aboutUsVisionPart1">... <span style="color: #d6fd51;">wir</span> wollen Ressourcennutzung nachhaltig, verantwortungsvoll und sozialgerecht gestalten, um die Lebensqualität in Deutschland im Einklang mit der Natur zu steigern auch für künftige Generationen.</h3>
+        <h3 class="visionText" id="weStandForText">... <span style="color: #d6fd51;">wir</span> stehen für Klimaschutz, Fairness, Vertrauen, Ehrlichkeit, Zuverlässigkeit, Transparenz</h3>
+    </div>
+
+
+    <div class="ourOffer infoContainer" id="ourOffer">
         <section class="ourOfferHeading">
             <h1 class="headingText" id="ourOfferText1"></h1>
             <h1 id="dot"></h1>
         </section>
+
+        <h3 class="infoText">Wir entwickeln maßgeschneiderte Projekte in den Bereichen Stromerzeugung und -speicherung, die genau zu ihrem Standort passen. <br>Dafür bringen wir alle wichtigen Partner zusammen und ermöglichen Bürgern und Gemeinden, aktiv mitzuwirken.</h1>
                 
         <div class="landOwners infoBox">
             <div class="offerSquare">
                 <h2 class="ourOfferHeader" id="ourOfferLandOwnersPart1"></h2>
                 <h3 class="ourOfferSquareText" id="ourOfferLandOwnersPart2"></h3>
+                <h3>Landverpachten.de
+                    Angebot zur Registrierung in Datenbank (+CTA)
+                </h3>
             </div>
 
         </div>
@@ -111,6 +143,7 @@
             <div class="offerSquare">
                 <h2 class="ourOfferHeader" id="ourOfferCitizensPart1"></h2>
                 <h3 class="ourOfferSquareText" id="ourOfferCitizensPart2"></h3>
+                <h3>Finanzielles Ertragspotential für die Gemeinde</h3>
             </div>
 
         </div>
@@ -118,32 +151,36 @@
             <div class="offerSquare">
                 <h2 class="ourOfferHeader" id="ourOfferInvestorsPart1"></h2>
                 <h3 class="ourOfferSquareText" id="ourOfferInvestorsPart2"></h3>
+                <h3>Crowdfunding & Bürgerbeteiligung & Institioneller Investor: Interesse an Portfolio? Interesse an Einzelprojekt? Hier zur Slide unter "Investors" (siehe Unten)</h3>
             </div>
 
         </div>
     </div>
 
 
-    <div class="howItWorks infoContainer">
+    <div class="howItWorks infoContainer" id="howItWorks">
         <section class="howItWorksHeading heading">
             <h1 class="headingText lined-title">So funktioniert's</h1>
         </section>
 
         <h4 class="howItWorksStepsText StepsText1">Land Sicherung</h4>
+        <h3>Finden und Sichern von idealen Grundstücken</h3>
         <h4 class="howItWorksStepsText StepsText2">Planung</h4>
         <h4 class="howItWorksStepsText StepsText3">Genehmigungen</h4>
+        <h3 style="grid-row: 7;">Einholen aller erforderlichen Genehmigungen für das Bauprojekt</h3>
         <h4 class="howItWorksStepsText StepsText4">Projektfinanzierung</h4>
         <h4 class="howItWorksStepsText StepsText5">Projektrealisierung</h4>
+        <h3 style="grid-column: 3; grid-row: 7;">Investoren ansprechen, Beteiligungsmöglichkeiten für Bürger schaffen, Crowdfunding</h3>
         <h4 class="howItWorksStepsText StepsText6">Stromvermarktung</h4>
 
             <!-- Circle in row 2 -->
             <div class="circle" style="grid-row: 2;"></div>
 
             <!-- Circle between row 4 and row 5 (manually positioned) -->
-            <div class="circle on-gap" style="grid-row: 7;"></div>
+            <div class="circle on-gap" style="grid-row: 6;"></div>
         
             <!-- Circle in row 7 -->
-            <div class="circle" style="grid-row: 12;"></div>
+            <div class="circle" style="grid-row: 10;"></div>
 
     </div>
 
@@ -152,6 +189,7 @@
 
 
     <!--<div id="overview">
+
         <div class="container">
             <div id="top-squares">
                 <div class="square" id="projektcluster">
@@ -329,12 +367,16 @@
     
         <canvas id="lineCanvas"></canvas>
     </div> -->
-    <img src="./img/presentation.png" alt="" style="transform: scale(9); margin-top: 200px; margin-bottom: 600px;">
+    
+    <div id="img" style="position: absolute; top: 4070px;;"></div>
+    <h1 style="text-align: center;">Investor</h1>
+    <img src="./img/presentation.png" alt="" style="transform: scale(7.5); margin-top: 350px; margin-bottom: 600px;" >
 
 
+    <div id="contact" style="position: absolute; top: 5100px;"></div>
     <div class="contact">
-        <div class="contactData">
-            <section class="contactHeading heading">
+        <div class="contactData" style="text-align: center;">
+            <section class="contactHeading">
                 <h1 class="headingText" id="cantactText1">Kontaktdaten</h1>
             </section>
 

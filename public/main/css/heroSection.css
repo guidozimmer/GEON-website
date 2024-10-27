@@ -40,7 +40,6 @@ li {
     align-items: center; /* Center content vertically */
     width: 100vw; /* Full viewport width */
     height: 100vh; /* Full viewport height */
-    
 }
 
 .heroSection h1 {
@@ -72,13 +71,17 @@ li {
 
 .vision {
     color: #ffffff;
-    margin: 100px 20px;
+    /*margin: 100px 20px;*/
+    margin: 0;
     padding: 50px;
     border: solid 2px black;
+    background-color: grey;
+    height: 100vh;
 }
 
 
 
 .visionText {
     font-family: Acumin-Black;
+    color: white;
 }
