@@ -15,8 +15,12 @@
 
     --hero-basic-color: black;
     --vision-basic-color: black;
+    --ourOffer-basic-color: black;
+    --ourOfferSquare-basic-color: black;
+    --howItWorks-basic-color: black;
+    
 
-
+ 
     /* =======================
        Margins & Paddings
        ======================= */
@@ -62,7 +66,6 @@
 @font-face {
     font-family: "Acumin-Light";
     src: url("./AcuminPro/Acumin Pro ExtraLight.otf");
-
 }
 
 
@@ -190,33 +193,12 @@ html, body {
     margin-bottom: 40px;
 }
 
-.offerSquare {
-    background-color: #4c4c4c;
-    margin: 5px;
-    border: solid 1px #666666;
-    height: auto;
-}
 
-.ourOfferText2 {
-    background-color: #d6fd51;
-    border: solid 2px black;
-    grid-column: 1 / 4; /* This makes the element stretch from column 1 to column 3 */
-    grid-row: 2;
-}
-
-
-.ourOfferSquareText {
-    color: white;
-    margin-left: 40px;
-    margin-right: 10px;
-    font-family: Acumin-Light;
-}
 
 
 
 .heading {
     color: #d6fd51;
-    border: solid 2px black;
     display: flex;
     justify-content: center; /* Center the "What We Do" title */
 }

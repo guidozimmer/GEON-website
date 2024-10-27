@@ -18,7 +18,7 @@
 }
 
 .ourOfferHeading {
-    color: white;
+    color: var(--ourOffer-basic-color);
     grid-column: 2;
     text-align: center;
 }
@@ -65,7 +65,7 @@ img {
 .ourOfferHeader {
     margin-bottom: 30px;
     margin-top: 30px;
-    color: white;
+    color: var(--ourOfferSquare-basic-color);
     justify-content: center;
     margin-left: 40px;
     margin-right: 10px;
@@ -88,5 +88,28 @@ img {
 .infoText {
     grid-column: 1 / span 3;
     text-align: center;
-    color: white;
+    color: var(--ourOffer-basic-color);
+}
+
+
+.offerSquare {
+    background-color: #4c4c4c;
+    margin: 5px;
+    border: solid 1px #666666;
+    height: auto;
+}
+
+.ourOfferText2 {
+    background-color: #d6fd51;
+    border: solid 2px black;
+    grid-column: 1 / 4; /* This makes the element stretch from column 1 to column 3 */
+    grid-row: 2;
+}
+
+
+.ourOfferSquareText {
+    color: var(--ourOffer-basic-color);
+    margin-left: 40px;
+    margin-right: 10px;
+    font-family: Acumin-Light;
 }
