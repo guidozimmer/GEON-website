@@ -87,7 +87,7 @@
     top: 100%; /* Start the line at the bottom of the circle */
     left: 50%;
     width: 2px;
-    height: 150px; /* Line between circles */
+    height: 160px; /* Line between circles */
     background-color: var(--howItWorks-accent-color);
     transform: translateX(-50%);
 }
@@ -112,32 +112,58 @@
     width: 15vw;
     height: 0px;
     grid-column: 2;
-    border-top: 5px dotted var(--accent-color); /* Create a dotted line */
+    border-top: 2.5px dotted var(--accent-color); /* Create a dotted line */
 }
 
 .line1 {
-    margin-top: 12px;
+    margin-top: 6px;
 }
 
 .line2 {
-    margin-top: 12px;
+    margin-top: 6px;
     margin-left: 15vw;
 }
 
 .line3 {
-    margin-top: 12px;
+    margin-top: 6px;
 }
 
 .line4 {
-    margin-top: 12px;
+    margin-top: 6px;
     margin-left: 15vw;
 }
 
 .line5 {
-    margin-top: 12px;
+    margin-top: 6px;
 }
 
 .line6 {
-    margin-top: 12px;
+    margin-top: 6px;
     margin-left: 15vw;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

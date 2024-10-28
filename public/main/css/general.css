@@ -15,7 +15,7 @@
         --heading-text-color: black;
         --basic-text-color: black;
 
-        --very-big-font: 55px;
+        --very-big-font: 65px;
         --big-font: 30px;
         --medium-font: 20px;
         --small-font: 18px;
@@ -79,8 +79,8 @@
        Sizes
        ======================= */
     --info-box-height: 220px;
-    --data-rectangle-height: 280px;
-    --circle-size: 30px;
+    --data-rectangle-height: 310px;
+    --circle-size: 15px;
 }
 
 
@@ -93,6 +93,11 @@
 @font-face {
     font-family: "Acumin-Black";
     src: url("./AcuminPro/Acumin Pro Black.otf");
+}
+
+@font-face {
+    font-family: "Acumin-UltraBlack";
+    src: url("./AcuminPro/Acumin\ Pro\ UltraBlack.otf");
 }
 
 @font-face {
@@ -226,7 +231,7 @@ html, body {
 
 
 h1 {
-    font-family: Acumin-Black;
+    font-family: Acumin-UltraBlack !important;
     color: var(--ourOffer-heading);
     font-size: var(--very-big-font) !important;
 }
