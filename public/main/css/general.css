@@ -45,6 +45,7 @@
     --ourOffer-basic-color: var(--basic-text-color);
     --ourOffer-heading: var(--heading-text-color);
     --ourOfferSquare-basic-color: var(--basic-text-color);
+    --ourOfferSquare-heading-color: var(--basic-text-color);
 
     /* How It Works */
     --howItWorks-bg: var(--dark-bg);
