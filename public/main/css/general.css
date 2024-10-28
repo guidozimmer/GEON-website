@@ -18,6 +18,7 @@
         --very-big-font: 65px;
         --medium-big-font: 35px;
         --big-font: 30px;
+        --medium-font: 23px;
         --small-font: 18px;
         --very-small-font: 15px;
 
@@ -252,9 +253,6 @@ h4 {
 
 }
 
-a {
-    font-size: var(--a-font) !important;
-}
 
 
 .nav-item.dropdown:hover .dropdown-menu {

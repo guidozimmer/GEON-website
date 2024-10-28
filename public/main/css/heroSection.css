@@ -80,12 +80,11 @@ li {
 
 .vision {
     color: var(--vision-basic-color);
-    /*margin: 100px 20px;*/
     margin: 0;
-    padding: 50px;
+    padding: 6vh 50px;
     border: solid 2px black;
     background-color: var(--vision-bg);
-    height: 100vh;
+    height: 30vh;
 }
 
 
