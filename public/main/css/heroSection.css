@@ -29,6 +29,13 @@ li {
 }
 
 
+#offerDropdown:focus {
+    outline: none; /* Remove the focus outline */
+    box-shadow: none; /* Remove any box-shadow used to indicate focus */
+}
+
+
+
 
 
 /* =======================
@@ -84,6 +91,8 @@ li {
     background-color: var(--vision-bg);
     height: 30vh;
 }
+
+
 
 
 

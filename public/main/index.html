@@ -67,11 +67,12 @@
                             Unser Angebot
                         </a>
                         <ul class="dropdown-menu bg-dark" aria-labelledby="offerDropdown">
-                            <li><a class="dropdown-item text-light" href="#ourOffer">Landeigentümer</a></li>
-                            <li><a class="dropdown-item text-light" href="#ourOffer">Gemeinden / Bürger</a></li>
-                            <li><a class="dropdown-item text-light" href="#ourOffer">Investoren</a></li>
+                            <li><a class="dropdown-item text-light" href="../subSites/landeigentümer/landeigentümer.html">Landeigentümer</a></li>
+                            <li><a class="dropdown-item text-light" href="../subSites/gemeinden/gemeinden.html">Gemeinden / Bürger</a></li>
+                            <li><a class="dropdown-item text-light" href="../subSites/investoren/investoren.html">Investoren</a></li>
                         </ul>
                     </li>
+                    
     
                     <li class="nav-item">
                         <a class="nav-link active" href="#howItWorks">So funktioniert's</a>
@@ -85,7 +86,41 @@
         </div>
     </nav>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const offerDropdown = document.getElementById('offerDropdown');
+            const dropdownMenu = new bootstrap.Dropdown(offerDropdown);
     
+            // Hover to show dropdown
+            offerDropdown.addEventListener('mouseenter', function () {
+                dropdownMenu.show();
+            });
+    
+            // Hide dropdown when mouse leaves the menu
+            offerDropdown.addEventListener('mouseleave', function () {
+                setTimeout(() => {
+                    if (!offerDropdown.matches(':hover') && !dropdownMenu._menu.matches(':hover')) {
+                        dropdownMenu.hide();
+                    }
+                }, 200);
+            });
+    
+            // Click to navigate to #ourOffer
+            offerDropdown.addEventListener('click', function (event) {
+                // Navigate to #ourOffer
+                window.location.href = '#ourOffer';
+            });
+    
+            // Hide dropdown when mouse leaves the entire dropdown menu
+            dropdownMenu._menu.addEventListener('mouseleave', function () {
+                setTimeout(() => {
+                    if (!offerDropdown.matches(':hover') && !dropdownMenu._menu.matches(':hover')) {
+                        dropdownMenu.hide();
+                    }
+                }, 200);
+            });
+        });
+    </script>
 
     <div class="heroSection">
         <div class="data">
@@ -124,7 +159,9 @@
                 
         <div class="landOwners infoBox">
             <div class="offerSquare">
-                <h2 class="ourOfferHeader" id="ourOfferLandOwnersPart1"></h2>
+                <a href="../subSites/landeigentümer/landeigentümer.html">
+                    <h2 class="ourOfferHeader" id="ourOfferLandOwnersPart1"></h2>
+                </a>
                 <h3 class="ourOfferSquareText" id="ourOfferLandOwnersPart2"></h3>
                 <!--<h3>Landverpachten.de
                     Angebot zur Registrierung in Datenbank (+CTA)
@@ -134,7 +171,9 @@
         </div>
         <div class="citizens infoBox">
             <div class="offerSquare">
-                <h2 class="ourOfferHeader" id="ourOfferCitizensPart1"></h2>
+                <a href="../subSites/gemeinden/gemeinden.html">
+                    <h2 class="ourOfferHeader" id="ourOfferCitizensPart1"></h2>
+                </a>
                 <h3 class="ourOfferSquareText" id="ourOfferCitizensPart2"></h3>
                 <!--<h3>Finanzielles Ertragspotential für die Gemeinde</h3>-->
             </div>
@@ -142,7 +181,9 @@
         </div>
         <div class="investors infoBox">
             <div class="offerSquare">
-                <h2 class="ourOfferHeader" id="ourOfferInvestorsPart1"></h2>
+                <a href="../subSites/investoren/investoren.html">
+                    <h2 class="ourOfferHeader" id="ourOfferInvestorsPart1"></h2>
+                </a>
                 <h3 class="ourOfferSquareText" id="ourOfferInvestorsPart2"></h3>
                 <!--<h3>Crowdfunding & Bürgerbeteiligung & Institioneller Investor: Interesse an Portfolio? Interesse an Einzelprojekt? Hier zur Slide unter "Investors" (siehe Unten)</h3>-->
             </div>

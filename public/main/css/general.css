@@ -250,8 +250,17 @@ h3 {
 h4 {
     font-family: Acumin-Thin;
     font-size: var(--medium-font) !important;
-
 }
+
+
+a {
+    text-decoration: none;
+}
+
+
+
+
+
 
 
 .navbar-toggler:focus {
