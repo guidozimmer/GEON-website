@@ -1,6 +1,5 @@
-.nav-link {
-    font-size: 20px;
-}
+
+
 
 .logo {
     font-size: 30px !important;
@@ -25,7 +24,8 @@ li {
 
 .navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
     color: white !important;
-    font-family: Acumin-Black;
+    font-family: Acumin-Thin;
+    font-size: var(--small-font) !important;
 }
 
 
@@ -70,7 +70,7 @@ li {
 .dataRectangle {
     position: absolute;
     left: 70px;
-    height: 240px;
+    height: var(--data-rectangle-height);
     width: 20px;
     background-color: var(--accent-color);
 }

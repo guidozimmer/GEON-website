@@ -19,7 +19,7 @@
 
 .ourOfferHeading {
     color: var(--ourOffer-heading);
-    grid-column: 2;
+    grid-column: 1 / span 3;
     text-align: center;
 }
 
@@ -83,11 +83,13 @@ img {
 }
 
 
+
+
 .offerSquare {
     background-color: #4c4c4c;
     margin: 5px;
     border: solid 1px #666666;
-    height: auto;
+    height: var(--info-box-height);
 }
 
 .ourOfferText2 {

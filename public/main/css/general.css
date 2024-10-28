@@ -15,9 +15,10 @@
         --heading-text-color: black;
         --basic-text-color: black;
 
-        --very-big-font: 48px;
+        --very-big-font: 55px;
         --big-font: 30px;
-        --small-font: 20px;
+        --medium-font: 20px;
+        --small-font: 18px;
         --very-small-font: 15px;
 
         --dot-font: 35px;
@@ -73,12 +74,14 @@
     --footer-copyright-margin-top: 10px; /* Margin above the copyright text */
     --logo-margin: 10px 45%; /* Center images horizontally */
 
+
+    /* =======================
+       Sizes
+       ======================= */
+    --info-box-height: 220px;
+    --data-rectangle-height: 280px;
 }
 
-
-/* =======================
-    Font Sizes
-======================= */
 
 
 @font-face {
@@ -101,6 +104,10 @@
     src: url("./AcuminPro/Acumin Pro ExtraLight.otf");
 }
 
+@font-face {
+    font-family: "Acumin-Thin";
+    src: url("./AcuminPro/Acumin\ Pro\ Thin.otf");
+}
 
 
 
@@ -227,9 +234,15 @@ h2 {
     font-size: var(--big-font) !important;
 }
 
-h3, h4 {
+h3 {
     font-family: Acumin-Light;
     font-size: var(--small-font) !important;
+}
+
+h4 {
+    font-family: Acumin-Thin;
+    font-size: var(--medium-font) !important;
+
 }
 
 a {
