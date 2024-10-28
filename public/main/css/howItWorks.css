@@ -112,7 +112,7 @@
     width: 15vw;
     height: 0px;
     grid-column: 2;
-    border-top: 2.5px dotted var(--accent-color); /* Create a dotted line */
+    border-top: 2.5px dashed var(--accent-color); /* Create a dotted line */
 }
 
 .line1 {

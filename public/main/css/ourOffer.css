@@ -57,6 +57,7 @@ img {
     margin-bottom: 30px;
     margin-top: 30px;
     color: var(--ourOfferSquare-heading-color);
+    font-size: var(--medium-big-font) !important;
     justify-content: center;
     margin-left: 40px;
     margin-right: 10px;

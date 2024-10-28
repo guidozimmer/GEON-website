@@ -16,8 +16,8 @@
         --basic-text-color: black;
 
         --very-big-font: 65px;
+        --medium-big-font: 35px;
         --big-font: 30px;
-        --medium-font: 20px;
         --small-font: 18px;
         --very-small-font: 15px;
 
@@ -234,6 +234,7 @@ h1 {
     font-family: Acumin-UltraBlack !important;
     color: var(--ourOffer-heading);
     font-size: var(--very-big-font) !important;
+    text-transform: uppercase;
 }
 
 h2 {
@@ -259,7 +260,3 @@ a {
 .nav-item.dropdown:hover .dropdown-menu {
     display: block;
 }
-
-
-
-
