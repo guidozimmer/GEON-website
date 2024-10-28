@@ -59,7 +59,7 @@
 
 
 img {
-    margin: var(--img-margin); /* Center images horizontally */
+    margin: var(--logo-margin); /* Center images horizontally */
 }
 
 .ourOfferHeader {

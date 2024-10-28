@@ -26,7 +26,7 @@ export function injectContent(data) {
 
     // Set the dot's content, font size, and color
     dotSpan.textContent = '■';
-    dotSpan.style.fontSize = '36px'; // Set the font size
+    dotSpan.style.fontSize = 'var(--dot-font)'; // Set the font size
     dotSpan.style.color = 'var(--accent-color)';  // Replace this with your desired color
     
     // Adjust position to move the square down
