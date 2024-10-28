@@ -80,6 +80,7 @@
        ======================= */
     --info-box-height: 220px;
     --data-rectangle-height: 280px;
+    --circle-size: 30px;
 }
 
 
@@ -253,4 +254,7 @@ a {
 .nav-item.dropdown:hover .dropdown-menu {
     display: block;
 }
+
+
+
 

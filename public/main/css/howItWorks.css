@@ -74,8 +74,8 @@
 .circle {
     grid-column: 2; /* Place circles in column 2 */
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: var(--circle-size);
+    height: var(--circle-size);
     background-color: var(--howItWorks-accent-color); /* Black circle */
     justify-self: center; /* Center the circles horizontally */
     position: relative;
@@ -92,7 +92,7 @@
     transform: translateX(-50%);
 }
 
-
+ 
 
 
 .circle:last-child::before {
@@ -100,8 +100,44 @@
 }
 
 
+
 .heading {
     color: var(--howItWorks-accent-color);
     display: flex;
     justify-content: center; /* Center the "What We Do" title */
+}
+
+
+.line {
+    width: 15vw;
+    height: 0px;
+    grid-column: 2;
+    border-top: 5px dotted var(--accent-color); /* Create a dotted line */
+}
+
+.line1 {
+    margin-top: 12px;
+}
+
+.line2 {
+    margin-top: 12px;
+    margin-left: 15vw;
+}
+
+.line3 {
+    margin-top: 12px;
+}
+
+.line4 {
+    margin-top: 12px;
+    margin-left: 15vw;
+}
+
+.line5 {
+    margin-top: 12px;
+}
+
+.line6 {
+    margin-top: 12px;
+    margin-left: 15vw;
 }
