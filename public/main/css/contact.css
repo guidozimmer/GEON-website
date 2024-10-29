@@ -3,7 +3,7 @@
 .contact {
     margin: auto 100px;
     margin-top: 20vh;
-    height: 50vh;
+    height: 120vh;
 }
 
 
@@ -31,4 +31,31 @@
     width: 300px;
     color: var(--contact-basic-color);
     
+}
+
+#homeIcon {
+    transform: scale(0.034);
+}
+
+#phoneIcon {
+    transform: scale(0.24);
+}
+
+#emailIcon {
+    transform: scale(0.05);
+}
+
+
+.bg-primary {
+    background: #1b1d1f !important;
+}
+
+.btn.btn-primary {
+    background: #1b1d1f !important;
+    border-color: #1b1d1f !important;
+    color: #fff;
+}
+
+#spacer {
+    margin-bottom: 50px;
 }
