@@ -35,6 +35,23 @@ li {
 }
 
 
+.navbar-toggler:focus {
+    outline: none; /* Removes the focus outline */
+    box-shadow: none; /* Removes any box-shadow that might be used for focus indication */
+}
+
+
+
+/* On hover, remove background change and set a different text color */
+.dropdown-item:hover {
+    background-color: transparent !important; /* No background change on hover */
+    color: #ffc107 !important; /* Change text color on hover (e.g., Bootstrap yellow) */
+}
+
+.navbar-nav .nav-link.active:hover {
+    background-color: transparent !important; /* No background change on hover */
+    color: #ffc107 !important; /* Change text color on hover (e.g., Bootstrap yellow) */
+}
 
 
 

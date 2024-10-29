@@ -62,7 +62,12 @@ img {
     margin-left: 40px;
     margin-right: 10px;
     font-family: Acumin-Black;
-    
+    display: inline-block;
+}
+
+.ourOfferHeader:hover {
+    background-color: transparent !important; /* No background change on hover */
+    color: #ffc107 !important; /* Change text color on hover (e.g., Bootstrap yellow) */
 }
 
 
@@ -108,3 +113,6 @@ img {
     margin-right: 10px;
     font-family: Acumin-Light;
 }
+
+
+

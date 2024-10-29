@@ -48,7 +48,7 @@
     <nav class="navbar navbar-expand-xl navbar-dark bg-dark fixed-top" id="navbar">
         <div class="container-fluid">
             <a class="navbar-brand logo" href="#">
-                <img src="./img/geonLogoWhite.png" alt="GEON Logo" style="height: 26px;">
+                <img src="./img/geonLogoWhite.png" alt="GEON Logo" style="height: 26px;" id="geonLogo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -85,42 +85,6 @@
             </div>
         </div>
     </nav>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const offerDropdown = document.getElementById('offerDropdown');
-            const dropdownMenu = new bootstrap.Dropdown(offerDropdown);
-    
-            // Hover to show dropdown
-            offerDropdown.addEventListener('mouseenter', function () {
-                dropdownMenu.show();
-            });
-    
-            // Hide dropdown when mouse leaves the menu
-            offerDropdown.addEventListener('mouseleave', function () {
-                setTimeout(() => {
-                    if (!offerDropdown.matches(':hover') && !dropdownMenu._menu.matches(':hover')) {
-                        dropdownMenu.hide();
-                    }
-                }, 200);
-            });
-    
-            // Click to navigate to #ourOffer
-            offerDropdown.addEventListener('click', function (event) {
-                // Navigate to #ourOffer
-                window.location.href = '#ourOffer';
-            });
-    
-            // Hide dropdown when mouse leaves the entire dropdown menu
-            dropdownMenu._menu.addEventListener('mouseleave', function () {
-                setTimeout(() => {
-                    if (!offerDropdown.matches(':hover') && !dropdownMenu._menu.matches(':hover')) {
-                        dropdownMenu.hide();
-                    }
-                }, 200);
-            });
-        });
-    </script>
 
     <div class="heroSection">
         <div class="data">
