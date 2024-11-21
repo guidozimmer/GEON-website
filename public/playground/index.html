@@ -3,37 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Playground</title>
+    <title>Flip Animation on Hover</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
 
-    <link rel="stylesheet" href="./style.css">
+        .flip-container {
+            perspective: 1000px; /* Perspective for the 3D effect */
+        }
+
+        .flip-card {
+            width: 300px;
+            height: 150px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 1.2rem;
+            cursor: pointer;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotateY(0);
+            transition: transform 0.6s ease;
+        }
+
+        /* Front side of the card */
+        .flip-card .front {
+            position: absolute;
+            backface-visibility: hidden; /* Hide back when front is visible */
+            width: 100%;
+            height: 100%;
+            background-color: #007bff;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+        }
+
+        /* Back side of the card */
+        .flip-card .back {
+            position: absolute;
+            backface-visibility: hidden;
+            width: 100%;
+            height: 100%;
+            background-color: #ff5722;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+            transform: rotateY(180deg); /* Initially flipped */
+        }
+
+        /* Flip the card on hover */
+        .flip-container:hover .flip-card {
+            transform: rotateY(180deg);
+        }
+    </style>
 </head>
-
 <body>
-    
-    <section class="hidden element1">
-        <h1>Hi Mom</h1>
-        <p>This is my website</p>
-    </section>
-
-    <section class="hidden element2">
-        <h2>Buy my product</h2>
-        <p>The things you own end up owning you.
-            It's only after you lose everthing that you're free to do anything
-        </p>
-    </section>
-
-    <section class="hidden element3">
-        <h2>It's really good</h2>
-    </section>
-
-
+    <div class="flip-container">
+        <div class="flip-card">
+            <div class="front">Front Text</div>
+            <div class="back">Back Text</div>
+        </div>
+    </div>
 </body>
-
-<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
-<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js"></script>
-<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/DrawSVGPlugin3.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/MotionPathPlugin.min.js"></script>
-<script src="https://assets.codepen.io/16327/GSDevTools3.min.js"></script>
-
-<script defer src="./animation.js"></script>
 </html>

@@ -9,9 +9,9 @@
     /* ==============================================
                         CORE VARIABLES
        ============================================== */
-        --accent-color: #d6fd51;
+        --accent-color: #000000;
         --light-bg: white;
-        --dark-bg: gray;
+        --dark-bg: rgb(230, 230, 230);
         --heading-text-color: black;
         --basic-text-color: black;
 

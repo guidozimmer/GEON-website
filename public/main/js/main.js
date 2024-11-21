@@ -12,3 +12,17 @@ document.addEventListener('DOMContentLoaded', function () {
         setupDropdown();
     }
 });
+
+
+
+anime({
+    targets: { value: 0 }, // Start value
+    value: 1000, // End value
+    duration: 2000, // Duration in milliseconds
+    easing: 'easeOutQuad', // Easing function
+    round: 1, // Round to the nearest whole number
+    update: function(anim) {
+        // Update the number displayed
+        document.getElementById('animated-number').textContent = anim.animatables[0].target.value;
+    }
+});

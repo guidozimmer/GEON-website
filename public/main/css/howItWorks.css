@@ -23,8 +23,15 @@
 }
 
 .howItWorksStepsText {
+    font-size: 30px !important;
     color: var(--howItWorks-basic-color);
     text-align: center;
+    line-height: 30px !important;
+
+}
+
+.howItWorksSpan {
+    font-size: 20px;
 }
 
 .StepsText1 {
@@ -109,7 +116,7 @@
     width: 15vw;
     height: 0px;
     grid-column: 2;
-    border-top: 2.5px dashed var(--accent-color); /* Create a dotted line */
+    border-top: 0.5px solid var(--accent-color); /* Create a dotted line */
 }
 
 .line1 {
