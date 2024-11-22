@@ -32,7 +32,9 @@
 
 .howItWorksSpan {
     font-size: 20px;
+    margin-top: 50px;
 }
+
 
 .StepsText1 {
     grid-column: 1; /* Place in column 3 */

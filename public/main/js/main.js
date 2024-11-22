@@ -14,52 +14,26 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-anime({
-    targets: { value: 0 }, // Start value
-    value: 1142, // End value
-    duration: 2000, // Duration in milliseconds
-    easing: 'easeOutQuad', // Easing function
-    round: 1, // Round to the nearest whole number
-    update: function (anim) {
-        // Format the number with thousand separators
-        const formattedNumber = anim.animatables[0].target.value.toLocaleString('de-DE');
-        document.getElementById('animatedNumber1').textContent = formattedNumber + " Projekte";
-    }
-});
+const animateNumber = (targetId, endValue, suffix = "", isHTML = false) => {
+    anime({
+        targets: { value: 0 },
+        value: endValue,
+        duration: 2000,
+        easing: 'easeOutQuad',
+        round: 1,
+        update: (anim) => {
+            const formattedNumber = anim.animatables[0].target.value.toLocaleString('de-DE');
+            const content = `
+                <span style="font-size: 2.3rem; font-weight: bold;">${formattedNumber}</span>
+                <span style="font-size: 1.5rem;"> ${suffix}</span>
+            `;
+            document.getElementById(targetId).innerHTML = content;
+        }
+    });
+};
 
-anime({
-    targets: { value: 0 }, // Start value
-    value: 48249, // End value
-    duration: 2000, // Duration in milliseconds
-    easing: 'easeOutQuad', // Easing function
-    round: 1, // Round to the nearest whole number
-    update: function (anim) {
-        const formattedNumber = anim.animatables[0].target.value.toLocaleString('de-DE');
-        document.getElementById('animatedNumber2').textContent = formattedNumber + " ha";
-    }
-});
-
-anime({
-    targets: { value: 0 }, // Start value
-    value: 48, // End value
-    duration: 2000, // Duration in milliseconds
-    easing: 'easeOutQuad', // Easing function
-    round: 1, // Round to the nearest whole number
-    update: function (anim) {
-        const formattedNumber = anim.animatables[0].target.value.toLocaleString('de-DE');
-        document.getElementById('animatedNumber3').innerHTML = formattedNumber + " GW<sub>p</sub>";
-    }
-});
-
-
-anime({
-    targets: { value: 0 }, // Start value
-    value: 96, // End value
-    duration: 2000, // Duration in milliseconds
-    easing: 'easeOutQuad', // Easing function
-    round: 1, // Round to the nearest whole number
-    update: function (anim) {
-        const formattedNumber = anim.animatables[0].target.value.toLocaleString('de-DE');
-        document.getElementById('animatedNumber4').textContent = formattedNumber + " GW Batterie";
-    }
-});
+// Animations
+animateNumber('animatedNumber1', 1142, "Projekte");
+animateNumber('animatedNumber2', 48249, "ha");
+animateNumber('animatedNumber3', 48, "GW<sub>p</sub>", true);
+animateNumber('animatedNumber4', 96, "GW Batterie");
