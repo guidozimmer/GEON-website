@@ -11,6 +11,13 @@
 
 .ourOffer {
     display: grid;
+    grid-template-columns: repeat(3, 300px); /* 4 fixed 300px columns */
+    grid-template-rows: 300px 300px 150px; /* Single row height */
+    gap: 50px; /* Ensures gap between columns */
+    justify-content: space-between; /* Ensures space on both sides while distributing items */
+
+
+
     height: auto; /* Fixed height for the "What We Do" section */
     background-color: var(--ourOffer-bg); /* Background color */
     height: 100vh;
@@ -21,26 +28,6 @@
     color: var(--ourOffer-heading);
     grid-column: 1 / span 3;
     text-align: center;
-}
-
-
-.landOwners,
-.citizens,
-.investors {
-    
-    grid-row: 3; /* Position in the second row */
-}
-
-.landOwners {
-    grid-column: 1; /* Position in the first column */
-}
-
-.citizens {
-    grid-column: 2; /* Position in the second column */
-}
-
-.investors {
-    grid-column: 3; /* Position in the third column */
 }
 
 
@@ -116,3 +103,69 @@ img {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+.flip-container {
+    perspective: 5000px; /* Perspective for the 3D effect */
+}
+
+.flip-card {
+    width: 300px;
+    height: 150px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateY(0);
+    transition: transform 0.6s ease;
+}
+
+/* Front side of the card */
+.flip-card .front {
+    position: absolute;
+    backface-visibility: hidden; /* Hide back when front is visible */
+    width: 100%;
+    height: 100%;
+    background-color: #007bff;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+
+/* Back side of the card */
+.flip-card .back {
+    position: absolute;
+    backface-visibility: hidden;
+    width: 100%;
+    height: 100%;
+    background-color: #ff5722;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    transform: rotateY(180deg); /* Initially flipped */
+}
+
+/* Flip the card on hover */
+.flip-container:hover .flip-card {
+    transform: rotateY(180deg);
+}
+
+.flipSection {
+    grid-column: 1 / 4;
+}
