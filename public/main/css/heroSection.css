@@ -104,7 +104,7 @@ li {
     color: var(--vision-basic-color);
     margin: 0;
     padding: 6vh 50px;
-    border: solid 2px black;
+    border: solid 1px black;
     background-color: var(--vision-bg);
     height: 30vh;
 }
@@ -138,14 +138,24 @@ li {
     .dataText {
         font-size: var(--big-font) !important;
     }
+
+    .dataRectangle {
+        height: 260px !important;
+    }
+
 }
 
   
 /* Small Devices (Portrait Tablets and Small Phones, up to 768px) */
 @media only screen and (min-width: 481px) and (max-width: 768px) {
     .dataText {
-        font-size: var(--medium-big-font) !important;
+        font-size: var(--medium-big-font) !important
     }
+
+    .dataRectangle {
+        height: 240px !important;
+    }
+
 }
 
 
@@ -153,6 +163,10 @@ li {
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
     .dataText {
         font-size: var(--large-font) !important;
+    }
+
+    .dataRectangle {
+        height: 300px !important;
     }
 }
 
@@ -162,6 +176,10 @@ li {
     .dataText {
         font-size: var(--large-font) !important;
     }
+    
+    .dataRectangle {
+        height: 300px !important;
+    }
 }
   
 
@@ -170,11 +188,15 @@ li {
     .dataText {
         font-size: var(--large-font) !important;
     }
+
+    .dataRectangle {
+        height: 300px !important;
+    }
 }
   
 
 /* Ultra Large Devices (Very Large Screens, 1600px and up) */
 @media only screen and (min-width: 1601px) {
-    
+
 }
   

@@ -9,7 +9,7 @@
     /* ==============================================
                         CORE VARIABLES
        ============================================== */
-        --accent-color: #000000;
+        --accent-color: #004466;
         --light-bg: white;
         --dark-bg: rgb(230, 230, 230);
         --heading-text-color: black;
@@ -81,7 +81,7 @@
        Sizes
        ======================= */
     --info-box-height: 220px;
-    --data-rectangle-height: 310px;
+    --data-rectangle-height: 360px;
     --circle-size: 15px;
 }
 
