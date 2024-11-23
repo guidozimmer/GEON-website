@@ -125,6 +125,8 @@ img {
 
 .flip-container {
     perspective: 5000px; /* Perspective for the 3D effect */
+    width: 400px;
+    height: 200px;
 }
 
 .flip-card {
