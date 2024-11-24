@@ -101,11 +101,12 @@ li {
 } 
 
 #heroText > h2 {
-    font-size: var(--medium-big-font) !important;
+    font-size: var(--large-font) !important;
 }
 
 #potential {
     margin-top: 250px;
+    margin-bottom: -40px;
 }
 
 
@@ -116,7 +117,16 @@ li {
     text-align: center;
     margin-top: 20px; /* Centering the text */
     color: white;
+    opacity: 1; /* Fully visible by default */
+    transition: opacity 1s ease-in-out; /* Smooth fade effect */
+    white-space: normal; /* Allows wrapping for long text */
+    overflow: visible; /* Prevents text from being clipped */
+    display: inline-block; /* Keeps text inline but prevents width shrinkage */
+    vertical-align: middle; /* Centers vertically within its parent */
+    
 }
+
+
 
 /* Fade-out class to transition opacity */
 .fade-out {

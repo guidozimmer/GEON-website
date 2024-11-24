@@ -10,12 +10,38 @@ export function startNumberFade(elementId, values, interval = 2000) {
         return;
     }
 
-    // Ensure initial state
-    numberDisplay.innerHTML = values[currentIndex]; // Use innerHTML for rendering HTML
-    numberDisplay.style.opacity = "1";
-    numberDisplay.style.transition = "opacity 1s ease-in-out";
+    // Function to animate numbers
+    const animateNumber = (targetId, endValue, suffix = "", isHTML = false) => {
+        anime({
+            targets: { value: 0 },
+            value: endValue,
+            duration: 2000,
+            easing: 'easeOutQuad',
+            round: 1, // Ensure numbers are integers
+            update: (anim) => {
+                const formattedNumber = anim.animatables[0].target.value
+                    .toLocaleString('de-DE'); // German-style thousand separator
+                const content = `
+                    <span style="font-size: 2.3rem; font-weight: bold;">${formattedNumber}</span>
+                    <span style="font-size: 1.5rem;"> ${suffix}</span>
+                `;
+                document.getElementById(targetId).innerHTML = isHTML ? content : formattedNumber;
+            }
+        });
+    };
 
-    // Function to handle fade-out, text change, and fade-in
+    // Function to dynamically set the content
+    const updateContent = (index) => {
+        const currentValue = values[index];
+        if (/\d/.test(currentValue)) {
+            const [number, text] = currentValue.split(/\s(.+)/); // Split number and text
+            animateNumber(elementId, parseInt(number, 10), text || "", true);
+        } else {
+            numberDisplay.innerHTML = currentValue; // Handle non-numeric text
+        }
+    };
+
+    // Function to handle fade-out, update, and fade-in
     function fadeNumber() {
         if (isFading) return; // Prevent overlapping fades
         isFading = true;
@@ -25,17 +51,16 @@ export function startNumberFade(elementId, values, interval = 2000) {
 
         // Wait for fade-out to complete
         setTimeout(() => {
-            // Update the text
+            // Update the content
             currentIndex = (currentIndex + 1) % values.length;
-            numberDisplay.innerHTML = values[currentIndex]; // Use innerHTML to render tags
+            updateContent(currentIndex);
 
-            // Force reflow before fading back in
+            // Fade in
             const _ = numberDisplay.offsetHeight; // Trigger reflow
             numberDisplay.style.opacity = "1";
 
-            // Wait for fade-in to complete and schedule next transition
-            const nextInterval =
-                currentIndex === values.length - 1 ? interval * 3 : interval;
+            // Wait for fade-in to complete and schedule the next transition
+            const nextInterval = currentIndex === values.length - 1 ? interval * 3 : interval;
 
             setTimeout(() => {
                 isFading = false;
@@ -44,6 +69,9 @@ export function startNumberFade(elementId, values, interval = 2000) {
         }, 1000); // Match fade-out duration
     }
 
-    // Start the first fade
+    // Animate the first value
+    updateContent(currentIndex);
+
+    // Start the first fade after the initial interval
     setTimeout(fadeNumber, interval);
 }
