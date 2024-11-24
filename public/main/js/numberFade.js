@@ -1,7 +1,6 @@
 export function startNumberFade(elementId, values, interval = 2000) {
     let currentIndex = 0;
-    let isFadingOut = false;
-    let timer = null;
+    let isFading = false;
 
     // Get the display element by ID
     const numberDisplay = document.getElementById(elementId);
@@ -11,41 +10,40 @@ export function startNumberFade(elementId, values, interval = 2000) {
         return;
     }
 
-    // Set the initial value
-    numberDisplay.textContent = values[currentIndex];
+    // Ensure initial state
+    numberDisplay.innerHTML = values[currentIndex]; // Use innerHTML for rendering HTML
     numberDisplay.style.opacity = "1";
+    numberDisplay.style.transition = "opacity 1s ease-in-out";
 
-    // Function to start fading out and in
+    // Function to handle fade-out, text change, and fade-in
     function fadeNumber() {
+        if (isFading) return; // Prevent overlapping fades
+        isFading = true;
+
         // Fade out
-        isFadingOut = true;
-        numberDisplay.style.transition = "opacity 1s";
         numberDisplay.style.opacity = "0";
 
         // Wait for fade-out to complete
-        timer = setTimeout(() => {
-            isFadingOut = false;
-
-            // Update the value
+        setTimeout(() => {
+            // Update the text
             currentIndex = (currentIndex + 1) % values.length;
-            numberDisplay.textContent = values[currentIndex];
+            numberDisplay.innerHTML = values[currentIndex]; // Use innerHTML to render tags
 
-            // Fade in
+            // Force reflow before fading back in
+            const _ = numberDisplay.offsetHeight; // Trigger reflow
             numberDisplay.style.opacity = "1";
 
-            // Schedule next fade
+            // Wait for fade-in to complete and schedule next transition
             const nextInterval =
                 currentIndex === values.length - 1 ? interval * 3 : interval;
 
-            timer = setTimeout(fadeNumber, nextInterval);
-        }, 1000); // Fade-out duration
+            setTimeout(() => {
+                isFading = false;
+                fadeNumber(); // Schedule the next fade
+            }, nextInterval);
+        }, 1000); // Match fade-out duration
     }
 
-    // Start the loop
-    const startLoop = () => {
-        if (!isFadingOut) fadeNumber();
-    };
-
-    // Initialize loop
-    startLoop();
+    // Start the first fade
+    setTimeout(fadeNumber, interval);
 }

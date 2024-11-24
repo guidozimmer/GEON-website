@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // Values to cycle through
-const values = ["1.142", "48.249", "48", "96", "Machen wir was draus!"];
+const values = ["1.142 Solarprojekte", "48.249 ha Flächen", "48 GW<sub>p</sub> Leistung", "96 GW Batterieleistung", "Machen wir was draus!"];
 
 // Start the fader
 startNumberFade("numberDisplay", values);
