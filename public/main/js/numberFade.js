@@ -1,5 +1,6 @@
 export function startNumberFade(numberId, textId, containerId, values, interval = 2000) {
-    let currentIndex = 0; // Track the current index
+    let currentIndex = 0; // Track the current index#
+    console.log("test");
 
     const numberElement = document.getElementById(numberId);
     const textElement = document.getElementById(textId);
