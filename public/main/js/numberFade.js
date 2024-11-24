@@ -44,8 +44,8 @@ export function startNumberFade(numberId, textId, containerId, values, interval 
             const [number, text, numberLeft, textRight] = values[currentIndex]; // Includes positions
 
             // Update positions
-            numberElement.style.left = numberLeft || "0px"; // Default to 0px if not provided
-            textElement.style.right = textRight || "0px"; // Default to 0px if not provided
+            numberElement.style.right = numberLeft || "0px"; // Default to 0px if not provided
+            textElement.style.left = textRight || "0px"; // Default to 0px if not provided
 
             // Update the text
             textElement.innerHTML = text;
@@ -73,8 +73,8 @@ export function startNumberFade(numberId, textId, containerId, values, interval 
         const [initialNumber, initialText, initialNumberLeft, initialTextRight] = values[currentIndex];
 
         // Set initial positions
-        numberElement.style.left = initialNumberLeft || "0px"; // Default to 0px if not provided
-        textElement.style.right = initialTextRight || "0px"; // Default to 0px if not provided
+        numberElement.style.right = initialNumberLeft || "0px"; // Default to 0px if not provided
+        textElement.style.left = initialTextRight || "0px"; // Default to 0px if not provided
 
         // Set the initial text
         textElement.innerHTML = initialText;
