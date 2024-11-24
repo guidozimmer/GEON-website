@@ -109,17 +109,15 @@ li {
     transition: opacity 1s ease-in-out; /* Smooth fade effect */
     white-space: normal; /* Allows wrapping for long text */
     overflow: visible; /* Prevents text from being clipped */
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Default: two columns */
+
 }
 
 #number {
-    justify-self: end; /* Align to the right in the grid cell */
-    margin-right: 40px;
+    position: absolute;
 }
 
 #text {
-    justify-self: start; /* Align to the left in the grid cell */
+    position: absolute;
 }
 
 /* For all fade transitions */
@@ -128,18 +126,7 @@ li {
     transition: opacity 1s ease-in-out;
 }
 
-/* Final slide layout for two-column span */
-#numberDisplay.final-slide {
-    grid-template-columns: 1fr; /* Change layout to single column */
-    grid-column: span 2; /* Ensure it spans two columns */
-    text-align: center; /* Center content */
-}
 
-#numberDisplay.final-slide #text {
-    grid-column: 1; /* Center text in the single column */
-    justify-self: center; /* Center-align the text */
-    text-align: center;
-}
 
 /* Extra Small Devices (Phones, up to 480px) */
 @media only screen and (max-width: 480px) {
