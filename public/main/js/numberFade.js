@@ -1,77 +1,107 @@
-export function startNumberFade(elementId, values, interval = 2000) {
-    let currentIndex = 0;
-    let isFading = false;
+export function startNumberFade(numberId, textId, containerId, values, interval = 2000) {
+    let currentIndex = 0; // Track the current index
 
-    // Get the display element by ID
-    const numberDisplay = document.getElementById(elementId);
+    const numberElement = document.getElementById(numberId);
+    const textElement = document.getElementById(textId);
+    const containerElement = document.getElementById(containerId);
 
-    if (!numberDisplay) {
-        console.error(`Element with ID "${elementId}" not found.`);
+    if (!numberElement || !textElement || !containerElement) {
+        console.error(`One or more elements not found: numberId=${numberId}, textId=${textId}, containerId=${containerId}`);
         return;
     }
 
+    // Set initial opacity and transitions
+    numberElement.style.opacity = "0";
+    textElement.style.opacity = "0";
+    numberElement.style.transition = "opacity 1s ease-in-out";
+    textElement.style.transition = "opacity 1s ease-in-out";
+
     // Function to animate numbers
-    const animateNumber = (targetId, endValue, suffix = "", isHTML = false) => {
+    const animateNumber = (targetElement, endValue) => {
         anime({
-            targets: { value: 0 },
+            targets: { value: 0 }, // Start counting from 0
             value: endValue,
-            duration: 2000,
-            easing: 'easeOutQuad',
+            duration: 2000, // Match the count-up duration
+            easing: "easeOutQuad",
             round: 1, // Ensure numbers are integers
             update: (anim) => {
-                const formattedNumber = anim.animatables[0].target.value
-                    .toLocaleString('de-DE'); // German-style thousand separator
-                const content = `
-                    <span style="font-size: 2.3rem; font-weight: bold;">${formattedNumber}</span>
-                    <span style="font-size: 1.5rem;"> ${suffix}</span>
-                `;
-                document.getElementById(targetId).innerHTML = isHTML ? content : formattedNumber;
-            }
+                const formattedNumber = anim.animatables[0].target.value.toLocaleString("de-DE");
+                targetElement.innerHTML = formattedNumber; // Update the number during animation
+            },
         });
     };
 
-    // Function to dynamically set the content
-    const updateContent = (index) => {
-        const currentValue = values[index];
-        if (/\d/.test(currentValue)) {
-            const [number, text] = currentValue.split(/\s(.+)/); // Split number and text
-            animateNumber(elementId, parseInt(number, 10), text || "", true);
-        } else {
-            numberDisplay.innerHTML = currentValue; // Handle non-numeric text
-        }
+    // Function to handle fade-out, content switch, and fade-in
+    const switchContent = () => {
+        // Fade out both elements
+        numberElement.style.opacity = "0";
+        textElement.style.opacity = "0";
+
+        // Wait for the fade-out to fully complete
+        setTimeout(() => {
+            // Switch content only after fade-out completes
+            currentIndex = (currentIndex + 1) % values.length;
+            const [number, text, isFinal] = values[currentIndex]; // `isFinal` determines if this is the final slide
+
+            // Update the text
+            textElement.innerHTML = text;
+
+            // Toggle class for the final slide
+            if (isFinal) {
+                containerElement.classList.add("final-slide");
+            } else {
+                containerElement.classList.remove("final-slide");
+            }
+
+            // Set the number and start count-up animation
+            if (number !== "" && number !== null) {
+                numberElement.innerHTML = "0"; // Reset number to 0
+                animateNumber(numberElement, number); // Start count-up animation
+            } else {
+                numberElement.innerHTML = ""; // Clear the number field for empty entries
+            }
+
+            // Fade in both elements
+            numberElement.style.opacity = "1";
+            textElement.style.opacity = "1";
+        }, 1000); // 1s matches the fade-out duration
     };
 
-    // Function to handle fade-out, update, and fade-in
-    function fadeNumber() {
-        if (isFading) return; // Prevent overlapping fades
-        isFading = true;
+    // Initialize the first slide
+    const initializeFirstSlide = () => {
+        const [initialNumber, initialText, isFinal] = values[currentIndex];
 
-        // Fade out
-        numberDisplay.style.opacity = "0";
+        // Set the initial text
+        textElement.innerHTML = initialText;
 
-        // Wait for fade-out to complete
+        // Toggle class for the first slide
+        if (isFinal) {
+            containerElement.classList.add("final-slide");
+        } else {
+            containerElement.classList.remove("final-slide");
+        }
+
+        // Start the count-up animation for the first slide
+        if (initialNumber !== "" && initialNumber !== null) {
+            numberElement.innerHTML = "0"; // Start with 0 initially
+            animateNumber(numberElement, initialNumber); // Start count-up animation
+        } else {
+            numberElement.innerHTML = ""; // Clear the number field for empty entries
+        }
+
+        // Fade in both elements
         setTimeout(() => {
-            // Update the content
-            currentIndex = (currentIndex + 1) % values.length;
-            updateContent(currentIndex);
+            numberElement.style.opacity = "1";
+            textElement.style.opacity = "1";
+        }, 100); // Small delay to ensure the content is visible
+    };
 
-            // Fade in
-            const _ = numberDisplay.offsetHeight; // Trigger reflow
-            numberDisplay.style.opacity = "1";
+    // Start the loop
+    const startLoop = () => {
+        setInterval(switchContent, interval);
+    };
 
-            // Wait for fade-in to complete and schedule the next transition
-            const nextInterval = currentIndex === values.length - 1 ? interval * 3 : interval;
-
-            setTimeout(() => {
-                isFading = false;
-                fadeNumber(); // Schedule the next fade
-            }, nextInterval);
-        }, 1000); // Match fade-out duration
-    }
-
-    // Animate the first value
-    updateContent(currentIndex);
-
-    // Start the first fade after the initial interval
-    setTimeout(fadeNumber, interval);
+    // Initialize the first slide, then start the loop
+    initializeFirstSlide();
+    setTimeout(startLoop, interval); // Start the loop after the first interval
 }

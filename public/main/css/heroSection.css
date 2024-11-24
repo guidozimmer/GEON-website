@@ -1,14 +1,8 @@
-
-
-
-
-
-
 /* =======================
    Navbar Styles
    ======================= */
    
-#navbar {
+   #navbar {
     background-color: #1b1d1f !important; /* Navbar background color */
 }
 
@@ -66,9 +60,7 @@ li {
     align-items: center; /* Center content vertically */
     width: 100vw; /* Full viewport width */
     height: 85.71vh; /* Full viewport height */
-    
 }
-
 
 .heroSection video {
     position: absolute;
@@ -80,10 +72,6 @@ li {
     pointer-events: none;   /* Disables mouse interactions */
     z-index: 0;
 }
-
-
-
-
 
 #heroText {
     position: relative;
@@ -121,21 +109,37 @@ li {
     transition: opacity 1s ease-in-out; /* Smooth fade effect */
     white-space: normal; /* Allows wrapping for long text */
     overflow: visible; /* Prevents text from being clipped */
-    display: inline-block; /* Keeps text inline but prevents width shrinkage */
-    vertical-align: middle; /* Centers vertically within its parent */
-    
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Default: two columns */
 }
 
-
-
-/* Fade-out class to transition opacity */
-.fade-out {
-    opacity: 0; /* Hides the element */
+#number {
+    justify-self: end; /* Align to the right in the grid cell */
+    margin-right: 40px;
 }
 
+#text {
+    justify-self: start; /* Align to the left in the grid cell */
+}
 
+/* For all fade transitions */
+.fade > div {
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
 
+/* Final slide layout for two-column span */
+#numberDisplay.final-slide {
+    grid-template-columns: 1fr; /* Change layout to single column */
+    grid-column: span 2; /* Ensure it spans two columns */
+    text-align: center; /* Center content */
+}
 
+#numberDisplay.final-slide #text {
+    grid-column: 1; /* Center text in the single column */
+    justify-self: center; /* Center-align the text */
+    text-align: center;
+}
 
 /* Extra Small Devices (Phones, up to 480px) */
 @media only screen and (max-width: 480px) {
@@ -147,21 +151,25 @@ li {
         height: 260px !important;
     }
 
+    #numberDisplay {
+        grid-template-columns: 1fr; /* For small screens, use single column */
+    }
 }
-
   
 /* Small Devices (Portrait Tablets and Small Phones, up to 768px) */
 @media only screen and (min-width: 481px) and (max-width: 768px) {
     .dataText {
-        font-size: var(--medium-big-font) !important
+        font-size: var(--medium-big-font) !important;
     }
 
     .dataRectangle {
         height: 240px !important;
     }
 
+    #numberDisplay.final-slide {
+        grid-template-columns: 1fr; /* Single column layout for final slide */
+    }
 }
-
 
 /* Medium Devices (Tablets in Landscape, 768px to 1024px) */
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
@@ -173,7 +181,6 @@ li {
         height: 300px !important;
     }
 }
-
 
 /* Large Devices (Desktops, 1024px to 1200px) */
 @media only screen and (min-width: 1025px) and (max-width: 1200px) {
@@ -197,10 +204,3 @@ li {
         height: 300px !important;
     }
 }
-  
-
-/* Ultra Large Devices (Very Large Screens, 1600px and up) */
-@media only screen and (min-width: 1601px) {
-
-}
-  

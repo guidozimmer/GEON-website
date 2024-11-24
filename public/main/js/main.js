@@ -15,11 +15,13 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-// Values to cycle through
-const values = ["1142 Solarprojekte", "48249 ha Flächen", "48 GW<sub>p</sub> Leistung", "96 GW Batterieleistung", "Machen wir was draus!"];
+const values = [
+    [1142, "Solarprojekte", false],
+    [48249, "ha Flächen", false],
+    [48, "GW<sub>p</sub> Leistung", false],
+    [96, "GW Batterieleistung", false],
+    ["", "Machen wir was draus!", true] // Final slide
+];
 
-// Start the fader
-startNumberFade("numberDisplay", values);
-
-
-
+// Correct function call:
+startNumberFade("number", "text", "numberDisplay", values, 4000); // Pass the correct containerId ("numberDisplay")
