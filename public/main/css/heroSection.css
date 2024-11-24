@@ -1,15 +1,13 @@
 
 
 
-.logo {
-    font-size: 30px !important;
-}
 
 
 
 /* =======================
    Navbar Styles
    ======================= */
+   
 #navbar {
     background-color: #1b1d1f !important; /* Navbar background color */
 }
@@ -40,6 +38,10 @@ li {
     box-shadow: none; /* Removes any box-shadow that might be used for focus indication */
 }
 
+.logo {
+    font-size: 30px !important;
+}
+
 
 
 /* On hover, remove background change and set a different text color */
@@ -55,6 +57,7 @@ li {
 
 
 
+
 /* =======================
    Intro Section Styles
    ======================= */
@@ -62,72 +65,63 @@ li {
     background-color: var(--hero-bg);
     align-items: center; /* Center content vertically */
     width: 100vw; /* Full viewport width */
-    height: 100vh; /* Full viewport height */
-}
-
-.heroSection h1 {
-    color: var(--hero-basic-color);
-}
-
-.data {
-    margin-top: 200px;
-    margin-left: 140px;
+    height: 85.71vh; /* Full viewport height */
+    
 }
 
 
-.data > h6 {
-    color: var(--hero-basic-color) !important;
-}
-
-.dataText {
-    margin-top: 45px;
-    font-family: Acumin-Black;
-}
-
-.heroText {
-    font-family: Acumin-Black;
-    color: var(--hero-basic-color);
-}
-
-.dataRectangle {
+.heroSection video {
     position: absolute;
-    left: 70px;
-    height: var(--data-rectangle-height);
-    width: 20px;
-    background-color: var(--accent-color);
+    top: 10px;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    user-select: none;      /* Prevents text selection */
+    pointer-events: none;   /* Disables mouse interactions */
+    z-index: 0;
 }
 
 
 
 
-.vision {
-    color: var(--vision-basic-color);
-    margin: 0;
-    padding: 6vh 50px;
-    border: solid 1px black;
-    background-color: var(--vision-bg);
-    height: 30vh;
+
+#heroText {
+    position: relative;
+    text-align: center; /* Centers the text inside */
+    margin-top: 20vh;
+}
+
+#heroText > h1, #heroText > h2 {
+    color: white;
+}
+
+#heroText > h1 {
+    font-size: var(--very-big-font);
+    font-family: Acumin-Black !important;
+} 
+
+#heroText > h2 {
+    font-size: var(--medium-big-font) !important;
+}
+
+#potential {
+    margin-top: 250px;
 }
 
 
-
-.animatedNumber {
+/* Styling for the number display */
+#numberDisplay {
+    font-size: var(--very-big-font); /* Adjust font size as needed */
+    font-family: Acumin-Black;
     text-align: center;
-    font-family: Acumin-Black;
-    color: black;
-    font-size: 30px;
+    margin-top: 20px; /* Centering the text */
+    color: white;
 }
 
-
-.numberContainer > img {
-    position: absolute;
-    left: -60px;
+/* Fade-out class to transition opacity */
+.fade-out {
+    opacity: 0; /* Hides the element */
 }
-
-
-
-
-
 
 
 
