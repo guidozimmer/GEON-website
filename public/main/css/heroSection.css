@@ -98,14 +98,15 @@ li {
 #heroText > h1 {
     font-size: var(--very-big-font);
     font-family: Acumin-Black !important;
+    margin-bottom: -20px;
 } 
 
 #heroText > h2 {
-    font-size: var(--medium-big-font) !important;
+    font-size: var(--large-font) !important;
 }
 
 #potential {
-    margin-top: 250px;
+    margin-top: 230px;
 }
 
 
