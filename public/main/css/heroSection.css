@@ -64,22 +64,22 @@ li {
 .heroSection {
     background-color: var(--hero-bg);
     align-items: center; /* Center content vertically */
-    width: 100vw; /* Full viewport width */
-    height: 85.71vh; /* Full viewport height */
-    
+    height: 100vh;
+
 }
 
 
 .heroSection video {
     position: absolute;
     top: 10px;
-    width: 100%;
+    width: 100vw;
+    height: 100vh;
     object-fit: cover;
     user-select: none;      /* Prevents text selection */
     pointer-events: none;   /* Disables mouse interactions */
     z-index: 0;
+    right: 0;
 }
-
 
 
 
