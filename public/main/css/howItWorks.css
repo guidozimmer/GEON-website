@@ -165,7 +165,6 @@
         font-size: var(--small-font);
         grid-column: 2 / span 2; /* Spans Columns 2 and 3 */
         text-align: left;
-        white-space: nowrap;
     }
     
     .howItWorksSpan {
@@ -204,7 +203,6 @@
         font-size: var(--medium-font) !important;
         grid-column: 2 / span 2; /* Spans Columns 2 and 3 */
         text-align: left;
-        white-space: nowrap;
     }
     
     .howItWorksSpan {
@@ -243,7 +241,6 @@
         grid-column: 2 / span 2; /* Spans Columns 2 and 3 */
         text-align: left;
         white-space: nowrap;
-        color: red;
     }
     
     .howItWorksSpan {
@@ -313,20 +310,20 @@
   
 
 /* Extra Large Devices (Large Desktops, 1200px to 1600px) */
-@media only screen and (min-width: 1201px) and (max-width: 1600px) {
+@media only screen and (min-width: 1201px) and (max-width: 1651px) {
     .howItWorksStepsText {
         font-size: var(--medium-font) !important;
     }
     
     .howItWorksSpan {
         font-size: var(--very-small-font);
-        margin-top: 70px !important;
+        margin-top: 40px !important;
     }
 }
   
 
 /* Ultra Large Devices (Very Large Screens, 1600px and up) */
-@media only screen and (min-width: 1601px) {
+@media only screen and (min-width: 1651px) {
     .howItWorksStepsText {
         white-space: nowrap;
     }
@@ -337,3 +334,43 @@
     }
 }
   
+
+
+/*********************** EXTRA RESPONSIVE ***********************/
+
+@media only screen and (min-width: 1201px) and (max-width: 1379px) {
+    .howItWorksSpan.StepsText4 {
+        margin-top: 70px !important;
+    }
+}
+
+@media only screen and (min-width: 1201px) and (max-width: 1425px) {
+    .howItWorksSpan.StepsText6 {
+        margin-top: 70px !important;
+    }
+}
+
+@media only screen and (min-width: 1201px) and (max-width: 1316px) {
+    .howItWorksSpan.StepsText1 {
+        margin-top: 70px !important;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    .howItWorksSpan.StepsText1 {
+        margin-top: 70px !important;
+    }
+
+    .howItWorksSpan.StepsText1 {
+        margin-top: 70px !important;
+    }
+
+    .howItWorksSpan.StepsText4 {
+        margin-top: 70px !important;
+    }
+
+    .howItWorksSpan.StepsText6 {
+        margin-top: 70px !important;
+    }
+}
+
