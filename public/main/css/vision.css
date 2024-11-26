@@ -1,0 +1,22 @@
+
+
+
+.vision {
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 50px;
+
+    padding: var(--info-box-padding);
+}
+
+.vision > h1 {
+    grid-column: 1 / span 3;
+}
+
+
+.visionSquare > h3 {
+    font-size: var(--big-font) !important;
+}
