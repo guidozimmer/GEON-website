@@ -39,7 +39,7 @@
 
     #visionHeading {
         grid-column: 1 / span 1;
-        margin-bottom: 100px !important;
+        margin-bottom: 75px !important;
     }
 
     .visionSquare > h3 {
@@ -52,7 +52,7 @@
 
     .visionSquare > h4 {
         font-size: var(--very-small-font) !important;
-        margin-bottom: 100px;
+        margin-bottom: 50px;
     }
 }
 
@@ -67,7 +67,7 @@
 
     #visionHeading {
         grid-column: 1 / span 1;
-        margin-bottom: 100px !important;
+        margin-bottom: 75px !important;
     }
 
     #visionHeading > h2 {
@@ -76,7 +76,7 @@
 
     .visionSquare > h4 {
         font-size: var(--small-font) !important;
-        margin-bottom: 100px;
+        margin-bottom: 50px;
     }
 }
 
@@ -91,7 +91,7 @@
 
     #visionHeading {
         grid-column: 1 / span 1;
-        margin-bottom: 100px !important;
+        margin-bottom: 75px !important;
     }
 
     #visionHeading > h2 {
@@ -100,7 +100,7 @@
 
     .visionSquare > h4 {
         font-size: var(--small-font) !important;
-        margin-bottom: 100px;
+        margin-bottom: 50px;
     }
 }   
 
@@ -166,7 +166,3 @@
 
 }
   
-
-
-
-
