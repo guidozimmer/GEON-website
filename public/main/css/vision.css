@@ -4,14 +4,13 @@
 .vision {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     gap: 50px;
 
     padding: var(--info-box-padding);
 }
 
 #visionHeading {
-    grid-column: 1 / span 3;
 }
 
 
@@ -24,6 +23,10 @@
     font-family: Acumin-Regular;
 }
 
+.vision > img {
+    height: 300px !important;
+    margin: 0 !important;
+}
 
 
 
