@@ -12,7 +12,7 @@
 .ourOffer {
     display: grid;
     grid-template-columns: repeat(3, 300px); /* 4 fixed 300px columns */
-    grid-template-rows: 300px 300px 150px; /* Single row height */
+    grid-template-rows: 100px 150px 150px; /* Single row height */
     gap: 50px; /* Ensures gap between columns */
     justify-content: space-between; /* Ensures space on both sides while distributing items */
 
@@ -40,23 +40,6 @@ img {
     margin: var(--logo-margin); /* Center images horizontally */
 }
 
-.ourOfferHeader {
-    margin-bottom: 30px;
-    margin-top: 30px;
-    color: var(--ourOfferSquare-heading-color);
-    font-size: var(--big-font) !important;
-    justify-content: center;
-    margin-left: 40px;
-    margin-right: 10px;
-    font-family: Acumin-Black;
-    display: inline-block;
-}
-
-.ourOfferHeader:hover {
-    background-color: transparent !important; /* No background change on hover */
-    color: #ffc107 !important; /* Change text color on hover (e.g., Bootstrap yellow) */
-}
-
 
 .ourOfferInfoText {
     font-family: Acumin-Light;
@@ -73,32 +56,9 @@ img {
 .infoText {
     grid-column: 1 / span 3;
     text-align: center;
+    font-size: var(--small-font) !important;
+    font-family: Acumin-Regular !important;
     color: var(--ourOffer-basic-color);
-}
-
-
-
-
-.offerSquare {
-    background-color: #4c4c4c;
-    margin: 5px;
-    border: solid 1px #666666;
-    height: var(--info-box-height);
-}
-
-.ourOfferText2 {
-    background-color: var(--accent-color);
-    border: solid 2px black;
-    grid-column: 1 / 4; /* This makes the element stretch from column 1 to column 3 */
-    grid-row: 2;
-}
-
-
-.ourOfferSquareText {
-    color: var(--ourOfferSquare-basic-color);
-    margin-left: 40px;
-    margin-right: 10px;
-    font-family: Acumin-Light;
 }
 
 
@@ -148,7 +108,7 @@ img {
     backface-visibility: hidden; /* Hide back when front is visible */
     width: 100%;
     height: 100%;
-    background-color: #004466;
+    background-color: var(--accent-color);
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 50px 50px 100px;
