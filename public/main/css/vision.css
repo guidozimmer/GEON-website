@@ -2,8 +2,6 @@
 
 
 .vision {
-    height: 100vh;
-
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -12,11 +10,105 @@
     padding: var(--info-box-padding);
 }
 
-.vision > h1 {
+#visionHeading {
     grid-column: 1 / span 3;
 }
 
 
 .visionSquare > h3 {
     font-size: var(--big-font) !important;
+    font-family: Acumin-Bold;
 }
+
+.visionSquare > h4 {
+    font-family: Acumin-Regular;
+}
+
+
+
+
+/* Extra Small Devices (Phones, up to 480px) */
+@media only screen and (max-width: 480px) {
+    .vision {
+        grid-template-columns: 1fr !important;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr !important;
+        gap: 50px;
+    }
+
+    #visionHeading {
+        grid-column: 1 / span 1;
+        margin-bottom: 100px !important;
+    }
+}
+
+  
+/* Small Devices (Portrait Tablets and Small Phones, up to 768px) */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    .vision {
+        grid-template-columns: 1fr !important;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr !important;
+        gap: 50px;
+    }
+
+    #visionHeading {
+        grid-column: 1 / span 1;
+        margin-bottom: 100px !important;
+    }
+}
+
+
+/* Medium Devices (Tablets in Landscape, 768px to 1024px) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .vision {
+        grid-template-columns: 1fr !important;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr !important;
+        gap: 50px;
+    }
+
+    #visionHeading {
+        grid-column: 1 / span 1;
+        margin-bottom: 100px !important;
+    }
+}   
+
+
+/* Large Devices (Desktops, 1024px to 1200px) */
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+    .vision {
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-rows: 1fr 1fr 1fr !important;
+        gap: 50px;
+    }
+
+    #visionHeading {
+        grid-column: 1 / span 2;
+    }
+}
+
+/* Extra Large Devices (Large Desktops, 1200px to 1600px) */
+@media only screen and (min-width: 1201px) and (max-width: 1600px) {
+    .vision {
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-rows: 1fr 1fr 1fr !important;
+        gap: 50px;
+    }
+
+    #visionHeading {
+        grid-column: 1 / span 2;
+    }
+}
+  
+
+/* Ultra Large Devices (Very Large Screens, 1600px and up) */
+@media only screen and (min-width: 1601px) {
+    .vision {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 50px;
+    }
+
+}
+  
+
+
+
