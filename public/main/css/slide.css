@@ -1,29 +1,66 @@
-
-
-#slide {
+/* Slider Container */
+#slider {
+    position: relative;
+    width: 100vw; /* Full viewport width */
+    height: 50vh; /* 50% viewport height */
+    overflow: hidden; /* Hide overflowing slides */
     display: flex;
-    width: 100vw;
-    height: 40vh;
-    background-color: var(--secondary-color);
-    margin: 200px auto;
+    align-items: center;
 }
 
+/* Slide Wrapper */
+.slide-wrapper {
+    display: flex; /* Arrange slides horizontally */
+    transition: transform 0.5s ease-in-out; /* Smooth animation */
+    width: 100%; /* Let JavaScript adjust this dynamically */
+}
 
-#slide img {
-    width: 50%; /* Occupies the left 50% */
-    height: 100%; /* Fills the entire height of the container */
-    object-fit: cover; /* Ensures the image scales without distortion */
+/* Individual Slides */
+.slide {
+    flex: 0 0 100%; /* Each slide takes up 100% of the container width */
+    display: grid; /* Use grid to split image and text */
+    grid-template-columns: 50% 50%; /* Image on the left, text on the right */
+    height: 100%; /* Full slider height */
+}
+
+/* Image Styling */
+.slide img {
+    width: 100%; /* Full width of the grid column */
+    height: 100%; /* Full height of the grid row */
+    object-fit: cover; /* Maintain aspect ratio and cover space */
     margin: 0;
 }
 
-
-
-
-.slideText {
-    width: 50%; /* Occupies the right 50% */
-    padding: 20px; /* Adds some padding for spacing */
+/* Text Section Styling */
+.slide .text {
+    padding: 20px;
     display: flex;
-    flex-direction: column; /* Stacks the text vertically */
-    justify-content: center; /* Centers text vertically */
-    box-sizing: border-box; /* Ensures padding doesn't affect the width */
+    flex-direction: column;
+    justify-content: center; /* Center text vertically */
+    align-items: flex-start; /* Align text to the left */
+    background-color: white; /* Optional background for contrast */
+    color: #333; /* Ensure text visibility */
+    text-align: left;
+}
+
+/* Navigation Arrows */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 10; /* Place arrows above the slides */
+}
+
+.arrow.left {
+    left: 10px;
+}
+
+.arrow.right {
+    right: 10px;
 }
