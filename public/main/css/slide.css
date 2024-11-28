@@ -1,0 +1,29 @@
+
+
+#slide {
+    display: flex;
+    width: 100vw;
+    height: 40vh;
+    background-color: var(--secondary-color);
+    margin: 200px auto;
+}
+
+
+#slide img {
+    width: 50%; /* Occupies the left 50% */
+    height: 100%; /* Fills the entire height of the container */
+    object-fit: cover; /* Ensures the image scales without distortion */
+    margin: 0;
+}
+
+
+
+
+.slideText {
+    width: 50%; /* Occupies the right 50% */
+    padding: 20px; /* Adds some padding for spacing */
+    display: flex;
+    flex-direction: column; /* Stacks the text vertically */
+    justify-content: center; /* Centers text vertically */
+    box-sizing: border-box; /* Ensures padding doesn't affect the width */
+}

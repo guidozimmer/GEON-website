@@ -10,15 +10,13 @@
 
 
 .ourOffer {
+    padding-top: 0;
     display: grid;
     grid-template-columns: repeat(3, 20vw); /* 4 fixed 300px columns */
     grid-template-rows: 100px 150px 300px; /* Single row height */
     gap: 50px; /* Ensures gap between columns */
     justify-content: space-between; /* Ensures space on both sides while distributing items */
 
-
-
-    height: auto; /* Fixed height for the "What We Do" section */
     background-color: var(--ourOffer-bg); /* Background color */
     height: 100vh;
 
@@ -38,6 +36,8 @@
 
 img {
     margin: var(--logo-margin); /* Center images horizontally */
+    width: 100px;
+    height: 100px;
 }
 
 
