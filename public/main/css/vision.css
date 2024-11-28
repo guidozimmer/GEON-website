@@ -17,7 +17,7 @@
 
 
 
-.visionSquare > h3 {
+.visionHeading > h3 {
     font-size: var(--big-font) !important;
     font-family: Acumin-Black;
 }
@@ -27,10 +27,33 @@
     font-family: Acumin-Regular;
 }
 
-.visionSquare > img {
-    fill: red; /* Changes the fill color */
-    stroke: blue; /* Changes the stroke color */
+
+
+
+.visionSquare {
+    display: flex;
+    flex-direction: column; /* Ensures text below is stacked */
 }
+
+.visionHeading {
+    display: flex;
+    align-items: center; /* Vertically aligns the image and heading */
+    gap: 8px; /* Adds space between the image and the heading */
+    margin-bottom: 8px; /* Adds space between heading and normal text */
+}
+
+.visionHeading img {
+    height: 50px; /* Adjust the size of the image */
+    width: auto;
+    margin: 0 20px 20px 0 !important;
+
+}
+
+.visionSquare h4 {
+    margin: 0; /* Optional: Removes default margin for consistent spacing */
+}
+
+
 
 
 
