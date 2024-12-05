@@ -5,7 +5,7 @@
     const form = e.target;
     const formData = new FormData(form);
 
-    fetch("test.php", {
+    fetch("main/send_email.php", {
       method: "POST",
       body: formData,
     })
@@ -22,4 +22,3 @@
       });
   });
 
-  
