@@ -5,7 +5,7 @@
     const form = e.target;
     const formData = new FormData(form);
 
-    fetch("main/send_email.php", {
+    fetch("https://dev.geongroup.de/test.php", {
       method: "POST",
       body: formData,
     })
