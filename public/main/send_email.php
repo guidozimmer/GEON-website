@@ -4,9 +4,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = htmlspecialchars($_POST['email']);
     $message = htmlspecialchars($_POST['message']);
 
-    $to = "raphael.v.zimmer@gmail.com"; // Replace with your email
+    $to = "raphael.v.zimmer@gmail.com";
     $subject = "Contact Form Submission";
-    $headers = "From: $email\r\nReply-To: $email";
+    $headers = "From: dev.geongroup.de";
 
     $body = "Name: $name\nEmail: $email\n\nMessage:\n$message";
 
@@ -18,4 +18,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 } else {
     echo "Invalid request.";
 }
-?>
+?>  
