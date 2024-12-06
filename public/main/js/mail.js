@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Popup functionality
     function showPopup() {
         const popup = document.createElement('div');
         popup.innerHTML = `
@@ -26,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     transform: scale(0.7);
                     opacity: 0;
                     transition: all 0.3s ease;
+                    position: relative;
                 }
                 .popup-content.show {
                     transform: scale(1);
@@ -49,13 +49,31 @@ document.addEventListener('DOMContentLoaded', function() {
                     position: absolute;
                     top: 15px;
                     right: 15px;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    background-color: #f0f0f0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                     cursor: pointer;
-                    font-size: 24px;
-                    color: #999;
-                    transition: color 0.2s;
+                    transition: all 0.2s ease;
                 }
                 .popup-close:hover {
-                    color: #333;
+                    background-color: #e0e0e0;
+                    transform: rotate(90deg);
+                }
+                .popup-close-btn {
+                    background-color: #4CAF50;
+                    color: white;
+                    border: none;
+                    padding: 10px 20px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    transition: background-color 0.2s ease;
+                }
+                .popup-close-btn:hover {
+                    background-color: #45a049;
                 }
             </style>
             <div class="popup-overlay">
