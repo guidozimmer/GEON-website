@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     width: 30px;
                     height: 30px;
                     border-radius: 50%;
-                    background-color: #3361f5;
+                    background-color: #f0f0f0;
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     transform: rotate(90deg);
                 }
                 .popup-close-btn {
-                    background-color: #4CAF50;
+                    background-color: #3361f5;
                     color: white;
                     border: none;
                     padding: 10px 20px;
