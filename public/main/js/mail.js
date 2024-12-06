@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     transition: background-color 0.2s ease;
                 }
                 .popup-close-btn:hover {
-                    background-color: #45a049;
+                    background-color: #3483eb;
                 }
             </style>
             <div class="popup-overlay">
