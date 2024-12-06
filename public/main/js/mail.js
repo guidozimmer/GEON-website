@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .then(response => response.text())
         .then(result => {
+            // Show result to user (you can customize this)
+            alert(result);
             form.reset(); // Optional: clear the form after successful submission
         })
         .catch(error => {
