@@ -13,10 +13,17 @@ document.addEventListener('DOMContentLoaded', function() {
             method: "POST",
             body: formData,
         })
-        .then((response) => response.text())
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
         .then((data) => {
-            responseElement.textContent = data;
-            form.reset();
+            responseElement.textContent = data.message;
+            if (data.status === 'success') {
+                form.reset();
+            }
         })
         .catch((error) => {
             console.error("Error:", error);
