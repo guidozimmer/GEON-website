@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     width: 30px;
                     height: 30px;
                     border-radius: 50%;
-                    background-color: #f0f0f0;
+                    background-color: #3361f5;
                     display: flex;
                     justify-content: center;
                     align-items: center;
