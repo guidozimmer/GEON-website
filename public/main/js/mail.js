@@ -1,24 +1,26 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('.form-wrapper form');
+    const responseElement = document.createElement('div');
+    responseElement.id = 'form-response';
+    form.appendChild(responseElement);
 
-  document.getElementById("contactForm").addEventListener("submit", function (e) {
-    e.preventDefault(); // Prevent the form from refreshing the page
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-    const form = e.target;
-    const formData = new FormData(form);
+        const formData = new FormData(form);
 
-    fetch("https://dev.geongroup.de/test.php", {
-      method: "POST",
-      body: formData,
-    })
-      .then((response) => response.text())
-      .then((data) => {
-        // Display success or error message
-        document.getElementById("form-response").textContent = data;
-        form.reset(); // Optionally reset the form after submission
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-        document.getElementById("form-response").textContent =
-          "An error occurred. Please try again.";
-      });
-  });
-
+        fetch("https://dev.geongroup.de/php/sendEmail.php", {
+            method: "POST",
+            body: formData,
+        })
+        .then((response) => response.text())
+        .then((data) => {
+            responseElement.textContent = data;
+            form.reset();
+        })
+        .catch((error) => {
+            console.error("Error:", error);
+            responseElement.textContent = "An error occurred. Please try again.";
+        });
+    });
+});
