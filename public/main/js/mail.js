@@ -134,13 +134,12 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .then(res => res.json())
         .then(response => response.text())
-        .then(result => {
+        /*.then(result => {
             showPopup();
             form.reset();
-        })
+        })*/
         .catch(error => {
             console.error('Error:', error);
-            alert('An error occurred. Please try again.');
         });
     });
 });
