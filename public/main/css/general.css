@@ -62,7 +62,7 @@
     
     --footer-bg-color: var(--accent-color); /* Footer background color */
     --footer-link-color: #b0aeaf; /* Link color */
-    --footer-link-hover-color: var(--accent-color); /* Link color on hover */
+    --footer-link-hover-color: var(--secondary-color); /* Link color on hover */
     --footer-copyright-color: #ffffff; /* Copyright text color */
 
 
@@ -184,6 +184,7 @@ footer {
 
 .links > a {
     text-decoration: none; /* Remove underline from links */
+    font-family: Acumin-Regular;
     color: var(--footer-link-color); /* Link color */
     padding: 0 10px; /* Space between links */
 }
@@ -195,6 +196,7 @@ footer {
 .copyright {
     color: var(--footer-copyright-color);
     margin-top: var(--footer-copyright-margin-top);
+    font-family: Acumin-Light
 }
 
 .textBox { 
@@ -220,6 +222,31 @@ footer {
 /* =======================
     Animation Style
    ======================= */
+/* General Styling */
+#langEN, #langDE {
+    color: black;
+    font-weight: normal;
+    transition: font-weight 0.3s ease-in-out; /* Smooth transition for text weight */
+}
+
+/* Switch Styling */
+.form-check-input {
+    transition: all 0.4s ease-in-out; /* Smooth transition for the switch */
+}
+
+/* Dropdown opens on hover */
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; /* Optional: adjust to avoid any visual jump */
+}
+
+
+
+
+
+
+
+
 
 
 

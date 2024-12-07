@@ -344,7 +344,7 @@ body {
   position: relative;
   min-height: 75px;
   flex-direction: row;
-  z-index: 2;
+  z-index: 2; 
   flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
@@ -481,10 +481,10 @@ body {
   border-image-width: initial;
   border-image-outset: initial;
   border-image-repeat: initial;
-  border-top-left-radius: 40px;
-  border-top-right-radius: 40px;
-  border-bottom-right-radius: 40px;
-  border-bottom-left-radius: 40px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
 }
 
 .contact_us_6 .form-box {

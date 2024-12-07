@@ -104,14 +104,14 @@ li {
     font-size: var(--large-font) !important;
 }
 
-#potential {
+.potential {
     margin-top: 230px;
     margin-bottom: -40px;
 }
 
 
 /* Styling for the number display */
-#numberDisplay {
+.numberDisplay {
     font-size: var(--very-big-font); /* Adjust font size as needed */
     font-family: Acumin-Black;
     text-align: center;
@@ -142,7 +142,7 @@ li {
 
     }
 
-    #numberDisplay {
+    .numberDisplay {
         font-size: var(--medium-font) !important; /* Adjust font size as needed */
     }
 
@@ -150,7 +150,7 @@ li {
         margin-bottom: 0;
     } 
 
-    #potential {
+    .potential {
         margin-top: 100px;
         margin-bottom: -20px;
     }
@@ -167,7 +167,7 @@ li {
         font-size: var(--medium-font) !important;
     }
 
-    #numberDisplay {
+    .numberDisplay {
         font-size: var(--big-font) !important; /* Adjust font size as needed */
     }
 
@@ -175,7 +175,7 @@ li {
         margin-bottom: 0;
     } 
 
-    #potential {
+    .potential {
         margin-bottom: -20px;
     }
 }
@@ -191,7 +191,7 @@ li {
         font-size: var(--big-font) !important;
     }
 
-    #numberDisplay {
+    .numberDisplay {
         font-size: var(--medium-big-font) !important; /* Adjust font size as needed */
     }
 
@@ -199,7 +199,7 @@ li {
         margin-bottom: -10px;
     } 
 
-    #potential {
+    .potential {
         margin-bottom: -30px;
     }
 }   
@@ -215,7 +215,7 @@ li {
         font-size: var(--medium-big-font) !important;
     }
 
-    #numberDisplay {
+    .numberDisplay {
         font-size: var(--large-font) !important; /* Adjust font size as needed */
     }
 }

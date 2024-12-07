@@ -64,3 +64,14 @@
 .arrow.right {
     right: 10px;
 }
+
+.text > h2 {
+    font-size: var(--big-font) !important;
+    font-family: Acumin-Regular;
+}
+
+.text > p {
+    margin-top: -10px;
+    margin-bottom: 100px;
+}
+

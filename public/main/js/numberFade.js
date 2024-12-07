@@ -2,14 +2,21 @@ export function startNumberFade(elementId, values, interval = 2000) {
     let currentIndex = 0;
     let isFading = false;
 
-    // Get the display element and video by IDs
-    const numberDisplay = document.getElementById(elementId);
-    const videoElement = document.getElementById("potential"); // Ensure #video exists
+    const videoElement = document.querySelector(".potential"); 
+    const numberDisplay = document.querySelector(`.${elementId}`);
 
-    if (!numberDisplay || !videoElement) {
-        console.error(`One or more elements not found: elementId=${elementId}, videoId=video`);
-        return;
+
+    if (!numberDisplay) {
+        console.error(`Element with ID "${elementId}" not found.`);
+        return
     }
+    if (!videoElement) {
+        console.error(`Element with class "potential" not found.`);
+        return
+    }
+
+
+
 
     // Ensure initial state
     numberDisplay.innerHTML = values[currentIndex]; // Use innerHTML for rendering HTML

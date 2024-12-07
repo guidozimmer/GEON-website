@@ -1,0 +1,4 @@
+heroHeadingPt1 = "Together now for tomorrow"
+heroHeadingPt2 = "We are your partner for sustainable energy projects."
+heroHeadingPt3 = "Potential identified by GEON"
+heroHeadingPt4 = "1.142"
