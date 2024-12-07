@@ -114,6 +114,52 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Form submission
+
+    // Form submission
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const captchaResponse = grecaptcha.getResponse();
+        if (captchaResponse.length === 0) {
+            throw new Error("Captcha not complete");
+        }
+        
+        const formData = new FormData(form);
+        
+        fetch('send_email.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(res => {
+            if (!res.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return res.json(); // Ensure the response is JSON
+        })
+        .then(data => {
+            console.log(data);
+            // Add any success handling here
+        })
+        .catch(err => {
+            console.error('Error:', err);
+            // Handle errors more comprehensively
+        });
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*
     const form = document.querySelector('form');
     form.addEventListener('submit', function(e) {
         e.preventDefault();
@@ -138,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function() {
         /*.then(result => {
             showPopup();
             form.reset();
-        })*/
+        })
         .catch(err => console.log(err));
-    });
+    });*/
 });
