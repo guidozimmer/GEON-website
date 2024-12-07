@@ -133,6 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
             body: formData
         })
         .then(res => res.json())
+        .then(data => console.log(data))
         .then(response => response.text())
         /*.then(result => {
             showPopup();
