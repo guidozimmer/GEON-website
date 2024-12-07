@@ -1,4 +1,5 @@
 Items to implement:
+-------------------------------------------------
 
 ■ Make text in menubar a tiny bit thicker
 
@@ -11,3 +12,10 @@ Items to implement:
 ■ Add language selector to menu bar at the right outside. should contain DE and EN for starters
 
 ■ Remove the Contact/Disclimer item in the paage bottom bar. Also exchange the font weights of the two lines in the bottom bar (copyright line light and Privacy policy and Imprint regular weight) 
+
+-------------------------------------------------
+■ Add banner_pic_01.jpeg (in this folder) to the slogan banner. Make the background of the text part (right) GEON blue and in white large text add this slogan:
+
+LARGE: "Die beste Art, die Zukunft vorherzusagen, ist, sie zu gestalten."
+FINE PRINT: Peter F. Drucker
+LARGE: Gestalten Sie mit uns die Zukunft.

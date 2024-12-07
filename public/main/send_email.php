@@ -1,4 +1,5 @@
 <?php
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$name = htmlspecialchars($_POST['fullName']);
 	$email = htmlspecialchars($_POST['email']);
