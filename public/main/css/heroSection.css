@@ -22,7 +22,7 @@ li {
 
 .navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
     color: white !important;
-    font-family: Acumin-Thin;
+    font-family: Acumin-Regular;
     font-size: var(--small-font) !important;
 }
 

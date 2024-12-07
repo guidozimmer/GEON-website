@@ -60,7 +60,7 @@
     --contact-heading-color: var(--basic-text-color);
     --contact-basic-color: var(--basic-text-color);
     
-    --footer-bg-color: #222222; /* Footer background color */
+    --footer-bg-color: var(--accent-color); /* Footer background color */
     --footer-link-color: #b0aeaf; /* Link color */
     --footer-link-hover-color: var(--accent-color); /* Link color on hover */
     --footer-copyright-color: #ffffff; /* Copyright text color */

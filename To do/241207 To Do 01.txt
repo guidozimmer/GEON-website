@@ -1,0 +1,13 @@
+Items to implement:
+
+■ Make text in menubar a tiny bit thicker
+
+■ Adapt color of the copyright bar at the bottom of the page to the GEON blue/green (like the menu bar)
+
+■ Fix the colors of the contact form to our blue/green
+
+■ Add a recaptcha to the contact form
+
+■ Add language selector to menu bar at the right outside. should contain DE and EN for starters
+
+■ Remove the Contact/Disclimer item in the paage bottom bar. Also exchange the font weights of the two lines in the bottom bar (copyright line light and Privacy policy and Imprint regular weight) 
