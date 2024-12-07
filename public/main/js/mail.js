@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const fd = new FormData(e.target);
         const params = new URLSearchParams(fd);
 
-        fetch("https://httpbin.org/post", {
+        fetch("verifyCaptcha.php", {
             method: "POST",
             body: params,
         })
