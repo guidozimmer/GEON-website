@@ -118,12 +118,21 @@ document.addEventListener('DOMContentLoaded', function() {
     form.addEventListener('submit', function(e) {
         e.preventDefault();
 
+
+        const captchaResponse = grecaptcha.getResponse();
+
+        if (!captchaResponse.length > 0) {
+            throw new Error("Captcha not complete");
+        }
+
+
         const formData = new FormData(form);
 
         fetch('send_email.php', {
             method: 'POST',
             body: formData
         })
+        .then(res => res.json())
         .then(response => response.text())
         .then(result => {
             showPopup();
