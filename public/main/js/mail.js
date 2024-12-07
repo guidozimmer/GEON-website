@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         fetch("https://httpbin.org/post", {
             method: "POST",
-            body: parms,
+            body: params,
         })
         .then(res => res.json())
         .then(data => console.log(data))
