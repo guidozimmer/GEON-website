@@ -139,8 +139,6 @@ document.addEventListener('DOMContentLoaded', function() {
             showPopup();
             form.reset();
         })*/
-        .catch(error => {
-            console.error('Error:', error);
-        });
+        .catch(err => console.log(err));
     });
 });
