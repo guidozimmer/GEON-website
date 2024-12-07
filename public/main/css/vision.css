@@ -64,6 +64,7 @@
         grid-template-columns: 1fr !important;
         grid-template-rows: auto !important;
         gap: 50px;
+        padding: 150px 30px !important;
     }
 
     #visionHeading {
@@ -92,6 +93,7 @@
         grid-template-columns: 1fr !important;
         grid-template-rows: auto !important;
         gap: 50px;
+        padding: 150px 100px !important;
     }
 
     #visionHeading {
@@ -100,11 +102,11 @@
     }
 
     #visionHeading > h2 {
-        font-size: var(--medium-font) !important;
+        font-size: var(--small-font) !important;
     }    
 
     .visionSquare > h4 {
-        font-size: var(--small-font) !important;
+        font-size: var(--very-small-font) !important;
         margin-bottom: 50px;
     }
 }
@@ -140,7 +142,7 @@
         grid-template-columns: 1fr 1fr !important;
         grid-template-rows: 1fr 1fr 1fr !important;
         gap: 50px;
-    }
+´    }
 
     #visionHeading {
         grid-column: 1 / span 2;

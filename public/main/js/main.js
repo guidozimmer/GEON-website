@@ -2,11 +2,6 @@ import { loadTextFile, injectContent} from "./websiteText.js";
 import { barGraphs } from "./barGraphs.js";
 import { setupDropdown } from "./nav.js"
 import { startNumberFade } from "./numberFade.js"
-import { nextSlide, prevSlide } from './slider.js';
-
-// Attach event listeners
-document.querySelector('.arrow.left').addEventListener('click', prevSlide);
-document.querySelector('.arrow.right').addEventListener('click', nextSlide);
 
 // Load the text file and inject content
 loadTextFile('websiteText.txt', injectContent);

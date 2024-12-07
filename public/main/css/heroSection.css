@@ -133,12 +133,13 @@ li {
 /* Extra Small Devices (Phones, up to 480px) */
 @media only screen and (max-width: 480px) {
     #heroText > h1 {
-        font-size: var(--medium-font) !important;
-        color: red;
+        font-size: var(--small-font) !important;
+        margin-top: 150px;
     } 
     
     #heroText > h2 {  
         font-size: var(--small-font) !important;
+
     }
 
     #numberDisplay {
@@ -150,6 +151,7 @@ li {
     } 
 
     #potential {
+        margin-top: 100px;
         margin-bottom: -20px;
     }
 }
@@ -183,6 +185,7 @@ li {
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
     #heroText > h1 {
         font-size: var(--medium-big-font) !important;
+        color: blue;
     } 
     
     #heroText > h2 {  
