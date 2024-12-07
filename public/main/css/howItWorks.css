@@ -162,7 +162,7 @@
 /* Extra Small Devices (Phones, up to 480px) */
 @media only screen and (max-width: 480px) {
     .howItWorksStepsText {
-        font-size: var(--small-font);
+        font-size: var(--small-font) !important;
         grid-column: 2 / span 2; /* Spans Columns 2 and 3 */
         text-align: left;
     }
@@ -173,23 +173,26 @@
         grid-column: 2; /* Spans Columns 2 and 3 */
         text-align: left;
     }
-
-
+ 
     .circle {
         grid-column: 1 !important;
     }
 
     .line {
-        margin-left: 110px;
+        margin-left: 20px;
         grid-column: 1 !important;
-        width: 100px !important;
+        width: 40px !important;
     }
 
     .howItWorks {
-        grid-template-columns: 1fr 3fr;
+        grid-template-columns: 50px 4fr !important;
         grid-template-rows: 225px 300px 300px 300px 300px 300px 300px !important;
+        padding: 150px 5px !important;
     }
 
+    .howItWorks > h4 {
+        font-size: var(--small-font) !important;
+    }
 
     .circle::before {
         height: 320px; /* Line between circles */
@@ -217,16 +220,20 @@
     }
 
     .line {
-        margin-left: 110px;
+        margin-left: 70px;
         grid-column: 1 !important;
-        width: 100px !important;
+        width: 80px !important;
     }
 
     .howItWorks {
-        grid-template-columns: 1fr 3fr;
+        grid-template-columns: 150px 4fr !important;
         grid-template-rows: 225px 300px 300px 300px 300px 300px 300px !important;
+        padding: 150px 25px !important;
     }
 
+    .howItWorks > h4 {
+        font-size: var(--small-font) !important;
+    }
 
     .circle::before {
         height: 320px; /* Line between circles */

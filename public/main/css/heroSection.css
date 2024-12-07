@@ -185,7 +185,6 @@ li {
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
     #heroText > h1 {
         font-size: var(--medium-big-font) !important;
-        color: blue;
     } 
     
     #heroText > h2 {  
