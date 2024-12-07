@@ -135,16 +135,6 @@ img {
 
 /* Extra Small Devices (Phones, up to 480px) */
 @media only screen and (max-width: 480px) {
-    
-}
-
-  
-/* Small Devices (Portrait Tablets and Small Phones, up to 768px) */
-@media only screen and (min-width: 481px) and (max-width: 768px) {
-    .ourOffer {
-        background-color: blue !important;
-    }
-
     .front > h2 {
         font-size: var(--small-font) !important;
     }
@@ -156,17 +146,34 @@ img {
     .flip-card {
         width: 200px;
         height: 150px;
+        margin-top: 100px;
     }
 
     .ourOffer {
-        gap: 15px;    
-        background-color: var(--ourOffer-bg);
-        padding: 150px 50px !important;
-        grid-template-columns: 1fr !important;
-        grid-template-rows: 100px 150px 150px 150px 150px !important;
+        display: block;
+    }    
+}
+
+  
+/* Small Devices (Portrait Tablets and Small Phones, up to 768px) */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    .front > h2 {
+        font-size: var(--small-font) !important;
     }
 
-    
+    .front > h3 {
+        font-size: var(--very-small-font) !important;
+    }
+
+    .flip-card {
+        width: 200px;
+        height: 150px;
+        margin-top: 100px;
+    }
+
+    .ourOffer {
+        display: block;
+    }    
 }
 
 
