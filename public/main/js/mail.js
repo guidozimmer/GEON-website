@@ -125,16 +125,22 @@ document.addEventListener('DOMContentLoaded', function() {
             throw new Error("Captcha not complete");
         }
 
-        const formData = new FormData(form);
+
+        const fd = new FormData(e.target);
+        const params = new URLSearchParams(fd);
 
         fetch("https://httpbin.org/post", {
             method: "POST",
-            body: formData,
+            body: parms,
         })
         .then(res => res.json())
         .then(data => console.log(data))
         .catch(err => console.error(err))
 
+
+
+
+        const formData = new FormData(form);
 
         fetch('send_email.php', {
             method: 'POST',
