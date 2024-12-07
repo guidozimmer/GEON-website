@@ -127,13 +127,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const formData = new FormData(form);
 
-        fetch("http://httpbin.org/post", {
+        fetch("https://httpbin.org/post", {
             method: "POST",
             body: formData,
         })
         .then(res => res.json())
         .then(data => console.log(data))
-        .catch(err => console.lerror(err))
+        .catch(err => console.error(err))
 
 
         fetch('send_email.php', {
