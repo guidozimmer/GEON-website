@@ -62,3 +62,5 @@ namePlaceholder = "Bitte vollständigen Namen eingeben..."
 emailPlaceholder = "Bitte E-Mail-Adresse eingeben..."
 phonePlaceholder = "Bitte Telefonnummer eingeben..."
 messagePlaceholder = "Bitte Anfrage eingeben..."
+
+recaptchaLanguage = de
