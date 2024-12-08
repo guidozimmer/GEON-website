@@ -135,46 +135,12 @@ h1, h2, h4, h5 {
 
 
 /* =======================
-   Lined Title Styles
-   ======================= */
-.lined-title {
-    position: relative;
-    font-weight: bold;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%; /* Ensure the container spans the full width */
-}
-
-.lined-title::before,
-.lined-title::after {
-    content: '';
-    flex-grow: 1; /* Makes the lines stretch as much as possible */
-    height: 1px; /* Thickness of the line */
-    background-color: #000; /* Line color */
-}
-
-.lined-title::before {
-    margin-right: 20px; /* Space between the line and the text */
-}
-
-.lined-title::after {
-    margin-left: 20px; /* Space between the line and the text */
-}
-
-
-
-
-
-
-/* =======================
    Footer Section Styles
    ======================= */
    
 
 footer {
-    height: 120px;
+    height: 100px;
     background-color: var(--footer-bg-color);
     display: flex;
     text-align: center;

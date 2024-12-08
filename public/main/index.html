@@ -59,16 +59,11 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#vision">Über uns</a>
+                        <a class="nav-link active" href="#vision" id="aboutUsNav"></a>
                     </li>
     
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#ourOffer" id="offerDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Unser Angebot
-                        </a>
+                        <a class="nav-link dropdown-toggle active" href="#ourOffer" id="offerDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"></a>
                         <ul class="dropdown-menu bg-dark" aria-labelledby="offerDropdown">
                             <li><a class="dropdown-item text-light" href="../subSites/landeigentümer/landeigentümer.html">Landeigentümer</a></li>
                             <li><a class="dropdown-item text-light" href="../subSites/gemeinden/gemeinden.html">Gemeinden / Bürger</a></li>
@@ -78,22 +73,22 @@
                     
     
                     <li class="nav-item">
-                        <a class="nav-link active" href="#howItWorks">So funktioniert's</a>
+                        <a class="nav-link active" href="#howItWorks" id="howItWorksNav"></a>
                     </li>
     
                     <li class="nav-item">
-                        <a class="nav-link active" href="#contact">Kontakt</a>
+                        <a class="nav-link active" href="#contact" id="contactNav"></a>
                     </li>
 
+
                     <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="languageDropdownTrigger" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          English
-                      </a>
-                      <ul class="dropdown-menu" id="languageDropdownMenu">
-                          <li><a class="dropdown-item" id="langEN" href="#" onclick="switchLanguage('EN')">English</a></li>
-                          <li><a class="dropdown-item" id="langDE" href="#" onclick="switchLanguage('DE')">Deutsch</a></li>
-                      </ul>
-                  </li>
+                        <a class="nav-link dropdown-toggle active" href="#ourOffer" id="languageDropdownTrigger" role="button" data-bs-toggle="dropdown" aria-expanded="false">Deutsch</a>
+                        <ul class="dropdown-menu bg-dark" aria-labelledby="offerDropdown" id="languageDropdownMenu">
+                            <li><a class="dropdown-item" id="langEN" onclick="switchLanguage('EN')">English</a></li>
+                            <li><a class="dropdown-item" id="langDE" onclick="switchLanguage('DE')">Deutsch</a></li>
+                        </ul>
+                    </li>
+
                 </ul>
             </div>
         </div>
@@ -119,42 +114,40 @@
 
 
 
-
-
     <div id="vision" style="position: absolute; top: 900px;"></div>
     <div class="vision">
         <div id="visionHeading">
-            <h1>Über uns</h1>
-            <h2>Wir setzen uns für eine nachhaltige, verantwortungsvolle und gerechte Nutzung von Ressourcen ein, um die Lebensqualität in Deutschland im Einklang mit der Natur zu verbessern – heute und für zukünftige Generationen.</h2>
+            <h1 id="aboutUsPt1"></h1>
+            <h2 id="aboutUsPt2"></h2>
         </div>
         
         <div class="visionSquare">
             <div class="visionHeading">
                 <img src="./img/favicon/Klimaschutz.svg" alt="icon">
-                <h3>Klimaschutz</h3>
+                <h3 id="aboutUsPt3"></h3>
             </div>
 
-            <h4>Wir fördern Lösungen, die Umweltbelastungen reduzieren, den CO₂-Ausstoß minimieren und erneuerbare Energien in den Mittelpunkt stellen, um unseren Planeten für kommende Generationen zu bewahren.</h4>    
+            <h4 id="aboutUsPt4"></h4>
         </div>
         
 
         <div class="visionSquare">
             <div class="visionHeading">
                 <img src="./img/favicon/Vertrauen.svg" alt="icon">
-                <h3>Vertrauen</h3>
+                <h3 id="aboutUsPt5"></h3>
             </div>
 
-            <h4>Wir bauen starke, langfristige Partnerschaften auf, die von Verlässlichkeit, Integrität und gegenseitigem Respekt geprägt sind – denn Vertrauen ist die Grundlage unseres Handelns.</h4>
+            <h4 id="aboutUsPt6"></h4>
         </div>
         
 
         <div class="visionSquare">
             <div class="visionHeading">
                 <img src="./img/favicon/Fairness.svg" alt="icon">
-                <h3>Fairness</h3>
+                <h3 id="aboutUsPt7"></h3>
             </div>
 
-            <h4>Unsere Arbeit basiert auf Respekt, Gleichberechtigung und transparenter Zusammenarbeit, bei der alle Beteiligten fair behandelt werden und echte Chancen erhalten.</h4>    
+            <h4 id="aboutUsPt8"></h4>
         </div>
 
 
@@ -162,28 +155,28 @@
         <div class="visionSquare">
             <div class="visionHeading">
                 <img src="./img/favicon/Ehrlichkeit.svg" alt="icon">
-                <h3>Ehrlichkeit</h3>
+                <h3 id="aboutUsPt9"></h3>
             </div>
 
-            <h4>In jeder unserer Entscheidungen und Handlungen setzen wir auf Offenheit und klare Kommunikation, um Vertrauen und Glaubwürdigkeit zu schaffen.</h4>    
+            <h4 id="aboutUsPt10"></h4>
         </div>
 
         <div class="visionSquare">
             <div class="visionHeading">
                 <img src="./img/favicon/Zuverlaessigkeit.svg" alt="icon">
-                <h3>Zuverlässigkeit</h3>
+                <h3 id="aboutUsPt11"></h3>
             </div>
 
-            <h4>Wir liefern, was wir versprechen. Unsere Projekte werden termingerecht und mit höchster Qualität umgesetzt – auf uns können Sie sich verlassen.</h4>       
+            <h4 id="aboutUsPt12"></h4>
         </div>
 
         <div class="visionSquare">
             <div class="visionHeading">
                 <img src="./img/favicon/Transparenz.svg" alt="icon">
-                <h3>Transparenz</h3>
+                <h3 id="aboutUsPt13"></h3>
             </div>
 
-            <h4>Klare Strukturen, nachvollziehbare Prozesse und ehrliche Kommunikation – so schaffen wir eine vertrauensvolle Basis für gemeinsame Erfolge.</h4>    
+            <h4 id="aboutUsPt14"></h4>
         </div>
 
 
@@ -192,39 +185,36 @@
 
     </div>
 
+
+
     <div id="slider">
-        <!-- Slide Wrapper -->
         <div class="slide-wrapper">
-            <!-- Individual Slides -->
             <div class="slide">
                 <img src="./img/banner_pic_01.jpeg" alt="Slide">
                 <div class="text">
-                    <h2 id="quote">Die beste Art, die Zukunft vorherzusagen, ist, sie zu gestalten.</h2>
-                    <p>Peter F. Drucker</p>
-                    <h2>Gestalten Sie mit uns die Zukunft.</2>
+                    <h2 id="quote"></h2>
+                    <p id="sliderPt2"></p>
+                    <h2 id="sliderPt3"></2>
                 </div>
             </div>
         </div>
     </div>
     
 
-
-
-
     <div class="ourOffer infoContainer" id="ourOffer">
         <section class="ourOfferHeading">
-            <h1 class="headingText" id="ourOfferText1"></h1>
+            <h1 class="headingText" id="ourOfferPt1"></h1>
             <h1 id="dot"></h1>
         </section>
 
-        <h3 class="infoText">Wir entwickeln maßgeschneiderte Projekte in den Bereichen Stromerzeugung und -speicherung, die genau zu ihrem Standort passen. <br>Dafür bringen wir alle wichtigen Partner zusammen und ermöglichen Bürgern und Gemeinden, aktiv mitzuwirken.</h1>
+        <h3 class="infoText" id="ourOfferPt2"></h1>
 
 
         <div class="flip-container">
             <div class="flip-card">
                 <div class="front">
-                    <h2>Landsicherung</h2>
-                    <h3>Profitieren Sie von nachhaltigen Projekten auf Ihren Flächen.</h3>
+                    <h2 id="ourOfferPt3"></h2>
+                    <h3 id="ourOfferPt4"></h3>
                 </div>
                 <div class="back"><a href="https://b3engineering.com/" target="_blank" rel="noopener noreferrer">Open in New Tab</a>
                 </div>
@@ -234,8 +224,8 @@
         <div class="flip-container">
             <div class="flip-card">
                 <div class="front">
-                    <h2>Gemeinden/Bürger</h2>
-                    <h3>Stellen Sie lukrative zukunftsweisende Projekte in ihrer Region mit auf die Beine</h3>
+                    <h2 id="ourOfferPt5"></h2>
+                    <h3 id="ourOfferPt6"></h3>
                 </div>
                 <div class="back">Back Text</div>
             </div>
@@ -244,8 +234,8 @@
         <div class="flip-container">
             <div class="flip-card">
                 <div class="front">
-                    <h2>Investoren</h2>
-                    <h3>Investieren Sie in nachhaltige Energieprojekte.</h3>
+                    <h2 id="ourOfferPt7"></h2>
+                    <h3 id="ourOfferPt8"></h3>
                 </div>
                 <div class="back">Back Text</div>
             </div>
@@ -254,28 +244,30 @@
 
     </div>
 
+
+
     <div class="howItWorks infoContainer" id="howItWorks">
         <section class="howItWorksHeading heading">
-            <h1 class="headingText lined-title">So funktioniert's</h1>
+            <h1 class="headingText lined-title" id="howItWorksPt1"></h1>
         </section>
 
-        <h4 class="howItWorksStepsText StepsText1">Standortanalyse und Landsicherung <br></h4>
-        <h5 class="howItWorksSpan StepsText1">Die Suche beginnt mit der Identifizierung geeigneter Grundstücke unter Berücksichtigung von Sonneneinstrahlung, Netzanbindung, Bodenbeschaffenheit und planungsrechtlichen Voraussetzungen. Nach der Vorauswahl erfolgen Verhandlungen mit Grundstückseigentümern über Pacht- oder Kaufverträge. </h5>
+        <h4 class="howItWorksStepsText StepsText1" id="howItWorksPt2"><br></h4>
+        <h5 class="howItWorksSpan StepsText1" id="howItWorksPt3"></h5>
 
-        <h4 class="howItWorksStepsText StepsText2">Genehmigungsmanagement <br>
-            <h5 class="howItWorksSpan StepsText2">Dieser Schritt umfasst die Abstimmung mit Gemeinden zur Bauleitplanung, Umweltgutachten, artenschutzrechtliche Prüfungen und die Einholung aller behördlichen Genehmigungen. Auch die frühzeitige Einbindung der Öffentlichkeit und Stakeholder ist wichtig. </h5>
+        <h4 class="howItWorksStepsText StepsText2" id="howItWorksPt4"><br>
+            <h5 class="howItWorksSpan StepsText2" id="howItWorksPt5"></h5>
         
-        <h4 class="howItWorksStepsText StepsText3">Technische Planung <br></h4>
-            <h5 class="howItWorksSpan StepsText3">Detaillierte Auslegung der Anlage mit Modulbelegung, Wechselrichterkonzept, Unterkonstruktion und Netzanbindung. Erstellung der Ausführungsplanung und Ausschreibungsunterlagen für die technischen Komponenten. </h5>
+        <h4 class="howItWorksStepsText StepsText3" id="howItWorksPt6"><br></h4>
+            <h5 class="howItWorksSpan StepsText3" id="howItWorksPt7"></h5>
         
-        <h4 class="howItWorksStepsText StepsText4">Finanzierung und Beteiligungsmodelle  <br></h4>
-            <h5 class="howItWorksSpan StepsText4">Entwicklung eines Finanzierungskonzepts mit verschiedenen Optionen wie Eigenkapitalinvestoren, Bankenfinanzierung oder Bürgerbeteiligung. Ausarbeitung der Wirtschaftlichkeitsberechnung und Risikoanalyse. </h5>
+        <h4 class="howItWorksStepsText StepsText4" id="howItWorksPt8"><br></h4>
+            <h5 class="howItWorksSpan StepsText4" id="howItWorksPt9"></h5>
         
-        <h4 class="howItWorksStepsText StepsText5">Bauausführung <br></h4>
-            <h5 class="howItWorksSpan StepsText5">Koordination aller Gewerke von der Grundstücksvorbereitung über die Montage bis zur Netzanbindung. Qualitätssicherung und Bauüberwachung sowie Dokumentation aller Arbeiten.</h5>
+        <h4 class="howItWorksStepsText StepsText5" id="howItWorksPt10"><br></h4>
+            <h5 class="howItWorksSpan StepsText5" id="howItWorksPt11"></h5>
         
-        <h4 class="howItWorksStepsText StepsText6">Betriebsführung und Stromvermarktung <br></h4>
-            <h5 class="howItWorksSpan StepsText6">Entwicklung einer Vermarktungsstrategie für den produzierten Strom - sei es über PPA (Power Purchase Agreements), EEG-Vergütung oder direkte Vermarktung. Aufbau eines professionellen Anlagenmanagements für den späteren Betrieb.</h5>
+        <h4 class="howItWorksStepsText StepsText6" id="howItWorksPt12"><br></h4>
+            <h5 class="howItWorksSpan StepsText6" id="howItWorksPt13"></h5>
 
 
 
@@ -304,8 +296,6 @@
     </div>
 
 
-    
-
 
 
         <div class="contact_us_6">
@@ -313,37 +303,24 @@
             <form class="form-box" method="POST" id="contactForm">
               <div class="container-block form-wrapper">
                 <div class="mob-text">
-                  <p class="text-blk contactus-head">
-                    Get in Touch
-                  </p>
-                  <p class="text-blk contactus-subhead">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis diam lectus sapien.
-                  </p>
+                  <p class="text-blk contactus-head" id="conatctPt1"></p>
                 </div>
                 <div class="responsive-container-block" id="i2cbk">
                   <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="i10mt-3">
-                    <p class="text-blk input-title">
-                      FULL NAME*
-                    </p>
-                    <input class="input" id="ijowk-3 name" name="fullName" placeholder="Please enter full name..." required>
+                    <p class="text-blk input-title" id="conatctPt2"></p>
+                    <input class="input" id="name" name="fullName" required>
                   </div>
                   <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="ip1yp">
-                    <p class="text-blk input-title">
-                      EMAIL*
-                    </p>
-                    <input class="input" id="ipmgh-3 email" name="email" type="email" placeholder="Please enter email..." required>
+                    <p class="text-blk input-title" id="conatctPt3"></p>
+                    <input class="input" id="ipmgh-3 email" name="email" type="email" required>
                   </div>
                   <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="ih9wi">
-                    <p class="text-blk input-title">
-                      PHONE NUMBER
-                    </p>
-                    <input class="input" id="imgis-3" name="phoneNumber" placeholder="Please enter phone number..." type="number">
+                    <p class="text-blk input-title" id="conatctPt4"></p>
+                    <input class="input" id="imgis-3" name="phoneNumber" type="number">
                   </div>
                   <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="i634i-3">
-                    <p class="text-blk input-title">
-                      WHAT DO YOU HAVE IN MIND ?*
-                    </p>
-                    <textarea class="textinput" id="i5vyy-3 message" name="message" placeholder="Please enter query..." required></textarea>
+                    <p class="text-blk input-title" id="conatctPt5"></p>
+                    <textarea class="textinput" id="i5vyy-3 message" name="message" required></textarea>
                   </div>
                 </div>
 
@@ -351,9 +328,7 @@
                 <div class="g-recaptcha" data-sitekey="6LeD9pQqAAAAAELVtSKGXrRsk_msiBDyOsuopWKv"></div>
 
 
-                <button class="submit-btn" id="w-c-s-bgc_p-1-dm-id-2" type="submit">
-                  Submit
-                </button>
+                <button class="submit-btn" id="w-c-s-bgc_p-1-dm-id-2" type="submit"></button>
               </div>
 
             </form>
