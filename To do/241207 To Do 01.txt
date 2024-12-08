@@ -1,23 +1,30 @@
 Items to implement:
 -------------------------------------------------
 
-■ Make text in menubar a tiny bit thicker	X
+✓ Make text in menubar a tiny bit thicker
 
-■ Adapt color of the copyright bar at the bottom of the page to the GEON blue/green (like the menu bar)	X
+✓ Adapt color of the copyright bar at the bottom of the page to the GEON blue/green (like the menu bar)
 
-■ Fix the colors of the contact form to our blue/green	X
+✓ Fix the colors of the contact form to our blue/green
 
 ■ Add a recaptcha to the contact form
+□ Adapt to selected language
+□ Modify the color of the "Close" button of the pop-up window and also make this multi-languge.
 
-■ Add language selector to menu bar at the right outside. should contain DE and EN for starters
+✓ Add language selector to menu bar at the right outside. should contain DE and EN for starters
 
 ■ Remove the Contact/Disclimer item in the paage bottom bar. Also exchange the font weights of the two lines in the bottom bar (copyright line light and Privacy policy and Imprint regular weight) X
+□ The top two link items should be white. Hover color could be the GEON sand color.
+□ Make the text for both lines smaller and reduce the height of the bottom bar.
 
 -------------------------------------------------
 ■ Add banner_pic_01.jpeg (in this folder) to the slogan banner. Make the background of the text part (right) GEON blue and in white large text add this slogan:
 
 LARGE: "Die beste Art, die Zukunft vorherzusagen, ist, sie zu gestalten."
 FINE PRINT: Peter F. Drucker
-LARGE: Gestalten Sie mit uns die Zukunft.	X
+LARGE: Gestalten Sie mit uns die Zukunft.
 
-■ Make corners of send button on contact form same radius as on the unser angebot page.	X
+□ Fix slogan banner to look like the mockup in 'GEON Cloud/12 Corporate identity/34 Website/22 Design inspirations/Mockup_01a'. Also the spaces before and after. Ideally, the picture should take up a fixed relative with, e.g. 1/3 window width.
+
+✓ Make corners of send button on contact form same radius as on the unser angebot page.d
+

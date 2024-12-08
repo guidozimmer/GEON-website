@@ -1,7 +1,7 @@
 
 
 .seoHeading {
-    background-color: #255f7f;
+    background-color: var(--geon-primary);
     margin: auto 640px;
     display: block;
     margin-bottom: 150px;

@@ -8,12 +8,7 @@
     align-items: center;
 }
 
-/* Slide Wrapper */
-.slide-wrapper {
-    display: flex; /* Arrange slides horizontally */
-    transition: transform 0.5s ease-in-out; /* Smooth animation */
-    width: 100%; /* Let JavaScript adjust this dynamically */
-}
+
 
 /* Individual Slides */
 .slide {
@@ -33,45 +28,32 @@
 
 /* Text Section Styling */
 .slide .text {
-    padding: 20px;
+    padding: 100px;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center text vertically */
     align-items: flex-start; /* Align text to the left */
-    background-color: white; /* Optional background for contrast */
-    color: #333; /* Ensure text visibility */
+    background-color: var(--geon-primary); /* Optional background for contrast */
+    color: white; /* Ensure text visibility */
     text-align: left;
 }
 
-/* Navigation Arrows */
-.arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
-    color: white;
-    border: none;
-    padding: 15px;
-    cursor: pointer;
-    font-size: 20px;
-    z-index: 10; /* Place arrows above the slides */
-}
 
-.arrow.left {
-    left: 10px;
-}
-
-.arrow.right {
-    right: 10px;
+#quote {
+    font-family: Acumin-Italic;
+    font-size: var(--large-font) !important;
+    margin-top: 50px;
+    text-transform: none;
 }
 
 .text > h2 {
-    font-size: var(--big-font) !important;
-    font-family: Acumin-Regular;
+    font-size: var(--large-font) !important;
+    font-family: Acumin-Black;
+    text-transform: uppercase;
 }
 
 .text > p {
-    margin-top: -10px;
+    margin-top: 10px;
     margin-bottom: 100px;
+    font-family: Acumin-Italic;
 }
 

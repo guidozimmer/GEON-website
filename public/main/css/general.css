@@ -9,8 +9,8 @@
     /* ==============================================
                         CORE VARIABLES
        ============================================== */
-        --accent-color: #004466;
-        --secondary-color: #ccbb88;
+        --geon-primary: #004466;
+        --geon-secondary: #ccbb88;
         --light-bg: white;
         --dark-bg: rgb(230, 230, 230);
         --heading-text-color: black;
@@ -54,15 +54,15 @@
     /* How It Works */
     --howItWorks-bg: var(--dark-bg);
     --howItWorks-basic-color: var(--basic-text-color);
-    --howItWorks-accent-color: var(--accent-color);
+    --howItWorks-accent-color: var(--geon-primary);
 
     /* Contact */
     --contact-heading-color: var(--basic-text-color);
     --contact-basic-color: var(--basic-text-color);
     
-    --footer-bg-color: var(--accent-color); /* Footer background color */
-    --footer-link-color: #b0aeaf; /* Link color */
-    --footer-link-hover-color: var(--secondary-color); /* Link color on hover */
+    --footer-bg-color: var(--geon-primary); /* Footer background color */
+    --footer-link-color: white; /* Link color */
+    --footer-link-hover-color: var(--geon-secondary); /* Link color on hover */
     --footer-copyright-color: #ffffff; /* Copyright text color */
 
 
@@ -118,7 +118,10 @@
     src: url("./AcuminPro/Acumin\ Pro\ Thin.otf");
 }
 
-
+@font-face {
+    font-family: "Acumin-Italic";
+    src: url("./AcuminPro/Acumin\ Pro\ Book\ Italic.otf");
+}
 
 
 
@@ -239,10 +242,6 @@ footer {
     display: block;
     margin-top: 0; /* Optional: adjust to avoid any visual jump */
 }
-
-
-
-
 
 
 

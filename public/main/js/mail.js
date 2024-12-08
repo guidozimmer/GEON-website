@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     transform: rotate(90deg);
                 }
                 .popup-close-btn {
-                    background-color: #3361f5;
+                    background-color: var(--geon-primary);
                     color: white;
                     border: none;
                     padding: 10px 20px;

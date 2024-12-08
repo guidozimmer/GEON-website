@@ -9,7 +9,7 @@
    ======================= */
    
 #navbar {
-    background-color: var(--accent-color) !important; /* Navbar background color */
+    background-color: var(--geon-primary) !important; /* Navbar background color */
 }
 
 ul {
