@@ -138,21 +138,6 @@ document.addEventListener('DOMContentLoaded', function() {
             throw new Error("Captcha not complete");
         }
 
-
-        const fd = new FormData(e.target);
-        const params = new URLSearchParams(fd);
-
-        fetch("geongroup.de/test.php", {
-            method: "POST",
-            body: params,
-        })
-        .then(res => res.json())
-        .then(data => console.log(data))
-        .catch(err => console.error(err))
-
-
-
-
         const formData = new FormData(form);
 
         fetch('send_email.php', {
