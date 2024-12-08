@@ -114,11 +114,6 @@ const LanguageSwitcher = (() => {
         id: 'message', 
         variable: 'messagePlaceholder',
         type: 'placeholder' 
-      },
-      {
-        id: 'g-recaptcha',
-        variable: 'recaptchaLanguage',
-        type: 'attribute'
       }
     ];
     
@@ -132,19 +127,14 @@ const LanguageSwitcher = (() => {
     
     // Update placeholders
     placeholdersToUpdate.forEach(element => {
-      const el = document.getElementById(element.id);
+      const el = document.querySelector(`[name="${element.id}"]`) || document.getElementById(element.id);
       
       if (el && variables[element.variable]) {
-          if (element.type === 'placeholder') {
-              el.placeholder = variables[element.variable];
-          } else if (element.type === 'attribute' && window.grecaptcha) {
-              window.grecaptcha.render(el, {
-                  'sitekey': el.getAttribute('data-sitekey'),
-                  'hl': variables[element.variable]
-              });
-          }
+        if (element.type === 'placeholder') {
+          el.placeholder = variables[element.variable];
+        }
       }
-  });
+    });
   }
 
   // Public method to switch language

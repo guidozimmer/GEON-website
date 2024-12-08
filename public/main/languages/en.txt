@@ -63,4 +63,6 @@ emailPlaceholder = "Please enter email..."
 phonePlaceholder = "Please enter phone number..."
 messagePlaceholder = "Please enter query..."
 
-recaptchaLanguage = en
+popupPt1 = "Message Sent Successfully!"
+popupPt2 = "Thank you for reaching out. We'll get back to you soon."
+popupPt3 = "Close"

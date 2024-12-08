@@ -80,9 +80,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="popup-content">
                     <div class="popup-close">&times;</div>
                     <div class="popup-icon">✔️</div>
-                    <h2 class="popup-title">Message Sent Successfully!</h2>
-                    <p class="popup-message">Thank you for reaching out. We'll get back to you soon.</p>
-                    <button class="popup-close-btn">Close</button>
+                    <h2 class="popup-title id="popupPt1"></h2>
+                    <p class="popup-message" id="popupPt2"></p>
+                    <button class="popup-close-btn" id="popupPt3"></button>
                 </div>
             </div>
         `;
