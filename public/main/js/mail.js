@@ -86,25 +86,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             </div>
         `;
-        // Select the language dropdown trigger element
+
         const languageTrigger = document.getElementById('languageDropdownTrigger');
 
-        // Check if the element exists
-        if (languageTrigger) {
-            // Get the text content of the language trigger
-            const selectedLanguage = languageTrigger.textContent.trim();
+        // Get the text content of the language trigger
+        const selectedLanguage = languageTrigger.textContent.trim();
 
-            // Check if the language is "Deutsch"
-            if (selectedLanguage === 'Deutsch') {
-                console.log("The selected language is German (Deutsch).");
-                // Perform actions for Deutsch
-            } else {
-                console.log("The selected language is not German. It's:", selectedLanguage);
-                // Perform actions for other languages
-            }
+        if (selectedLanguage === 'Deutsch') {
+            switchLanguage('DE')
         } else {
-            console.error("#languageDropdownTrigger element not found.");
+            switchLanguage('EN')
         }
+
 
         document.body.appendChild(popup);
         
