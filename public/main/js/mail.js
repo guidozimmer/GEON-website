@@ -93,18 +93,26 @@ document.addEventListener('DOMContentLoaded', function() {
         const popupOverlay = popup.querySelector('.popup-overlay');
         const popupContent = popup.querySelector('.popup-content');
         
-        setTimeout(() => popupContent.classList.add('show'), 10);
+        setTimeout(() => {
+            popupContent.classList.add('show');
+            
+            const languageTrigger = document.getElementById('languageDropdownTrigger');
+
+            // Get the text content of the language trigger
+            const selectedLanguage = languageTrigger.textContent.trim();
+    
+            if (selectedLanguage === 'Deutsch') {
+                console.log("Deutsch");
+                switchLanguage('DE');
+            } else {
+                console.log("English");
+                switchLanguage('DE');
+            }
+        }, 10);
+
         
-        const languageTrigger = document.getElementById('languageDropdownTrigger');
+        
 
-        // Get the text content of the language trigger
-        const selectedLanguage = languageTrigger.textContent.trim();
-
-        if (selectedLanguage === 'Deutsch') {
-            switchLanguage('DE')
-        } else {
-            switchLanguage('EN')
-        }
         
         const closeButtons = popup.querySelectorAll('.popup-close, .popup-close-btn');
         closeButtons.forEach(btn => {
