@@ -15,7 +15,7 @@ Items to implement:
 
 ■ Remove the Contact/Disclimer item in the paage bottom bar. Also exchange the font weights of the two lines in the bottom bar (copyright line light and Privacy policy and Imprint regular weight) X
  The top two link items should be white. Hover color could be the GEON sand color.
-□ Make the text for both lines smaller and reduce the height of the bottom bar.
+✓ Make the text for both lines smaller and reduce the height of the bottom bar.
 
 -------------------------------------------------
 ■ Add banner_pic_01.jpeg (in this folder) to the slogan banner. Make the background of the text part (right) GEON blue and in white large text add this slogan:

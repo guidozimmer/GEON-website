@@ -1,26 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Translations for the popup
-    const translations = {
-        EN: {
-            popupPt1: "Message Sent Successfully!",
-            popupPt2: "Thank you for reaching out. We'll get back to you soon.",
-            popupPt3: "Close"
-        },
-        DE: {
-            popupPt1: "Nachricht erfolgreich gesendet!",
-            popupPt2: "Vielen Dank, dass Sie uns kontaktiert haben. Wir melden uns bald bei Ihnen.",
-            popupPt3: "Schließen"
-        }
-    };
-
     function showPopup() {
-        // Get current language (replace with your own implementation)
-        const currentLanguage = window.LanguageSwitcher.getCurrentLanguage();
-
-        // Get translations for the current language
-        const { popupPt1, popupPt2, popupPt3 } = translations[currentLanguage];
-
-        // Create popup HTML
         const popup = document.createElement('div');
         popup.innerHTML = `
             <style>
@@ -101,15 +80,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="popup-content">
                     <div class="popup-close">&times;</div>
                     <div class="popup-icon">✔️</div>
-                    <h2 class="popup-title">${popupPt1}</h2>
-                    <p class="popup-message">${popupPt2}</p>
-                    <button class="popup-close-btn">${popupPt3}</button>
+                    <h2 class="popup-title id="popupPt1"></h2>
+                    <p class="popup-message" id="popupPt2"></p>
+                    <button class="popup-close-btn" id="popupPt3"></button>
                 </div>
             </div>
         `;
         document.body.appendChild(popup);
-
-        // Popup behavior (unchanged)
+        
         const popupOverlay = popup.querySelector('.popup-overlay');
         const popupContent = popup.querySelector('.popup-content');
         
@@ -124,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }, 300);
             });
         });
-
+        
         popupOverlay.addEventListener('click', (e) => {
             if (e.target === popupOverlay) {
                 popupContent.classList.remove('show');
@@ -135,16 +113,32 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Form submission (unchanged)
+    // Form submission
     const form = document.querySelector('form');
     form.addEventListener('submit', function(e) {
         e.preventDefault();
+
 
         const captchaResponse = grecaptcha.getResponse();
 
         if (!captchaResponse.length > 0) {
             throw new Error("Captcha not complete");
         }
+
+
+        const fd = new FormData(e.target);
+        const params = new URLSearchParams(fd);
+
+        fetch("geongroup.de/test.php", {
+            method: "POST",
+            body: params,
+        })
+        .then(res => res.json())
+        .then(data => console.log(data))
+        .catch(err => console.error(err))
+
+
+
 
         const formData = new FormData(form);
 
