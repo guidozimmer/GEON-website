@@ -95,7 +95,6 @@ document.addEventListener('DOMContentLoaded', function() {
         
         setTimeout(() => {
             popupContent.classList.add('show');
-            
             const languageTrigger = document.getElementById('languageDropdownTrigger');
 
             // Get the text content of the language trigger

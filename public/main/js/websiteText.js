@@ -2,6 +2,7 @@ const LanguageSwitcher = (() => {
   // Private variables
   let currentLanguage = 'DE'; // Default language
   const supportedLanguages = ['EN', 'DE']; // Supported language codes
+  console.log("Language switcg");
   
   // Function to load the text file
   function loadTextFile(url, callback) {
