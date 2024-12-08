@@ -1,3 +1,5 @@
+import { createLanguageSwitcher } from './websiteText.js';
+
 document.addEventListener('DOMContentLoaded', function() {
     function showPopup() {
         const popup = document.createElement('div');
