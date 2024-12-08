@@ -102,10 +102,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
             if (selectedLanguage === 'Deutsch') {
                 console.log("Deutsch");
-                switchLanguage('DE');
+                languageSwitcher.switchLanguage('DE');
             } else {
                 console.log("English");
-                switchLanguage('DE');
+                languageSwitcher.switchLanguage('EN');
             }
         }, 10);
 

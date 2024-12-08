@@ -1,6 +1,8 @@
 import { setupDropdown } from "./nav.js"
 import { startNumberFade } from "./numberFade.js"
+import { createLanguageSwitcher } from './websiteText.js';
 
+const languageSwitcher = createLanguageSwitcher();
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -13,6 +15,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Start the fader
     startNumberFade("numberDisplay", values);
+
+    
+
+    languageSwitcher.initializeLanguage();
+
+    // Example: Switch to English
+    document.getElementById('langEN').addEventListener('click', () => {
+        languageSwitcher.switchLanguage('EN');
+    });
+
+    // Example: Switch to German
+    document.getElementById('langDE').addEventListener('click', () => {
+        languageSwitcher.switchLanguage('DE');
+    });
 });
+
+
+
 
 
