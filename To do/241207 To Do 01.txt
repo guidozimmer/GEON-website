@@ -9,7 +9,7 @@ Items to implement:
 
 ■ Add a recaptcha to the contact form
 □ Adapt to selected language
-□ Modify the color of the "Close" button of the pop-up window and also make this multi-languge.
+✓ Modify the color of the "Close" button of the pop-up window and also make this multi-languge.
 
 ✓ Add language selector to menu bar at the right outside. should contain DE and EN for starters
 
@@ -26,7 +26,7 @@ LARGE: Gestalten Sie mit uns die Zukunft.
 
 ✓ Fix slogan banner to look like the mockup in 'GEON Cloud/12 Corporate identity/34 Website/22 Design inspirations/Mockup_01a'. Also the spaces before and after. Ideally, the picture should take up a fixed relative with, e.g. 1/3 window width.
 
-□ Make banner responsive
+✓ Make banner responsive
 
 ✓ Make corners of send button on contact form same radius as on the unser angebot page.d
 

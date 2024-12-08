@@ -47,13 +47,24 @@ li {
 /* On hover, remove background change and set a different text color */
 .dropdown-item:hover {
     background-color: transparent !important; /* No background change on hover */
-    color: #ffc107 !important; /* Change text color on hover (e.g., Bootstrap yellow) */
+    color: var(--geon-secondary) !important; /* Change text color on hover (e.g., Bootstrap yellow) */
 }
 
 .navbar-nav .nav-link.active:hover {
     background-color: transparent !important; /* No background change on hover */
-    color: #ffc107 !important; /* Change text color on hover (e.g., Bootstrap yellow) */
+    color: var(--geon-secondary) !important; /* Change text color on hover (e.g., Bootstrap yellow) */
 }
+
+.dropdown-menu {
+    background-color: var(--geon-primary) !important;
+    border: solid 1px black;
+}
+
+.dropdown-item {
+    background-color: var(--geon-primary) !important;
+    color: white !important;
+}
+
 
 
 

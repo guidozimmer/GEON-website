@@ -1,8 +1,7 @@
 /* Slider Container */
 #slider {
     position: relative;
-    width: 100vw; /* Full viewport width */
-    height: 50vh; /* 50% viewport height */
+    height: 35vh;
     overflow: hidden; /* Hide overflowing slides */
     display: flex;
     align-items: center;
@@ -14,7 +13,7 @@
 .slide {
     flex: 0 0 100%; /* Each slide takes up 100% of the container width */
     display: grid; /* Use grid to split image and text */
-    grid-template-columns: 50% 50%; /* Image on the left, text on the right */
+    grid-template-columns: 40% 60%; /* Image on the left, text on the right */
     height: 100%; /* Full slider height */
 }
 
@@ -40,13 +39,13 @@
 
 #quote {
     font-family: Acumin-Italic;
-    font-size: var(--large-font) !important;
+    font-size: var(--medium-large-font) !important;
     margin-top: 50px;
     text-transform: none;
 }
 
 .text > h2 {
-    font-size: var(--large-font) !important;
+    font-size: var(--medium-large-font) !important;
     font-family: Acumin-Black;
     text-transform: uppercase;
 }
@@ -55,5 +54,131 @@
     margin-top: 10px;
     margin-bottom: 100px;
     font-family: Acumin-Italic;
+    font-size: var(--small-font);
 }
+
+
+
+
+
+/* Extra Small Devices (Phones, up to 480px) */
+@media only screen and (max-width: 480px) {
+    #quote {
+        font-size: var(--vary-small-font) !important;
+        margin-top: 100px;
+    }
+    
+    .text > h2 {
+        font-size: var(--vary-small-font) !important;
+    }
+    
+    .text > p {
+        margin-top: 10px;
+        margin-bottom: 50px;
+        font-size: var(--mini-font);
+    }
+
+    #slider {
+        height: 20vh; 
+    }
+
+    .slide .text {
+        padding: 10px;
+    }
+}
+
+  
+/* Small Devices (Portrait Tablets and Small Phones, up to 768px) */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    #quote {
+        font-size: var(--small-font) !important;
+        margin-top: 50px;
+    }
+    
+    .text > h2 {
+        font-size: var(--small-font) !important;
+    }
+    
+    .text > p {
+        margin-top: 10px;
+        margin-bottom: 50px;
+        font-size: var(--mini-font);
+    }
+
+    #slider {
+        height: 20vh; 
+    }
+
+    .slide .text {
+        padding: 50px;
+    }
+}
+
+
+/* Medium Devices (Tablets in Landscape, 768px to 1024px) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    #quote {
+        font-size: var(--medium-font) !important;
+        margin-top: 50px;
+    }
+    
+    .text > h2 {
+        font-size: var(--medium-font) !important;
+    }
+    
+    .text > p {
+        margin-top: 10px;
+        margin-bottom: 50px;
+        font-size: var(--small-font);
+    }
+
+    #slider {
+        height: 25vh; 
+    }
+}   
+
+
+/* Large Devices (Desktops, 1024px to 1200px) */
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+    #quote {
+        font-size: var(--big-font) !important;
+        margin-top: 50px;
+    }
+    
+    .text > h2 {
+        font-size: var(--big-font) !important;
+    }
+    
+    .text > p {
+        margin-top: 10px;
+        margin-bottom: 100px;
+        font-size: var(--small-font);
+    }
+}
+
+/* Extra Large Devices (Large Desktops, 1200px to 1600px) */
+@media only screen and (min-width: 1201px) and (max-width: 1651px) {
+    #quote {
+        font-size: var(--medium-big-font) !important;
+        margin-top: 50px;
+    }
+    
+    .text > h2 {
+        font-size: var(--medium-big-font) !important;
+    }
+    
+    .text > p {
+        margin-top: 10px;
+        margin-bottom: 100px;
+        font-size: var(--small-font);
+    }
+}
+  
+
+/* Ultra Large Devices (Very Large Screens, 1600px and up) */
+@media only screen and (min-width: 1651px) {
+
+}
+
+
 

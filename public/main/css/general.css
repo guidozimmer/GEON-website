@@ -18,11 +18,13 @@
 
         --very-big-font: 65px;
         --large-font: 50px;
+        --medium-large-font: 43px;
         --medium-big-font: 35px;
         --big-font: 30px;
         --medium-font: 23px;
         --small-font: 18px;
         --very-small-font: 15px;
+        --mini-font: 10px;
 
         --dot-font: 35px;
         --a-font: 20px;
@@ -280,8 +282,3 @@ a {
 @media only screen and (min-width: 1025px) and (max-width: 1200px) {
 
 }
-
-
-/** {
-    border: solid 1px red !important;
-}*/

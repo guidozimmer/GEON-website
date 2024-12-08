@@ -17,12 +17,10 @@ document.addEventListener('DOMContentLoaded', function () {
         if (languageTrigger) {
             const selectedLanguage = languageTrigger.textContent.trim();
             if (selectedLanguage === 'Deutsch') {
-                console.log("Switching to Deutsch");
                 document.getElementById('popupPt1').textContent = "Nachricht erfolgreich gesendet!";
                 document.getElementById('popupPt2').textContent = "Vielen Dank, dass Sie uns kontaktiert haben. Wir melden uns bald bei Ihnen.";
                 document.getElementById('popupPt3').textContent = "Schließen";
             } else {
-                console.log("Switching to English");
                 document.getElementById('popupPt1').textContent = "Message Sent Successfully!";
                 document.getElementById('popupPt2').textContent = "Thank you for reaching out. We'll get back to you soon.";
                 document.getElementById('popupPt3').textContent = "Close";
@@ -80,9 +78,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     showPopup();
                     form.reset();
                 })
-                .catch((error) => {
-                    console.error('Error:', error);
-                });
         });
     } else {
         console.error("Form element not found.");
