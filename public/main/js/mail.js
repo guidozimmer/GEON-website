@@ -58,7 +58,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Form submission handler
-    /*
     const form = document.querySelector('form');
     if (form) {
         form.addEventListener('submit', function (e) {
@@ -83,10 +82,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 })
                 .catch((error) => {
                     console.error('Error:', error);
-                    alert('An error occurred. Please try again.');
                 });
         });
     } else {
         console.error("Form element not found.");
-    }*/
+    }
 });
