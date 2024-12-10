@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Form submission handler
-    const form = document.querySelector('form');
+    const form = document.getElementById('contactForm');
     if (form) {
         form.addEventListener('submit', function (e) {
             e.preventDefault();

@@ -13,6 +13,7 @@
     <!-- Include React and ReactDOM via CDN -->
     <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+
     <!-- Include Babel for JSX transformation -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
@@ -33,15 +34,17 @@
     <link rel="stylesheet" href="./css/refrences.css">
     <link rel="stylesheet" href="./css/vision.css">
     <link rel="stylesheet" href="./css/slide.css">
+    <link rel="stylesheet" href="./css/code.css">
+
 
 
     <!--Recaptcha -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 
-    <!-- Load cookie css 
+    <!-- Load cookie css -->
     <link rel="stylesheet" href="../cookies/cookieconsent.css">
-    <link rel="stylesheet" href="../cookies/cookie.css">-->
+    <link rel="stylesheet" href="../cookies/cookie.css">
 
 
 
@@ -110,6 +113,21 @@
         </div>
 
 
+    </div>
+
+
+    <div class="codeSection">
+        <div class="codeSectionText">
+            <h3>Wurden sie von uns angeschreiben?</h3>
+            <h3>Geben sie ihren Zugangscode hier ein.</h3>
+
+        </div>
+
+
+        <form id="redirectForm">
+            <input type="text" name="code" id="code">
+            <button class="submit-btn-redirect" id="w-c-s-bgc_p-1-dm-id-2" type="submit"></button>
+        </form>
     </div>
 
 
@@ -300,7 +318,7 @@
 
         <div class="contact_us_6">
           <div class="responsive-container-block container">
-            <form class="form-box" method="POST" id="contactForm">
+            <form class="form-box" method="POST" id="contactForm" id="contactForm">
               <div class="container-block form-wrapper">
                 <div class="mob-text">
                   <p class="text-blk contactus-head" id="conatctPt1"></p>
@@ -312,7 +330,7 @@
                   </div>
                   <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="ip1yp">
                     <p class="text-blk input-title" id="conatctPt3"></p>
-                    <input class="input" id="ipmgh-3 email" name="email" type="email" required>
+                    <input class="input" id="ipmgh-3 email" name="email" type="email" autofill required>
                   </div>
                   <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="ih9wi">
                     <p class="text-blk input-title" id="conatctPt4"></p>
@@ -391,7 +409,7 @@
 
 
     <!--Cookies-->
-    <!--<script type="module" src="../cookies/cookieconsent-init.js"></script>-->
+    <script type="module" src="../cookies/cookieconsent-init.js"></script>
 </section>
 
 </html>

@@ -40,7 +40,6 @@
 #quote {
     font-family: Acumin-Italic;
     font-size: var(--medium-large-font) !important;
-    margin-top: 50px;
     text-transform: none;
 }
 
@@ -52,7 +51,7 @@
 
 .text > p {
     margin-top: 10px;
-    margin-bottom: 100px;
+    margin-bottom: 120px;
     font-family: Acumin-Italic;
     font-size: var(--small-font);
 }
@@ -64,18 +63,18 @@
 /* Extra Small Devices (Phones, up to 480px) */
 @media only screen and (max-width: 480px) {
     #quote {
-        font-size: var(--vary-small-font) !important;
-        margin-top: 100px;
+        font-size: var(--mini-font) !important;
+        margin-top: 10px;
     }
     
     .text > h2 {
-        font-size: var(--vary-small-font) !important;
+        font-size: var(--mini-font) !important;
     }
     
     .text > p {
-        margin-top: 10px;
-        margin-bottom: 50px;
-        font-size: var(--mini-font);
+        margin-top: -5px;
+        margin-bottom: 10px;
+        font-size: var(--mega-mini-font);
     }
 
     #slider {
@@ -92,7 +91,6 @@
 @media only screen and (min-width: 481px) and (max-width: 768px) {
     #quote {
         font-size: var(--small-font) !important;
-        margin-top: 50px;
     }
     
     .text > h2 {
@@ -119,7 +117,6 @@
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
     #quote {
         font-size: var(--medium-font) !important;
-        margin-top: 50px;
     }
     
     .text > h2 {
@@ -142,7 +139,6 @@
 @media only screen and (min-width: 1025px) and (max-width: 1200px) {
     #quote {
         font-size: var(--big-font) !important;
-        margin-top: 50px;
     }
     
     .text > h2 {
@@ -160,7 +156,6 @@
 @media only screen and (min-width: 1201px) and (max-width: 1651px) {
     #quote {
         font-size: var(--medium-big-font) !important;
-        margin-top: 50px;
     }
     
     .text > h2 {
@@ -169,7 +164,6 @@
     
     .text > p {
         margin-top: 10px;
-        margin-bottom: 100px;
         font-size: var(--small-font);
     }
 }

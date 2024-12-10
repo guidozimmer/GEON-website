@@ -1,0 +1,58 @@
+
+.codeSection {
+    height: 120px;
+    background-color: var(--geon-primary);
+    margin-top: -256px;
+    margin-bottom: 100px;
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+}
+
+.codeSectionText > h3 {
+    color: white;
+    font-family: Acumin-Italic;
+    font-size: var(--small-font) !important;
+}
+
+
+
+.codeSection .submit-btn-redirect {
+    background-color: var(--geon-secondary);
+    height: 30px;
+    width: 150px;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    border-top-style: outset;
+    border-right-style: outset;
+    border-bottom-style: outset;
+    border-left-style: outset;
+    border-top-color: #767676;
+    border-right-color: #767676;
+    border-bottom-color: #767676;
+    border-left-color: #767676;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+
+.codeSection > form {
+    margin-left: 200px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+}

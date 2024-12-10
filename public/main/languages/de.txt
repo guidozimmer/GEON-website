@@ -29,7 +29,7 @@ sliderPt2 = "Peter F. Drucker"
 sliderPt3 = "Gestalten Sie mit uns die Zukunft."
 
 ourOfferPt1 = "Unser Angebot"
-ourOfferPt2 = "Wir entwickeln maßgeschneiderte Projekte in den Bereichen Stromerzeugung und -speicherung, die genau zu ihrem Standort passen. <br>Dafür bringen wir alle wichtigen Partner zusammen und ermöglichen Bürgern und Gemeinden, aktiv mitzuwirken."
+ourOfferPt2 = "Wir entwickeln maßgeschneiderte Projekte in den Bereichen Stromerzeugung und -speicherung, die genau zu ihrem Standort passen. Dafür bringen wir alle wichtigen Partner zusammen und ermöglichen Bürgern und Gemeinden, aktiv mitzuwirken."
 ourOfferPt3 = "Landsicherung"
 ourOfferPt4 = "Profitieren Sie von nachhaltigen Projekten auf Ihren Flächen."
 ourOfferPt5 = "Gemeinden/Bürger"

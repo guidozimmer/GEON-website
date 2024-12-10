@@ -29,7 +29,7 @@ sliderPt2 = "Peter F. Drucker"
 sliderPt3 = "Shape the future with us."
 
 ourOfferPt1 = "Our Offer"
-ourOfferPt2 = "We develop tailor-made projects in the fields of power generation and storage that perfectly suit your location. <br>We bring together all key partners and enable citizens and communities to actively participate."
+ourOfferPt2 = "We develop tailor-made projects in the fields of power generation and storage that perfectly suit your location. We bring together all key partners and enable citizens and communities to actively participate."
 ourOfferPt3 = "Land Securing"
 ourOfferPt4 = "Benefit from sustainable projects on your land."
 ourOfferPt5 = "Communities/Citizens"
