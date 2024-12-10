@@ -1,7 +1,7 @@
 /* Slider Container */
 #slider {
     position: relative;
-    height: 35vh;
+    height: 400px;
     overflow: hidden; /* Hide overflowing slides */
     display: flex;
     align-items: center;
