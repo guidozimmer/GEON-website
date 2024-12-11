@@ -725,9 +725,9 @@ body {
 
   .contact_us_6 .form-box {
     padding-top: 0px;
-    padding-right: 20px;
+    padding-right: 0;
     padding-bottom: 0px;
-    padding-left: 20px;
+    padding-left: 0;
   }
 
   .contact_us_6 .container-block.form-wrapper {

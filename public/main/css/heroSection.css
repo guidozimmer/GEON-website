@@ -90,9 +90,9 @@ li {
 
 
 #heroText {
-    padding: 50px;
+    padding-top: 50px;
     top: 10vh;
-    width: 100vw;
+    width: 99%;
     position: absolute;
     text-align: center; /* Centers the text inside */
 }

@@ -1,8 +1,9 @@
 
 .codeSection {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     place-items: center;
+    gap: 75px;
 
     height: 100px;
     background-color: var(--geon-primary);
@@ -11,15 +12,13 @@
     padding: 0px 175px !important;
 }
 
-.codeSectionText {
-    display: flex;
-    gap: 70px;
-} 
+
 
 .codeSection > h3 {
     color: white;
     font-family: Acumin-Italic;
     font-size: var(--small-font) !important;
+    justify-self: end;
 }
 
 
@@ -56,12 +55,11 @@
 
 
 .codeSection > form {
-    margin-left: 200px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     place-items: center;
+    justify-self: start;
 }
-
 
 
 
@@ -70,93 +68,105 @@
 
 /* Extra Small Devices (Phones, up to 480px) */
 @media only screen and (max-width: 480px) {
-    .codeSection {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-
-        padding: 20px 10px !important;
-    }
-
-    
     .codeSection > h3 {
-        font-size: var(--vary-small-font) !important;
-        margin-right: 20px;
+        font-size: var(--small-font) !important;
+        justify-self: center;
+        margin-top: 20px;
+    }
+    
+    .codeSection > form {
+        justify-self: center;
     }
 
-    .codeSection > form {
-        grid-column: 1 / 3;
-        margin: 0 !important;
+    .codeSection .submit-btn-redirect {
+        width: 100px;
+        font-size: var(---small-font) !important;
+        font-family: Acumin-Bold;
+    }
+
+    #redirectForm > input {
+        width: 150px;
+    }
+
+    .codeSection {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 0 !important;
+        padding: 0 !important;
     }
 }
 
   
 /* Small Devices (Portrait Tablets and Small Phones, up to 768px) */
 @media only screen and (min-width: 481px) and (max-width: 768px) {
-    .codeSection {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-
-        padding: 20px 100px !important;
-    }
-
-    
     .codeSection > h3 {
-        font-size: var(--vary-small-font) !important;
-        margin-right: 20px;
+        font-size: var(--small-font) !important;
+        justify-self: center;
+        margin-top: 20px;
+    }
+    
+    .codeSection > form {
+        justify-self: center;
     }
 
-    .codeSection > form {
-        grid-column: 1 / 3;
-        margin: 0 !important;
+    .codeSection .submit-btn-redirect {
+        width: 100px;
+        font-size: var(---small-font) !important;
+        font-family: Acumin-Bold;
+    }
+
+    #redirectForm > input {
+        width: 150px;
+    }
+
+    .codeSection {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 0 !important;
+        padding: 0 !important;
     }
 }
 
 
 /* Medium Devices (Tablets in Landscape, 768px to 1024px) */
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
-    .codeSection {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-    }
-
-    
     .codeSection > h3 {
-        font-size: var(--vary-small-font) !important;
-        margin-right: 20px;
+        font-size: var(--small-font) !important;
+        justify-self: center;
+        margin-top: 20px;
+    }
+    
+    .codeSection > form {
+        justify-self: center;
     }
 
-    .codeSection > form {
-        grid-column: 1 / 3;
-        margin: 0 !important;
+    .codeSection .submit-btn-redirect {
+        width: 100px;
+        font-size: var(---small-font) !important;
+        font-family: Acumin-Bold;
     }
+
+    #redirectForm > input {
+        width: 150px;
+    }
+
+    .codeSection {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 0 !important;
+    }
+
 }
 
 
 /* Large Devices (Desktops, 1024px to 1200px) */
 @media only screen and (min-width: 1025px) and (max-width: 1200px) {
-    .codeSection {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-    }
 
-    
-    .codeSection > h3 {
-        font-size: var(--vary-small-font) !important;
-        margin-right: 20px;
-    }
-
-    .codeSection > form {
-        grid-column: 1 / 3;
-        margin: 0 !important;
-    }
 }
 
 /* Extra Large Devices (Large Desktops, 1200px to 1600px) */
 @media only screen and (min-width: 1201px) and (max-width: 1600px) {
-    .codeSection > h3 {
-        font-size: var(--vary-small-font) !important;
-        margin-right: 20px;
-    }
+
 }
   
 
