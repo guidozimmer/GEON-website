@@ -1,9 +1,3 @@
-
-
-
-
-
-
 /* =======================
    Navbar Styles
    ======================= */
@@ -96,9 +90,11 @@ li {
 
 
 #heroText {
-    position: relative;
+    padding: 50px;
+    top: 10vh;
+    width: 100vw;
+    position: absolute;
     text-align: center; /* Centers the text inside */
-    margin-top: 20vh;
 }
 
 #heroText > h1, #heroText > h2 {
