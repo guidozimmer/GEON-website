@@ -25,6 +25,7 @@
 
 .codeSection .submit-btn-redirect {
     background-color: var(--geon-secondary);
+    font-family: Acumin-Regular;
     height: 30px;
     width: 150px;
     font-size: 20px;
@@ -54,15 +55,19 @@
 }
 
 
-.codeSection > form {
+#redirectForm {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    place-items: center;
+    grid-template-columns: 1fr 150px;
     justify-self: start;
+    gap: 1vw;
 }
 
 
-
+#redirectForm > input {
+    border-radius: 8px;
+    border: none;
+    height: 30px;
+}
 
 
 
@@ -74,14 +79,14 @@
         margin-top: 20px;
     }
     
-    .codeSection > form {
-        justify-self: center;
+    #redirectForm {
+        justify-self: center !important;
+        grid-template-columns: 1fr 100px;
     }
 
     .codeSection .submit-btn-redirect {
         width: 100px;
         font-size: var(---small-font) !important;
-        font-family: Acumin-Bold;
     }
 
     #redirectForm > input {
@@ -105,8 +110,9 @@
         margin-top: 20px;
     }
     
-    .codeSection > form {
-        justify-self: center;
+    #redirectForm {
+        justify-self: center !important;
+        grid-template-columns: 1fr 100px;
     }
 
     .codeSection .submit-btn-redirect {
@@ -136,8 +142,9 @@
         margin-top: 20px;
     }
     
-    .codeSection > form {
-        justify-self: center;
+    #redirectForm {
+        justify-self: center !important;
+        grid-template-columns: 1fr 100px;
     }
 
     .codeSection .submit-btn-redirect {

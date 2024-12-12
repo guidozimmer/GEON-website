@@ -1,26 +1,24 @@
-export function redirectToCode(event, inputId) {
+export async function redirectToCode(event, inputId) {
     event.preventDefault(); // Prevent default form submission behavior
-    const code = document.getElementById(inputId).value.trim(); // Get the value of the input field
+    const code = document.getElementById(inputId).value; // Get the value of the input field
 
-    if (code !== "") {
-        const newUrl = `https://geongroup.de/code/${encodeURIComponent(code)}`; // Construct the new URL
+    if (code.trim() !== "") {
+        const newUrl = `http://127.0.0.1:5500/main/${encodeURIComponent(code)}`; // Construct the new URL
 
-        // Check if the page exists
-        fetch(newUrl, { method: "HEAD" })
-            .then(response => {
-                if (response.ok) {
-                    // If the page exists, redirect
-                    window.location.href = newUrl;
-                } else {
-                    // If not found, show an alert
-                    alert("Code not found. Please enter a valid code.");
-                }
-            })
-            .catch(() => {
-                // Handle network errors
-                alert("An error occurred. Please try again later.");
-            });
+        try {
+            // Check if the URL exists
+            const response = await fetch(newUrl, { method: 'HEAD' });
+
+            if (response.ok) {
+                window.location.href = newUrl; // Redirect to the new URL if found
+            } else {
+                alert("The requested resource was not found."); // Handle non-200 responses
+            }
+        } catch (error) {
+            console.error("Error checking the URL:", error);
+            alert("An error occurred while checking the resource."); // Handle network or other errors
+        }
     } else {
-        alert("Please enter a valid code."); // Validation for empty input
+        alert("Please enter a valid code."); // Optional validation
     }
 }

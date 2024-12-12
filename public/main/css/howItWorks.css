@@ -29,6 +29,7 @@
     font-family: Acumin-Black;
     text-align: center;
     line-height: 30px !important;
+    margin-top: -5px;
 }
 
 .howItWorksSpan {
@@ -351,7 +352,7 @@
     }
 }
 
-@media only screen and (min-width: 1201px) and (max-width: 1425px) {
+@media only screen and (min-width: 1201px) and (max-width: 1269px) {
     .howItWorksSpan.StepsText6 {
         margin-top: 70px !important;
     }
@@ -381,3 +382,9 @@
     }
 }
 
+
+@media only screen and (max-width: 398px) {
+    .howItWorksSpan.StepsText6 {
+        margin-top: 70px !important;
+    }
+}
