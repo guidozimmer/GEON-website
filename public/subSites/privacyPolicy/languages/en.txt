@@ -1,0 +1,5 @@
+aboutUsNav = "About Us"
+ourOfferNav = "Our Offer"
+howItWorksNav = "How It Works"
+contactNav = "Contact"
+languageNav = "English"

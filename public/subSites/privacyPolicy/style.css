@@ -1,0 +1,128 @@
+/* =======================
+   Navbar Styles
+   ======================= */
+   
+   #navbar {
+    background-color: var(--geon-primary) !important; /* Navbar background color */
+}
+
+ul {
+    margin-right: 30px;
+}
+
+li {
+    margin: auto 20px;
+}
+
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+    color: white !important;
+    font-family: Acumin-Regular;
+    font-size: var(--small-font) !important;
+}
+
+
+#offerDropdown:focus {
+    outline: none; /* Remove the focus outline */
+    box-shadow: none; /* Remove any box-shadow used to indicate focus */
+}
+
+
+.navbar-toggler:focus {
+    outline: none; /* Removes the focus outline */
+    box-shadow: none; /* Removes any box-shadow that might be used for focus indication */
+}
+
+.logo {
+    font-size: 30px !important;
+}
+
+
+
+/* On hover, remove background change and set a different text color */
+.dropdown-item:hover {
+    background-color: transparent !important; /* No background change on hover */
+    color: var(--geon-secondary) !important; /* Change text color on hover (e.g., Bootstrap yellow) */
+}
+
+.navbar-nav .nav-link.active:hover {
+    background-color: transparent !important; /* No background change on hover */
+    color: var(--geon-secondary) !important; /* Change text color on hover (e.g., Bootstrap yellow) */
+}
+
+.dropdown-menu {
+    background-color: var(--geon-primary) !important;
+    border: solid 1px black;
+}
+
+.dropdown-item {
+    background-color: var(--geon-primary) !important;
+    color: white !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#privacyPolicy {
+    margin-top: 150px;
+    padding: 0px 50px;
+}
+
+.policy {
+    margin-bottom: 300px !important;
+}
+
+h1 {
+    font-family: Acumin-Bold !important;
+    font-size: var(--large-font) !important;
+    justify-self: center;
+    margin-bottom: 50px !important;
+
+    display: flex;
+    width: 100%;
+    align-items: center;
+
+}
+
+h1:before,
+h1:after {
+    content: '';
+    border-top: 3px solid;
+    margin: 0 20px 0 0;
+    flex: 1 0 20px !important;
+    border-color: var(--geon-primary);
+}
+
+h1:after {
+    margin: 0 0 0 20px;
+}
+
+
+
+
+h2 {
+    font-family: Acumin-Bold !important;
+    font-size: var(--big-font);
+    margin-top: 50px !important;
+}
+
+h3 {
+    font-family: Acumin-Bold !important;
+    font-size: var(--medium-font) !important;
+    margin-top: 50px !important;
+}
+
+h4 {
+    font-family: Acumin-Light !important;
+}
