@@ -3,7 +3,7 @@ export async function redirectToCode(event, inputId) {
     const code = document.getElementById(inputId).value; // Get the value of the input field
 
     if (code.trim() !== "") {
-        const newUrl = `geongroup.de/code/${encodeURIComponent(code)}`; // Construct the new URL
+        const newUrl = `https://geongroup.de/code/${encodeURIComponent(code)}`; // Use absolute URL
 
         try {
             // Check if the URL exists
