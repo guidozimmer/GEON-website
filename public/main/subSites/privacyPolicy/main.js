@@ -1,4 +1,4 @@
-import { setupDropdown } from "../../main/js/nav.js"
+import { setupDropdown } from "../../js/nav.js"
 import { createLanguageSwitcher } from './websiteText.js';
 
 
