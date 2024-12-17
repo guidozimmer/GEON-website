@@ -90,8 +90,8 @@ export function createLanguageSwitcher() {
         { id: 'conatctPt3', variable: 'emailTitle' },
         { id: 'conatctPt4', variable: 'phoneTitle' },
         { id: 'conatctPt5', variable: 'messageTitle' },
-        { id: 'w-c-s-bgc_p-1-dm-id-2', variable: 'conatctPt6' },
-        { id: 'conatctPt6', variable: 'conatctPt6' },
+        { id: 'conatctPt6', variable: 'contactPt6' },
+        { id: 'w-c-s-fc_p-1-dm-id', variable: 'contactPt7' },
 
         // Cookie Dialog
         { id: 'cm__title', variable: 'cookieTitle' },
