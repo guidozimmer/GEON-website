@@ -201,7 +201,7 @@
 
 
 
-    <div id="slider">
+    <div>
         <div class="slide">
             <img src="./img/banner_pic_01.jpeg" alt="Slide">
             <div class="text">
@@ -214,45 +214,52 @@
     
 
     <div class="ourOffer infoContainer" id="ourOffer">
-        <section class="ourOfferHeading">
-            <h1 class="headingText" id="ourOfferPt1"></h1>
-            <h1 id="dot"></h1>
-        </section>
-
-        <h3 class="infoText" id="ourOfferPt2"></h1>
-
-
-        <div class="flip-container">
-            <div class="flip-card">
-                <div class="front">
-                    <h2 id="ourOfferPt3"></h2>
-                    <h3 id="ourOfferPt4"></h3>
+        <div id="squareStage">
+            <div class="square-container">
+                <div class="square" data-id="1">
+                    <img src="" alt="img">
+                    <span>Square 1</span>
                 </div>
-                <div class="back"><a href="https://b3engineering.com/" target="_blank" rel="noopener noreferrer">Open in New Tab</a>
+                <div class="square" data-id="2">
+                    <img src="" alt="img">
+                    <span>Square 2</span>
+                </div>
+                <div class="square" data-id="3">
+                    <img src="" alt="img">
+                    <span>Square 3</span>
+                </div>
+                <div class="square" data-id="4">
+                    <img src="" alt="img">
+                    <span>Square 4</span>
+                </div>
+                <div class="square" data-id="5">
+                    <img src="" alt="img">
+                    <span>Square 5</span>
+                </div>
+                <div class="square" data-id="6">
+                    <img src="" alt="img">
+                    <span>Square 6</span>
                 </div>
             </div>
-        </div>
-
-        <div class="flip-container">
-            <div class="flip-card">
-                <div class="front">
-                    <h2 id="ourOfferPt5"></h2>
-                    <h3 id="ourOfferPt6"></h3>
-                </div>
-                <div class="back">Back Text</div>
+            <div class="button-container">
+                <button id="nextButton" disabled>Next</button>
             </div>
         </div>
-
-        <div class="flip-container">
-            <div class="flip-card">
-                <div class="front">
-                    <h2 id="ourOfferPt7"></h2>
-                    <h3 id="ourOfferPt8"></h3>
+    
+        <div id="slideContainer">
+            <div class="slider-container">
+                <div id="currentValue">500</div>
+                <input type="range" id="slider" min="1" max="1000" value="500">
+                <div class="slider-labels">
+                    <span>1</span>
+                    <span>1000</span>
                 </div>
-                <div class="back">Back Text</div>
+            </div>
+            <div class="button-container">
+                <button id="backButton">Back</button>
+                <button id="slideNextButton" disabled>Next</button>
             </div>
         </div>
-
 
     </div>
 
@@ -396,6 +403,7 @@
     <!--Bootstrap-->
     <script src="./js/main.js" type="module"></script>
     <script src="./js/mail.js"></script>
+    <script src="./js/ourOffer.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 

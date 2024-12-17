@@ -1,51 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Square Selection Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .square-container {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .square {
+            width: 100px;
+            height: 100px;
+            background-color: #ddd;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border: 2px solid #999;
+        }
+        .square img {
+            max-width: 60px;
+            max-height: 60px;
+            margin-bottom: 10px;
+        }
+        .square.selected {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .button-container {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        #nextButton, #backButton, #slideNextButton {
+            padding: 10px 20px;
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        #nextButton:disabled, #slideNextButton:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        #slideContainer {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+        }
+        .slider-container {
+            width: 300px;
+            position: relative;
+            margin-bottom: 20px;
+        }
+        #slider {
+            width: 100%;
+            margin: 20px 0;
+        }
+        .slider-labels {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 5px;
+        }
+        #currentValue {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 3px;
+            pointer-events: none;
+            white-space: nowrap;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
-
-<div class="container">
-  <h2>Carousel Example</h2>  
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-      <div class="item active">
-        <img src="la.jpg" alt="Los Angeles" style="width:100%;">
-      </div>
-
-      <div class="item">
-        <img src="chicago.jpg" alt="Chicago" style="width:100%;">
-      </div>
-    
-      <div class="item">
-        <img src="ny.jpg" alt="New york" style="width:100%;">
-      </div>
+    <div id="squareStage">
+        <div class="square-container">
+            <div class="square" data-id="1">
+                <img src="/api/placeholder/80/80" alt="Square 1">
+                <span>Square 1</span>
+            </div>
+            <div class="square" data-id="2">
+                <img src="/api/placeholder/80/80" alt="Square 2">
+                <span>Square 2</span>
+            </div>
+            <div class="square" data-id="3">
+                <img src="/api/placeholder/80/80" alt="Square 3">
+                <span>Square 3</span>
+            </div>
+            <div class="square" data-id="4">
+                <img src="/api/placeholder/80/80" alt="Square 4">
+                <span>Square 4</span>
+            </div>
+            <div class="square" data-id="5">
+                <img src="/api/placeholder/80/80" alt="Square 5">
+                <span>Square 5</span>
+            </div>
+            <div class="square" data-id="6">
+                <img src="/api/placeholder/80/80" alt="Square 6">
+                <span>Square 6</span>
+            </div>
+        </div>
+        <div class="button-container">
+            <button id="nextButton" disabled>Next</button>
+        </div>
     </div>
 
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-</div>
+    <div id="slideContainer">
+        <div class="slider-container">
+            <div id="currentValue">500</div>
+            <input type="range" id="slider" min="1" max="1000" value="500">
+            <div class="slider-labels">
+                <span>1</span>
+                <span>1000</span>
+            </div>
+        </div>
+        <div class="button-container">
+            <button id="backButton">Back</button>
+            <button id="slideNextButton" disabled>Next</button>
+        </div>
+    </div>
 
+    <script>
+        const squares = document.querySelectorAll('.square');
+        const nextButton = document.getElementById('nextButton');
+        const backButton = document.getElementById('backButton');
+        const squareStage = document.getElementById('squareStage');
+        const slideContainer = document.getElementById('slideContainer');
+        const slider = document.getElementById('slider');
+        const currentValueDisplay = document.getElementById('currentValue');
+        const slideNextButton = document.getElementById('slideNextButton');
+        let selectedSquare = null;
+
+        function updateSliderLabelPosition() {
+            const percent = (slider.value - slider.min) / (slider.max - slider.min);
+            const sliderWidth = slider.offsetWidth;
+            const thumbOffset = percent * sliderWidth;
+            currentValueDisplay.style.left = `${thumbOffset}px`;
+        }
+
+        squares.forEach(square => {
+            square.addEventListener('click', () => {
+                if (selectedSquare) {
+                    selectedSquare.classList.remove('selected');
+                }
+                square.classList.add('selected');
+                selectedSquare = square;
+                nextButton.disabled = false;
+            });
+        });
+
+        nextButton.addEventListener('click', () => {
+            squareStage.style.display = 'none';
+            slideContainer.style.display = 'flex';
+            updateSliderLabelPosition();
+        });
+
+        backButton.addEventListener('click', () => {
+            slideContainer.style.display = 'none';
+            squareStage.style.display = 'block';
+        });
+
+        slider.addEventListener('input', () => {
+            updateSliderLabelPosition();
+            currentValueDisplay.textContent = slider.value;
+            slideNextButton.disabled = false;
+        });
+
+        slideNextButton.addEventListener('click', () => {
+            alert(`You selected Square ${selectedSquare.dataset.id} and chose value ${slider.value}`);
+        });
+
+        window.addEventListener('resize', () => {
+            if (slideContainer.style.display === 'flex') {
+                updateSliderLabelPosition();
+            }
+        });
+    </script>
 </body>
 </html>
