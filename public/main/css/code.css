@@ -25,10 +25,10 @@
 
 .codeSection .submit-btn-redirect {
     background-color: var(--geon-secondary);
-    font-family: Acumin-Regular;
+    font-family: Acumin-Bold;
     height: 30px;
-    width: 150px;
-    font-size: 20px;
+    width: 100px;
+    font-size: 15px;
     font-weight: 700;
     color: white;
     border-top-width: 0px;
@@ -179,6 +179,8 @@
 
 /* Ultra Large Devices (Very Large Screens, 1600px and up) */
 @media only screen and (min-width: 1601px) {
-
+    #heroText {
+        top: 0 !important;
+    }
 }
   

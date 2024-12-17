@@ -48,18 +48,19 @@
     --vision-basic-color: var(--basic-text-color);
 
     /* Our Offer Section */
-    --ourOffer-bg: var(--light-bg);
+    --ourOffer-bg: var(--dark-bg);
     --ourOffer-basic-color: var(--basic-text-color);
     --ourOffer-heading: var(--heading-text-color);
     --ourOfferSquare-basic-color: var(--basic-text-color);
     --ourOfferSquare-heading-color: var(--basic-text-color);
 
     /* How It Works */
-    --howItWorks-bg: var(--dark-bg);
+    --howItWorks-bg: var(--light-bg);
     --howItWorks-basic-color: var(--basic-text-color);
     --howItWorks-accent-color: var(--geon-primary);
 
     /* Contact */
+    --contact-bg: var(--dark-bg);
     --contact-heading-color: var(--basic-text-color);
     --contact-basic-color: var(--basic-text-color);
     

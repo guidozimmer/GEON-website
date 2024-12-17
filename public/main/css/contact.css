@@ -1,62 +1,9 @@
 .contact {
-    margin: auto 100px;
-    margin-top: 20vh;
-    height: auto;
+    background-color: var(--contact-bg);
+    padding: 100px;
 }
 
 
-
-.contactData > h3 {
-    font-family: Acumin-Light;
-    margin-top: 50px;
-    color: var(--contact-basic-color);
-}
-
-.contactHeading {
-    color: var(--contact-heading-color);
-}
-
-.contactForm {
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-}
-
-.contactForm > a {
-    color: black;
-    text-decoration: none;
-    font-size: 28px;
-    width: 300px;
-    color: var(--contact-basic-color);
-    
-}
-
-#homeIcon {
-    transform: scale(0.034);
-}
-
-#phoneIcon {
-    transform: scale(0.24);
-}
-
-#emailIcon {
-    transform: scale(0.05);
-}
-
-
-.bg-primary {
-    background: #1b1d1f !important;
-}
-
-.btn.btn-primary {
-    background: #1b1d1f !important;
-    border-color: #1b1d1f !important;
-    color: #fff;
-}
-
-#spacer {
-    margin-bottom: 50px;
-}
 
 
 .g-recaptcha {
@@ -370,7 +317,6 @@ body {
   padding-right: 40px;
   padding-bottom: 50px;
   padding-left: 40px;
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 20px 7px;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
@@ -853,7 +799,6 @@ body {
   padding: 40px;
   text-align: center;
   max-width: 400px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   transform: scale(0.7);
   opacity: 0;
   transition: all 0.3s ease;
