@@ -71,7 +71,7 @@ export function initializeCookieConsent(language = 'en') {
                                 description: `
                                     <span id="cookieUsageDesc">
                                         For more details, refer to our 
-                                        <a href="#" class="cc__link" id="privacyPolicyLink">privacy policy</a>.
+                                        <a href="https://geongroup.de/dev/public/main/subSites/privacyPolicy/index.html" class="cc__link" id="privacyPolicyLink">privacy policy</a>.
                                     </span>
                                 `
                             },
@@ -120,7 +120,7 @@ export function initializeCookieConsent(language = 'en') {
                         acceptAllBtn: '<span id="cookieAcceptAll">Alle akzeptieren</span>',
                         acceptNecessaryBtn: '<span id="cookieRejectAll">Alle ablehnen</span>',
                         footer: `
-                            <a id="cookiePrivacyLink" href="#link">Datenschutzerklärung</a>
+                            <a id="cookiePrivacyLink" href="https://geongroup.de/dev/public/main/subSites/privacyPolicy/index.html">Datenschutzerklärung</a>
                             <a id="cookieImpressumLink" href="#test">Impressum</a>
                         `
                     },
@@ -136,7 +136,7 @@ export function initializeCookieConsent(language = 'en') {
                                 description: `
                                     <span id="cookieUsageDesc">
                                         Weitere Informationen finden Sie in unserer 
-                                        <a href="#" class="cc__link" id="privacyPolicyLink">Datenschutzerklärung</a>.
+                                        <a href="https://geongroup.de/dev/public/main/subSites/privacyPolicy/index.html" class="cc__link" id="privacyPolicyLink">Datenschutzerklärung</a>.
                                     </span>
                                 `
                             },
