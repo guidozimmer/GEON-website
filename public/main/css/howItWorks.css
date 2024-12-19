@@ -112,7 +112,10 @@
 .heading {
     color: var(--howItWorks-accent-color);
     display: flex;
-    justify-content: center; /* Center the "What We Do" title */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    flex-direction: column; /* Ensures content stacks vertically */
+    margin-bottom: 200px;
 }
 
 

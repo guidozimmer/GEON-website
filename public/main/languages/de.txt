@@ -76,3 +76,46 @@ cookieAcceptAll = "Alle akzeptieren"
 cookieRejectAll = "Alle ablehnen"
 cookiePrivacy = "Datenschutzrichtlinie"
 cookieImpressum = "Impressum"
+
+
+formQuestion1 = "1. Um welche Art Fläche handelt es sich"
+formOption1_1 = "Ackerland"
+formOption1_2 = "Grünland"
+formOption1_3 = "Brachland"
+formOption1_4 = "Sonstiges"
+
+formQuestion2 = "2. Liegt die Fläche oder eine Teilfläche entlag einer Autobahn oder Bahnstrecke (bis 500 m entfernt)?"
+formOption2_1 = "Ja"
+formOption2_2 = "Nein"
+formQuestion2a = "2a. Welcher Anteil liegt innerhalb einer Korridors von 500 m rechts und links von der Autobahn oder Bahnstrecke?"
+
+formQuestion3 = "3. Wie groß ist die Fläche?"
+
+formQuestion4 = "4. Ist die Fläche zusammenhängend?"
+formOption4_1 = "Ja"
+formOption4_2 = "Nein"
+formQuestion4a = "4a. Um wie viele Teilflächen handelt es sich?"
+formOption4a_1 = "1"
+formOption4a_2 = "2"
+formOption4a_3 = "3"
+formOption4a_4 = "3+"
+
+formQuestion5 = "5. Ist die Fläche verpachtet?"
+formOption5_1 = "Ja"
+formOption5_2 = "Nein"
+formQuestion5a = "5a. Bis wann ist die Fläche verpachtet?"
+
+formQuestion6 = "6. Wo liegt die Fläche?"
+formLabel6_1 = "Bundesland"
+formLabel6_2 = "Kreis"
+
+formButtonBack = "Zurück"
+formButtonNext = "Weiter"
+formButtonSubmit = "Absenden"
+
+mainSquare1 = "Fläche anbieten"
+mainSquare1Desc = "Klicken Sie hier, um Ihre Fläche anzubieten"
+mainSquare2 = "Option 2"
+mainSquare2Desc = "Beschreibung für Option 2"
+mainSquare3 = "Option 3"
+mainSquare3Desc = "Beschreibung für Option 3"

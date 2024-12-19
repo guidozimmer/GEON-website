@@ -102,6 +102,50 @@ export function createLanguageSwitcher() {
         { id: 'cookiePrivacyLink', variable: 'cookiePrivacy' },
         { id: 'cookieImpressumLink', variable: 'cookieImpressum' },
 
+
+        // Main squares
+        { id: 'mainSquare1Title', variable: 'mainSquare1' },
+        { id: 'mainSquare1Desc', variable: 'mainSquare1Desc' },
+        { id: 'mainSquare2Title', variable: 'mainSquare2' },
+        { id: 'mainSquare2Desc', variable: 'mainSquare2Desc' },
+        { id: 'mainSquare3Title', variable: 'mainSquare3' },
+        { id: 'mainSquare3Desc', variable: 'mainSquare3Desc' },
+
+        // Form questions
+        { id: 'formQuestion1', variable: 'formQuestion1' },
+        { id: 'formOption1_1', variable: 'formOption1_1' },
+        { id: 'formOption1_2', variable: 'formOption1_2' },
+        { id: 'formOption1_3', variable: 'formOption1_3' },
+        { id: 'formOption1_4', variable: 'formOption1_4' },
+
+        { id: 'formQuestion2', variable: 'formQuestion2' },
+        { id: 'formOption2_1', variable: 'formOption2_1' },
+        { id: 'formOption2_2', variable: 'formOption2_2' },
+        { id: 'formQuestion2a', variable: 'formQuestion2a' },
+
+        { id: 'formQuestion3', variable: 'formQuestion3' },
+
+        { id: 'formQuestion4', variable: 'formQuestion4' },
+        { id: 'formOption4_1', variable: 'formOption4_1' },
+        { id: 'formOption4_2', variable: 'formOption4_2' },
+        { id: 'formQuestion4a', variable: 'formQuestion4a' },
+        { id: 'formOption4a_1', variable: 'formOption4a_1' },
+        { id: 'formOption4a_2', variable: 'formOption4a_2' },
+        { id: 'formOption4a_3', variable: 'formOption4a_3' },
+        { id: 'formOption4a_4', variable: 'formOption4a_4' },
+
+        { id: 'formQuestion5', variable: 'formQuestion5' },
+        { id: 'formOption5_1', variable: 'formOption5_1' },
+        { id: 'formOption5_2', variable: 'formOption5_2' },
+        { id: 'formQuestion5a', variable: 'formQuestion5a' },
+
+        { id: 'formQuestion6', variable: 'formQuestion6' },
+        { id: 'formLabel6_1', variable: 'formLabel6_1' },
+        { id: 'formLabel6_2', variable: 'formLabel6_2' },
+
+        { id: 'prevButton', variable: 'formButtonBack' },
+        { id: 'nextButton', variable: 'formButtonNext' }
+
       ];
 
       const placeholdersToUpdate = [

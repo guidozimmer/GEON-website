@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             const formData = new FormData(form);
 
-            fetch('send_email.php', {
+            fetch('contactMail.php', {
                 method: 'POST',
                 body: formData,
             })

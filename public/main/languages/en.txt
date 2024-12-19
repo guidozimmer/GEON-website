@@ -76,3 +76,46 @@ cookieAcceptAll = "Accept all"
 cookieRejectAll = "Reject all"
 cookiePrivacy = "Privacy Policy"
 cookieImpressum = "Impressum"
+
+
+formQuestion1 = "1. What type of area is it?"
+formOption1_1 = "Arable land"
+formOption1_2 = "Grassland"
+formOption1_3 = "Fallow land"
+formOption1_4 = "Other"
+
+formQuestion2 = "2. Is the area or part of the area located along a highway or railway line (within 500 m)?"
+formOption2_1 = "Yes"
+formOption2_2 = "No"
+formQuestion2a = "2a. What percentage lies within a 500 m corridor on both sides of the highway or railway line?"
+
+formQuestion3 = "3. How large is the area?"
+
+formQuestion4 = "4. Is the area contiguous?"
+formOption4_1 = "Yes"
+formOption4_2 = "No"
+formQuestion4a = "4a. How many sub-areas are there?"
+formOption4a_1 = "1"
+formOption4a_2 = "2"
+formOption4a_3 = "3"
+formOption4a_4 = "3+"
+
+formQuestion5 = "5. Is the area leased?"
+formOption5_1 = "Yes"
+formOption5_2 = "No"
+formQuestion5a = "5a. Until when is the area leased?"
+
+formQuestion6 = "6. Where is the area located?"
+formLabel6_1 = "State"
+formLabel6_2 = "District"
+
+formButtonBack = "Back"
+formButtonNext = "Next"
+formButtonSubmit = "Submit"
+
+mainSquare1 = "Offer Area"
+mainSquare1Desc = "Click here to offer your area"
+mainSquare2 = "Option 2"
+mainSquare2Desc = "Description for Option 2"
+mainSquare3 = "Option 3"
+mainSquare3Desc = "Description for Option 3"
