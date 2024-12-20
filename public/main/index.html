@@ -214,164 +214,185 @@
     
 
 
-    <div class="ourOffer infoContainer" id="ourOffer">
-
-        <div class="header">
-            <h1 class="headingText">Our Offer</h1>
-            <p class="intro-text">
-                Die Planung und Realisierung eines Photovoltaik-Projekts erfordert eine sorgfältige und strukturierte Vorgehensweise. Von der Auswahl des geeigneten Standorts über die Einholung aller notwendigen Genehmigungen bis hin zur finalen Inbetriebnahme – jeder Schritt ist entscheidend für den Erfolg des Projekts. Im Folgenden erläutern wir die einzelnen Phasen unseres PV-Projektplanungsprozesses und zeigen, wie wir durch diesen Ansatz Projekte erfolgreich umsetzen, um einen wesentlichen Beitrag zur Klimaneutralität zu leisten.
-            </p>
+    <div class="ourOffer">
+        <!-- Main form container -->
+        <div class="main-squares-container">
+            <div class="main-square">
+                <div class="square-content">
+                    <h3 id="mainSquare1Title">Fläche anbieten</h3>
+                    <p id="mainSquare1Desc">Klicken Sie hier, um Ihre Fläche anzubieten</p>
+                </div>
+            </div>
         </div>
     
-
-        <div class="main-squares-container">
-                <div class="main-square">
-                    <div class="square-content">
-                        <h3 id="mainSquare1Title"></h3>
-                        <p id="mainSquare1Desc"></p>
-                    </div>
-                </div>
-                <div class="main-square">
-                    <div class="square-content">
-                        <h3 id="mainSquare2Title"></h3>
-                        <p id="mainSquare2Desc"></p>
-                    </div>
-                </div>
-                <div class="main-square">
-                    <div class="square-content">
-                        <h3 id="mainSquare3Title"></h3>
-                        <p id="mainSquare3Desc"></p>
-                    </div>
-                </div>
-        </div>
-
         <div class="form-section">
             <!-- Question 1 -->
             <div id="question1" class="question-container">
-                <div class="question-title" id="formQuestion1"></div>
+                <div class="question-title">1. Sind sie Eigentümer der Flächen</div>
                 <div class="options-container">
-                    <div class="option-card" data-value="ackerland">
-                        <span id="formOption1_1"></span>
-                    </div>
-                    <div class="option-card" data-value="grunland">
-                        <span id="formOption1_2"></span>
-                    </div>
-                    <div class="option-card" data-value="brachland">
-                        <span id="formOption1_3"></span>
-                    </div>
-                    <div class="option-card" data-value="sonstiges">
-                        <span id="formOption1_4"></span>
-                    </div>
+                    <div class="option-card" data-value="ja">Ja</div>
+                    <div class="option-card" data-value="nein">Nein</div>
                 </div>
             </div>
-
+    
             <!-- Question 2 -->
             <div id="question2" class="question-container">
-                <div class="question-title" id="formQuestion2"></div>
+                <div class="question-title">2. Um welche Art Fläche handelt es sich</div>
                 <div class="options-container">
-                    <div class="option-card" data-value="ja" data-shows="question2a">
-                        <span id="formOption2_1"></span>
-                    </div>
-                    <div class="option-card" data-value="nein">
-                        <span id="formOption2_2"></span>
-                    </div>
+                    <div class="option-card" data-value="ackerland">Ackerland</div>
+                    <div class="option-card" data-value="brachland">Brachland</div>
+                    <div class="option-card" data-value="grunland">Grünland</div>
+                    <div class="option-card" data-value="sonstiges">Sonstiges</div>
                 </div>
-                
-                <div id="question2a" class="conditional-question">
-                    <div class="question-title" id="formQuestion2a"></div>
+            </div>
+    
+            <!-- Question 3 -->
+            <div id="question3" class="question-container">
+                <div class="question-title">3. Liegt die Fläche oder eine Teilfläche entlag einer Autobahn oder Bahnstrecke (bis 500 m entfernt)?</div>
+                <div class="options-container">
+                    <div class="option-card" data-value="ja" data-shows="question3a">Ja</div>
+                    <div class="option-card" data-value="nein">Nein</div>
+                </div>
+    
+                <div id="question3a" class="conditional-question">
+                    <div class="question-title">3a. Welcher Anteil liegt innerhalb eines Korridors von 500m parallel zur Autobahn oder Bahnstrecke?</div>
                     <div class="slider-container">
                         <div class="slider-wrapper">
                             <input type="range" class="slider" min="1" max="100" value="50" data-percentage="true">
-                            <div class="slider-value"></div>
+                            <div class="slider-value">50%</div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Question 3 -->
-            <div id="question3" class="question-container">
-                <div class="question-title" id="formQuestion3"></div>
+    
+            <!-- Question 4 -->
+            <div id="question4" class="question-container">
+                <div class="question-title">4. Wie groß ist die Fläche?</div>
                 <div class="slider-container">
                     <div class="slider-wrapper">
                         <input type="range" class="slider" min="1" max="300" value="150">
-                        <div class="slider-value"></div>
+                        <div class="slider-value">150 ha</div>
                     </div>
                 </div>
             </div>
-
-            <!-- Question 4 -->
-            <div id="question4" class="question-container">
-                <div class="question-title" id="formQuestion4"></div>
-                <div class="options-container">
-                    <div class="option-card" data-value="ja">
-                        <span id="formOption4_1"></span>
-                    </div>
-                    <div class="option-card" data-value="nein" data-shows="question4a">
-                        <span id="formOption4_2"></span>
-                    </div>
-                </div>
-
-                <div id="question4a" class="conditional-question">
-                    <div class="question-title" id="formQuestion4a"></div>
-                    <div class="options-container">
-                        <div class="option-card" data-value="1">
-                            <span id="formOption4a_1"></span>
-                        </div>
-                        <div class="option-card" data-value="2">
-                            <span id="formOption4a_2"></span>
-                        </div>
-                        <div class="option-card" data-value="3">
-                            <span id="formOption4a_3"></span>
-                        </div>
-                        <div class="option-card" data-value="3plus">
-                            <span id="formOption4a_4"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    
 
             <!-- Question 5 -->
             <div id="question5" class="question-container">
-                <div class="question-title" id="formQuestion5"></div>
+                <div class="question-title">5. Ist die Fläche zusammenhängend?</div>
                 <div class="options-container">
-                    <div class="option-card" data-value="ja" data-shows="question5a">
-                        <span id="formOption5_1"></span>
-                    </div>
-                    <div class="option-card" data-value="nein">
-                        <span id="formOption5_2"></span>
-                    </div>
+                    <div class="option-card" data-value="ja" data-shows="question5a">Ja</div>
+                    <div class="option-card" data-value="nein">Nein</div>
                 </div>
 
                 <div id="question5a" class="conditional-question">
-                    <div class="question-title" id="formQuestion5a"></div>
+                    <div class="question-title">5a. Um wie viele Teilflächen handelt es sich?</div>
+                    <div class="options-container">
+                        <div class="option-card" data-value="1">1</div>
+                        <div class="option-card" data-value="2">2</div>
+                        <div class="option-card" data-value="3">3</div>
+                        <div class="option-card" data-value="3plus">3+</div>
+                    </div>
+                </div>
+            </div>
+
+
+    
+            <!-- Question 6 -->
+            <div id="question6" class="question-container">
+                <div class="question-title">6. Ist die Fläche verpachtet?</div>
+                <div class="options-container">
+                    <div class="option-card" data-value="ja" data-shows="question6a">Ja</div>
+                    <div class="option-card" data-value="nein">Nein</div>
+                </div>
+    
+                <div id="question6a" class="conditional-question">
+                    <div class="question-title">6a. Bis wann ist die Fläche verpachtet?</div>
                     <div class="slider-container">
                         <div class="slider-wrapper">
                             <input type="range" class="slider" min="2023" max="2040" value="2023" data-year="true">
-                            <div class="slider-value"></div>
+                            <div class="slider-value">2023</div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Question 6 -->
-            <div id="question6" class="question-container">
-                <div class="question-title" id="formQuestion6"></div>
+    
+            <!-- Question 7 - Repeatable Location Fields -->
+            <div id="question7" class="question-container">
+                <div class="question-title">7. Wo liegt die Fläche?</div>
+                <div id="locationFieldsContainer">
+                    <div class="location-entry">
+                        <div class="input-group">
+                            <div class="input-field">
+                                <label for="bundesland">Bundesland</label>
+                                <input type="text" name="bundesland[]" required>
+                            </div>
+                            <div class="input-field">
+                                <label for="landkreis">Landkreis</label>
+                                <input type="text" name="landkreis[]" required>
+                            </div>
+                            <div class="input-field">
+                                <label for="gemarkung">Gemarkung</label>
+                                <input type="text" name="gemarkung[]" required>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-field">
+                                <label for="flur">Flur</label>
+                                <input type="text" name="flur[]" required>
+                            </div>
+                            <div class="input-field">
+                                <label for="flurstueck">Flurstück</label>
+                                <input type="text" name="flurstueck[]" required>
+                            </div>
+                            <div class="input-field">
+                                <label for="flaeche">Fläche in ha</label>
+                                <input type="number" name="flaeche[]" required>
+                            </div>
+                            <div class="input-field">
+                                <label for="amt">Amt</label>
+                                <input type="text" name="amt[]" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" id="addLocationButton" class="add-location-btn">Weitere Fläche hinzufügen</button>
+            </div>
+    
+            <!-- Question 8 -->
+            <div id="question8" class="question-container">
+                <div class="question-title">8. Kontakt aufnehmen</div>
                 <div class="input-group">
                     <div class="input-field">
-                        <label for="bundesland" id="formLabel6_1"></label>
-                        <input type="text" id="bundesland" placeholder="Bundesland eingeben">
+                        <label for="name">Name*</label>
+                        <input type="text" id="name" required>
                     </div>
                     <div class="input-field">
-                        <label for="kreis" id="formLabel6_2"></label>
-                        <input type="text" id="kreis" placeholder="Kreis eingeben">
+                        <label for="email">Email*</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="phone">Telefonnummer</label>
+                        <input type="tel" id="phone">
                     </div>
                 </div>
             </div>
-
+    
             <!-- Navigation Buttons -->
             <div class="navigation-buttons">
-                <button id="prevButton" class="nav-button"></button>
-                <button id="nextButton" class="nav-button"></button>
+                <button id="prevButton" class="nav-button">Zurück</button>
+                <button id="nextButton" class="nav-button">Weiter</button>
+            </div>
+        </div>
+    
+        <!-- Success Popup -->
+        <div id="popup" style="display: none;">
+            <div class="popup-overlay">
+                <div class="popup-content">
+                    <h2 id="popupPt1">Nachricht erfolgreich gesendet!</h2>
+                    <p id="popupPt2">Vielen Dank für Ihre Anfrage. Wir melden uns bald bei Ihnen.</p>
+                    <button class="popup-close-btn" id="popupPt3">Schließen</button>
+                </div>
             </div>
         </div>
     </div>

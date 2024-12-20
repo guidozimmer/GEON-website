@@ -1,11 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
     let currentQuestion = 1;
-    const totalQuestions = 6;
+    const totalQuestions = 8;
+    let locationCount = 1;
     
-    // Form visibility state
     const mainSquare = document.querySelector('.main-square');
     const formSection = document.querySelector('.form-section');
     formSection.style.display = 'none';
+
+    // Add Location Button Handler
+    document.getElementById('addLocationButton').addEventListener('click', addLocationFields);
 
     mainSquare.addEventListener('click', () => {
         mainSquare.classList.toggle('active');
@@ -15,17 +18,94 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    function addLocationFields() {
+        locationCount++;
+        const container = document.getElementById('locationFieldsContainer');
+        const newLocation = document.createElement('div');
+        newLocation.className = 'location-entry';
+        
+        newLocation.innerHTML = `
+            <button type="button" class="remove-location" onclick="this.parentElement.remove();">✕</button>
+            <div class="input-group">
+                <div class="input-field">
+                    <label for="bundesland${locationCount}">Bundesland</label>
+                    <input type="text" name="bundesland[]" required>
+                </div>
+                <div class="input-field">
+                    <label for="landkreis${locationCount}">Landkreis</label>
+                    <input type="text" name="landkreis[]" required>
+                </div>
+                <div class="input-field">
+                    <label for="gemarkung${locationCount}">Gemarkung</label>
+                    <input type="text" name="gemarkung[]" required>
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="input-field">
+                    <label for="flur${locationCount}">Flur</label>
+                    <input type="text" name="flur[]" required>
+                </div>
+                <div class="input-field">
+                    <label for="flurstueck${locationCount}">Flurstück</label>
+                    <input type="text" name="flurstueck[]" required>
+                </div>
+                <div class="input-field">
+                    <label for="flaeche${locationCount}">Fläche in ha</label>
+                    <input type="number" name="flaeche[]" required>
+                </div>
+                <div class="input-field">
+                    <label for="amt${locationCount}">Amt</label>
+                    <input type="text" name="amt[]" required>
+                </div>
+            </div>
+        `;
+        
+        container.appendChild(newLocation);
+        updateNavigationButtons();
+    }
+
+    function hideConditionalQuestion(conditionalId) {
+        const conditional = document.querySelector(`#${conditionalId}`);
+        if (conditional) {
+            conditional.classList.remove('visible');
+        }
+    }
+
+    function showConditionalQuestion(conditionalId) {
+        const conditional = document.querySelector(`#${conditionalId}`);
+        if (conditional) {
+            conditional.classList.add('visible');
+            const slider = conditional.querySelector('.slider');
+            const valueDisplay = conditional.querySelector('.slider-value');
+            if (slider && valueDisplay) {
+                setTimeout(() => {
+                    updateSliderValue(slider, valueDisplay);
+                }, 0);
+            }
+        }
+    }
+
     function resetForm() {
         currentQuestion = 1;
+        locationCount = 1;
+        
+        // Reset all form elements
         document.querySelectorAll('.option-card').forEach(card => {
             card.classList.remove('selected');
         });
         document.querySelectorAll('.conditional-question').forEach(q => {
             q.classList.remove('visible');
         });
-        document.querySelectorAll('input[type="text"]').forEach(input => {
+        document.querySelectorAll('input').forEach(input => {
             input.value = '';
         });
+        
+        // Reset location fields to initial state
+        const container = document.getElementById('locationFieldsContainer');
+        const firstLocation = container.firstElementChild;
+        container.innerHTML = '';
+        container.appendChild(firstLocation);
+        
         showQuestion(1);
     }
 
@@ -42,75 +122,46 @@ document.addEventListener('DOMContentLoaded', () => {
     function handleOptionCardClick(card, optionCards) {
         optionCards.forEach(c => c.classList.remove('selected'));
         card.classList.add('selected');
-        
-        optionCards.forEach(c => {
-            const conditionalId = c.getAttribute('data-shows');
-            if (conditionalId) {
-                const conditional = document.querySelector(`#${conditionalId}`);
-                if (conditional) {
-                    conditional.classList.remove('visible');
-                }
+    
+        // Special handling for Question 1
+        if (card.closest('#question1')) {
+            if (card.getAttribute('data-value') === 'nein') {
+                alert('Vielen Dank für Ihr Interesse. Leider können wir nur mit Eigentümern zusammenarbeiten.');
+                formSection.style.display = 'none';
+                mainSquare.classList.remove('active');
+                resetForm();
+                return;
             }
-        });
-
+        }
+        
+        // Handle conditional questions
         const conditionalId = card.getAttribute('data-shows');
-        if (conditionalId && card.classList.contains('selected')) {
-            const conditional = document.querySelector(`#${conditionalId}`);
-            const shouldShow = card.getAttribute('data-value') === 'ja';
-            if (conditional && shouldShow) {
-                conditional.classList.add('visible');
-                const slider = conditional.querySelector('.slider');
-                const valueDisplay = conditional.querySelector('.slider-value');
-                if (slider && valueDisplay) {
-                    setTimeout(() => updateSliderValue(slider, valueDisplay), 0);
+        const questionContainer = card.closest('.question-container');
+        
+        // Only handle conditional visibility if this is not a click within a conditional question
+        if (!card.closest('.conditional-question')) {
+            // Hide any conditional questions in this container
+            const conditional = questionContainer.querySelector('.conditional-question');
+            if (conditional) {
+                conditional.classList.remove('visible');
+                // If this card should show the conditional and it's selected
+                if (conditionalId && card.classList.contains('selected') && 
+                    card.getAttribute('data-value') === 'ja') {
+                    conditional.classList.add('visible');
+                    
+                    // Initialize slider if present
+                    const slider = conditional.querySelector('.slider');
+                    const valueDisplay = conditional.querySelector('.slider-value');
+                    if (slider && valueDisplay) {
+                        setTimeout(() => updateSliderValue(slider, valueDisplay), 0);
+                    }
                 }
             }
         }
         
-        updateNextButton();
+        updateNavigationButtons();
     }
-
-    function showQuestion(questionNumber) {
-        document.querySelectorAll('.question-container').forEach(q => {
-            q.classList.remove('active');
-        });
-        
-        const currentQuestionEl = document.querySelector(`#question${questionNumber}`);
-        if (currentQuestionEl) {
-            currentQuestionEl.classList.add('active');
-            initializeQuestion(questionNumber);
-        }
-        
-        updateNextButton();
-    }
-
-    function updateNextButton() {
-        const nextButton = document.querySelector('#nextButton');
-        const prevButton = document.querySelector('#prevButton');
-        
-        if (prevButton) {
-            prevButton.disabled = currentQuestion === 1;
-        }
-
-        if (nextButton) {
-            const isLastQuestion = currentQuestion === totalQuestions;
-            nextButton.textContent = isLastQuestion ? 'Absenden' : 'Weiter';
-            
-            if (isLastQuestion) {
-                // For the last question, enable the button when both fields are filled
-                const bundesland = document.querySelector('#bundesland');
-                const kreis = document.querySelector('#kreis');
-                nextButton.disabled = !bundesland.value || !kreis.value;
-            } else {
-                // For other questions, check for selected option or slider
-                const currentContainer = document.querySelector(`#question${currentQuestion}`);
-                const hasSelection = currentContainer.querySelector('.option-card.selected');
-                const hasSlider = currentContainer.querySelector('.slider');
-                nextButton.disabled = !hasSelection && !hasSlider;
-            }
-        }
-    }
-
+    
     function initializeQuestion(questionNumber) {
         const container = document.querySelector(`#question${questionNumber}`);
         if (!container) return;
@@ -127,88 +178,97 @@ document.addEventListener('DOMContentLoaded', () => {
             const valueDisplay = container.querySelector('.slider-value');
             slider.addEventListener('input', () => {
                 updateSliderValue(slider, valueDisplay);
-                updateNextButton();
+                updateNavigationButtons();
             });
             updateSliderValue(slider, valueDisplay);
         }
 
-        // Handle text inputs for last question
-        if (questionNumber === totalQuestions) {
-            const inputs = container.querySelectorAll('input[type="text"]');
+        // Handle text inputs
+        if (questionNumber === 7 || questionNumber === totalQuestions) {
+            const inputs = container.querySelectorAll('input');
             inputs.forEach(input => {
-                input.addEventListener('input', updateNextButton);
+                input.addEventListener('input', updateNavigationButtons);
             });
         }
     }
 
-    function submitForm() {
-        const formData = {
-            landType: document.querySelector('#question1 .selected')?.getAttribute('data-value'),
-            nearHighway: document.querySelector('#question2 .selected')?.getAttribute('data-value'),
-            highwayPercentage: document.querySelector('#question2a .slider')?.value,
-            areaSize: document.querySelector('#question3 .slider')?.value,
-            isContiguous: document.querySelector('#question4 .selected')?.getAttribute('data-value'),
-            subAreas: document.querySelector('#question4a .selected')?.getAttribute('data-value'),
-            isLeased: document.querySelector('#question5 .selected')?.getAttribute('data-value'),
-            leaseEnd: document.querySelector('#question5a .slider')?.value,
-            state: document.querySelector('#bundesland')?.value,
-            district: document.querySelector('#kreis')?.value
-        };
-    
-        const data = new FormData();
-        for (const [key, value] of Object.entries(formData)) {
-            if (value) data.append(key, value);
-        }
-    
-        fetch('sendOurOffer.php', {
-            method: 'POST',
-            body: data
-        })
-        .then(response => response.text())
-        .then(() => {
-            showPopup();
-            formSection.style.display = 'none';
-            mainSquare.classList.remove('active');
-            resetForm();
-        })
-        .catch(error => {
-            console.error('Error:', error);
+    function showQuestion(questionNumber) {
+        document.querySelectorAll('.question-container').forEach(q => {
+            q.classList.remove('active');
         });
+        
+        const currentQuestionEl = document.querySelector(`#question${questionNumber}`);
+        if (currentQuestionEl) {
+            currentQuestionEl.classList.add('active');
+            initializeQuestion(questionNumber);
+        }
+        
+        updateNavigationButtons();
     }
+
+    function updateNavigationButtons() {
+        const prevButton = document.querySelector('#prevButton');
+        const nextButton = document.querySelector('#nextButton');
+        
+        if (prevButton) {
+            prevButton.disabled = currentQuestion === 1;
+        }
+
+        if (nextButton) {
+            const isLastQuestion = currentQuestion === totalQuestions;
+            nextButton.textContent = isLastQuestion ? 'Absenden' : 'Weiter';
+            nextButton.disabled = !isQuestionAnswered(currentQuestion);
+        }
+    }
+
+    function isQuestionAnswered(questionNumber) {
+        const container = document.querySelector(`#question${questionNumber}`);
+        if (!container) return false;
     
+        // For location fields (Question 7)
+        if (questionNumber === 7) {
+            const locationEntries = container.querySelectorAll('.location-entry');
+            // Check if all location entries are properly filled
+            let allValid = true;
+            locationEntries.forEach(entry => {
+                const inputs = entry.querySelectorAll('input[required]');
+                const isEntryValid = Array.from(inputs).every(input => input.value.trim() !== '');
+                if (!isEntryValid) {
+                    allValid = false;
+                }
+            });
+            return allValid;
+        }
+        // For contact information (Question 8)
+        if (questionNumber === 8) {
+            const requiredInputs = container.querySelectorAll('input[required]');
+            return Array.from(requiredInputs).every(input => input.value.trim() !== '');
+        }
+
+        // For other questions
+        const selectedOption = container.querySelector('.option-card.selected');
+        const slider = container.querySelector('.slider:not(.conditional-question .slider)');
+        
+        if (selectedOption) return true;
+        if (slider) return true;
+        
+        return false;
+    }
+
     function showPopup() {
         const popup = document.getElementById('popup');
         if (!popup) {
             console.error("Popup element not found in the HTML.");
             return;
         }
-    
-        // Set popup to visible
+
         popup.style.display = 'flex';
-    
         const popupContent = popup.querySelector('.popup-content');
-        const languageTrigger = document.getElementById('languageDropdownTrigger');
-    
-        // Handle language
-        if (languageTrigger) {
-            const selectedLanguage = languageTrigger.textContent.trim();
-            if (selectedLanguage === 'Deutsch') {
-                document.getElementById('popupPt1').textContent = "Nachricht erfolgreich gesendet!";
-                document.getElementById('popupPt2').textContent = "Vielen Dank für Ihre Anfrage. Wir melden uns bald bei Ihnen.";
-                document.getElementById('popupPt3').textContent = "Schließen";
-            } else {
-                document.getElementById('popupPt1').textContent = "Message Sent Successfully!";
-                document.getElementById('popupPt2').textContent = "Thank you for your inquiry. We'll get back to you soon.";
-                document.getElementById('popupPt3').textContent = "Close";
-            }
-        }
-    
-        // Add the 'show' class to animate
+        
         setTimeout(() => {
             popupContent.classList.add('show');
         }, 10);
-    
-        // Close popup on button click
+
         const closeButtons = popup.querySelectorAll('.popup-close, .popup-close-btn');
         closeButtons.forEach(btn => {
             btn.onclick = () => {
@@ -218,8 +278,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, 300);
             };
         });
-    
-        // Close popup on overlay click
+
         const popupOverlay = popup.querySelector('.popup-overlay');
         popupOverlay.onclick = (e) => {
             if (e.target === popupOverlay) {
@@ -229,6 +288,45 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, 300);
             }
         };
+    }
+
+    function submitForm() {
+        const locationEntries = document.querySelectorAll('.location-entry');
+        const locations = Array.from(locationEntries).map(entry => {
+            return {
+                bundesland: entry.querySelector('[name="bundesland[]"]').value,
+                landkreis: entry.querySelector('[name="landkreis[]"]').value,
+                gemarkung: entry.querySelector('[name="gemarkung[]"]').value,
+                flur: entry.querySelector('[name="flur[]"]').value,
+                flurstueck: entry.querySelector('[name="flurstueck[]"]').value,
+                flaeche: entry.querySelector('[name="flaeche[]"]').value,
+                amt: entry.querySelector('[name="amt[]"]').value
+            };
+        });
+
+        const formData = {
+            isOwner: document.querySelector('#question1 .selected')?.getAttribute('data-value'),
+            landType: document.querySelector('#question2 .selected')?.getAttribute('data-value'),
+            nearHighway: document.querySelector('#question3 .selected')?.getAttribute('data-value'),
+            highwayPercentage: document.querySelector('#question3a .slider')?.value,
+            areaSize: document.querySelector('#question4 .slider')?.value,
+            isContiguous: document.querySelector('#question5 .selected')?.getAttribute('data-value'),
+            subAreas: document.querySelector('#question5a .selected')?.getAttribute('data-value'),
+            isLeased: document.querySelector('#question6 .selected')?.getAttribute('data-value'),
+            leaseEnd: document.querySelector('#question6a .slider')?.value,
+            locations: locations,
+            contact: {
+                name: document.querySelector('#name').value,
+                email: document.querySelector('#email').value,
+                phone: document.querySelector('#phone').value
+            }
+        };
+
+        console.log('Form Data:', formData);
+        showPopup();
+        formSection.style.display = 'none';
+        mainSquare.classList.remove('active');
+        resetForm();
     }
 
     document.querySelector('#prevButton')?.addEventListener('click', () => {
