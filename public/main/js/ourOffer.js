@@ -120,43 +120,32 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function handleOptionCardClick(card, optionCards) {
-        optionCards.forEach(c => c.classList.remove('selected'));
-        card.classList.add('selected');
-    
-        // Special handling for Question 1
-        if (card.closest('#question1')) {
-            if (card.getAttribute('data-value') === 'nein') {
-                alert('Vielen Dank für Ihr Interesse. Leider können wir nur mit Eigentümern zusammenarbeiten.');
-                formSection.style.display = 'none';
-                mainSquare.classList.remove('active');
-                resetForm();
-                return;
-            }
-        }
-        
-        // Handle conditional questions
-        const conditionalId = card.getAttribute('data-shows');
-        const questionContainer = card.closest('.question-container');
-        
-        // Only handle conditional visibility if this is not a click within a conditional question
+        // For parent questions (not in conditional)
         if (!card.closest('.conditional-question')) {
-            // Hide any conditional questions in this container
-            const conditional = questionContainer.querySelector('.conditional-question');
-            if (conditional) {
-                conditional.classList.remove('visible');
-                // If this card should show the conditional and it's selected
-                if (conditionalId && card.classList.contains('selected') && 
-                    card.getAttribute('data-value') === 'ja') {
+            optionCards.forEach(c => c.classList.remove('selected'));
+            card.classList.add('selected');
+            
+            // Handle conditional questions
+            const conditionalId = card.getAttribute('data-shows');
+            const questionContainer = card.closest('.question-container');
+            
+            if (conditionalId && card.getAttribute('data-value') === 'ja') {
+                const conditional = document.querySelector(`#${conditionalId}`);
+                if (conditional) {
                     conditional.classList.add('visible');
-                    
-                    // Initialize slider if present
-                    const slider = conditional.querySelector('.slider');
-                    const valueDisplay = conditional.querySelector('.slider-value');
-                    if (slider && valueDisplay) {
-                        setTimeout(() => updateSliderValue(slider, valueDisplay), 0);
-                    }
+                }
+            } else {
+                const conditional = questionContainer.querySelector('.conditional-question');
+                if (conditional) {
+                    conditional.classList.remove('visible');
+                    // Remove any selections in the conditional question
+                    conditional.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
                 }
             }
+        } else {
+            // For options within conditional questions
+            optionCards.forEach(c => c.classList.remove('selected'));
+            card.classList.add('selected');
         }
         
         updateNavigationButtons();
@@ -225,20 +214,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const container = document.querySelector(`#question${questionNumber}`);
         if (!container) return false;
     
-        // For location fields (Question 7)
+        // Special handling for Question 7 (location fields)
         if (questionNumber === 7) {
             const locationEntries = container.querySelectorAll('.location-entry');
-            // Check if all location entries are properly filled
-            let allValid = true;
-            locationEntries.forEach(entry => {
-                const inputs = entry.querySelectorAll('input[required]');
-                const isEntryValid = Array.from(inputs).every(input => input.value.trim() !== '');
-                if (!isEntryValid) {
-                    allValid = false;
-                }
+            return Array.from(locationEntries).every(entry => {
+                const requiredInputs = entry.querySelectorAll('input[required]');
+                return Array.from(requiredInputs).every(input => input.value.trim() !== '');
             });
-            return allValid;
         }
+
         // For contact information (Question 8)
         if (questionNumber === 8) {
             const requiredInputs = container.querySelectorAll('input[required]');
@@ -302,18 +286,23 @@ document.addEventListener('DOMContentLoaded', () => {
             amt: entry.querySelector('[name="amt[]"]').value
         }));
     
+        // Get multi-select values for landType
+        const selectedTypes = Array.from(
+            document.querySelectorAll('#question2 .option-card.selected')
+        ).map(card => card.getAttribute('data-value'));
+    
         // Create FormData object
         const formData = new FormData();
     
         // Add locations data
         formData.append('locations', JSON.stringify(locations));
     
-        // Add other form fields
+        // Add main form data
         formData.append('fullName', document.querySelector('#name').value);
         formData.append('email', document.querySelector('#email').value);
         formData.append('phoneNumber', document.querySelector('#phone').value);
         formData.append('isOwner', document.querySelector('#question1 .selected')?.getAttribute('data-value'));
-        formData.append('landType', document.querySelector('#question2 .selected')?.getAttribute('data-value'));
+        formData.append('landType', JSON.stringify(selectedTypes)); // Now sending array of selected land types
         formData.append('nearHighway', document.querySelector('#question3 .selected')?.getAttribute('data-value'));
         formData.append('highwayPercentage', document.querySelector('#question3a .slider')?.value || '');
         formData.append('areaSize', document.querySelector('#question4 .slider')?.value);
@@ -323,7 +312,7 @@ document.addEventListener('DOMContentLoaded', () => {
         formData.append('leaseEnd', document.querySelector('#question6a .slider')?.value || '');
     
         // Send the form data
-        fetch('contactMail.php', {  // Using your existing contactMail.php
+        fetch('contactMail.php', {
             method: 'POST',
             body: formData
         })

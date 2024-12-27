@@ -365,3 +365,17 @@
 .conditional-question.visible {
     display: block;
 }
+
+
+.option-card.multi-select {
+    position: relative;
+}
+
+.option-card.multi-select.selected::before {
+    content: '✓';
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    color: var(--geon-primary);
+    font-weight: bold;
+}
