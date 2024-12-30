@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
     startNumberFade("numberDisplay", values);
 
     /////////////// COOKIE CONSENT INITIALIZATION ///////////////
+
     initializeCookieConsent('de'); // Default language is German
 
     /////////////// LANGUAGE SWITCHER ///////////////

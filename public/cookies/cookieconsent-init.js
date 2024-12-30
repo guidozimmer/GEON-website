@@ -2,10 +2,10 @@ import "../cookies/cookieconsent.umd.js";
 
 let cookieConsentInstance;
 
-
 function toggleContactForm(cookie) {
+
     const contactForm = document.querySelector('.contact_us_6.contact');
-    
+
     if (!cookie || !cookie.categories || !cookie.categories.necessary) {
         contactForm.style.display = 'none';
     } else {
@@ -26,7 +26,7 @@ function toggleContactForm(cookie) {
         onChange: ({cookie}) => {
             toggleContactForm(cookie);
         },
-        
+
         cookie: {
             name: 'cc_cookie_demo1',
         },
@@ -46,8 +46,14 @@ function toggleContactForm(cookie) {
 
         categories: {
             necessary: {
-                readOnly: false, // Allow toggling
-                enabled: true
+                readOnly: false,
+                enabled: false,  // Set to false by default
+                onAccept: function () {
+                    toggleContactForm({categories: {necessary: true}});
+                },
+                onReject: function () {
+                    toggleContactForm({categories: {necessary: false}});
+                }
             },
             analytics: {
                 autoClear: {

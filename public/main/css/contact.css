@@ -3,7 +3,9 @@
     padding: 100px;
 }
 
-
+.contact_us_6.contact {
+  display: none;
+}
 
 
 .g-recaptcha {
