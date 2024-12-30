@@ -115,7 +115,7 @@
     justify-content: center; /* Centers content horizontally */
     align-items: center; /* Centers content vertically */
     flex-direction: column; /* Ensures content stacks vertically */
-    margin-bottom: 200px;
+    margin-bottom: 100px;
 }
 
 

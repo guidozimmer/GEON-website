@@ -46,7 +46,7 @@
     <link rel="stylesheet" href="../cookies/cookieconsent.css">
     <link rel="stylesheet" href="../cookies/cookie.css">
 
-    <!--  -->
+    <!-- Salseforce -->
     <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
 
 </head>
@@ -201,72 +201,18 @@
     </div>
 
 
-
-    <div>
-        <div class="slide">
-            <img src="./img/banner_pic_01.jpeg" alt="Slide">
-            <div class="text">
-                <h2 id="quote"></h2>
-                <p id="sliderPt2"></p>
-                <h2 id="sliderPt3"></2>
-            </div>
+    <div class="slide">
+        <img src="./img/banner_pic_01.jpeg" alt="Slide">
+        <div class="text">
+            <h2 id="quote"></h2>
+            <p id="sliderPt2"></p>
+            <h2 id="sliderPt3"></2>
         </div>
     </div>
     
 
-    <!--  ----------------------------------------------------------------------  -->
-    <!--  NOTE: Please add the following <FORM> element to your page.             -->
-    <!--  ----------------------------------------------------------------------  -->
-    
-    <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DWz000001Nbvx" method="POST">
-    
-    <input type=hidden name="orgid" value="00DWz000001Nbvx">
-    <input type=hidden name="retURL" value="http://geongroup.de/dev/public/main">
-    
-    <!--  ----------------------------------------------------------------------  -->
-    <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
-    <!--  these lines if you wish to test in debug mode.                          -->
-    <!--  <input type="hidden" name="debug" value=1>                              -->
-    <!--  <input type="hidden" name="debugEmail"                                  -->
-    <!--  value="tristan.zimmer@geongroup.de">                                    -->
-    <!--  ----------------------------------------------------------------------  -->
-    
-    <label for="name">Contact Name</label><input  id="name" maxlength="80" name="name" size="20" type="text" /><br>
-    
-    <label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>
-    
-    <label for="phone">Phone</label><input  id="phone" maxlength="40" name="phone" size="20" type="text" /><br>
-    
-    LandArt:<select  id="00NMz000003nXif" multiple="multiple" name="00NMz000003nXif" title="LandArt"><option value="Ackerland">Ackerland</option>
-    <option value="Brachland">Brachland</option>
-    <option value="Grünland">Grünland</option>
-    <option value="Sonstiges">Sonstiges</option>
-    </select><br>
-    
-    Entlang_Autobahn/Bahnstrecke:<input  id="00NMz000003nXkH" name="00NMz000003nXkH" type="checkbox" value="1" /><br>
-    
-    Welcher_Anteil_500m_Autobahn/Bahnstrecke:<input  id="00NMz000003nXlt" name="00NMz000003nXlt" size="20" type="text" /><br>
-    
-    Landflaeche_ha:<input  id="00NMz000003nXnV" name="00NMz000003nXnV" size="20" type="text" /><br>
-    
-    zusammenhaengend:<input  id="00NMz000003nXp7" name="00NMz000003nXp7" type="checkbox" value="1" /><br>
-    
-    Anzahl_Teilflaechen:<select  id="00NMz000003nXad" name="00NMz000003nXad" title="Anzahl_Teilflaechen"><option value="">--None--</option><option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="3+">3+</option>
-    </select><br>
-    
-    Ist_Verpachtet:<input  id="00NMz000003nXsL" name="00NMz000003nXsL" type="checkbox" value="1" /><br>
-    
-    Bis_Wann_Verpachtet:<input  id="00NMz000003nXh4" name="00NMz000003nXh4" size="20" type="text" /><br>
-    
-    <input type="submit" name="submit">
-    
-    </form>
 
     <div class="ourOffer">
-        <!-- Main form container -->
         <div class="main-squares-container">
             <div class="main-square">
                 <div class="square-content">
@@ -275,8 +221,31 @@
                 </div>
             </div>
         </div>
-    
+        
         <div class="form-section">
+            <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST" class="form-section" id="landForm">
+                <input type="hidden" name="orgid" value="00DWz000001Nbvx">
+                <input type="hidden" name="retURL" value="http://geongroup.de/dev/public/main">
+                
+                <!-- Add these at the top of your form -->
+                <input type="hidden" id="email" name="email">
+                <input type="hidden" id="name" name="name">
+                <select id="00NMz000003nXif" multiple="multiple" name="00NMz000003nXif" style="display:none">
+                  <option value="Ackerland">Ackerland</option>
+                  <option value="Brachland">Brachland</option>
+                  <option value="Grünland">Grünland</option>
+                  <option value="Sonstiges">Sonstiges</option>
+                </select>
+                <input type="hidden" id="00NMz000003nXkH" name="00NMz000003nXkH">
+                <input type="hidden" id="00NMz000003nXlt" name="00NMz000003nXlt">
+                <input type="hidden" id="00NMz000003nXnV" name="00NMz000003nXnV">
+                <input type="hidden" id="00NMz000003nXp7" name="00NMz000003nXp7">
+                <input type="hidden" id="00NMz000003nXad" name="00NMz000003nXad">
+                <input type="hidden" id="00NMz000003nXsL" name="00NMz000003nXsL">
+                <input type="hidden" id="00NMz000003nXh4" name="00NMz000003nXh4">
+              
+            </form>
+     
             <!-- Question 1 -->
             <div id="question1" class="question-container">
                 <div class="question-title">1. Sind sie Eigentümer der Flächen</div>
@@ -285,18 +254,24 @@
                     <div class="option-card" data-value="nein">Nein</div>
                 </div>
             </div>
-    
-        <!-- Question 2 -->
-        <div id="question2" class="question-container">
-            <div class="question-title">2. Um welche Art Fläche handelt es sich (Mehrfachauswahl möglich)</div>
-            <div class="options-container">
-                <div class="option-card multi-select" data-value="ackerland">Ackerland</div>
-                <div class="option-card multi-select" data-value="brachland">Brachland</div>
-                <div class="option-card multi-select" data-value="grunland">Grünland</div>
-                <div class="option-card multi-select" data-value="sonstiges">Sonstiges</div>
+     
+            <!-- Question 2 -->
+            <div id="question2" class="question-container">
+                <div class="question-title">2. Um welche Art Fläche handelt es sich (Mehrfachauswahl möglich)</div>
+                <select id="00NMz000003nXif" name="00NMz000003nXif" multiple style="display: none;">
+                    <option value="Ackerland">Ackerland</option>
+                    <option value="Brachland">Brachland</option>
+                    <option value="Grünland">Grünland</option>
+                    <option value="Sonstiges">Sonstiges</option>
+                </select>
+                <div class="options-container">
+                    <div class="option-card multi-select" data-value="Ackerland">Ackerland</div>
+                    <div class="option-card multi-select" data-value="Brachland">Brachland</div>
+                    <div class="option-card multi-select" data-value="Grünland">Grünland</div>
+                    <div class="option-card multi-select" data-value="Sonstiges">Sonstiges</div>
+                </div>
             </div>
-        </div>
-    
+     
             <!-- Question 3 -->
             <div id="question3" class="question-container">
                 <div class="question-title">3. Liegt die Fläche oder eine Teilfläche entlag einer Autobahn oder Bahnstrecke (bis 500 m entfernt)?</div>
@@ -304,18 +279,20 @@
                     <div class="option-card" data-value="ja" data-shows="question3a">Ja</div>
                     <div class="option-card" data-value="nein">Nein</div>
                 </div>
-    
+                <input type="hidden" id="00NMz000003nXkH" name="00NMz000003nXkH" value="0">
+     
                 <div id="question3a" class="conditional-question">
                     <div class="question-title">3a. Welcher Anteil liegt innerhalb eines Korridors von 500m parallel zur Autobahn oder Bahnstrecke?</div>
                     <div class="slider-container">
                         <div class="slider-wrapper">
                             <input type="range" class="slider" min="1" max="100" value="50" data-percentage="true">
                             <div class="slider-value">50%</div>
+                            <input type="hidden" id="00NMz000003nXlt" name="00NMz000003nXlt" value="50">
                         </div>
                     </div>
                 </div>
             </div>
-    
+     
             <!-- Question 4 -->
             <div id="question4" class="question-container">
                 <div class="question-title">4. Wie groß ist die Fläche?</div>
@@ -323,11 +300,11 @@
                     <div class="slider-wrapper">
                         <input type="range" class="slider" min="1" max="300" value="150">
                         <div class="slider-value">150 ha</div>
+                        <input type="hidden" id="00NMz000003nXnV" name="00NMz000003nXnV" value="150">
                     </div>
                 </div>
             </div>
-    
-
+     
             <!-- Question 5 -->
             <div id="question5" class="question-container">
                 <div class="question-title">5. Ist die Fläche zusammenhängend?</div>
@@ -335,20 +312,20 @@
                     <div class="option-card" data-value="ja" data-shows="question5a">Ja</div>
                     <div class="option-card" data-value="nein">Nein</div>
                 </div>
-
+                <input type="hidden" id="00NMz000003nXp7" name="00NMz000003nXp7" value="0">
+     
                 <div id="question5a" class="conditional-question">
                     <div class="question-title">5a. Um wie viele Teilflächen handelt es sich?</div>
-                    <div class="options-container">
-                        <div class="option-card" data-value="1">1</div>
-                        <div class="option-card" data-value="2">2</div>
-                        <div class="option-card" data-value="3">3</div>
-                        <div class="option-card" data-value="3plus">3+</div>
-                    </div>
+                    <select id="00NMz000003nXad" name="00NMz000003nXad" title="Anzahl_Teilflaechen">
+                        <option value="">--None--</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="3+">3+</option>
+                    </select>
                 </div>
             </div>
-
-
-    
+     
             <!-- Question 6 -->
             <div id="question6" class="question-container">
                 <div class="question-title">6. Ist die Fläche verpachtet?</div>
@@ -356,19 +333,21 @@
                     <div class="option-card" data-value="ja" data-shows="question6a">Ja</div>
                     <div class="option-card" data-value="nein">Nein</div>
                 </div>
-    
+                <input type="hidden" id="00NMz000003nXsL" name="00NMz000003nXsL" value="0">
+     
                 <div id="question6a" class="conditional-question">
                     <div class="question-title">6a. Bis wann ist die Fläche verpachtet?</div>
                     <div class="slider-container">
                         <div class="slider-wrapper">
                             <input type="range" class="slider" min="2023" max="2040" value="2023" data-year="true">
                             <div class="slider-value">2023</div>
+                            <input type="hidden" id="00NMz000003nXh4" name="00NMz000003nXh4" value="2023">
                         </div>
                     </div>
                 </div>
             </div>
-    
-            <!-- Question 7 - Repeatable Location Fields -->
+     
+            <!-- Question 7 -->
             <div id="question7" class="question-container">
                 <div class="question-title">7. Wo liegt die Fläche?</div>
                 <div id="locationFieldsContainer">
@@ -409,18 +388,18 @@
                 </div>
                 <button type="button" id="addLocationButton" class="add-location-btn">Weitere Fläche hinzufügen</button>
             </div>
-    
+     
             <!-- Question 8 -->
             <div id="question8" class="question-container">
                 <div class="question-title">8. Kontakt aufnehmen</div>
                 <div class="input-group">
                     <div class="input-field">
                         <label for="name">Name*</label>
-                        <input type="text" id="name" required>
+                        <input type="text" id="name" name="name" required>
                     </div>
                     <div class="input-field">
                         <label for="email">Email*</label>
-                        <input type="email" id="email" required>
+                        <input type="email" id="email" name="email" required>
                     </div>
                     <div class="input-field">
                         <label for="phone">Telefonnummer</label>
@@ -428,14 +407,15 @@
                     </div>
                 </div>
             </div>
-    
+     
             <!-- Navigation Buttons -->
             <div class="navigation-buttons">
-                <button id="prevButton" class="nav-button">Zurück</button>
-                <button id="nextButton" class="nav-button">Weiter</button>
+                <button type="button" id="prevButton" class="nav-button">Zurück</button>
+                <button type="button" id="nextButton" class="nav-button">Weiter</button>
+                <button type="submit" id="submitButton" class="nav-button" style="display: none;">Senden</button>
             </div>
-        </div>
-    
+        </form>
+     
         <!-- Success Popup -->
         <div id="popup" style="display: none;">
             <div class="popup-overlay">
@@ -446,7 +426,9 @@
                 </div>
             </div>
         </div>
+        </div>
     </div>
+        
     
 
 
@@ -505,68 +487,68 @@
 
 
 
-        <div class="contact_us_6 contact">
-          <div class="responsive-container-block container">
-            <form class="form-box" method="POST" id="contactForm" id="contactForm">
-              <div class="container-block form-wrapper">
-                <div class="mob-text">
-                  <p class="text-blk contactus-head" id="conatctPt1"></p>
-                </div>
-                <div class="responsive-container-block" id="i2cbk">
-                  <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="i10mt-3">
-                    <p class="text-blk input-title" id="conatctPt2"></p>
-                    <input class="input" id="name" name="fullName" required>
-                  </div>
-                  <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="ip1yp">
-                    <p class="text-blk input-title" id="conatctPt3"></p>
-                    <input class="input" id="ipmgh-3 email" name="email" type="email" autofill required>
-                  </div>
-                  <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="ih9wi">
-                    <p class="text-blk input-title" id="conatctPt4"></p>
-                    <input class="input" id="imgis-3" name="phoneNumber">
-                  </div>
-                  <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="i634i-3">
-                    <p class="text-blk input-title" id="conatctPt5"></p>
-                    <textarea class="textinput" id="i5vyy-3 message" name="message" required></textarea>
-                  </div>
-                </div>
-
-
-                <div class="g-recaptcha" data-sitekey="6LcAbJ4qAAAAAP1bGh0zHKjBV2uTT4U5sjhJoIx1"></div>
-
-
-                <button class="submit-btn" id="conatctPt6" type="submit"></button>
-              </div>
-
-            </form>
-          
-            <div class="responsive-cell-block wk-desk-7 wk-ipadp-12 wk-tab-12 wk-mobile-12" id="i772w">
-              <div class="map-part">
-                <p class="text-blk map-contactus-head" id="w-c-s-fc_p-1-dm-id">
-                  
-                </p>
-                <p class="text-blk map-contactus-subhead">
-                  +49 1604455677 <br>
-                  Richard-Wagner-Straße 15, München, 80333
-                </p>
-
-                <div class="map-box container-block">
-                </div>
-
-                <div id="popup" class="popup-overlay" style="display: none;">
-                    <div class="popup-content">
-                        <div class="popup-close">&times;</div>
-                        <div class="popup-icon">✔️</div>
-                        <h2 class="popup-title" id="popupPt1">Message Sent Successfully!</h2>
-                        <p class="popup-message" id="popupPt2">Thank you for reaching out. We'll get back to you soon.</p>
-                        <button class="popup-close-btn" id="popupPt3">Close</button>
-                    </div>
-                </div>
-            
-              </div>
+    <div class="contact_us_6 contact">
+        <div class="responsive-container-block container">
+        <form class="form-box" method="POST" id="contactForm" id="contactForm">
+            <div class="container-block form-wrapper">
+            <div class="mob-text">
+                <p class="text-blk contactus-head" id="conatctPt1"></p>
             </div>
-          </div>
+            <div class="responsive-container-block" id="i2cbk">
+                <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="i10mt-3">
+                <p class="text-blk input-title" id="conatctPt2"></p>
+                <input class="input" id="contactFormName" name="fullName" required>
+                </div>
+                <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="ip1yp">
+                <p class="text-blk input-title" id="conatctPt3"></p>
+                <input class="input" id="contactFormEmail" name="email" type="email" autofill required>
+                </div>
+                <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="ih9wi">
+                <p class="text-blk input-title" id="conatctPt4"></p>
+                <input class="input" id="imgis-3" name="phoneNumber">
+                </div>
+                <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="i634i-3">
+                <p class="text-blk input-title" id="conatctPt5"></p>
+                <textarea class="textinput" id="i5vyy-3 message" name="message" required></textarea>
+                </div>
+            </div>
+
+
+            <div class="g-recaptcha" data-sitekey="6LcAbJ4qAAAAAP1bGh0zHKjBV2uTT4U5sjhJoIx1"></div>
+
+
+            <button class="submit-btn" id="conatctPt6" type="submit"></button>
+            </div>
+
+        </form>
+        
+        <div class="responsive-cell-block wk-desk-7 wk-ipadp-12 wk-tab-12 wk-mobile-12" id="i772w">
+            <div class="map-part">
+            <p class="text-blk map-contactus-head" id="w-c-s-fc_p-1-dm-id">
+                
+            </p>
+            <p class="text-blk map-contactus-subhead">
+                +49 1604455677 <br>
+                Richard-Wagner-Straße 15, München, 80333
+            </p>
+
+            <div class="map-box container-block">
+            </div>
+
+            <div id="popup" class="popup-overlay" style="display: none;">
+                <div class="popup-content">
+                    <div class="popup-close">&times;</div>
+                    <div class="popup-icon">✔️</div>
+                    <h2 class="popup-title" id="popupPt1">Message Sent Successfully!</h2>
+                    <p class="popup-message" id="popupPt2">Thank you for reaching out. We'll get back to you soon.</p>
+                    <button class="popup-close-btn" id="popupPt3">Close</button>
+                </div>
+            </div>
+        
+            </div>
         </div>
+        </div>
+    </div>
 
   </div>
 

@@ -239,101 +239,58 @@ document.addEventListener('DOMContentLoaded', () => {
         return false;
     }
 
-    function showPopup() {
-        const popup = document.getElementById('popup');
-        if (!popup) {
-            console.error("Popup element not found in the HTML.");
-            return;
-        }
-
-        popup.style.display = 'flex';
-        const popupContent = popup.querySelector('.popup-content');
-        
-        setTimeout(() => {
-            popupContent.classList.add('show');
-        }, 10);
-
-        const closeButtons = popup.querySelectorAll('.popup-close, .popup-close-btn');
-        closeButtons.forEach(btn => {
-            btn.onclick = () => {
-                popupContent.classList.remove('show');
-                setTimeout(() => {
-                    popup.style.display = 'none';
-                }, 300);
-            };
-        });
-
-        const popupOverlay = popup.querySelector('.popup-overlay');
-        popupOverlay.onclick = (e) => {
-            if (e.target === popupOverlay) {
-                popupContent.classList.remove('show');
-                setTimeout(() => {
-                    popup.style.display = 'none';
-                }, 300);
-            }
-        };
-    }
 
     function submitForm() {
-        const locationEntries = document.querySelectorAll('.location-entry');
-        const locations = Array.from(locationEntries).map(entry => ({
-            bundesland: entry.querySelector('[name="bundesland[]"]').value,
-            landkreis: entry.querySelector('[name="landkreis[]"]').value,
-            gemarkung: entry.querySelector('[name="gemarkung[]"]').value,
-            flur: entry.querySelector('[name="flur[]"]').value,
-            flurstueck: entry.querySelector('[name="flurstueck[]"]').value,
-            flaeche: entry.querySelector('[name="flaeche[]"]').value,
-            amt: entry.querySelector('[name="amt[]"]').value
-        }));
-    
-        // Get multi-select values for landType
-        const selectedTypes = Array.from(
-            document.querySelectorAll('#question2 .option-card.selected')
-        ).map(card => card.getAttribute('data-value'));
-    
-        // Create FormData object
-        const formData = new FormData();
-    
-        // Add locations data
-        formData.append('locations', JSON.stringify(locations));
-    
-        // Add main form data
-        formData.append('fullName', document.querySelector('#name').value);
-        formData.append('email', document.querySelector('#email').value);
-        formData.append('phoneNumber', document.querySelector('#phone').value);
-        formData.append('isOwner', document.querySelector('#question1 .selected')?.getAttribute('data-value'));
-        formData.append('landType', JSON.stringify(selectedTypes)); // Now sending array of selected land types
-        formData.append('nearHighway', document.querySelector('#question3 .selected')?.getAttribute('data-value'));
-        formData.append('highwayPercentage', document.querySelector('#question3a .slider')?.value || '');
-        formData.append('areaSize', document.querySelector('#question4 .slider')?.value);
-        formData.append('isContiguous', document.querySelector('#question5 .selected')?.getAttribute('data-value'));
-        formData.append('subAreas', document.querySelector('#question5a .selected')?.getAttribute('data-value') || '');
-        formData.append('isLeased', document.querySelector('#question6 .selected')?.getAttribute('data-value'));
-        formData.append('leaseEnd', document.querySelector('#question6a .slider')?.value || '');
-    
-        // Send the form data
-        fetch('contactMail.php', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.text();
-        })
-        .then(result => {
-            console.log('Success:', result);
-            showPopup();
-            formSection.style.display = 'none';
-            mainSquare.classList.remove('active');
-            resetForm();
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.');
+        // Update the hidden Salesforce fields based on user selections
+        const selectedTypes = Array.from(document.querySelectorAll('#question2 .option-card.selected')).map(card => card.getAttribute('data-value'));
+        
+        // Update land type selections in hidden select
+        const landTypeSelect = document.getElementById('00NMz000003nXif');
+        Array.from(landTypeSelect.options).forEach(option => {
+            option.selected = selectedTypes.includes(option.value);
         });
+        
+        // Update other hidden fields
+        document.getElementById('00NMz000003nXkH').value = 
+            document.querySelector('#question3 .selected')?.getAttribute('data-value') === 'ja' ? '1' : '0';
+        
+        document.getElementById('00NMz000003nXlt').value = 
+            document.querySelector('#question3a .slider').value;
+            
+        document.getElementById('00NMz000003nXnV').value = 
+            document.querySelector('#question4 .slider').value;
+            
+        document.getElementById('00NMz000003nXp7').value = 
+            document.querySelector('#question5 .selected')?.getAttribute('data-value') === 'ja' ? '1' : '0';
+            
+        document.getElementById('00NMz000003nXad').value = 
+            document.querySelector('#question5a .selected')?.getAttribute('data-value') || '';
+            
+        document.getElementById('00NMz000003nXsL').value = 
+            document.querySelector('#question6 .selected')?.getAttribute('data-value') === 'ja' ? '1' : '0';
+            
+        document.getElementById('00NMz000003nXh4').value = 
+            document.querySelector('#question6a .slider').value;
+            
+        document.getElementById('email').value = 
+            document.querySelector('#question8 input[type="email"]').value;
+            
+        document.getElementById('name').value = 
+            document.querySelector('#question8 input[type="text"]').value;
+    
+        // Submit the form
+        document.getElementById('landForm').submit();
     }
+    
+    // Update your nextButton click handler to use submitForm
+    document.querySelector('#nextButton').addEventListener('click', () => {
+        if (currentQuestion < totalSteps) {
+            currentQuestion++;
+            showQuestion(currentQuestion);
+        } else {
+            submitForm();
+        }
+    });
     
     document.querySelector('#prevButton')?.addEventListener('click', () => {
         if (currentQuestion > 1) {

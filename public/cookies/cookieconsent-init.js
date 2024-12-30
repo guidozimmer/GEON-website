@@ -2,8 +2,31 @@ import "../cookies/cookieconsent.umd.js";
 
 let cookieConsentInstance;
 
-export function initializeCookieConsent(language = 'en') {
+
+function toggleContactForm(cookie) {
+    const contactForm = document.querySelector('.contact_us_6.contact');
+    
+    if (!cookie || !cookie.categories || !cookie.categories.necessary) {
+        contactForm.style.display = 'none';
+    } else {
+        contactForm.style.display = 'block';
+    }
+ }
+ 
+ // Add callbacks to cookie consent
+ export function initializeCookieConsent(language = 'en') {
     cookieConsentInstance = CookieConsent.run({
+        // Add these new callbacks
+        onFirstConsent: ({cookie}) => {
+            toggleContactForm(cookie);
+        },
+        onConsent: ({cookie}) => {
+            toggleContactForm(cookie);
+        }, 
+        onChange: ({cookie}) => {
+            toggleContactForm(cookie);
+        },
+        
         cookie: {
             name: 'cc_cookie_demo1',
         },
@@ -174,3 +197,4 @@ export function initializeCookieConsent(language = 'en') {
         }
     });
 }
+

@@ -9,6 +9,9 @@ howItWorksNav = "So funktioniert's"
 contactNav = "Kontakt"
 languageNav = "Deutsch"
 
+codePt1 = "Haben sie einen Zugangscode?"
+codePt2 = "Absenden"
+
 aboutUsPt1 = "Über uns"
 aboutUsPt2 = "Wir setzen uns für eine nachhaltige, verantwortungsvolle und gerechte Nutzung von Ressourcen ein, um die Lebensqualität in Deutschland im Einklang mit der Natur zu verbessern – heute und für zukünftige Generationen."
 aboutUsPt3 = "Klimaschutz"

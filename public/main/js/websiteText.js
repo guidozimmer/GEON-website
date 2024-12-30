@@ -38,6 +38,9 @@ export function createLanguageSwitcher() {
         { id: 'contactNav', variable: 'contactNav' },
         { id: 'languageDropdownTrigger', variable: 'languageNav' },
 
+        // Code Section
+        { id: "w-c-s-bgc_p-1-dm-id-2", variable: "codePt2"},
+
         // About Us Section
         { id: 'aboutUsPt1', variable: 'aboutUsPt1' },
         { id: 'aboutUsPt2', variable: 'aboutUsPt2' },
@@ -150,12 +153,12 @@ export function createLanguageSwitcher() {
 
       const placeholdersToUpdate = [
         { 
-          id: 'name', 
+          id: 'contactFormName', 
           variable: 'namePlaceholder',
           type: 'placeholder' 
         },
         { 
-          id: 'email', 
+          id: 'contactFormEmail', 
           variable: 'emailPlaceholder',
           type: 'placeholder' 
         },

@@ -9,6 +9,9 @@ howItWorksNav = "How It Works"
 contactNav = "Contact"
 languageNav = "English"
 
+codePt1 = "Do you have an acces code?"
+codePt2 = "Submit"
+
 aboutUsPt1 = "About Us"
 aboutUsPt2 = "We are committed to the sustainable, responsible, and fair use of resources to improve the quality of life in Germany in harmony with nature – today and for future generations."
 aboutUsPt3 = "Climate Protection"
