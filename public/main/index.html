@@ -46,7 +46,8 @@
     <link rel="stylesheet" href="../cookies/cookieconsent.css">
     <link rel="stylesheet" href="../cookies/cookie.css">
 
-
+    <!--  -->
+    <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
 
 </head>
 
@@ -213,6 +214,56 @@
     </div>
     
 
+    <!--  ----------------------------------------------------------------------  -->
+    <!--  NOTE: Please add the following <FORM> element to your page.             -->
+    <!--  ----------------------------------------------------------------------  -->
+    
+    <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DWz000001Nbvx" method="POST">
+    
+    <input type=hidden name="orgid" value="00DWz000001Nbvx">
+    <input type=hidden name="retURL" value="http://geongroup.de/dev/public/main">
+    
+    <!--  ----------------------------------------------------------------------  -->
+    <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+    <!--  these lines if you wish to test in debug mode.                          -->
+    <!--  <input type="hidden" name="debug" value=1>                              -->
+    <!--  <input type="hidden" name="debugEmail"                                  -->
+    <!--  value="tristan.zimmer@geongroup.de">                                    -->
+    <!--  ----------------------------------------------------------------------  -->
+    
+    <label for="name">Contact Name</label><input  id="name" maxlength="80" name="name" size="20" type="text" /><br>
+    
+    <label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>
+    
+    <label for="phone">Phone</label><input  id="phone" maxlength="40" name="phone" size="20" type="text" /><br>
+    
+    LandArt:<select  id="00NMz000003nXif" multiple="multiple" name="00NMz000003nXif" title="LandArt"><option value="Ackerland">Ackerland</option>
+    <option value="Brachland">Brachland</option>
+    <option value="Grünland">Grünland</option>
+    <option value="Sonstiges">Sonstiges</option>
+    </select><br>
+    
+    Entlang_Autobahn/Bahnstrecke:<input  id="00NMz000003nXkH" name="00NMz000003nXkH" type="checkbox" value="1" /><br>
+    
+    Welcher_Anteil_500m_Autobahn/Bahnstrecke:<input  id="00NMz000003nXlt" name="00NMz000003nXlt" size="20" type="text" /><br>
+    
+    Landflaeche_ha:<input  id="00NMz000003nXnV" name="00NMz000003nXnV" size="20" type="text" /><br>
+    
+    zusammenhaengend:<input  id="00NMz000003nXp7" name="00NMz000003nXp7" type="checkbox" value="1" /><br>
+    
+    Anzahl_Teilflaechen:<select  id="00NMz000003nXad" name="00NMz000003nXad" title="Anzahl_Teilflaechen"><option value="">--None--</option><option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="3+">3+</option>
+    </select><br>
+    
+    Ist_Verpachtet:<input  id="00NMz000003nXsL" name="00NMz000003nXsL" type="checkbox" value="1" /><br>
+    
+    Bis_Wann_Verpachtet:<input  id="00NMz000003nXh4" name="00NMz000003nXh4" size="20" type="text" /><br>
+    
+    <input type="submit" name="submit">
+    
+    </form>
 
     <div class="ourOffer">
         <!-- Main form container -->
