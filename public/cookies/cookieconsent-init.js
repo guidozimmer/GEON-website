@@ -2,29 +2,50 @@ import "../cookies/cookieconsent.umd.js";
 
 let cookieConsentInstance;
 
-function toggleContactForm(cookie) {
 
-    const contactForm = document.querySelector('.contact_us_6.contact');
-
-    if (!cookie || !cookie.categories || !cookie.categories.necessary) {
-        contactForm.style.display = 'none';
+function toggleContactForm() {
+    const contactForm = document.querySelector('.contact_us_6');
+    if (!contactForm) return;  // Guard clause if element doesn't exist
+    
+    const cookieConsent = localStorage.getItem('cookie_consent');
+    
+    if (cookieConsent) {
+        try {
+            const cookie = JSON.parse(cookieConsent);
+            
+            // Check if necessary cookies are accepted
+            if (cookie && cookie.categories && cookie.categories.includes('necessary')) {
+                contactForm.style.display = 'block';
+                console.log("Cookie consent granted - showing form");
+            } else {
+                contactForm.style.display = 'none';
+                console.log("Cookie consent not granted - hiding form");
+            }
+        } catch (e) {
+            console.error("Error parsing cookie consent:", e);
+            contactForm.style.display = 'none';
+        }
     } else {
-        contactForm.style.display = 'block';
+        console.log("No cookie consent found - hiding form");
+        contactForm.style.display = 'none';
     }
- }
- 
- // Add callbacks to cookie consent
- export function initializeCookieConsent(language = 'en') {
+}
+
+// Check contact form visibility when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    toggleContactForm();
+});
+
+export function initializeCookieConsent(language = 'en') {
     cookieConsentInstance = CookieConsent.run({
-        // Add these new callbacks
-        onFirstConsent: ({cookie}) => {
-            toggleContactForm(cookie);
+        onFirstConsent: () => {
+            toggleContactForm();
         },
-        onConsent: ({cookie}) => {
-            toggleContactForm(cookie);
-        }, 
-        onChange: ({cookie}) => {
-            toggleContactForm(cookie);
+        onConsent: () => {
+            toggleContactForm();
+        },
+        onChange: () => {
+            toggleContactForm();
         },
 
         cookie: {
@@ -48,11 +69,11 @@ function toggleContactForm(cookie) {
             necessary: {
                 readOnly: false,
                 enabled: false,  // Set to false by default
-                onAccept: function () {
-                    toggleContactForm({categories: {necessary: true}});
+                onAccept: () => {
+                    toggleContactForm();
                 },
-                onReject: function () {
-                    toggleContactForm({categories: {necessary: false}});
+                onReject: () => {
+                    toggleContactForm();
                 }
             },
             analytics: {
@@ -203,4 +224,7 @@ function toggleContactForm(cookie) {
         }
     });
 }
+
+// Initialize contact form visibility check on script load
+toggleContactForm();
 
