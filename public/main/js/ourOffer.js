@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         newLocation.className = 'location-entry';
         
         newLocation.innerHTML = `
-            <button type="button" class="remove-location" onclick="this.parentElement.remove();">✕</button>
+            <button type="button" class="remove-location">✕</button>
             <div class="input-group">
                 <div class="input-field">
                     <label for="bundesland${locationCount}">Bundesland</label>
@@ -62,6 +62,19 @@ document.addEventListener('DOMContentLoaded', () => {
         
         container.appendChild(newLocation);
         updateNavigationButtons();
+        
+        // Add event listeners to new inputs
+        newLocation.querySelectorAll('input').forEach(input => {
+            input.addEventListener('input', updateNavigationButtons);
+        });
+        
+        // Add event listener to remove button
+        const removeButton = newLocation.querySelector('.remove-location');
+        if (removeButton) {
+            removeButton.addEventListener('click', function() {
+                removeLocationEntry(this);
+            });
+        }
     }
 
     function hideConditionalQuestion(conditionalId) {
@@ -89,7 +102,6 @@ document.addEventListener('DOMContentLoaded', () => {
         currentQuestion = 1;
         locationCount = 1;
         
-        // Reset all form elements
         document.querySelectorAll('.option-card').forEach(card => {
             card.classList.remove('selected');
         });
@@ -100,7 +112,6 @@ document.addEventListener('DOMContentLoaded', () => {
             input.value = '';
         });
         
-        // Reset location fields to initial state
         const container = document.getElementById('locationFieldsContainer');
         const firstLocation = container.firstElementChild;
         container.innerHTML = '';
@@ -120,32 +131,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function handleOptionCardClick(card, optionCards) {
-        // For parent questions (not in conditional)
-        if (!card.closest('.conditional-question')) {
-            optionCards.forEach(c => c.classList.remove('selected'));
-            card.classList.add('selected');
-            
-            // Handle conditional questions
-            const conditionalId = card.getAttribute('data-shows');
-            const questionContainer = card.closest('.question-container');
-            
-            if (conditionalId && card.getAttribute('data-value') === 'ja') {
-                const conditional = document.querySelector(`#${conditionalId}`);
-                if (conditional) {
-                    conditional.classList.add('visible');
+        if (card.classList.contains('multi-select')) {
+            card.classList.toggle('selected');
+        } else {
+            if (!card.closest('.conditional-question')) {
+                optionCards.forEach(c => c.classList.remove('selected'));
+                card.classList.add('selected');
+                
+                const conditionalId = card.getAttribute('data-shows');
+                const questionContainer = card.closest('.question-container');
+                
+                if (conditionalId && card.getAttribute('data-value') === 'ja') {
+                    showConditionalQuestion(conditionalId);
+                } else {
+                    const conditional = questionContainer.querySelector('.conditional-question');
+                    if (conditional) {
+                        hideConditionalQuestion(conditional.id);
+                    }
                 }
             } else {
-                const conditional = questionContainer.querySelector('.conditional-question');
-                if (conditional) {
-                    conditional.classList.remove('visible');
-                    // Remove any selections in the conditional question
-                    conditional.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
-                }
+                optionCards.forEach(c => c.classList.remove('selected'));
+                card.classList.add('selected');
             }
-        } else {
-            // For options within conditional questions
-            optionCards.forEach(c => c.classList.remove('selected'));
-            card.classList.add('selected');
         }
         
         updateNavigationButtons();
@@ -155,13 +162,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const container = document.querySelector(`#question${questionNumber}`);
         if (!container) return;
 
-        // Handle options
         const optionCards = container.querySelectorAll('.option-card');
         optionCards.forEach(card => {
             card.addEventListener('click', () => handleOptionCardClick(card, optionCards));
         });
 
-        // Handle sliders
         const slider = container.querySelector('.slider');
         if (slider) {
             const valueDisplay = container.querySelector('.slider-value');
@@ -172,7 +177,6 @@ document.addEventListener('DOMContentLoaded', () => {
             updateSliderValue(slider, valueDisplay);
         }
 
-        // Handle text inputs
         if (questionNumber === 7 || questionNumber === totalQuestions) {
             const inputs = container.querySelectorAll('input');
             inputs.forEach(input => {
@@ -214,7 +218,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const container = document.querySelector(`#question${questionNumber}`);
         if (!container) return false;
     
-        // Special handling for Question 7 (location fields)
+        if (questionNumber === 1) {
+            const selectedOption = container.querySelector('.option-card.selected');
+            return selectedOption && selectedOption.getAttribute('data-value') === 'ja';
+        }
+    
         if (questionNumber === 7) {
             const locationEntries = container.querySelectorAll('.location-entry');
             return Array.from(locationEntries).every(entry => {
@@ -223,13 +231,11 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // For contact information (Question 8)
         if (questionNumber === 8) {
             const requiredInputs = container.querySelectorAll('input[required]');
             return Array.from(requiredInputs).every(input => input.value.trim() !== '');
         }
 
-        // For other questions
         const selectedOption = container.querySelector('.option-card.selected');
         const slider = container.querySelector('.slider:not(.conditional-question .slider)');
         
@@ -239,59 +245,92 @@ document.addEventListener('DOMContentLoaded', () => {
         return false;
     }
 
+    function removeLocationEntry(button) {
+        button.closest('.location-entry').remove();
+        updateNavigationButtons();
+    }
 
     function submitForm() {
-        // Update the hidden Salesforce fields based on user selections
-        const selectedTypes = Array.from(document.querySelectorAll('#question2 .option-card.selected')).map(card => card.getAttribute('data-value'));
+        // Get all location entries
+        const locationEntries = document.querySelectorAll('.location-entry');
         
-        // Update land type selections in hidden select
-        const landTypeSelect = document.getElementById('00NMz000003nXif');
-        Array.from(landTypeSelect.options).forEach(option => {
-            option.selected = selectedTypes.includes(option.value);
+        // Initialize arrays to store values for each field
+        const bundeslandValues = [];
+        const landkreisValues = [];
+        const gemarkungValues = [];
+        const flurValues = [];
+        const flurstueckValues = [];
+        const flaecheValues = [];
+        const amtValues = [];
+        
+        // Collect values from each location entry
+        locationEntries.forEach(entry => {
+            bundeslandValues.push(entry.querySelector('input[name="bundesland[]"]')?.value || '');
+            landkreisValues.push(entry.querySelector('input[name="landkreis[]"]')?.value || '');
+            gemarkungValues.push(entry.querySelector('input[name="gemarkung[]"]')?.value || '');
+            flurValues.push(entry.querySelector('input[name="flur[]"]')?.value || '');
+            flurstueckValues.push(entry.querySelector('input[name="flurstueck[]"]')?.value || '');
+            flaecheValues.push(entry.querySelector('input[name="flaeche[]"]')?.value || '');
+            amtValues.push(entry.querySelector('input[name="amt[]"]')?.value || '');
         });
         
-        // Update other hidden fields
-        document.getElementById('00NMz000003nXkH').value = 
-            document.querySelector('#question3 .selected')?.getAttribute('data-value') === 'ja' ? '1' : '0';
+        // Map field names to Salesforce IDs
+        const salesforceFields = {
+            'bundesland': '00NMz000003o2Cz',
+            'landkreis': '00NMz000003o2Eb',
+            'gemarkung': '00NMz000003o2GD',
+            'flur': '00NMz000003o2Hp',
+            'flurstueck': '00NMz000003o2JR',
+            'amt': '00NMz000003o2L3'
+        };
+
+        // Update location fields
+        document.getElementById(salesforceFields.bundesland).value = bundeslandValues.join('; ');
+        document.getElementById(salesforceFields.landkreis).value = landkreisValues.join('; ');
+        document.getElementById(salesforceFields.gemarkung).value = gemarkungValues.join('; ');
+        document.getElementById(salesforceFields.flur).value = flurValues.join('; ');
+        document.getElementById(salesforceFields.flurstueck).value = flurstueckValues.join('; ');
+        document.getElementById(salesforceFields.amt).value = amtValues.join('; ');
+
+        // Get and join selected land types with proper formatting
+        const selectedTypes = Array.from(document.querySelectorAll('#question2 .option-card.selected'))
+            .map(card => card.getAttribute('data-value'))
+            .join('; ');
         
-        document.getElementById('00NMz000003nXlt').value = 
-            document.querySelector('#question3a .slider').value;
+        // Set the formatted string to the Salesforce field
+        document.getElementById('00NMz000003nXif').value = selectedTypes.length ? `${selectedTypes}` : '';
+        
+        // Update other form fields
+        const q3Answer = document.querySelector('#question3 .option-card.selected')?.getAttribute('data-value') === 'ja';
+        document.getElementById('00NMz000003nXkH').value = q3Answer ? '1' : '0';
+        document.getElementById('00NMz000003nXlt').value = q3Answer ? 
+            (document.querySelector('#question3a .slider')?.value || '') : '';
             
         document.getElementById('00NMz000003nXnV').value = 
-            document.querySelector('#question4 .slider').value;
+            document.querySelector('#question4 .slider')?.value || '';
             
-        document.getElementById('00NMz000003nXp7').value = 
-            document.querySelector('#question5 .selected')?.getAttribute('data-value') === 'ja' ? '1' : '0';
+        const q5Answer = document.querySelector('#question5 .option-card.selected')?.getAttribute('data-value') === 'ja';
+        document.getElementById('00NMz000003nXp7').value = q5Answer ? '1' : '0';
+        document.getElementById('00NMz000003nXad').value = q5Answer ? 
+            (document.querySelector('#question5a select')?.value || '') : '';
             
-        document.getElementById('00NMz000003nXad').value = 
-            document.querySelector('#question5a .selected')?.getAttribute('data-value') || '';
-            
-        document.getElementById('00NMz000003nXsL').value = 
-            document.querySelector('#question6 .selected')?.getAttribute('data-value') === 'ja' ? '1' : '0';
-            
-        document.getElementById('00NMz000003nXh4').value = 
-            document.querySelector('#question6a .slider').value;
-            
+        const q6Answer = document.querySelector('#question6 .option-card.selected')?.getAttribute('data-value') === 'ja';
+        document.getElementById('00NMz000003nXsL').value = q6Answer ? '1' : '0';
+        document.getElementById('00NMz000003nXh4').value = q6Answer ? 
+            (document.querySelector('#question6a .slider')?.value || '') : '';
+
+        // Update contact information
         document.getElementById('email').value = 
             document.querySelector('#question8 input[type="email"]').value;
             
         document.getElementById('name').value = 
             document.querySelector('#question8 input[type="text"]').value;
-    
+
         // Submit the form
         document.getElementById('landForm').submit();
     }
-    
-    // Update your nextButton click handler to use submitForm
-    document.querySelector('#nextButton').addEventListener('click', () => {
-        if (currentQuestion < totalSteps) {
-            currentQuestion++;
-            showQuestion(currentQuestion);
-        } else {
-            submitForm();
-        }
-    });
-    
+
+    // Event Listeners for navigation
     document.querySelector('#prevButton')?.addEventListener('click', () => {
         if (currentQuestion > 1) {
             currentQuestion--;

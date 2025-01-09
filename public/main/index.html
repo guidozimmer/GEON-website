@@ -223,19 +223,14 @@
         </div>
         
         <div class="form-section">
-            <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST" class="form-section" id="landForm">
+            <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DWz000001Nbvx" method="POST" class="form-section" id="landForm">
                 <input type="hidden" name="orgid" value="00DWz000001Nbvx">
                 <input type="hidden" name="retURL" value="http://geongroup.de/dev/public/main">
                 
                 <!-- Add these at the top of your form -->
                 <input type="hidden" id="email" name="email">
                 <input type="hidden" id="name" name="name">
-                <select id="00NMz000003nXif" multiple="multiple" name="00NMz000003nXif" style="display:none">
-                  <option value="Ackerland">Ackerland</option>
-                  <option value="Brachland">Brachland</option>
-                  <option value="Grünland">Grünland</option>
-                  <option value="Sonstiges">Sonstiges</option>
-                </select>
+                <input type="hidden" id="00NMz000003nXif" name="00NMz000003nXif">
                 <input type="hidden" id="00NMz000003nXkH" name="00NMz000003nXkH">
                 <input type="hidden" id="00NMz000003nXlt" name="00NMz000003nXlt">
                 <input type="hidden" id="00NMz000003nXnV" name="00NMz000003nXnV">
@@ -243,7 +238,12 @@
                 <input type="hidden" id="00NMz000003nXad" name="00NMz000003nXad">
                 <input type="hidden" id="00NMz000003nXsL" name="00NMz000003nXsL">
                 <input type="hidden" id="00NMz000003nXh4" name="00NMz000003nXh4">
-              
+                <input type="hidden" id="00NMz000003o2Cz" name="00NMz000003o2Cz">
+                <input type="hidden" id="00NMz000003o2Eb" name="00NMz000003o2Eb">
+                <input type="hidden" id="00NMz000003o2GD" name="00NMz000003o2GD">
+                <input type="hidden" id="00NMz000003o2Hp" name="00NMz000003o2Hp">
+                <input type="hidden" id="00NMz000003o2JR" name="00NMz000003o2JR">
+                <input type="hidden" id="00NMz000003o2L3" name="00NMz000003o2L3">
             </form>
      
             <!-- Question 1 -->
@@ -258,12 +258,6 @@
             <!-- Question 2 -->
             <div id="question2" class="question-container">
                 <div class="question-title">2. Um welche Art Fläche handelt es sich (Mehrfachauswahl möglich)</div>
-                <select id="00NMz000003nXif" name="00NMz000003nXif" multiple style="display: none;">
-                    <option value="Ackerland">Ackerland</option>
-                    <option value="Brachland">Brachland</option>
-                    <option value="Grünland">Grünland</option>
-                    <option value="Sonstiges">Sonstiges</option>
-                </select>
                 <div class="options-container">
                     <div class="option-card multi-select" data-value="Ackerland">Ackerland</div>
                     <div class="option-card multi-select" data-value="Brachland">Brachland</div>
@@ -429,7 +423,6 @@
         </div>
     </div>
         
-    
 
 
 
@@ -483,7 +476,6 @@
             
 
     </div>
-
 
 
 
@@ -550,7 +542,6 @@
         </div>
     </div>
 
-  </div>
 
 
     <footer>
