@@ -2,31 +2,62 @@ import "../cookies/cookieconsent.umd.js";
 
 let cookieConsentInstance;
 
-
-function toggleContactForm() {
-    const contactForm = document.querySelector('.contact_us_6');
-    if (!contactForm) return;  // Guard clause if element doesn't exist
-    
-    const cookieConsent = localStorage.getItem('cookie_consent');
-    
+// Add listener for contact nav link
+function setupContactNavListener() {
+    const contactNav = document.getElementById('contactNav');
+    if (contactNav) {
+        contactNav.addEventListener('click', (e) => {
+            const cookieConsent = localStorage.getItem('cookie_consent');
+            if (cookieConsent) {
+                const cookie = JSON.parse(cookieConsent);
+                if (!cookie.categories || !cookie.categories.includes('necessary')) {
+                    e.preventDefault();
+                    cookieConsentInstance.show();
+                }
+            }
+        });
+    }
 }
 
-// Check contact form visibility when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    toggleContactForm();
-});
+function toggleContactForm(cookie) {
+    const contactSection = document.querySelector('.contact_us_6');
+
+    if (!contactSection) {
+        console.error('Contact section not found');
+        return;
+    }
+
+    // Hide contact section by default
+    contactSection.style.display = 'none';
+    
+    if (cookie && cookie.categories) {
+        // Show form only if necessary cookies are accepted
+        if (cookie.categories.includes('necessary')) {
+            contactSection.style.display = 'flex';
+        }
+    } else {
+        console.log('No cookie preferences found - keeping form hidden');
+    }
+}
 
 export function initializeCookieConsent(language = 'en') {
-    console.log("cookie initialized");
+    
+    // First hide the contact form
+    const contactSection = document.querySelector('.contact_us_6');
+    
+    if (contactSection) {
+        contactSection.style.display = 'none';
+    }
+
     cookieConsentInstance = CookieConsent.run({
-        onFirstConsent: () => {
-            toggleContactForm();
+        onFirstConsent: ({cookie}) => {
+            toggleContactForm(cookie);
         },
-        onConsent: () => {
-            toggleContactForm();
-        },
-        onChange: () => {
-            toggleContactForm();
+        onConsent: ({cookie}) => {
+            toggleContactForm(cookie);
+        }, 
+        onChange: ({cookie}) => {
+            toggleContactForm(cookie);
         },
 
         cookie: {
@@ -51,10 +82,16 @@ export function initializeCookieConsent(language = 'en') {
                 readOnly: false,
                 enabled: false,  // Set to false by default
                 onAccept: () => {
-                    toggleContactForm();
+                    const contactSection = document.querySelector('.contact_us_6');
+                    if (contactSection) {
+                        contactSection.style.display = 'flex';
+                    }
                 },
                 onReject: () => {
-                    toggleContactForm();
+                    const contactSection = document.querySelector('.contact_us_6');
+                    if (contactSection) {
+                        contactSection.style.display = 'none';
+                    }
                 }
             },
             analytics: {
@@ -73,11 +110,12 @@ export function initializeCookieConsent(language = 'en') {
             translations: {
                 en: {
                     consentModal: {
+                        showAgain: '<span id="cookieShowAgain">To access the contact form, you need to accept necessary cookies. Please review your cookie settings.</span>',
                         title: '<span id="cookieTitle">Hello traveller, it\'s cookie time!</span>',
                         description: `
                             <span id="cookieDesc">
-                                Our website uses tracking cookies to understand how you interact with it. 
-                                The tracking will be enabled only if you accept explicitly. 
+                                Our website uses cookies to enable core functionality and improve your experience. 
+                                The contact form will only be enabled if you accept necessary cookies.
                                 <a href="#privacy-policy" id="cookieManageLink" data-cc="show-preferencesModal" class="cc__link">
                                     Manage preferences
                                 </a>
@@ -110,7 +148,7 @@ export function initializeCookieConsent(language = 'en') {
                                 title: '<span id="necessaryCookiesTitle">Strictly necessary cookies</span>',
                                 description: `
                                     <span id="necessaryCookiesDesc">
-                                        These cookies are essential for the website to function.
+                                        These cookies are essential for the website to function and enable features like the contact form.
                                     </span>
                                 `,
                                 linkedCategory: 'necessary'
@@ -138,11 +176,12 @@ export function initializeCookieConsent(language = 'en') {
                 },
                 de: {
                     consentModal: {
+                        showAgain: '<span id="cookieShowAgain">Um das Kontaktformular zu nutzen, müssen Sie die notwendigen Cookies akzeptieren. Bitte überprüfen Sie Ihre Cookie-Einstellungen.</span>',
                         title: '<span id="cookieTitle">Hallo Besucher, Zeit für Cookies!</span>',
                         description: `
                             <span id="cookieDesc">
-                                Unsere Website verwendet Tracking-Cookies, um zu verstehen, wie Sie mit ihr interagieren.
-                                Das Tracking wird nur aktiviert, wenn Sie es ausdrücklich akzeptieren. 
+                                Unsere Website verwendet Cookies für Kernfunktionen und zur Verbesserung Ihrer Erfahrung.
+                                Das Kontaktformular wird nur aktiviert, wenn Sie notwendige Cookies akzeptieren.
                                 <a href="#privacy-policy" id="cookieManageLink" data-cc="show-preferencesModal" class="cc__link">
                                     Präferenzen verwalten
                                 </a>
@@ -175,7 +214,7 @@ export function initializeCookieConsent(language = 'en') {
                                 title: '<span id="necessaryCookiesTitle">Unbedingt erforderliche Cookies</span>',
                                 description: `
                                     <span id="necessaryCookiesDesc">
-                                        Diese Cookies sind für die Funktion der Website unerlässlich.
+                                        Diese Cookies sind für die Funktion der Website und das Kontaktformular unerlässlich.
                                     </span>
                                 `,
                                 linkedCategory: 'necessary'
@@ -204,8 +243,22 @@ export function initializeCookieConsent(language = 'en') {
             }
         }
     });
+
+    // Set up contact nav link listener
+    setupContactNavListener();
+
+    // Check existing cookie consent on page load
+    const existingCookie = localStorage.getItem('cookie_consent');
+    if (existingCookie) {
+        try {
+            const cookie = JSON.parse(existingCookie);
+            toggleContactForm(cookie);
+        } catch (e) {
+            console.error('Error parsing existing cookie consent:', e);
+            // If there's an error parsing the cookie, ensure the form is hidden
+            if (contactSection) {
+                contactSection.style.display = 'none';
+            }
+        }
+    }
 }
-
-// Initialize contact form visibility check on script load
-toggleContactForm();
-
