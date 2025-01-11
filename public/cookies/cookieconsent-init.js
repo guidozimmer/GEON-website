@@ -9,26 +9,6 @@ function toggleContactForm() {
     
     const cookieConsent = localStorage.getItem('cookie_consent');
     
-    if (cookieConsent) {
-        try {
-            const cookie = JSON.parse(cookieConsent);
-            
-            // Check if necessary cookies are accepted
-            if (cookie && cookie.categories && cookie.categories.includes('necessary')) {
-                contactForm.style.display = 'block';
-                console.log("Cookie consent granted - showing form");
-            } else {
-                contactForm.style.display = 'none';
-                console.log("Cookie consent not granted - hiding form");
-            }
-        } catch (e) {
-            console.error("Error parsing cookie consent:", e);
-            contactForm.style.display = 'none';
-        }
-    } else {
-        console.log("No cookie consent found - hiding form");
-        contactForm.style.display = 'none';
-    }
 }
 
 // Check contact form visibility when DOM is loaded
@@ -37,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 export function initializeCookieConsent(language = 'en') {
+    console.log("cookie initialized");
     cookieConsentInstance = CookieConsent.run({
         onFirstConsent: () => {
             toggleContactForm();
