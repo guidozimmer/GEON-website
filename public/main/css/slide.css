@@ -1,193 +1,57 @@
-/* Slider Container */
-#slider {
-    position: relative;
-    align-items: center;
-}
-
-
-
-/* Individual Slides */
 .slide {
-    display: grid; /* Use grid to split image and text */
-    grid-template-columns: 40% 60%; /* Image on the left, text on the right */
-    align-items: center;
-    background-color: var(--geon-primary);
-    height: 400px !important;
-}
-
-/* Image Styling */
-.slide img {
-    width: 100%; /* Full width of the grid column */
-    height: 100%; /* Full height of the grid row */
-    object-fit: cover; /* Maintain aspect ratio and cover space */
-    margin: 0;
-    overflow: hidden
-}
-
-/* Text Section Styling */
-.slide .text {
-    padding: 0 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Align text to the left */
-    color: white; /* Ensure text visibility */
-    text-align: left;
+	padding: 2rem;
+    height: 400px;
 }
 
 
-#quote {
-    font-family: Acumin-Italic;
-    font-size: var(--medium-large-font) !important;
-    text-transform: none;
+.slider-wrapper {
+	position: relative;
+	max-width: 48rem;
+	margin: 0 auto;
 }
 
-.text > h2 {
-    font-size: var(--medium-large-font) !important;
-    font-family: Acumin-Black;
-    text-transform: uppercase;
+.slider {
+	display: flex;
+	aspect-ratio: 16 / 9;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+	box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+	border-radius: 0.5rem;
+	-ms-overflow-style: none; /* Hide scrollbar IE and Edge */
+	scrollbar-width: none; /* Hide scrollbar Firefox */
 }
 
-.text > p {
-    margin-top: 10px;
-    margin-bottom: 70px;
-    font-family: Acumin-Italic;
-    font-size: var(--small-font);
+/* Hide scrollbar for Chrome, Safari and Opera */
+.slider::-webkit-scrollbar {
+	display: none;
 }
 
-
-
-
-
-/* Extra Small Devices (Phones, up to 480px) */
-@media only screen and (max-width: 480px) {
-    #quote {
-        font-size: var(--very-small-font) !important;
-        margin-top: 10px;
-    }
-    
-    .text > h2 {
-        font-size: var(--very-small-font) !important;
-    }
-    
-    .text > p {
-        margin-top: -5px;
-        margin-bottom: 30px;
-        font-size: var(--mini-font);
-    }
-
-
-    .slide {
-        height: 200px !important;
-    }
-
-    .slide .text {
-        padding: 0 30px;
-    }
+.slider img {
+	flex: 1 0 100%;
+	scroll-snap-align: start;
+	object-fit: cover;
 }
 
-  
-/* Small Devices (Portrait Tablets and Small Phones, up to 768px) */
-@media only screen and (min-width: 481px) and (max-width: 768px) {
-    #quote {
-        font-size: var(--small-font) !important;
-    }
-    
-    .text > h2 {
-        font-size: var(--small-font) !important;
-    }
-    
-    .text > p {
-        margin-top: 10px;
-        margin-bottom: 30px;
-        font-size: var(--mini-font);
-    }
-
-    .slide {
-        height: 200px !important;
-    }
-
-    .slide .text {
-        padding: 0 50px;
-    }
+.slider-nav {
+	display: flex;
+	column-gap: 1rem;
+	position: absolute;
+	bottom: 1.25rem;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 1;
 }
 
-
-/* Medium Devices (Tablets in Landscape, 768px to 1024px) */
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
-    #quote {
-        font-size: var(--medium-font) !important;
-    }
-    
-    .text > h2 {
-        font-size: var(--medium-font) !important;
-    }
-    
-    .text > p {
-        margin-top: 10px;
-        margin-bottom: 40px;
-        font-size: var(--very-small-font);
-    }
-
-    .slide {
-        height: 300px !important;
-    }
-
-    .slide .text {
-        padding: 0 50px;
-    }
-}   
-
-
-/* Large Devices (Desktops, 1024px to 1200px) */
-@media only screen and (min-width: 1025px) and (max-width: 1200px) {
-    #quote {
-        font-size: var(--big-font) !important;
-    }
-    
-    .text > h2 {
-        font-size: var(--big-font) !important;
-    }
-    
-    .text > p {
-        margin-top: 10px;
-        margin-bottom: 50px;
-        font-size: var(--small-font);
-    }
-
-    .slide {
-        height: 300px !important;
-    }
-
-    .slide .text {
-        padding: 0 50px;
-    }
+.slider-nav a {
+	width: 0.5rem;
+	height: 0.5rem;
+	border-radius: 50%;
+	background-color: #fff;
+	opacity: 0.75;
+	transition: opacity ease 250ms;
 }
 
-/* Extra Large Devices (Large Desktops, 1200px to 1600px) */
-@media only screen and (min-width: 1201px) and (max-width: 1651px) {
-    #quote {
-        font-size: var(--medium-big-font) !important;
-    }
-    
-    .text > h2 {
-        font-size: var(--medium-big-font) !important;
-    }
-    
-    .text > p {
-        margin-top: 10px;
-        font-size: var(--small-font);
-    }
-
-    .slide {
-        height: 350px !important;
-    }
+.slider-nav a:hover {
+	opacity: 1;
 }
-  
-
-/* Ultra Large Devices (Very Large Screens, 1600px and up) */
-@media only screen and (min-width: 1651px) {
-
-}
-
-
-

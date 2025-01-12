@@ -1,21 +1,55 @@
 document.addEventListener('DOMContentLoaded', () => {
     let currentQuestion = 1;
-    const totalQuestions = 8;
+    const totalQuestions = 7;
     let locationCount = 1;
     
-    const mainSquare = document.querySelector('.main-square');
-    const formSection = document.querySelector('.form-section');
-    formSection.style.display = 'none';
+    const mainSquares = document.querySelectorAll('.main-square');
+    const formContents = document.querySelectorAll('.form-content');
+    let activeSquare = null;
+
+    // Hide all form content initially
+    formContents.forEach(content => {
+        content.style.display = 'none';
+    });
 
     // Add Location Button Handler
     document.getElementById('addLocationButton').addEventListener('click', addLocationFields);
 
-    mainSquare.addEventListener('click', () => {
-        mainSquare.classList.toggle('active');
-        formSection.style.display = mainSquare.classList.contains('active') ? 'block' : 'none';
-        if (!mainSquare.classList.contains('active')) {
-            resetForm();
-        }
+    // Square click handlers
+    mainSquares.forEach(square => {
+        square.addEventListener('click', () => {
+            const formType = square.getAttribute('data-form-type');
+            
+            // Hide all form content first
+            document.querySelectorAll('.form-content').forEach(content => {
+                content.style.display = 'none';
+            });
+            
+            if (square === activeSquare) {
+                // If clicking active square, deactivate it
+                square.classList.remove('active');
+                activeSquare = null;
+            } else {
+                // Deactivate previous square if any
+                if (activeSquare) {
+                    activeSquare.classList.remove('active');
+                }
+                
+                // Activate new square
+                square.classList.add('active');
+                activeSquare = square;
+                
+                // Show appropriate content
+                if (formType === 'land') {
+                    document.getElementById('landContent').style.display = 'block';
+                    showQuestion(1);
+                } else if (formType === 'gemeinden') {
+                    document.getElementById('gemeindenContent').style.display = 'block';
+                } else if (formType === 'investors') {
+                    document.getElementById('investorsContent').style.display = 'block';
+                }
+            }
+        });
     });
 
     function addLocationFields() {
@@ -177,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
             updateSliderValue(slider, valueDisplay);
         }
 
-        if (questionNumber === 7 || questionNumber === totalQuestions) {
+        if (questionNumber === 7) {
             const inputs = container.querySelectorAll('input');
             inputs.forEach(input => {
                 input.addEventListener('input', updateNavigationButtons);
@@ -202,6 +236,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateNavigationButtons() {
         const prevButton = document.querySelector('#prevButton');
         const nextButton = document.querySelector('#nextButton');
+        const submitButton = document.querySelector('#submitButton');
         
         if (prevButton) {
             prevButton.disabled = currentQuestion === 1;
@@ -209,7 +244,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (nextButton) {
             const isLastQuestion = currentQuestion === totalQuestions;
-            nextButton.textContent = isLastQuestion ? 'Absenden' : 'Weiter';
+            nextButton.style.display = isLastQuestion ? 'none' : 'block';
+            if (submitButton) {
+                submitButton.style.display = isLastQuestion ? 'block' : 'none';
+            }
             nextButton.disabled = !isQuestionAnswered(currentQuestion);
         }
     }
@@ -229,11 +267,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 const requiredInputs = entry.querySelectorAll('input[required]');
                 return Array.from(requiredInputs).every(input => input.value.trim() !== '');
             });
-        }
-
-        if (questionNumber === 8) {
-            const requiredInputs = container.querySelectorAll('input[required]');
-            return Array.from(requiredInputs).every(input => input.value.trim() !== '');
         }
 
         const selectedOption = container.querySelector('.option-card.selected');
@@ -319,13 +352,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('00NMz000003nXh4').value = q6Answer ? 
             (document.querySelector('#question6a .slider')?.value || '') : '';
 
-        // Update contact information
-        document.getElementById('email').value = 
-            document.querySelector('#question8 input[type="email"]').value;
-            
-        document.getElementById('name').value = 
-            document.querySelector('#question8 input[type="text"]').value;
-
         // Submit the form
         document.getElementById('landForm').submit();
     }
@@ -342,12 +368,50 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentQuestion < totalQuestions) {
             currentQuestion++;
             showQuestion(currentQuestion);
-        } else {
-            submitForm();
         }
     });
 
-    // Initialize first question
+    document.querySelector('#submitButton')?.addEventListener('click', (e) => {
+        e.preventDefault();
+        submitForm();
+    });
+    document.querySelectorAll('.contact-form .submit-btn').forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const form = button.closest('.contact-form');
+            const nameInput = form.querySelector('input[name="name"]');
+            const emailInput = form.querySelector('input[name="email"]');
+            
+            if (!nameInput.value.trim() || !emailInput.value.trim()) {
+                alert('Bitte füllen Sie alle erforderlichen Felder aus.');
+                return;
+            }
+
+            // Show success popup
+            const popup = document.getElementById('popup');
+            if (popup) {
+                popup.style.display = 'block';
+                
+                // Close popup handler
+                const closeButton = popup.querySelector('.popup-close-btn');
+                if (closeButton) {
+                    closeButton.addEventListener('click', () => {
+                        popup.style.display = 'none';
+                        // Reset form
+                        form.reset();
+                        // Hide form content and deactivate square
+                        form.closest('.form-content').style.display = 'none';
+                        if (activeSquare) {
+                            activeSquare.classList.remove('active');
+                            activeSquare = null;
+                        }
+                    });
+                }
+            }
+        });
+    });
+
+    // Initialize first question for land form
     showQuestion(1);
 
     // Handle window resize for sliders

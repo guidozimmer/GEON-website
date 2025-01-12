@@ -33,8 +33,9 @@
     <link rel="stylesheet" href="./css/howItWorks.css">
     <link rel="stylesheet" href="./css/refrences.css">
     <link rel="stylesheet" href="./css/vision.css">
-    <link rel="stylesheet" href="./css/slide.css">
+    <link rel="stylesheet" href="./css/banner.css">
     <link rel="stylesheet" href="./css/code.css">
+    <link rel="stylesheet" href="./css/slide.css">
 
 
 
@@ -201,7 +202,7 @@
     </div>
 
 
-    <div class="slide">
+    <div class="banner">
         <img src="./img/banner_pic_01.jpeg" alt="Slide">
         <div class="text">
             <h2 id="quote"></h2>
@@ -209,220 +210,273 @@
             <h2 id="sliderPt3"></2>
         </div>
     </div>
+
+
+    <section class="slide">
+        <div class="slider-wrapper">
+            <div class="slider">
+                <img id="slide-1" src="https://images.unsplash.com/photo-1656464868371-602be27fd4c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80" alt="3D rendering of an imaginary orange planet in space" />
+                <img id="slide-2" src="https://images.unsplash.com/photo-1657586640569-4a3d4577328c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80" alt="3D rendering of an imaginary green planet in space" />
+                <img id="slide-3" src="https://images.unsplash.com/photo-1656077217715-bdaeb06bd01f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80" alt="3D rendering of an imaginary blue planet in space" />
+            </div>
+            <div class="slider-nav">
+                <a href="#slide-1"></a>
+                <a href="#slide-2"></a>
+                <a href="#slide-3"></a>
+            </div>
+        </div>
+    </section>
+
     
 
 
     <div class="ourOffer">
         <div class="main-squares-container">
-            <div class="main-square">
+            <div class="main-square" data-form-type="land">
                 <div class="square-content">
                     <h3 id="mainSquare1Title">Fläche anbieten</h3>
                     <p id="mainSquare1Desc">Klicken Sie hier, um Ihre Fläche anzubieten</p>
                 </div>
             </div>
-        </div>
-        
-        <div class="form-section">
-            <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DWz000001Nbvx" method="POST" class="form-section" id="landForm">
-                <input type="hidden" name="orgid" value="00DWz000001Nbvx">
-                <input type="hidden" name="retURL" value="http://geongroup.de/dev/public/main">
-                
-                <!-- Add these at the top of your form -->
-                <input type="hidden" id="email" name="email">
-                <input type="hidden" id="name" name="name">
-                <input type="hidden" id="00NMz000003nXif" name="00NMz000003nXif">
-                <input type="hidden" id="00NMz000003nXkH" name="00NMz000003nXkH">
-                <input type="hidden" id="00NMz000003nXlt" name="00NMz000003nXlt">
-                <input type="hidden" id="00NMz000003nXnV" name="00NMz000003nXnV">
-                <input type="hidden" id="00NMz000003nXp7" name="00NMz000003nXp7">
-                <input type="hidden" id="00NMz000003nXad" name="00NMz000003nXad">
-                <input type="hidden" id="00NMz000003nXsL" name="00NMz000003nXsL">
-                <input type="hidden" id="00NMz000003nXh4" name="00NMz000003nXh4">
-                <input type="hidden" id="00NMz000003o2Cz" name="00NMz000003o2Cz">
-                <input type="hidden" id="00NMz000003o2Eb" name="00NMz000003o2Eb">
-                <input type="hidden" id="00NMz000003o2GD" name="00NMz000003o2GD">
-                <input type="hidden" id="00NMz000003o2Hp" name="00NMz000003o2Hp">
-                <input type="hidden" id="00NMz000003o2JR" name="00NMz000003o2JR">
-                <input type="hidden" id="00NMz000003o2L3" name="00NMz000003o2L3">
-            </form>
-     
-            <!-- Question 1 -->
-            <div id="question1" class="question-container">
-                <div class="question-title">1. Sind sie Eigentümer der Flächen</div>
-                <div class="options-container">
-                    <div class="option-card" data-value="ja">Ja</div>
-                    <div class="option-card" data-value="nein">Nein</div>
+            
+            <div class="main-square" data-form-type="gemeinden">
+                <div class="square-content">
+                    <h3>Gemeinden</h3>
+                    <p>Informationen für Gemeinden und Bürger</p>
                 </div>
             </div>
-     
-            <!-- Question 2 -->
-            <div id="question2" class="question-container">
-                <div class="question-title">2. Um welche Art Fläche handelt es sich (Mehrfachauswahl möglich)</div>
-                <div class="options-container">
-                    <div class="option-card multi-select" data-value="Ackerland">Ackerland</div>
-                    <div class="option-card multi-select" data-value="Brachland">Brachland</div>
-                    <div class="option-card multi-select" data-value="Grünland">Grünland</div>
-                    <div class="option-card multi-select" data-value="Sonstiges">Sonstiges</div>
-                </div>
-            </div>
-     
-            <!-- Question 3 -->
-            <div id="question3" class="question-container">
-                <div class="question-title">3. Liegt die Fläche oder eine Teilfläche entlag einer Autobahn oder Bahnstrecke (bis 500 m entfernt)?</div>
-                <div class="options-container">
-                    <div class="option-card" data-value="ja" data-shows="question3a">Ja</div>
-                    <div class="option-card" data-value="nein">Nein</div>
-                </div>
-                <input type="hidden" id="00NMz000003nXkH" name="00NMz000003nXkH" value="0">
-     
-                <div id="question3a" class="conditional-question">
-                    <div class="question-title">3a. Welcher Anteil liegt innerhalb eines Korridors von 500m parallel zur Autobahn oder Bahnstrecke?</div>
-                    <div class="slider-container">
-                        <div class="slider-wrapper">
-                            <input type="range" class="slider" min="1" max="100" value="50" data-percentage="true">
-                            <div class="slider-value">50%</div>
-                            <input type="hidden" id="00NMz000003nXlt" name="00NMz000003nXlt" value="50">
-                        </div>
-                    </div>
-                </div>
-            </div>
-     
-            <!-- Question 4 -->
-            <div id="question4" class="question-container">
-                <div class="question-title">4. Wie groß ist die Fläche?</div>
-                <div class="slider-container">
-                    <div class="slider-wrapper">
-                        <input type="range" class="slider" min="1" max="300" value="150">
-                        <div class="slider-value">150 ha</div>
-                        <input type="hidden" id="00NMz000003nXnV" name="00NMz000003nXnV" value="150">
-                    </div>
-                </div>
-            </div>
-     
-            <!-- Question 5 -->
-            <div id="question5" class="question-container">
-                <div class="question-title">5. Ist die Fläche zusammenhängend?</div>
-                <div class="options-container">
-                    <div class="option-card" data-value="ja" data-shows="question5a">Ja</div>
-                    <div class="option-card" data-value="nein">Nein</div>
-                </div>
-                <input type="hidden" id="00NMz000003nXp7" name="00NMz000003nXp7" value="0">
-     
-                <div id="question5a" class="conditional-question">
-                    <div class="question-title">5a. Um wie viele Teilflächen handelt es sich?</div>
-                    <select id="00NMz000003nXad" name="00NMz000003nXad" title="Anzahl_Teilflaechen">
-                        <option value="">--None--</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="3+">3+</option>
-                    </select>
-                </div>
-            </div>
-     
-            <!-- Question 6 -->
-            <div id="question6" class="question-container">
-                <div class="question-title">6. Ist die Fläche verpachtet?</div>
-                <div class="options-container">
-                    <div class="option-card" data-value="ja" data-shows="question6a">Ja</div>
-                    <div class="option-card" data-value="nein">Nein</div>
-                </div>
-                <input type="hidden" id="00NMz000003nXsL" name="00NMz000003nXsL" value="0">
-     
-                <div id="question6a" class="conditional-question">
-                    <div class="question-title">6a. Bis wann ist die Fläche verpachtet?</div>
-                    <div class="slider-container">
-                        <div class="slider-wrapper">
-                            <input type="range" class="slider" min="2023" max="2040" value="2023" data-year="true">
-                            <div class="slider-value">2023</div>
-                            <input type="hidden" id="00NMz000003nXh4" name="00NMz000003nXh4" value="2023">
-                        </div>
-                    </div>
-                </div>
-            </div>
-     
-            <!-- Question 7 -->
-            <div id="question7" class="question-container">
-                <div class="question-title">7. Wo liegt die Fläche?</div>
-                <div id="locationFieldsContainer">
-                    <div class="location-entry">
-                        <div class="input-group">
-                            <div class="input-field">
-                                <label for="bundesland">Bundesland</label>
-                                <input type="text" name="bundesland[]" required>
-                            </div>
-                            <div class="input-field">
-                                <label for="landkreis">Landkreis</label>
-                                <input type="text" name="landkreis[]" required>
-                            </div>
-                            <div class="input-field">
-                                <label for="gemarkung">Gemarkung</label>
-                                <input type="text" name="gemarkung[]" required>
-                            </div>
-                        </div>
-                        <div class="input-group">
-                            <div class="input-field">
-                                <label for="flur">Flur</label>
-                                <input type="text" name="flur[]" required>
-                            </div>
-                            <div class="input-field">
-                                <label for="flurstueck">Flurstück</label>
-                                <input type="text" name="flurstueck[]" required>
-                            </div>
-                            <div class="input-field">
-                                <label for="flaeche">Fläche in ha</label>
-                                <input type="number" name="flaeche[]" required>
-                            </div>
-                            <div class="input-field">
-                                <label for="amt">Amt</label>
-                                <input type="text" name="amt[]" required>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <button type="button" id="addLocationButton" class="add-location-btn">Weitere Fläche hinzufügen</button>
-            </div>
-     
-            <!-- Question 8 -->
-            <div id="question8" class="question-container">
-                <div class="question-title">8. Kontakt aufnehmen</div>
-                <div class="input-group">
-                    <div class="input-field">
-                        <label for="name">Name*</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="input-field">
-                        <label for="email">Email*</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="input-field">
-                        <label for="phone">Telefonnummer</label>
-                        <input type="tel" id="phone">
-                    </div>
-                </div>
-            </div>
-     
-            <!-- Navigation Buttons -->
-            <div class="navigation-buttons">
-                <button type="button" id="prevButton" class="nav-button">Zurück</button>
-                <button type="button" id="nextButton" class="nav-button">Weiter</button>
-                <button type="submit" id="submitButton" class="nav-button" style="display: none;">Senden</button>
-            </div>
-        </form>
-     
-        <!-- Success Popup -->
-        <div id="popup" style="display: none;">
-            <div class="popup-overlay">
-                <div class="popup-content">
-                    <h2 id="popupPt1">Nachricht erfolgreich gesendet!</h2>
-                    <p id="popupPt2">Vielen Dank für Ihre Anfrage. Wir melden uns bald bei Ihnen.</p>
-                    <button class="popup-close-btn" id="popupPt3">Schließen</button>
+    
+            <div class="main-square" data-form-type="investors">
+                <div class="square-content">
+                    <h3>Investoren</h3>
+                    <p>Informationen für Investoren</p>
                 </div>
             </div>
         </div>
+    
+        <!-- Content for Land -->
+        <div id="landContent" class="form-content">
+            <div class="form-section">
+                <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DWz000001Nbvx" method="POST" class="form-section" id="landForm">
+                    <input type="hidden" name="orgid" value="00DWz000001Nbvx">
+                    <input type="hidden" name="retURL" value="http://geongroup.de/dev/public/main">
+                    
+                    <input type="hidden" id="email" name="email">
+                    <input type="hidden" id="name" name="name">
+                    <input type="hidden" id="00NMz000003nXif" name="00NMz000003nXif">
+                    <input type="hidden" id="00NMz000003nXkH" name="00NMz000003nXkH">
+                    <input type="hidden" id="00NMz000003nXlt" name="00NMz000003nXlt">
+                    <input type="hidden" id="00NMz000003nXnV" name="00NMz000003nXnV">
+                    <input type="hidden" id="00NMz000003nXp7" name="00NMz000003nXp7">
+                    <input type="hidden" id="00NMz000003nXad" name="00NMz000003nXad">
+                    <input type="hidden" id="00NMz000003nXsL" name="00NMz000003nXsL">
+                    <input type="hidden" id="00NMz000003nXh4" name="00NMz000003nXh4">
+                    <input type="hidden" id="00NMz000003o2Cz" name="00NMz000003o2Cz">
+                    <input type="hidden" id="00NMz000003o2Eb" name="00NMz000003o2Eb">
+                    <input type="hidden" id="00NMz000003o2GD" name="00NMz000003o2GD">
+                    <input type="hidden" id="00NMz000003o2Hp" name="00NMz000003o2Hp">
+                    <input type="hidden" id="00NMz000003o2JR" name="00NMz000003o2JR">
+                    <input type="hidden" id="00NMz000003o2L3" name="00NMz000003o2L3">
+                </form>
+         
+                <!-- Question 1 -->
+                <div id="question1" class="question-container">
+                    <div class="question-title">1. Sind sie Eigentümer der Flächen</div>
+                    <div class="options-container">
+                        <div class="option-card" data-value="ja">Ja</div>
+                        <div class="option-card" data-value="nein">Nein</div>
+                    </div>
+                </div>
+         
+                <!-- Question 2 -->
+                <div id="question2" class="question-container">
+                    <div class="question-title">2. Um welche Art Fläche handelt es sich (Mehrfachauswahl möglich)</div>
+                    <div class="options-container">
+                        <div class="option-card multi-select" data-value="Ackerland">Ackerland</div>
+                        <div class="option-card multi-select" data-value="Brachland">Brachland</div>
+                        <div class="option-card multi-select" data-value="Grünland">Grünland</div>
+                        <div class="option-card multi-select" data-value="Sonstiges">Sonstiges</div>
+                    </div>
+                </div>
+         
+                <!-- Question 3 -->
+                <div id="question3" class="question-container">
+                    <div class="question-title">3. Liegt die Fläche oder eine Teilfläche entlag einer Autobahn oder Bahnstrecke (bis 500 m entfernt)?</div>
+                    <div class="options-container">
+                        <div class="option-card" data-value="ja" data-shows="question3a">Ja</div>
+                        <div class="option-card" data-value="nein">Nein</div>
+                    </div>
+                    <input type="hidden" id="00NMz000003nXkH" name="00NMz000003nXkH" value="0">
+         
+                    <div id="question3a" class="conditional-question">
+                        <div class="question-title">3a. Welcher Anteil liegt innerhalb eines Korridors von 500m parallel zur Autobahn oder Bahnstrecke?</div>
+                        <div class="slider-container">
+                            <div class="slider-wrapper">
+                                <input type="range" class="slider" min="1" max="100" value="50" data-percentage="true">
+                                <div class="slider-value">50%</div>
+                                <input type="hidden" id="00NMz000003nXlt" name="00NMz000003nXlt" value="50">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+         
+                <!-- Question 4 -->
+                <div id="question4" class="question-container">
+                    <div class="question-title">4. Wie groß ist die Fläche?</div>
+                    <div class="slider-container">
+                        <div class="slider-wrapper">
+                            <input type="range" class="slider" min="1" max="300" value="150">
+                            <div class="slider-value">150 ha</div>
+                            <input type="hidden" id="00NMz000003nXnV" name="00NMz000003nXnV" value="150">
+                        </div>
+                    </div>
+                </div>
+         
+                <!-- Question 5 -->
+                <div id="question5" class="question-container">
+                    <div class="question-title">5. Ist die Fläche zusammenhängend?</div>
+                    <div class="options-container">
+                        <div class="option-card" data-value="ja" data-shows="question5a">Ja</div>
+                        <div class="option-card" data-value="nein">Nein</div>
+                    </div>
+                    <input type="hidden" id="00NMz000003nXp7" name="00NMz000003nXp7" value="0">
+         
+                    <div id="question5a" class="conditional-question">
+                        <div class="question-title">5a. Um wie viele Teilflächen handelt es sich?</div>
+                        <select id="00NMz000003nXad" name="00NMz000003nXad" title="Anzahl_Teilflaechen">
+                            <option value="">--None--</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="3+">3+</option>
+                        </select>
+                    </div>
+                </div>
+         
+                <!-- Question 6 -->
+                <div id="question6" class="question-container">
+                    <div class="question-title">6. Ist die Fläche verpachtet?</div>
+                    <div class="options-container">
+                        <div class="option-card" data-value="ja" data-shows="question6a">Ja</div>
+                        <div class="option-card" data-value="nein">Nein</div>
+                    </div>
+                    <input type="hidden" id="00NMz000003nXsL" name="00NMz000003nXsL" value="0">
+         
+                    <div id="question6a" class="conditional-question">
+                        <div class="question-title">6a. Bis wann ist die Fläche verpachtet?</div>
+                        <div class="slider-container">
+                            <div class="slider-wrapper">
+                                <input type="range" class="slider" min="2023" max="2040" value="2023" data-year="true">
+                                <div class="slider-value">2023</div>
+                                <input type="hidden" id="00NMz000003nXh4" name="00NMz000003nXh4" value="2023">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+         
+                <!-- Question 7 -->
+                <div id="question7" class="question-container">
+                    <div class="question-title">7. Wo liegt die Fläche?</div>
+                    <div id="locationFieldsContainer">
+                        <div class="location-entry">
+                            <div class="input-group">
+                                <div class="input-field">
+                                    <label for="bundesland">Bundesland</label>
+                                    <input type="text" name="bundesland[]" required>
+                                </div>
+                                <div class="input-field">
+                                    <label for="landkreis">Landkreis</label>
+                                    <input type="text" name="landkreis[]" required>
+                                </div>
+                                <div class="input-field">
+                                    <label for="gemarkung">Gemarkung</label>
+                                    <input type="text" name="gemarkung[]" required>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <div class="input-field">
+                                    <label for="flur">Flur</label>
+                                    <input type="text" name="flur[]" required>
+                                </div>
+                                <div class="input-field">
+                                    <label for="flurstueck">Flurstück</label>
+                                    <input type="text" name="flurstueck[]" required>
+                                </div>
+                                <div class="input-field">
+                                    <label for="flaeche">Fläche in ha</label>
+                                    <input type="number" name="flaeche[]" required>
+                                </div>
+                                <div class="input-field">
+                                    <label for="amt">Amt</label>
+                                    <input type="text" name="amt[]" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" id="addLocationButton" class="add-location-btn">Weitere Fläche hinzufügen</button>
+                </div>
+    
+                <!-- Navigation Buttons -->
+                <div class="navigation-buttons">
+                    <button type="button" id="prevButton" class="nav-button">Zurück</button>
+                    <button type="button" id="nextButton" class="nav-button">Weiter</button>
+                    <button type="submit" id="submitButton" class="nav-button" style="display: none;">Senden</button>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Content for Gemeinden -->
+        <div id="gemeindenContent" class="form-content">
+            <div class="contact-form">
+                <div class="question-container active">
+                    <div class="question-title">Kontakt aufnehmen</div>
+                    <div class="input-group">
+                        <div class="input-field">
+                            <label for="gemeinden-name">Name*</label>
+                            <input type="text" id="gemeinden-name" name="name" required>
+                        </div>
+                        <div class="input-field">
+                            <label for="gemeinden-email">Email*</label>
+                            <input type="email" id="gemeinden-email" name="email" required>
+                        </div>
+                        <div class="input-field">
+                            <label for="gemeinden-phone">Telefonnummer</label>
+                            <input type="tel" id="gemeinden-phone">
+                        </div>
+                    </div>
+                    <div class="navigation-buttons">
+                        <button type="submit" class="nav-button submit-btn">Senden</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Content for Investors -->
+        <div id="investorsContent" class="form-content">
+            <div class="contact-form">
+                <div class="question-container active">
+                    <div class="question-title">Kontakt aufnehmen</div>
+                    <div class="input-group">
+                        <div class="input-field">
+                            <label for="investor-name">Name*</label>
+                            <input type="text" id="investor-name" name="name" required>
+                        </div>
+                        <div class="input-field">
+                            <label for="investor-email">Email*</label>
+                            <input type="email" id="investor-email" name="email" required>
+                        </div>
+                        <div class="input-field">
+                            <label for="investor-phone">Telefonnummer</label>
+                            <input type="tel" id="investor-phone">
+                        </div>
+                    </div>
+                    <div class="navigation-buttons">
+                        <button type="submit" class="nav-button submit-btn">Senden</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-        
 
 
 
