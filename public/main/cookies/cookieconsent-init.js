@@ -41,8 +41,7 @@ const toggleContactForm = (cookie) => {
 };
 
 // Single export declaration for initializeCookieConsent
-export const initializeCookieConsent = (language = 'en') => {
-    // First hide the contact form
+export default function initializeCookieConsent(language = 'en') {
     const contactSection = document.querySelector('.contact_us_6');
     
     if (contactSection) {
