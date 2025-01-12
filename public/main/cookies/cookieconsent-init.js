@@ -3,7 +3,7 @@ import "../cookies/cookieconsent.umd.js";
 let cookieConsentInstance;
 
 // Add listener for contact nav link
-function setupContactNavListener() {
+const setupContactNavListener = () => {
     const contactNav = document.getElementById('contactNav');
     if (contactNav) {
         contactNav.addEventListener('click', (e) => {
@@ -17,9 +17,9 @@ function setupContactNavListener() {
             }
         });
     }
-}
+};
 
-function toggleContactForm(cookie) {
+const toggleContactForm = (cookie) => {
     const contactSection = document.querySelector('.contact_us_6');
 
     if (!contactSection) {
@@ -38,10 +38,10 @@ function toggleContactForm(cookie) {
     } else {
         console.log('No cookie preferences found - keeping form hidden');
     }
-}
+};
 
-export function initializeCookieConsent(language = 'en') {
-    
+// Single export declaration for initializeCookieConsent
+export const initializeCookieConsent = (language = 'en') => {
     // First hide the contact form
     const contactSection = document.querySelector('.contact_us_6');
     
@@ -261,4 +261,4 @@ export function initializeCookieConsent(language = 'en') {
             }
         }
     }
-}
+};
