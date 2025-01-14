@@ -35,7 +35,7 @@
     <link rel="stylesheet" href="./css/vision.css">
     <link rel="stylesheet" href="./css/banner.css">
     <link rel="stylesheet" href="./css/code.css">
-    <link rel="stylesheet" href="./css/slide.css">
+    <link rel="stylesheet" href="./css/ourTeam.css">
 
 
 
@@ -120,7 +120,6 @@
     <div class="codeSection">
 
         <h3>Haben sie einen Zugangscode?</h3>
-
 
         <form id="redirectForm">
             <input type="text" name="code" id="code" placeholder="Enter code here...">
@@ -544,69 +543,78 @@
     </div>
 
 
-
-    <div class="contact_us_6 contact">
-        <div class="responsive-container-block container">
-        <form class="form-box" method="POST" id="contactForm">
-            <div class="container-block form-wrapper">
-            <div class="mob-text">
-                <p class="text-blk contactus-head" id="conatctPt1"></p>
+    <div class="ourTeam">
+        <h1>Our Team</h1>
+        <h3>At GEON, we are a small, passionate team of highly skilled professionals with extensive expertise in photovoltaics and renewable energy. Leveraging our deep knowledge of technical challenges, legal frameworks in German renewable energy, and financing solutions, we excel at managing utility-scale projects. Our advanced IT systems, including AI components, enable us to automate all business processes, making our compact team highly efficient and technology-driven.</h3>
+        <div class="team">
+            <div class="profile-card">
+                <div class="profile-image"></div>
+                <div class="profile-name">Sharam Roghani</div>
+                <div class="profile-job">Chief Execurtive Officer</div>
             </div>
-            <div class="responsive-container-block" id="i2cbk">
-                <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="i10mt-3">
-                <p class="text-blk input-title" id="conatctPt2"></p>
-                <input class="input" id="contactFormName" name="fullName" required>
-                </div>
-                <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="ip1yp">
-                <p class="text-blk input-title" id="conatctPt3"></p>
-                <input class="input" id="contactFormEmail" name="email" type="email" autofill required>
-                </div>
-                <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="ih9wi">
-                <p class="text-blk input-title" id="conatctPt4"></p>
-                <input class="input" id="imgis-3" name="phoneNumber">
-                </div>
-                <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="i634i-3">
-                <p class="text-blk input-title" id="conatctPt5"></p>
-                <textarea class="textinput" id="i5vyy-3 message" name="message" required></textarea>
-                </div>
+            
+            <div class="profile-card">
+                <div class="profile-image"></div>
+                <div class="profile-name">Guido Zimmer</div>
+                <div class="profile-job">Chief Technology Officer</div>
             </div>
-
-
-            <div class="g-recaptcha" data-sitekey="6LcAbJ4qAAAAAP1bGh0zHKjBV2uTT4U5sjhJoIx1"></div>
-
-
-            <button class="submit-btn" id="conatctPt6" type="submit"></button>
+            
+            <div class="profile-card">
+                <div class="profile-image"></div>
+                <div class="profile-name">Bertan Oguz</div>
+                <div class="profile-job">Business Development</div>
             </div>
-
-        </form>
-        
-        <div class="responsive-cell-block wk-desk-7 wk-ipadp-12 wk-tab-12 wk-mobile-12" id="i772w">
-            <div class="map-part">
-            <p class="text-blk map-contactus-head" id="w-c-s-fc_p-1-dm-id">
-                
-            </p>
-            <p class="text-blk map-contactus-subhead">
-                +49 1604455677 <br>
-                Richard-Wagner-Straße 15, München, 80333
-            </p>
-
-            <div class="map-box container-block">
+            
+            <div class="profile-card">
+                <div class="profile-image"></div>
+                <div class="profile-name">Tristan Zimmer</div>
+                <div class="profile-job">Junior Geospatial Analyst</div>
             </div>
-
-            <div id="popup" class="popup-overlay" style="display: none;">
-                <div class="popup-content">
-                    <div class="popup-close">&times;</div>
-                    <div class="popup-icon">✔️</div>
-                    <h2 class="popup-title" id="popupPt1">Message Sent Successfully!</h2>
-                    <p class="popup-message" id="popupPt2">Thank you for reaching out. We'll get back to you soon.</p>
-                    <button class="popup-close-btn" id="popupPt3">Close</button>
-                </div>
+            
+            <div class="profile-card">
+                <div class="profile-image"></div>
+                <div class="profile-name">Raphael Zimmer</div>
+                <div class="profile-job">Junior Software Developer</div>
             </div>
-        
-            </div>
-        </div>
         </div>
     </div>
+    <div class="contact">
+        <div class="contact-container">
+            <div class="contact-form">
+                <h2>Do you have questions, feedback, or specific requests?</h2>
+                <p>We're here to help! Simply fill out the form below, and we'll get back to you as soon as possible. We look forward to hearing from you!</p>
+                <form id="contactForm" method="POST">
+                    <div class="form-group">
+                        <p class="input-title">Full Name</p>
+                        <input class="input" id="contactFormName" name="fullName" required>
+                    </div>
+                    <div class="form-group">
+                        <p class="input-title">Email</p>
+                        <input class="input" id="contactFormEmail" name="email" type="email" required>
+                    </div>
+                    <div class="form-group">
+                        <p class="input-title">Phone Number</p>
+                        <input class="input" id="contactFormPhone" name="phoneNumber">
+                    </div>
+                    <div class="form-group">
+                        <p class="input-title">Message</p>
+                        <textarea class="textinput" id="message" name="message" required></textarea>
+                    </div>
+                    <div class="g-recaptcha" data-sitekey="6LcAbJ4qAAAAAP1bGh0zHKjBV2uTT4U5sjhJoIx1"></div>
+                    <button class="submit-btn" type="submit">Send Message</button>
+                </form>
+            </div>
+            <div class="company-info">
+                <h2>GEON Group GmbH</h2>
+                <p>Richard-Wagner-Str. 15</p>
+                <p>D-80333 München</p>
+                <p>Tel +49 89 1234567</p>
+                <p>solarpark@geongroup.de</p>
+            </div>
+        </div>
+    </div>
+
+
 
 
 
