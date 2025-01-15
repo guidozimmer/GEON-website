@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    let currentQuestion = 1;
+    let currentQuestion = 0;
     const totalQuestions = 8;
     let locationCount = 1;
     
@@ -15,6 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add Location Button Handler
     document.getElementById('addLocationButton')?.addEventListener('click', addLocationFields);
 
+
+    initializeSimpleFormQuestions();
+    
     // Function to hide all forms
     function hideAllForms() {
         landOwnerForm.style.display = 'none';
@@ -36,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
             hideAllForms();
             landOwnerForm.style.display = 'block';
             landOwnerSquare.classList.add('active');
-            showQuestion(1);
+            showQuestion(0);
         }
     });
 
@@ -47,13 +50,17 @@ document.addEventListener('DOMContentLoaded', () => {
             hideAllForms();
             investorForm.style.display = 'block';
             investorSquare.classList.add('active');
-            const investorQuestion = investorForm.querySelector('.question-container');
-            if (investorQuestion) {
-                investorQuestion.classList.add('active');
+            
+            // Show question 0 by default
+            const q0 = investorForm.querySelector('#investorQuestion0');
+            const contactForm = investorForm.querySelector('#investorContactForm');
+            if (q0 && contactForm) {
+                q0.style.display = 'block';
+                contactForm.style.display = 'none';
             }
         }
     });
-
+    
     communitySquare.addEventListener('click', () => {
         if (communityForm.style.display === 'block') {
             hideAllForms();
@@ -61,9 +68,13 @@ document.addEventListener('DOMContentLoaded', () => {
             hideAllForms();
             communityForm.style.display = 'block';
             communitySquare.classList.add('active');
-            const communityQuestion = communityForm.querySelector('.question-container');
-            if (communityQuestion) {
-                communityQuestion.classList.add('active');
+            
+            // Show question 0 by default
+            const q0 = communityForm.querySelector('#communityQuestion0');
+            const contactForm = communityForm.querySelector('#communityContactForm');
+            if (q0 && contactForm) {
+                q0.style.display = 'block';
+                contactForm.style.display = 'none';
             }
         }
     });
@@ -149,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function resetForm() {
-        currentQuestion = 1;
+        currentQuestion = 0;
         locationCount = 1;
         
         document.querySelectorAll('.option-card').forEach(card => {
@@ -171,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
         
-        showQuestion(1);
+        showQuestion(0);
     }
 
     function updateSliderValue(slider, valueDisplay) {
@@ -212,6 +223,29 @@ document.addEventListener('DOMContentLoaded', () => {
         updateNavigationButtons();
     }
 
+    function initializeSimpleFormQuestions() {
+        ['investor', 'community'].forEach(formType => {
+            const question0 = document.querySelector(`#${formType}Question0`);
+            const contactForm = document.querySelector(`#${formType}ContactForm`);
+            
+            if (question0 && contactForm) {
+                question0.querySelectorAll('.option-card').forEach(card => {
+                    card.addEventListener('click', () => {
+                        const optionCards = question0.querySelectorAll('.option-card');
+                        optionCards.forEach(c => c.classList.remove('selected'));
+                        card.classList.add('selected');
+                        
+                        if (card.getAttribute('data-value') === 'ja') {
+                            question0.style.display = 'none';
+                            contactForm.style.display = 'block';
+                        }
+                    });
+                });
+            }
+        });
+    }
+    
+
     function initializeQuestion(questionNumber) {
         const container = document.querySelector(`#question${questionNumber}`);
         if (!container) return;
@@ -220,6 +254,14 @@ document.addEventListener('DOMContentLoaded', () => {
         optionCards.forEach(card => {
             card.addEventListener('click', () => handleOptionCardClick(card, optionCards));
         });
+
+        if (questionNumber === 0) {
+            const neinOption = container.querySelector('.option-card[data-value="nein"]');
+            const hasSelected = container.querySelector('.option-card.selected');
+            if (neinOption && !hasSelected) {
+                neinOption.classList.add('selected');
+            }
+        }
 
         const slider = container.querySelector('.slider');
         if (slider) {
@@ -258,7 +300,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const nextButton = document.querySelector('#nextButton');
         
         if (prevButton) {
-            prevButton.disabled = currentQuestion === 1;
+            prevButton.disabled = currentQuestion === 0;
         }
 
         if (nextButton) {
@@ -380,70 +422,70 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('name').value = 
             document.querySelector('#question8 input[type="text"]').value;
         
-            // Submit the form
-            document.getElementById('landForm').submit();
+        // Submit the form
+        document.getElementById('landForm').submit();
+    }
+
+    // Event Listeners for navigation
+    document.querySelector('#prevButton')?.addEventListener('click', () => {
+        if (currentQuestion > 0) {
+            currentQuestion--;
+            showQuestion(currentQuestion);
         }
-    
-        // Event Listeners for navigation
-        document.querySelector('#prevButton')?.addEventListener('click', () => {
-            if (currentQuestion > 1) {
-                currentQuestion--;
-                showQuestion(currentQuestion);
-            }
-        });
-    
-        document.querySelector('#nextButton')?.addEventListener('click', () => {
-            if (currentQuestion < totalQuestions) {
-                currentQuestion++;
-                showQuestion(currentQuestion);
-            } else {
-                submitForm();
-            }
-        });
-    
-        // Initialize first question
-        showQuestion(1);
-    
-        // Add form submission handlers for the simple forms
-        const simpleFormSubmitHandler = (event) => {
-            event.preventDefault();
-            const form = event.target;
-            
-            // Basic validation
-            const email = form.querySelector('input[type="email"]');
-            const name = form.querySelector('input[type="text"]');
-            
-            if (!email.value || !name.value) {
-                alert('Bitte füllen Sie alle erforderlichen Felder aus.');
-                return;
-            }
-    
-            // Submit the form
-            form.submit();
-        };
-    
-        // Add submit handlers to both simple forms
-        document.querySelector('#investorForm form')?.addEventListener('submit', simpleFormSubmitHandler);
-        document.querySelector('#communityForm form')?.addEventListener('submit', simpleFormSubmitHandler);
-    
-        // Handle window resize for sliders
-        window.addEventListener('resize', () => {
-            const currentContainer = document.querySelector(`#question${currentQuestion}`);
-            if (currentContainer) {
-                const slider = currentContainer.querySelector('.slider');
-                const valueDisplay = currentContainer.querySelector('.slider-value');
-                if (slider && valueDisplay) {
-                    updateSliderValue(slider, valueDisplay);
-                }
-    
-                const visibleConditionals = currentContainer.querySelectorAll('.conditional-question.visible');
-                visibleConditionals.forEach(conditional => {
-                    const conditionalSlider = conditional.querySelector('.slider');
-                    const conditionalValueDisplay = conditional.querySelector('.slider-value');
-                    if (conditionalSlider && conditionalValueDisplay) {
-                        updateSliderValue(conditionalSlider, conditionalValueDisplay);
-                    }
-                });
-            }
-        });
     });
+
+    document.querySelector('#nextButton')?.addEventListener('click', () => {
+        if (currentQuestion < totalQuestions) {
+            currentQuestion++;
+            showQuestion(currentQuestion);
+        } else {
+            submitForm();
+        }
+    });
+
+    // Initialize first question
+    showQuestion(0);
+
+    // Add form submission handlers for the simple forms
+    const simpleFormSubmitHandler = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        
+        // Basic validation
+        const email = form.querySelector('input[type="email"]');
+        const name = form.querySelector('input[type="text"]');
+        
+        if (!email.value || !name.value) {
+            alert('Bitte füllen Sie alle erforderlichen Felder aus.');
+            return;
+        }
+
+        // Submit the form
+        form.submit();
+    };
+
+    // Add submit handlers to both simple forms
+    document.querySelector('#investorForm form')?.addEventListener('submit', simpleFormSubmitHandler);
+    document.querySelector('#communityForm form')?.addEventListener('submit', simpleFormSubmitHandler);
+
+    // Handle window resize for sliders
+    window.addEventListener('resize', () => {
+        const currentContainer = document.querySelector(`#question${currentQuestion}`);
+        if (currentContainer) {
+            const slider = currentContainer.querySelector('.slider');
+            const valueDisplay = currentContainer.querySelector('.slider-value');
+            if (slider && valueDisplay) {
+                updateSliderValue(slider, valueDisplay);
+            }
+
+            const visibleConditionals = currentContainer.querySelectorAll('.conditional-question.visible');
+            visibleConditionals.forEach(conditional => {
+                const conditionalSlider = conditional.querySelector('.slider');
+                const conditionalValueDisplay = conditional.querySelector('.slider-value');
+                if (conditionalSlider && conditionalValueDisplay) {
+                    updateSliderValue(conditionalSlider, conditionalValueDisplay);
+                }
+            });
+        }
+    });
+});

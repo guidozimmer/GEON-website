@@ -213,7 +213,7 @@
             <!-- Original Land Offer Square -->
             <div class="main-square" id="landOwnerSquare">
                 <div class="square-content">
-                    <h3>Fläche anbieten</h3>
+                    <h3 id="landTitle"></h3>
                     <p>Klicken Sie hier, um Ihre Fläche anzubieten</p>
                 </div>
             </div>
@@ -221,7 +221,7 @@
             <!-- New Investors Square -->
             <div class="main-square" id="investorSquare">
                 <div class="square-content">
-                    <h3>Investoren</h3>
+                    <h3 id="investorsTitle"></h3>
                     <p>Klicken Sie hier für Investoreninformationen</p>
                 </div>
             </div>
@@ -229,7 +229,7 @@
             <!-- New Communities Square -->
             <div class="main-square" id="communitySquare">
                 <div class="square-content">
-                    <h3>Gemeinden</h3>
+                    <h3 id="communityTitle"></h3>
                     <p>Klicken Sie hier für Gemeindeinformationen</p>
                 </div>
             </div>
@@ -262,41 +262,75 @@
                 <input type="hidden" id="00NMz000003o2L3" name="00NMz000003o2L3">
             </form>
 
+            <div id="question0" class="question-container">
+                <!-- Title -->
+                <div class="question-title" id="landPt1"></div>
+                
+                <!-- Content Container -->
+                <div class="options-container">
+                    <h3>
+                        <!-- Introduction -->
+                        <div class="intro-text">
+                            <p id="landPt2"></p>
+                            <p id="landPt3"></p>
+                        </div>
+                        
+                        <!-- Requirements List -->
+                        <div class="requirements">
+                            <p id="landPt4"></p>
+                            <ul>
+                                <li id="landPt5"></li>
+                                <li id="landPt6"></li>
+                                <li id="landPt7"></li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Call to Action -->
+                        <div class="cta-text">
+                            <p id="landPt8"></p>
+                        </div>
+                    </h3>
+            
+                    <!-- Action Button -->
+                    <div class="option-card" data-value="nein" style="display: none;" id="landPt9"></div>
+                </div>
+            </div>
+
             <!-- Question 1 -->
             <div id="question1" class="question-container">
-                <div class="question-title">1. Sind sie Eigentümer der Flächen</div>
+                <div id="landPt10" class="question-title"></div>
                 <div class="options-container">
-                    <div class="option-card" data-value="ja">Ja</div>
-                    <div class="option-card" data-value="nein">Nein</div>
+                    <div class="option-card" data-value="ja" id="landPt11"></div>
+                    <div class="option-card" data-value="nein" id="landPt12"></div>
                 </div>
             </div>
 
             <!-- Question 2 -->
             <div id="question2" class="question-container">
-                <div class="question-title">2. Um welche Art Fläche handelt es sich (Mehrfachauswahl möglich)</div>
+                <div id="landPt13" class="question-title"></div>
                 <div class="options-container">
-                    <div class="option-card multi-select" data-value="Ackerland">Ackerland</div>
-                    <div class="option-card multi-select" data-value="Brachland">Brachland</div>
-                    <div class="option-card multi-select" data-value="Grünland">Grünland</div>
-                    <div class="option-card multi-select" data-value="Sonstiges">Sonstiges</div>
+                    <div class="option-card multi-select" data-value="Ackerland" id="landPt14"></div>
+                    <div class="option-card multi-select" data-value="Brachland" id="landPt15"></div>
+                    <div class="option-card multi-select" data-value="Grünland" id="landPt16"></div>
+                    <div class="option-card multi-select" data-value="Sonstiges" id="landPt17"></div>
                 </div>
             </div>
 
             <!-- Question 3 -->
             <div id="question3" class="question-container">
-                <div class="question-title">3. Liegt die Fläche oder eine Teilfläche entlag einer Autobahn oder Bahnstrecke (bis 500 m entfernt)?</div>
+                <div id="landPt18" class="question-title"></div>
                 <div class="options-container">
-                    <div class="option-card" data-value="ja" data-shows="question3a">Ja</div>
-                    <div class="option-card" data-value="nein">Nein</div>
+                    <div class="option-card" data-value="ja" data-shows="question3a" id="landPt19"></div>
+                    <div class="option-card" data-value="nein" id="landPt20"></div>
                 </div>
                 <input type="hidden" id="00NMz000003nXkH" name="00NMz000003nXkH" value="0">
 
                 <div id="question3a" class="conditional-question">
-                    <div class="question-title">3a. Welcher Anteil liegt innerhalb eines Korridors von 500m parallel zur Autobahn oder Bahnstrecke?</div>
+                    <div id="landPt21" class="question-title"></div>
                     <div class="slider-container">
                         <div class="slider-wrapper">
                             <input type="range" class="slider" min="1" max="100" value="50" data-percentage="true">
-                            <div class="slider-value">50%</div>
+                            <div class="slider-value" id="landPt22"></div>
                             <input type="hidden" id="00NMz000003nXlt" name="00NMz000003nXlt" value="50">
                         </div>
                     </div>
@@ -305,11 +339,11 @@
 
             <!-- Question 4 -->
             <div id="question4" class="question-container">
-                <div class="question-title">4. Wie groß ist die Fläche?</div>
+                <div id="landPt23" class="question-title"></div>
                 <div class="slider-container">
                     <div class="slider-wrapper">
                         <input type="range" class="slider" min="1" max="300" value="150">
-                        <div class="slider-value">150 ha</div>
+                        <div class="slider-value" id="landPt24"></div>
                         <input type="hidden" id="00NMz000003nXnV" name="00NMz000003nXnV" value="150">
                     </div>
                 </div>
@@ -317,22 +351,22 @@
 
             <!-- Question 5 -->
             <div id="question5" class="question-container">
-                <div class="question-title">5. Ist die Fläche zusammenhängend?</div>
+                <div id="landPt25" class="question-title"></div>
                 <div class="options-container">
-                    <div class="option-card" data-value="ja" data-shows="question5a">Ja</div>
-                    <div class="option-card" data-value="nein">Nein</div>
+                    <div class="option-card" data-value="ja" data-shows="question5a" id="landPt26"></div>
+                    <div class="option-card" data-value="nein" id="landPt27"></div>
                 </div>
                 <input type="hidden" id="00NMz000003nXp7" name="00NMz000003nXp7" value="0">
 
                 <div id="question5a" class="conditional-question">
-                    <div class="question-title">5a. Um wie viele Teilflächen handelt es sich?</div>
+                    <div id="landPt28" class="question-title"></div>
                     <div class="select-wrapper">
                         <select id="00NMz000003nXad" name="00NMz000003nXad" title="Anzahl_Teilflaechen">
-                            <option value="">Bitte wählen Sie</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="3+">3+</option>
+                            <option value="" id="landPt29"></option>
+                            <option value="1" id="landPt30"></option>
+                            <option value="2" id="landPt31"></option>
+                            <option value="3" id="landPt32"></option>
+                            <option value="3+" id="landPt33"></option>
                         </select>
                         <div class="select-arrow"></div>
                     </div>
@@ -341,19 +375,19 @@
 
             <!-- Question 6 -->
             <div id="question6" class="question-container">
-                <div class="question-title">6. Ist die Fläche verpachtet?</div>
+                <div id="landPt34" class="question-title"></div>
                 <div class="options-container">
-                    <div class="option-card" data-value="ja" data-shows="question6a">Ja</div>
-                    <div class="option-card" data-value="nein">Nein</div>
+                    <div class="option-card" data-value="ja" data-shows="question6a" id="landPt35"></div>
+                    <div class="option-card" data-value="nein" id="landPt36"></div>
                 </div>
                 <input type="hidden" id="00NMz000003nXsL" name="00NMz000003nXsL" value="0">
 
                 <div id="question6a" class="conditional-question">
-                    <div class="question-title">6a. Bis wann ist die Fläche verpachtet?</div>
+                    <div id="landPt37" class="question-title"></div>
                     <div class="slider-container">
                         <div class="slider-wrapper">
                             <input type="range" class="slider" min="2023" max="2040" value="2023" data-year="true">
-                            <div class="slider-value">2023</div>
+                            <div class="slider-value" id="landPt38"></div>
                             <input type="hidden" id="00NMz000003nXh4" name="00NMz000003nXh4" value="2023">
                         </div>
                     </div>
@@ -362,60 +396,60 @@
 
             <!-- Question 7 -->
             <div id="question7" class="question-container">
-                <div class="question-title">7. Wo liegt die Fläche?</div>
+                <div id="landPt39" class="question-title"></div>
                 <div id="locationFieldsContainer">
                     <div class="location-entry">
                         <div class="input-group">
                             <div class="input-field">
-                                <label for="bundesland">Bundesland</label>
+                                <label for="bundesland" id="landPt40"></label>
                                 <input type="text" name="bundesland[]" required>
                             </div>
                             <div class="input-field">
-                                <label for="landkreis">Landkreis</label>
+                                <label for="landkreis" id="landPt41"></label>
                                 <input type="text" name="landkreis[]" required>
                             </div>
                             <div class="input-field">
-                                <label for="gemarkung">Gemarkung</label>
+                                <label for="gemarkung" id="landPt42"></label>
                                 <input type="text" name="gemarkung[]" required>
                             </div>
                         </div>
                         <div class="input-group">
                             <div class="input-field">
-                                <label for="flur">Flur</label>
+                                <label for="flur" id="landPt43"></label>
                                 <input type="text" name="flur[]" required>
                             </div>
                             <div class="input-field">
-                                <label for="flurstueck">Flurstück</label>
+                                <label for="flurstueck" id="landPt44"></label>
                                 <input type="text" name="flurstueck[]" required>
                             </div>
                             <div class="input-field">
-                                <label for="flaeche">Fläche in ha</label>
+                                <label for="flaeche" id="landPt45"></label>
                                 <input type="number" name="flaeche[]" required>
                             </div>
                             <div class="input-field">
-                                <label for="amt">Amt</label>
+                                <label for="amt" id="landPt46"></label>
                                 <input type="text" name="amt[]" required>
                             </div>
                         </div>
                     </div>
                 </div>
-                <button type="button" id="addLocationButton" class="add-location-btn">Weitere Fläche hinzufügen</button>
+                <button type="button" id="addLocationButton" class="add-location-btn" id="landPt47"></button>
             </div>
 
             <!-- Question 8 -->
             <div id="question8" class="question-container">
-                <div class="question-title">8. Kontakt aufnehmen</div>
+                <div id="landPt48" class="question-title"></div>
                 <div class="input-group">
                     <div class="input-field">
-                        <label for="name">Name*</label>
+                        <label for="name" id="landPt49"></label>
                         <input type="text" id="name" name="name" required>
                     </div>
                     <div class="input-field">
-                        <label for="email">Email*</label>
+                        <label for="email" id="landPt50"></label>
                         <input type="email" id="email" name="email" required>
                     </div>
                     <div class="input-field">
-                        <label for="phone">Telefonnummer</label>
+                        <label for="phone" id="landPt51"></label>
                         <input type="tel" id="phone">
                     </div>
                 </div>
@@ -423,70 +457,160 @@
 
             <!-- Navigation Buttons -->
             <div class="navigation-buttons">
-                <button type="button" id="prevButton" class="nav-button">Zurück</button>
-                <button type="button" id="nextButton" class="nav-button">Weiter</button>
+                <button type="button" id="prevButton" class="nav-button" id="landPt52"></button>
+                <button type="button" id="nextButton" class="nav-button" id="landPt53"></button>
             </div>
         </div>
+
     
-        <!-- New Simple Form for Investors -->
-        <div class="form-section simple-form" id="investorForm" style="display: none;">
-            <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DWz000001Nbvx" method="POST" class="simple-contact-form">
-                <input type="hidden" name="orgid" value="00DWz000001Nbvx">
-                <input type="hidden" name="retURL" value="http://geongroup.de/dev/public/main">
-                <input type="hidden" name="subject" value="Investoren">
-                
-                <div class="question-container active">
-                    <div class="question-title">Kontakt aufnehmen</div>
-                    <div class="input-group">
-                        <div class="input-field">
-                            <label for="investor-name">Name*</label>
-                            <input id="investor-name" name="name" type="text" required>
-                        </div>
-                        <div class="input-field">
-                            <label for="investor-email">Email*</label>
-                            <input id="investor-email" name="email" type="email" required>
-                        </div>
-                        <div class="input-field">
-                            <label for="investor-phone">Telefon</label>
-                            <input id="investor-phone" name="phone" type="tel">
-                        </div>
-                    </div>
-                    <div class="navigation-buttons">
-                        <button type="submit" class="nav-button">Absenden</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    
-        <!-- New Simple Form for Communities -->
+        <!-- For Community Form -->
         <div class="form-section simple-form" id="communityForm" style="display: none;">
             <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DWz000001Nbvx" method="POST" class="simple-contact-form">
                 <input type="hidden" name="orgid" value="00DWz000001Nbvx">
                 <input type="hidden" name="retURL" value="http://geongroup.de/dev/public/main">
                 <input type="hidden" name="subject" value="Gemeinden">
+            </form>
+
+            <div id="communityQuestion0" class="question-container active">
+                <!-- Title -->
+                <div class="question-title" id="communityPt1"></div>
                 
-                <div class="question-container active">
-                    <div class="question-title">Kontakt aufnehmen</div>
-                    <div class="input-group">
-                        <div class="input-field">
-                            <label for="community-name">Name*</label>
-                            <input id="community-name" name="name" type="text" required>
+                <!-- Content Container -->
+                <div class="options-container">
+                    <h3>
+                        <!-- Introduction -->
+                        <div class="intro-text">
+                            <p id="communityPt2"></p>
+                            <p id="communityPt3"></p>
                         </div>
-                        <div class="input-field">
-                            <label for="community-email">Email*</label>
-                            <input id="community-email" name="email" type="email" required>
+                        
+                        <!-- Benefits List -->
+                        <div class="benefits">
+                            <ul>
+                                <li id="communityPt4"></li>
+                                <li id="communityPt5"></li>
+                                <li id="communityPt6"></li>
+                                <li id="communityPt7"></li>
+                            </ul>
                         </div>
-                        <div class="input-field">
-                            <label for="community-phone">Telefon</label>
-                            <input id="community-phone" name="phone" type="tel">
+                        
+                        <!-- Additional Information -->
+                        <div class="additional-info">
+                            <p id="communityPt8"></p>
+                            <p id="communityPt9"></p>
                         </div>
+                    </h3>
+            
+                    <!-- Action Button -->
+                    <div class="option-card" data-value="ja" id="communityPt10"></div>
+                </div>
+            </div>
+            
+
+            <!-- Contact Form (will be shown after question 0) -->
+            <div id="communityContactForm" class="question-container" style="display: none;">
+                <div class="question-title" id="communityPt11"></div>
+                <div class="input-group">
+                    <div class="input-field">
+                        <label for="community-name" id="communityPt12"></label>
+                        <input id="community-name" name="name" type="text" required>
                     </div>
-                    <div class="navigation-buttons">
-                        <button type="submit" class="nav-button">Absenden</button>
+                    <div class="input-field">
+                        <label for="community-email" id="communityPt13"></label>
+                        <input id="community-email" name="email" type="email" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="community-phone" id="communityPt14"></label>
+                        <input id="community-phone" name="phone" type="tel">
                     </div>
                 </div>
-            </form>
+                <div class="navigation-buttons">
+                    <button type="submit" class="nav-button" id="communityPt15"></button>
+                </div>
+            </div>
         </div>
+
+        <!-- For Investor Form -->
+        <div class="form-section simple-form" id="investorForm" style="display: none;">
+            <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DWz000001Nbvx" method="POST" class="simple-contact-form">
+                <input type="hidden" name="orgid" value="00DWz000001Nbvx">
+                <input type="hidden" name="retURL" value="http://geongroup.de/dev/public/main">
+                <input type="hidden" name="subject" value="Investoren">
+            </form>
+
+            <div id="investorQuestion0" class="question-container active">
+                <!-- Title -->
+                <div class="question-title" id="investorPt1"></div>
+                
+                <!-- Content Container -->
+                <div class="options-container">
+                    <h3>
+                        <!-- Introduction -->
+                        <div class="intro-text">
+                            <p id="investorPt2"></p>
+                            <p id="investorPt3"></p>
+                        </div>
+                        
+                        <!-- Portfolio Benefits -->
+                        <div class="portfolio-benefits">
+                            <ul>
+                                <li id="investorPt4"></li>
+                                <li id="investorPt5"></li>
+                                <li id="investorPt6"></li>
+                                <li id="investorPt7"></li>
+                                <li id="investorPt8"></li>
+                                <li id="investorPt9"></li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Expertise Section -->
+                        <div class="expertise-section">
+                            <p id="investorPt10"></p>
+                            <ul>
+                                <li id="investorPt11"></li>
+                                <li id="investorPt12"></li>
+                                <li id="investorPt13"></li>
+                                <li id="investorPt14"></li>
+                                <li id="investorPt15"></li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Call to Action -->
+                        <div class="cta-text">
+                            <p id="investorPt16"></p>
+                        </div>
+                    </h3>
+            
+                    <!-- Action Button -->
+                    <div class="option-card" data-value="ja" id="investorPt17"></div>
+                </div>
+            </div>
+
+            <!-- Contact Form (will be shown after question 0) -->
+            <div id="investorContactForm" class="question-container" style="display: none;">
+                <div class="question-title" id="investorPt18"></div>
+                <div class="input-group">
+                    <div class="input-field">
+                        <label for="investor-name" id="investorPt19"></label>
+                        <input id="investor-name" name="name" type="text" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="investor-email" id="investorPt20"></label>
+                        <input id="investor-email" name="email" type="email" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="investor-phone" id="investorPt21"></label>
+                        <input id="investor-phone" name="phone" type="tel">
+                    </div>
+                </div>
+                <div class="navigation-buttons">
+                    <button type="submit" class="nav-button" id="investorPt22"></button>
+                </div>
+            </div>
+        </div>
+
+
+
     </div>
 
 
@@ -543,7 +667,7 @@
     </div>
 
 
-    <div class="ourTeam">
+    <div class="ourTeam" style="display: none;">
         <h1>Our Team</h1>
         <h3>At GEON, we are a small, passionate team of highly skilled professionals with extensive expertise in photovoltaics and renewable energy. Leveraging our deep knowledge of technical challenges, legal frameworks in German renewable energy, and financing solutions, we excel at managing utility-scale projects. Our advanced IT systems, including AI components, enable us to automate all business processes, making our compact team highly efficient and technology-driven.</h3>
         <div class="team">
@@ -578,6 +702,7 @@
             </div>
         </div>
     </div>
+
     <div class="contact">
         <div class="contact-container">
             <div class="contact-form">
@@ -616,12 +741,10 @@
 
 
 
-
-
     <footer>
         <div class="links">
             <a href="https://geongroup.de/dev/public/main/subSites/privacyPolicy/index.html">Privacy Policy</a>
-            <a href="">Imprint</a>
+            <a href="https://geongroup.de/dev/public/main/subSites/imprint/index.html">Imprint</a>
         </div>
 
         <div class="copyright">Copyright 2021 GEON Group GmbH. All rights reserved.</div>        
