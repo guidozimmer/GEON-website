@@ -98,6 +98,15 @@
     text-align: left !important;
 }
 
+#investorQuestion0 > .options-container {
+    text-align: left !important;
+}
+
+#communityQuestion0 > .options-container {
+    text-align: left !important;
+}
+
+
 #ourOfferHeading {
     font-size: var(--big-font) !important;
     font-family: Acumin-Black;

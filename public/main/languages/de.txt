@@ -195,7 +195,7 @@ communityPt14 = Telefon
 communityPt15 = Absenden
 
 
-investorPt1 = Premium-Investitionsmöglichkeiten in deutsche Solarprojekte
+investorPt1 = Investitionsmöglichkeiten in deutsche Solarprojekte
 investorPt2 = GEON bietet qualifizierten Investoren Zugang zu einer vielfältigen Pipeline von Photovoltaik-Großprojekten in Deutschland. Als spezialisierter PV-Projektentwickler ermöglichen wir Investitionen in allen Entwicklungsphasen - von frühen Projektphasen mit hohem Wertsteigerungspotenzial bis hin zu vollständig entwickelten, baureifen Projekten.
 investorPt3 = Unser Projektportfolio bietet:
 investorPt4 = Projekte in verschiedenen Entwicklungsstadien passend zu Ihrer Investitionsstrategie
