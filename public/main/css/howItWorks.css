@@ -17,11 +17,24 @@
 }
 
 .howItWorksHeading {
-    grid-column: 1 / span 3;
-    grid-row: 1;
+    font-size: var(--medium-font) !important;
+    font-family: Acumin-Black;
+    text-align: left;
     margin-bottom: 50px;
-    color: var(--ourOffer-heading) !important;
+    grid-column: 1 / span 3;
+    display: block !important;
 }
+
+.howItWorksHeading > h1 {
+    text-align: left !important;
+}
+
+.howItWorksHeading > h3 {
+    font-size: var(--medium-font) !important;
+    font-family: Acumin-Regular !important;
+    color: black !important;
+}
+
 
 .howItWorksStepsText {
     font-size: var(--big-font) !important;
