@@ -247,7 +247,8 @@ export function createLanguageSwitcher() {
         { id: 'communityTitle', variable: 'communityTitle' },
         { id: 'investorsTitle', variable: 'investorsTitle' },
 
-
+        { id: 'ourOfferTitlePt1', variable: 'ourOfferTitlePt1' },
+        { id: 'ourOfferTitlePt2', variable: 'ourOfferTitlePt2' },
       ];
 
       const placeholdersToUpdate = [

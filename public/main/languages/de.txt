@@ -221,3 +221,11 @@ investorPt22 = Absenden
 landTitle = Fläche anbieten
 investorsTitle = Investoren
 communityTitle = Gemeinden
+
+ourOfferTitlePt1 = Unser Angebot
+ourOfferTitlePt2 = GEON entwickelt Photovoltaikprojekte in Deutschland – immer in enger Zusammenarbeit mit allen Beteiligten. Ob Sie Grundstückseigentümer sind, eine Gemeinde vertreten oder als Investor agieren: Wählen Sie Ihren Bereich und entdecken Sie, wie wir gemeinsam die Energiewende gestalten können.
+
+
+
+
+

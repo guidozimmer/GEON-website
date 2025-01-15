@@ -20,7 +20,7 @@ const setupContactNavListener = () => {
 };
 
 const toggleContactForm = (cookie) => {
-    const contactSection = document.querySelector('.contact_us_6');
+    const contactSection = document.querySelector('.contact');
 
     if (!contactSection) {
         console.error('Contact section not found');
@@ -42,7 +42,7 @@ const toggleContactForm = (cookie) => {
 
 // Single export declaration for initializeCookieConsent
 export default function initializeCookieConsent(language = 'en') {
-    const contactSection = document.querySelector('.contact_us_6');
+    const contactSection = document.querySelector('.contact');
     
     if (contactSection) {
         contactSection.style.display = 'none';
@@ -81,13 +81,13 @@ export default function initializeCookieConsent(language = 'en') {
                 readOnly: false,
                 enabled: false,  // Set to false by default
                 onAccept: () => {
-                    const contactSection = document.querySelector('.contact_us_6');
+                    const contactSection = document.querySelector('.contact');
                     if (contactSection) {
                         contactSection.style.display = 'flex';
                     }
                 },
                 onReject: () => {
-                    const contactSection = document.querySelector('.contact_us_6');
+                    const contactSection = document.querySelector('.contact');
                     if (contactSection) {
                         contactSection.style.display = 'none';
                     }
