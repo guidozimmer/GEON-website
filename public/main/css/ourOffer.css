@@ -111,6 +111,7 @@
     font-size: var(--big-font) !important;
     font-family: Acumin-Black;
     margin-bottom: 50px;
+    text-align: left;
 }
 
 .option-card {
@@ -430,3 +431,44 @@
     padding: 1rem;
     font-family: Acumin-Regular, Arial, sans-serif;
 }
+
+
+
+
+
+
+
+
+
+
+
+.full-width-image-container {
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    position: relative;
+}
+
+.full-width-image {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Optional: If you want different height on mobile */
+@media screen and (max-width: 767px) {
+    .full-width-image-container,
+    .full-width-image {
+        height: 150px; /* Smaller height for mobile */
+    }
+}
+
+
+
+
+
+

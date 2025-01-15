@@ -226,3 +226,19 @@ communityTitle = Communities
 
 ourOfferTitlePt1 = Our Offer
 ourOfferTitlePt2 = GEON develops photovoltaic projects across Germany – always in close collaboration with all stakeholders. Whether you're a landowner, represent a municipality, or act as an investor: Select your area below to discover how we can shape the energy transition together. 
+
+entryCode = Do you have an entry code?
+
+
+
+
+
+
+
+
+
+
+
+
+
+

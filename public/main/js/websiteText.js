@@ -249,6 +249,9 @@ export function createLanguageSwitcher() {
 
         { id: 'ourOfferTitlePt1', variable: 'ourOfferTitlePt1' },
         { id: 'ourOfferTitlePt2', variable: 'ourOfferTitlePt2' },
+
+        { id: 'entryCode', variable: 'entryCode' },
+
       ];
 
       const placeholdersToUpdate = [
