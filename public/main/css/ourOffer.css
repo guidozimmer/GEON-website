@@ -2,19 +2,24 @@
     font-family: Acumin-Regular, Arial, sans-serif;
     margin: 0 auto;
     padding: var(--info-box-padding);
+    padding-bottom: 50px !important;
     padding-top: 100px;
     background-color: var(--ourOffer-bg);
     text-align: center;
 }
 
+
+
 .main-squares-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     max-width: 1200px;
     margin: 2rem auto;
     padding: 0 1rem;
 }
+
+
 
 .main-square {
     width: 100%;

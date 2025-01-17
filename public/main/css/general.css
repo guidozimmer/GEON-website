@@ -231,7 +231,7 @@ html, body {
 
 
 h1 {
-    font-family: Acumin-Black;
+    font-family: Acumin-Bold;
     color: var(--ourOffer-heading);
     font-size: var(--large-font);
     text-transform: uppercase;

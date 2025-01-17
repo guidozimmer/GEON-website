@@ -10,9 +10,17 @@ const setupContactNavListener = () => {
             const cookieConsent = localStorage.getItem('cookie_consent');
             if (cookieConsent) {
                 const cookie = JSON.parse(cookieConsent);
+                console.log("Checked for cookieConsent");
                 if (!cookie.categories || !cookie.categories.includes('necessary')) {
+                    console.log("Contact form shown")
                     e.preventDefault();
                     cookieConsentInstance.show();
+                } else {
+                    // If necessary cookies are accepted, scroll to contact section
+                    const contactSection = document.querySelector('#contact');
+                    if (contactSection) {
+                      contactSection.scrollIntoView({ behavior: 'smooth' });
+                    }
                 }
             }
         });
@@ -124,7 +132,7 @@ export default function initializeCookieConsent(language = 'en') {
                         acceptNecessaryBtn: '<span id="cookieRejectAll">Reject all</span>',
                         footer: `
                             <a id="cookiePrivacyLink" href="#test">Privacy Policy</a>
-                            <a id="cookieImpressumLink" href="#test">Impressum</a>
+                            <a id="cookieImpressumLink" href="subSites/imprint/index.html">Impressum</a>
                         `
                     },
                     preferencesModal: {
@@ -190,7 +198,7 @@ export default function initializeCookieConsent(language = 'en') {
                         acceptNecessaryBtn: '<span id="cookieRejectAll">Alle ablehnen</span>',
                         footer: `
                             <a id="cookiePrivacyLink" href="https://geongroup.de/dev/public/main/subSites/privacyPolicy/index.html">Datenschutzerklärung</a>
-                            <a id="cookieImpressumLink" href="#test">Impressum</a>
+                            <a id="cookieImpressumLink" href="https://geongroup.de/dev/public/main/subSites/imprint/index.html">Impressum</a>
                         `
                     },
                     preferencesModal: {
