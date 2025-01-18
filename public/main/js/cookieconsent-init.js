@@ -2,43 +2,7 @@ import "../cookies/cookieconsent.umd.js";
 
 let cookieConsentInstance;
 
-// Add listener for contact nav link
-const setupContactNavListener = () => {
-    const contactNav = document.getElementById('contactNav');
-    const contactSection = document.getElementById('contact');
-    
-    if (contactNav) {
-        contactNav.addEventListener('click', () => {
-            // Check if cookies are accepted by checking contact section visibility
-            if (contactSection && contactSection.style.display === 'flex') {
-                // If cookies are accepted, only scroll
-                contactSection.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-    }
-};
 
-
-const toggleContactForm = (cookie) => {
-    const contactSection = document.getElementById('contact');
-
-    if (!contactSection) {
-        console.error('Contact section not found');
-        return;
-    }
-
-    // Hide contact section by default
-    contactSection.style.display = 'none';
-    
-    if (cookie && cookie.categories) {
-        // Show form only if necessary cookies are accepted
-        if (cookie.categories.includes('necessary')) {
-            contactSection.style.display = 'flex';
-        }
-    } else {
-        console.log('No cookie preferences found - keeping form hidden');
-    }
-};
 
 // Single export declaration for initializeCookieConsent
 export function initializeCookieConsent(language = 'en') {
