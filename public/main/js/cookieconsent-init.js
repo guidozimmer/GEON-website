@@ -41,7 +41,7 @@ const toggleContactForm = (cookie) => {
 };
 
 // Single export declaration for initializeCookieConsent
-export default function initializeCookieConsent(language = 'en') {
+export function initializeCookieConsent(language = 'en') {
     const contactSection = document.getElementById('contact');
     
     if (contactSection) {
