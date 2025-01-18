@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     /////////////// COOKIE CONSENT INITIALIZATION ///////////////
 
-    initializeCookieConsent('de'); // Default language is German
 
     /////////////// LANGUAGE SWITCHER ///////////////
     languageSwitcher.initializeLanguage();
