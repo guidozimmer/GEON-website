@@ -4,7 +4,6 @@ import { createLanguageSwitcher } from './websiteText.js';
 import { redirectToCode } from './redirectForm.js';
 import "../cookies/cookieconsent.umd.js";
 
-let cookieConsentInstance;
 
 // Add listener for contact nav link
 const setupContactNavListener = () => {
@@ -46,6 +45,8 @@ const toggleContactForm = (cookie) => {
 
 // Single export declaration for initializeCookieConsent
 function initializeCookieConsent(language = 'en') {
+    let cookieConsentInstance;
+
     const contactSection = document.getElementById('contact');
     
     if (contactSection) {
