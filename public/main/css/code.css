@@ -19,6 +19,7 @@
     font-family: Acumin-Italic;
     font-size: var(--small-font) !important;
     justify-self: end;
+    margin-bottom: 0px !important;
 }
 
 

@@ -62,7 +62,7 @@ conatctPt5 = "WAS HABEN SIE IM SINN?*"
 contactPt6 = "Absenden"
 contactPt7 = "Erreichen Sie uns unter"
 
-codePlaceholder = "Coder hier eingeben..."
+codePlaceholder = "Code hier eingeben..."
 namePlaceholder = "Bitte vollständigen Namen eingeben...*"
 emailPlaceholder = "Bitte E-Mail-Adresse eingeben...*"
 phonePlaceholder = "Bitte Telefonnummer eingeben..."

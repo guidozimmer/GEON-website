@@ -8,7 +8,10 @@
     font-size: 48px;
     margin: 0 0 20px 0;
     font-weight: normal;
-    text-align: center;
+    text-align: left;
+    max-width: 1200px;
+    margin: 0 auto 20px auto;
+    padding: 0 40px;
 }
 
 .ourTeam h3 {
@@ -18,7 +21,8 @@
     max-width: 1200px;
     margin: 0 auto 40px auto;
     padding: 0 40px;
-    text-align: center;
+    text-align: left;
+    font-family: Acumin-Regular;
 }
 
 .team {
@@ -61,6 +65,7 @@
 .contact {
     width: 100%;
     padding: 40px 20px;
+    background-color: var(--light-bg);
 }
 
 .contact-container {
@@ -84,7 +89,8 @@
 .contact-form p {
     font-size: 16px;
     line-height: 1.6;
-    margin-bottom: 20px;
+    margin-bottom: 0;
+    margin-top: 10px;
 }
 
 .form-group {
@@ -132,9 +138,6 @@
     margin: 20px 0;
 }
 
-.company-info {
-    width: 300px;
-}
 
 .company-info h2 {
     font-size: 24px;

@@ -73,6 +73,7 @@
 .question-container {
     margin-bottom: 3rem;
     padding: 2rem;
+    padding-bottom: 0;
     border-radius: 16px;
     background: #ffffff;
     transition: all 0.3s ease;
