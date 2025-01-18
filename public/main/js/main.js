@@ -64,8 +64,8 @@ function initializeCookieConsent(language = 'en') {
     if (contactSection) {
         contactSection.style.display = 'none';
     }
-    let cookieConsentInstance;
-    cookieConsentInstance = CookieConsent.run({
+    
+    let cookieConsentInstance = CookieConsent.run({
         onFirstConsent: ({cookie}) => {
             toggleContactForm(cookie);
         },
