@@ -5,6 +5,21 @@ import { redirectToCode } from './redirectForm.js';
 import "../cookies/cookieconsent.umd.js";
 
 
+
+
+
+
+
+
+const languageSwitcher = createLanguageSwitcher();
+
+document.addEventListener('DOMContentLoaded', function () {
+
+
+
+
+    let cookieConsentInstance;
+
 // Add listener for contact nav link
 const setupContactNavListener = () => {
     const contactNav = document.getElementById('contactNav');
@@ -45,8 +60,6 @@ const toggleContactForm = (cookie) => {
 
 // Single export declaration for initializeCookieConsent
 function initializeCookieConsent(language = 'en') {
-    let cookieConsentInstance;
-
     const contactSection = document.getElementById('contact');
     
     if (contactSection) {
@@ -272,9 +285,20 @@ function initializeCookieConsent(language = 'en') {
 
 
 
-const languageSwitcher = createLanguageSwitcher();
 
-document.addEventListener('DOMContentLoaded', function () {
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     /////////////// DROPDOWN ///////////////
     if (typeof setupDropdown === 'function') {
