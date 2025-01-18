@@ -350,10 +350,7 @@
     display: block;
 }
 
-/* Simple form specific styles */
-.simple-form {
-    max-width: 600px;
-}
+
 
 .simple-form .question-container {
     display: block;
