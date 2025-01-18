@@ -2,13 +2,7 @@ import { setupDropdown } from "./nav.js";
 import { startNumberFade } from "./numberFade.js";
 import { createLanguageSwitcher } from './websiteText.js';
 import { redirectToCode } from './redirectForm.js';
-import "../cookies/cookieconsent.umd.js";
-
-
-
-
-
-
+import {initializeCookieConsent} from './cookieconsent-init.js';
 
 const languageSwitcher = createLanguageSwitcher();
 
