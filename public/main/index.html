@@ -285,337 +285,327 @@
                 </div>
             </div>
 
-            <!-- Question 1 - Land ownership -->
+            <!-- Question 1 -->
             <div id="question1" class="question-container">
                 <div class="question-title">Sind Sie Eigentümer der Fläche(n)?*</div>
                 <div class="options-container">
-                    <div class="option-card" data-value="Ja" data-field="00NMz0000040bQH">Ja</div>
-                    <div class="option-card" data-value="Nein, ich bin ein autorisierter Vertreter" data-field="00NMz0000040bQH">Nein, ich bin bevollmächtigter Vertreter</div>
-                    <div class="option-card" data-value="Nein, ich handle im Auftrag des Eigentümers" data-field="00NMz0000040bQH">Nein, ich handle im Auftrag des Eigentümers</div>
+                    <div class="option-card" data-value="ja">Ja</div>
+                    <div class="option-card" data-value="nein, ich bin bevollmächtigter Vertreter">Nein, ich bin bevollmächtigter Vertreter</div>
+                    <div class="option-card" data-value="nein, ich handle im Auftrag des Eigentümers">Nein, ich handle im Auftrag des Eigentümers</div>
                 </div>
             </div>
 
-            <!-- Question 2 - Land type -->
+            <!-- Question 2 -->
             <div id="question2" class="question-container">
                 <div class="question-title">Um welche Art von Fläche handelt es sich? (Mehrfachauswahl möglich)*</div>
                 <div class="options-container">
-                    <div class="option-card multi-select" data-value="Ackerland" data-field="00NMz0000040bRt">Ackerland</div>
-                    <div class="option-card multi-select" data-value="Grünland" data-field="00NMz0000040bRt">Grünland</div>
-                    <div class="option-card multi-select" data-value="Brachland" data-field="00NMz0000040bRt">Brachfläche</div>
-                    <div class="option-card multi-select" data-value="Umstellungsfläche" data-field="00NMz0000040bRt">Konversionsfläche</div>
-                    <div class="option-card multi-select" data-value="Sonstiges" data-field="00NMz0000040bRt">Sonstiges</div>
-                </div>
-                <div class="input-field" id="otherLandType" style="display: none;">
-                    <input type="text" id="00NMz0000040bTV" name="00NMz0000040bTV" placeholder="Bitte spezifizieren">
+                    <div class="option-card multi-select" data-value="Ackerland">Ackerland</div>
+                    <div class="option-card multi-select" data-value="Grünland">Grünland</div>
+                    <div class="option-card multi-select" data-value="Brachfläche">Brachfläche</div>
+                    <div class="option-card multi-select" data-value="Konversionsfläche">Konversionsfläche</div>
+                    <div class="option-card multi-select" data-value="Sonstiges">Sonstiges</div>
                 </div>
             </div>
 
-            <!-- Question 3 - Infrastructure proximity -->
+            <!-- Question 3 -->
             <div id="question3" class="question-container">
-                <div class="question-title">Befindet sich die Fläche in der Nähe einer Autobahn oder Bahnstrecke?</div>
+                <div class="question-title">Befindet sich die Fläche in der Nähe einer Autobahn oder Bahnstrecke? (Mehrfachauswahl)</div>
                 <div class="options-container">
-                    <div class="option-card multi-select" data-value="Autobahn (bis 500 m)" data-field="00NMz0000040bWj">Autobahn (bis 500 m)</div>
-                    <div class="option-card multi-select" data-value="Bahnstrecke (bis 500 m)" data-field="00NMz0000040bWj">Bahnstrecke (bis 500 m)</div>
+                    <div class="option-card multi-select" data-value="Autobahn (bis 500 m)">Autobahn (bis 500 m)</div>
+                    <div class="option-card multi-select" data-value="Bahnstrecke (bis 500 m)">Bahnstrecke (bis 500 m)</div>
                 </div>
-                
-                <div id="infrastrukturSlider" class="conditional-question">
+
+                <div id="question3a" class="conditional-question">
                     <div class="question-title">Wie viel Prozent der Fläche liegt im entsprechenden 500 m Korridor?</div>
                     <div class="slider-container">
                         <div class="slider-wrapper">
-                            <input type="range" class="slider" min="0" max="100" value="50" data-field="00NMz0000040bYL">
+                            <input type="range" class="slider" min="0" max="100" value="50" data-percentage="true">
                             <div class="slider-value">50%</div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Question 4 - Power substation -->
+            <!-- Question 4 -->
             <div id="question4" class="question-container">
                 <div class="question-title">Befindet sich ein Umspannwerk oder sonstiger Stomnetzanschluss in der Nähe?</div>
                 <div class="options-container">
-                    <div class="option-card" data-value="1" data-field="00NMz0000040bZx">Ja</div>
-                    <div class="option-card" data-value="0" data-field="00NMz0000040bZx">Nein</div>
+                    <div class="option-card" data-value="ja" data-shows="question4a">Ja</div>
+                    <div class="option-card" data-value="nein">Nein</div>
                 </div>
 
-                <div id="trafoDistance" class="conditional-question">
+                <div id="question4a" class="conditional-question">
                     <div class="question-title">Wie weit ist die ungefähre Entfernung?</div>
                     <div class="select-wrapper">
-                        <select id="00NMz0000040bbZ" name="00NMz0000040bbZ">
+                        <select>
                             <option value="">Bitte wählen</option>
                             <option value="bis 1km">bis 1 km</option>
                             <option value="1-3km">1-3 km</option>
                             <option value="3-5km">3-5 km</option>
                             <option value=">5km">>5 km</option>
                         </select>
+                        <div class="select-arrow"></div>
                     </div>
                 </div>
             </div>
 
-            <!-- Question 5 - Power lines -->
-            <div id="question5" class="question-container">
-                <div class="question-title">Verlaufen Freileitungen auf oder neben dem Grundstück?</div>
-                <div class="options-container">
-                    <div class="option-card" data-value="1" data-field="00NMz0000040bdB">Ja</div>
-                    <div class="option-card" data-value="0" data-field="00NMz0000040bdB">Nein</div>
-                </div>
 
-                <div id="powerLineVoltage" class="conditional-question">
-                    <div class="question-title">Ist die Spannungsebene bekannt?</div>
-                    <div class="select-wrapper">
-                        <select id="00NMz0000040ben" name="00NMz0000040ben">
-                            <option value="">Bitte wählen</option>
-                            <option value="Nein">Nein</option>
-                            <option value="20 kV">20 kV</option>
-                            <option value="60 kV">60 kV</option>
-                            <option value="110 kV">110 kV</option>
-                            <option value="220 kV">220 kV</option>
-                            <option value="380 kV">380 kV</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Question 6 - Total area -->
-            <div id="question6" class="question-container">
-                <div class="question-title">Wie groß ist Ihre Fläche insgesamt?*</div>
-                <div class="slider-container">
-                    <div class="slider-wrapper">
-                        <input type="range" class="slider" min="1" max="300" value="150" data-field="00NMz0000040bgP">
-                        <div class="slider-value">150 ha</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Question 7 - Contiguous area -->
-            <div id="question7" class="question-container">
-                <div class="question-title">Handelt es sich um eine zusammenhängende Fläche?*</div>
-                <div class="options-container">
-                    <div class="option-card" data-value="1" data-field="00NMz0000040bjd">Ja</div>
-                    <div class="option-card" data-value="0" data-field="00NMz0000040bjd">Nein, es handelt sich um mehrere Teilflächen</div>
-                </div>
-
-                <div id="parcelCount" class="conditional-question">
-                    <div class="question-title">Wie viele Teilflächen sind es?</div>
-                    <div class="select-wrapper">
-                        <select id="00NMz0000040bmr" name="00NMz0000040bmr">
-                            <option value="">Bitte wählen</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5+">5+</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Question 8 - Current usage -->
-            <div id="question8" class="question-container">
-                <div class="question-title">Wie ist die aktuelle Nutzung der Fläche?*</div>
-                <div class="options-container">
-                    <div class="option-card" data-value="Verpachtet" data-field="00NMz0000040boT">Verpachtet</div>
-                    <div class="option-card" data-value="Nicht verpachtet" data-field="00NMz0000040boT">Nicht verpachtet</div>
-                    <div class="option-card" data-value="Selbstbewirtschaftet" data-field="00NMz0000040boT">Selbst bewirtschaftet</div>
-                </div>
-
-                <div id="leaseDetails" class="conditional-question">
-                    <div class="question-title">Wann endet der Pachtvertrag?</div>
-                    <input type="date" id="00NMz0000040aag" name="00NMz0000040aag">
-                    
-                    <div class="question-title">Ist eine vorzeitige Beendigung möglich?</div>
-                    <div class="options-container">
-                        <div class="option-card" data-value="1" data-field="00NMz0000040bq5">Ja</div>
-                        <div class="option-card" data-value="0" data-field="00NMz0000040bq5">Nein</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Question 9 - Terrain and features -->
-            <div id="question9" class="question-container">
-                <div class="question-title">Geländeneigung</div>
-                <div class="select-wrapper">
-                    <select id="00NMz0000040brh" name="00NMz0000040brh">
-                        <option value="">Bitte wählen</option>
-                        <option value="Flach (0-3%)">Eben (0-3%)</option>
-                        <option value="Leicht geneigt (3-10%)">Leicht geneigt (3-10%)</option>
-                        <option value="Stark geneigt (>10%)">Stark geneigt (>10%)</option>
-                    </select>
-                </div>
-
-                <div class="question-title">Gibt es besondere Merkmale? (Mehrfachauswahl möglich)</div>
-                <div class="options-container">
-                    <div class="option-card multi-select" data-value="Wald in unmittelbarer Nähe" data-field="00NMz0000040btJ">Wald in unmittelbarer Nähe</div>
-                    <div class="option-card multi-select" data-value="Gewässer auf dem Grundstück" data-field="00NMz0000040btJ">Gewässer auf dem Grundstück</div>
-                    <div class="option-card multi-select" data-value="Bekannte Schutzgebiete" data-field="00NMz0000040btJ">Schutzgebiete bekannt</div>
-                    <div class="option-card multi-select" data-value="Hochspannungsleitung" data-field="00NMz0000040btJ">Hochspannungsleitung</div>
-                    <div class="option-card multi-select" data-value="Gaspipeline" data-field="00NMz0000040btJ">Gasleitung</div>
-                </div>
-            </div>
-
-            <!-- Question 10 - Planning status -->
-            <div id="question10" class="question-container">
-                <div class="question-title">Wie ist der aktuelle Planungsstand?</div>
-                
-                <div class="sub-question">
-                    <div class="question-title">Haben Sie die Gemeinde bereits informiert?</div>
-                    <div class="options-container">
-                        <div class="option-card" data-value="1" data-field="00NMz0000040buv">Ja</div>
-                        <div class="option-card" data-value="0" data-field="00NMz0000040buv">Nein</div>
-                    </div>
-                </div>
-
-                <div class="sub-question">
-                    <div class="question-title">Ist ein Vorranggebiet für PV bekannt?</div>
-                    <div class="select-wrapper">
-                        <select id="00NMz0000040bwX" name="00NMz0000040bwX">
-                            <option value="">Bitte wählen</option>
-                            <option value="Ja">Ja</option>
-                            <option value="Nein">Nein</option>
-                            <option value="Unbekannt">Unbekannt</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="sub-question">
-                    <div class="question-title">Gab es bereits Anfragen von anderen Projektierern?</div>
-                    <div class="options-container">
-                        <div class="option-card" data-value="1" data-field="00NMz0000040by9">Ja</div>
-                        <div class="option-card" data-value="0" data-field="00NMz0000040by9">Nein</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Question 11 - Location details -->
-            <div id="question11" class="question-container">
-                <div class="question-title">Wo befindet sich die Fläche?</div>
-                <div class="input-group">
-                    <div class="input-field">
-                        <label>Bundesland*</label>
-                        <input type="text" id="00NMz0000040bzl" name="00NMz0000040bzl" required>
-                    </div>
-                    <div class="input-field">
-                        <label>Landkreis*</label>
-                        <input type="text" id="00NMz0000040c1N" name="00NMz0000040c1N" required>
-                    </div>
-                    <div class="input-field">
-                        <label>Gemeinde</label>
-                        <input type="text" id="00NMz0000040c2z" name="00NMz0000040c2z">
-                    </div>
-                    <div class="input-field">
-                        <label>Gemarkung</label>
-                        <input type="text" id="00NMz0000040c4b" name="00NMz0000040c4b">
-                    </div>
-                    <div class="input-field">
-                        <label>Flur</label>
-                        <input type="text" id="00NMz0000040c6D" name="00NMz0000040c6D">
-                    </div>
-                    <div class="input-field">
-                        <label>Flurstück</label>
-                        <input type="text" id="00NMz0000040c7p" name="00NMz0000040c7p">
-                    </div>
-                    <div class="input-field">
-                        <label>Fläche in ha</label>
-                        <input type="text" id="00NMz0000040c9R" name="00NMz0000040c9R">
-                    </div>
-                    <div class="input-field">
-                        <label>Amt</label>
-                        <input type="text" id="00NMz0000040cB3" name="00NMz0000040cB3">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Question 12 - Contact Information -->
-            <div id="question12" class="question-container">
-                <div class="question-title">Wie können wir Sie erreichen? (Kontaktdaten)</div>
-                <div class="input-group">
-                    <div class="input-field">
-                        <label>Anrede*</label>
-                        <select id="00NMz0000040cCf" name="00NMz0000040cCf" required>
-                            <option value="">Bitte wählen</option>
-                            <option value="Herr">Herr</option>
-                            <option value="Frau">Frau</option>
-                            <option value="Divers">Divers</option>
-                        </select>
-                    </div>
-                    <div class="input-field">
-                        <label>Titel</label>
-                        <input type="text" id="00NMz0000040cFt" name="00NMz0000040cFt">
-                    </div>
-                    <div class="input-field">
-                        <label>Vorname*</label>
-                        <input type="text" id="00NMz0000040cHV" name="00NMz0000040cHV" required>
-                    </div>
-                    <div class="input-field">
-                        <label>Nachname*</label>
-                        <input type="text" id="00NMz0000040bzm" name="00NMz0000040bzm" required>
-                    </div>
-                    <div class="input-field">
-                        <label>Firma</label>
-                        <input type="text" id="00NMz0000040cJ7" name="00NMz0000040cJ7">
-                    </div>
-                    <div class="input-field">
-                        <label>Straße und Hausnummer*</label>
-                        <input type="text" id="00NMz0000040cKj" name="00NMz0000040cKj" required>
-                    </div>
-                    <div class="input-field">
-                        <label>PLZ*</label>
-                        <input type="text" id="00NMz0000040cML" name="00NMz0000040cML" required>
-                    </div>
-                    <div class="input-field">
-                        <label>Ort*</label>
-                        <input type="text" id="00NMz0000040cNx" name="00NMz0000040cNx" required>
-                    </div>
-                    <div class="input-field">
-                        <label>Land*</label>
-                        <input type="text" id="00NMz0000040b26" name="00NMz0000040b26" required>
-                    </div>
-                    <div class="input-field">
-                        <label>Telefon*</label>
-                        <input type="tel" id="00NMz0000040cRB" name="00NMz0000040cRB" required>
-                    </div>
-                    <div class="input-field">
-                        <label>E-Mail*</label>
-                        <input type="email" id="00NMz0000040cSn" name="00NMz0000040cSn" required>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Question 13 - Contact Preferences -->
-            <div id="question13" class="question-container">
-                <div class="question-title">Wie möchten Sie kontaktiert werden?</div>
-                <div class="select-wrapper">
-                    <select id="00NMz0000040cUP" name="00NMz0000040cUP">
-                        <option value="">Bitte wählen</option>
-                        <option value="Telefon">Telefon</option>
-                        <option value="E-Mail">E-Mail</option>
-                    </select>
-                </div>
-
-                <div id="bestTimeToCall" class="conditional-question">
-                    <div class="question-title">Wann sind Sie am besten erreichbar?</div>
-                    <div class="select-wrapper">
-                        <select id="00NMz0000040cW1" name="00NMz0000040cW1">
-                            <option value="">Bitte wählen</option>
-                            <option value="Vormittags">Vormittags</option>
-                            <option value="Nachmittags">Nachmittags</option>
-                            <option value="Ganztägig">Ganztags</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Privacy Policy Agreement -->
-            <div id="privacy-agreement" class="question-container">
-                <div class="checkbox-group">
-                    <input type="checkbox" id="privacy-checkbox" required>
-                    <label for="privacy-checkbox">Ich stimme der Verarbeitung meiner Daten gemäß Datenschutzerklärung zu*</label>
-                </div>
-            </div>
-
-            <!-- Navigation Buttons -->
-            <div class="navigation-buttons">
-                <button type="button" id="prevButton" class="nav-button">Zurück</button>
-                <button type="button" id="nextButton" class="nav-button">Weiter</button>
-            </div>
+            <!-- Question 5 -->
+<div id="question5" class="question-container">
+    <div class="question-title">Verlaufen Freileitungen auf oder neben dem Grundstück?</div>
+    <div class="options-container">
+        <div class="option-card" data-value="ja" data-shows="question5a">Ja</div>
+        <div class="option-card" data-value="nein">Nein</div>
+    </div>
+ 
+    <div id="question5a" class="conditional-question">
+        <div class="question-title">Ist die Spannungsebene bekannt?</div>
+        <div class="select-wrapper">
+            <select>
+                <option value="">Bitte wählen</option>
+                <option value="Nein">Nein</option>
+                <option value="20 kV">20 kV</option>
+                <option value="60 kV">60 kV</option>
+                <option value="110 kV">110 kV</option>
+                <option value="220 kV">220 kV</option>
+                <option value="380 kV">380 kV</option>
+            </select>
+            <div class="select-arrow"></div>
+        </div>
+    </div>
+ </div>
+ 
+ <!-- Question 6 -->
+ <div id="question6" class="question-container">
+    <div class="question-title">Wie groß ist Ihre Fläche insgesamt?*</div>
+    <div class="slider-container">
+        <div class="slider-wrapper">
+            <input type="range" class="slider" min="1" max="300" value="150">
+            <div class="slider-value">150 ha</div>
+        </div>
+    </div>
+ </div>
+ 
+ <!-- Question 7 -->
+ <div id="question7" class="question-container">
+    <div class="question-title">Handelt es sich um eine zusammenhängende Fläche?*</div>
+    <div class="options-container">
+        <div class="option-card" data-value="ja">Ja</div>
+        <div class="option-card" data-value="nein" data-shows="question7a">Nein, es handelt sich um mehrere Teilflächen</div>
+    </div>
+ 
+    <div id="question7a" class="conditional-question">
+        <div class="question-title">Wie viele Teilflächen sind es?</div>
+        <div class="select-wrapper">
+            <select>
+                <option value="">Bitte wählen</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5+">5+</option>
+            </select>
+            <div class="select-arrow"></div>
+        </div>
+    </div>
+ </div>
+ 
+ <!-- Question 8 -->
+ <div id="question8" class="question-container">
+    <div class="question-title">Wie ist die aktuelle Nutzung der Fläche?*</div>
+    <div class="options-container">
+        <div class="option-card" data-value="Verpachtet" data-shows="question8a">Verpachtet</div>
+        <div class="option-card" data-value="Nicht verpachtet">Nicht verpachtet</div>
+        <div class="option-card" data-value="Selbst bewirtschaftet">Selbst bewirtschaftet</div>
+    </div>
+ 
+    <div id="question8a" class="conditional-question">
+        <div class="question-title">Wann endet der Pachtvertrag?</div>
+        <input type="date">
+        
+        <div class="question-title">Ist eine vorzeitige Beendigung möglich?</div>
+        <div class="options-container">
+            <div class="option-card" data-value="ja">Ja</div>
+            <div class="option-card" data-value="nein">Nein</div>
+        </div>
+    </div>
+ </div>
+ 
+ <!-- Question 9 -->
+ <div id="question9" class="question-container">
+    <div class="question-title">Geländeneigung</div>
+    <div class="select-wrapper">
+        <select>
+            <option value="">Bitte wählen</option>
+            <option value="Flach (0-3%)">Eben (0-3%)</option>
+            <option value="Leicht geneigt (3-10%)">Leicht geneigt (3-10%)</option>
+            <option value="Stark geneigt (>10%)">Stark geneigt (>10%)</option>
+        </select>
+        <div class="select-arrow"></div>
+    </div>
+ 
+    <div class="question-title">Gibt es besondere Merkmale? (Mehrfachauswahl möglich)</div>
+    <div class="options-container">
+        <div class="option-card multi-select" data-value="Wald in unmittelbarer Nähe">Wald in unmittelbarer Nähe</div>
+        <div class="option-card multi-select" data-value="Gewässer auf dem Grundstück">Gewässer auf dem Grundstück</div>
+        <div class="option-card multi-select" data-value="Bekannte Schutzgebiete">Schutzgebiete bekannt</div>
+        <div class="option-card multi-select" data-value="Hochspannungsleitung">Hochspannungsleitung</div>
+        <div class="option-card multi-select" data-value="Gaspipeline">Gasleitung</div>
+    </div>
+ </div>
+ 
+ <!-- Question 10 -->
+ <div id="question10" class="question-container">
+    <div class="question-title">Wie ist der aktuelle Planungsstand?</div>
+    
+    <div class="sub-question">
+        <div class="question-title">Haben Sie die Gemeinde bereits informiert?</div>
+        <div class="options-container">
+            <div class="option-card" data-value="ja">Ja</div>
+            <div class="option-card" data-value="nein">Nein</div>
+        </div>
+    </div>
+ 
+    <div class="sub-question">
+        <div class="question-title">Ist ein Vorranggebiet für PV bekannt?</div>
+        <div class="select-wrapper">
+            <select>
+                <option value="">Bitte wählen</option>
+                <option value="Ja">Ja</option>
+                <option value="Nein">Nein</option>
+                <option value="Unbekannt">Unbekannt</option>
+            </select>
+        </div>
+    </div>
+ 
+    <div class="sub-question">
+        <div class="question-title">Gab es bereits Anfragen von anderen Projektierern?</div>
+        <div class="options-container">
+            <div class="option-card" data-value="ja">Ja</div>
+            <div class="option-card" data-value="nein">Nein</div>
+        </div>
+    </div>
+ </div>
+ 
+ <!-- Question 11 -->
+ <div id="question11" class="question-container">
+    <div class="question-title">Wo befindet sich die Fläche?</div>
+    <div class="input-group">
+        <div class="input-field">
+            <label>Bundesland*</label>
+            <input type="text" required>
+        </div>
+        <div class="input-field">
+            <label>Landkreis*</label>
+            <input type="text" required>
+        </div>
+        <div class="input-field">
+            <label>Gemeinde</label>
+            <input type="text">
+        </div>
+        <div class="input-field">
+            <label>Gemarkung</label>
+            <input type="text">
+        </div>
+        <div class="input-field">
+            <label>Flur</label>
+            <input type="text">
+        </div>
+        <div class="input-field">
+            <label>Flurstück</label>
+            <input type="text">
+        </div>
+        <div class="input-field">
+            <label>Fläche in ha</label>
+            <input type="text">
+        </div>
+    </div>
+ </div>
+ 
+ <!-- Question 12 -->
+ <div id="question12" class="question-container">
+    <div class="question-title">Wie können wir Sie erreichen? (Kontaktdaten)</div>
+    <div class="input-group">
+        <div class="input-field">
+            <label>Anrede*</label>
+            <select required>
+                <option value="">Bitte wählen</option>
+                <option value="Herr">Herr</option>
+                <option value="Frau">Frau</option>
+                <option value="Divers">Divers</option>
+            </select>
+        </div>
+        <div class="input-field">
+            <label>Titel</label>
+            <input type="text">
+        </div>
+        <div class="input-field">
+            <label>Vorname*</label>
+            <input type="text" required>
+        </div>
+        <div class="input-field">
+            <label>Nachname*</label>
+            <input type="text" required>
+        </div>
+        <div class="input-field">
+            <label>Firma</label>
+            <input type="text">
+        </div>
+        <div class="input-field">
+            <label>Straße und Hausnummer*</label>
+            <input type="text" required>
+        </div>
+        <div class="input-field">
+            <label>PLZ*</label>
+            <input type="text" required>
+        </div>
+        <div class="input-field">
+            <label>Ort*</label>
+            <input type="text" required>
+        </div>
+        <div class="input-field">
+            <label>Land*</label>
+            <input type="text" required>
+        </div>
+        <div class="input-field">
+            <label>Telefon*</label>
+            <input type="tel" required>
+        </div>
+        <div class="input-field">
+            <label>E-Mail*</label>
+            <input type="email" required>
+        </div>
+    </div>
+ </div>
+ 
+ <!-- Question 13 -->
+ <div id="question13" class="question-container">
+    <div class="question-title">Wie möchten Sie kontaktiert werden?</div>
+    <div class="select-wrapper">
+        <select>
+            <option value="">Bitte wählen</option>
+            <option value="Telefon">Telefon</option>
+            <option value="E-Mail">E-Mail</option>
+        </select>
+    </div>
+ 
+    <div id="bestTimeToCall" class="conditional-question">
+        <div class="question-title">Wann sind Sie am besten erreichbar?</div>
+        <div class="select-wrapper">
+            <select>
+                <option value="">Bitte wählen</option>
+                <option value="Vormittags">Vormittags</option>
+                <option value="Nachmittags">Nachmittags</option>
+                <option value="Ganztägig">Ganztags</option>
+            </select>
+        </div>
+    </div>
+ </div>
+ 
+ <!-- Navigation Buttons -->
+ <div class="navigation-buttons">
+    <button type="button" id="prevButton" class="nav-button">Zurück</button>
+    <button type="button" id="nextButton" class="nav-button">Weiter</button>
+ </div>
         </div>
 
         <!-- For Community Form -->

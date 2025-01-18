@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     let currentQuestion = 0;
-    const totalQuestions = 8;
+    const totalQuestions = 13;
     let locationCount = 1;
     
     // Get all squares and forms
@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add Location Button Handler
     document.getElementById('addLocationButton')?.addEventListener('click', addLocationFields);
 
-
     initializeSimpleFormQuestions();
     
     // Function to hide all forms
@@ -24,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
         investorForm.style.display = 'none';
         communityForm.style.display = 'none';
         
-        // Remove active class from all squares
         landOwnerSquare.classList.remove('active');
         investorSquare.classList.remove('active');
         communitySquare.classList.remove('active');
@@ -51,7 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
             investorForm.style.display = 'block';
             investorSquare.classList.add('active');
             
-            // Show question 0 by default
             const q0 = investorForm.querySelector('#investorQuestion0');
             const contactForm = investorForm.querySelector('#investorContactForm');
             if (q0 && contactForm) {
@@ -69,7 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
             communityForm.style.display = 'block';
             communitySquare.classList.add('active');
             
-            // Show question 0 by default
             const q0 = communityForm.querySelector('#communityQuestion0');
             const contactForm = communityForm.querySelector('#communityContactForm');
             if (q0 && contactForm) {
@@ -90,33 +86,33 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="input-group">
                 <div class="input-field">
                     <label for="bundesland${locationCount}">Bundesland</label>
-                    <input type="text" name="bundesland[]" required>
+                    <input type="text" id="bundesland${locationCount}" name="bundesland[]" required>
                 </div>
                 <div class="input-field">
                     <label for="landkreis${locationCount}">Landkreis</label>
-                    <input type="text" name="landkreis[]" required>
+                    <input type="text" id="landkreis${locationCount}" name="landkreis[]" required>
                 </div>
                 <div class="input-field">
                     <label for="gemarkung${locationCount}">Gemarkung</label>
-                    <input type="text" name="gemarkung[]" required>
+                    <input type="text" id="gemarkung${locationCount}" name="gemarkung[]" required>
                 </div>
             </div>
             <div class="input-group">
                 <div class="input-field">
                     <label for="flur${locationCount}">Flur</label>
-                    <input type="text" name="flur[]" required>
+                    <input type="text" id="flur${locationCount}" name="flur[]" required>
                 </div>
                 <div class="input-field">
                     <label for="flurstueck${locationCount}">Flurstück</label>
-                    <input type="text" name="flurstueck[]" required>
+                    <input type="text" id="flurstueck${locationCount}" name="flurstueck[]" required>
                 </div>
                 <div class="input-field">
                     <label for="flaeche${locationCount}">Fläche in ha</label>
-                    <input type="number" name="flaeche[]" required>
+                    <input type="number" id="flaeche${locationCount}" name="flaeche[]" required>
                 </div>
                 <div class="input-field">
                     <label for="amt${locationCount}">Amt</label>
-                    <input type="text" name="amt[]" required>
+                    <input type="text" id="amt${locationCount}" name="amt[]" required>
                 </div>
             </div>
         `;
@@ -137,14 +133,14 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     }
-
+ 
     function hideConditionalQuestion(conditionalId) {
         const conditional = document.querySelector(`#${conditionalId}`);
         if (conditional) {
             conditional.classList.remove('visible');
         }
     }
-
+ 
     function showConditionalQuestion(conditionalId) {
         const conditional = document.querySelector(`#${conditionalId}`);
         if (conditional) {
@@ -158,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
-
+ 
     function resetForm() {
         currentQuestion = 0;
         locationCount = 1;
@@ -184,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         showQuestion(0);
     }
-
+ 
     function updateSliderValue(slider, valueDisplay) {
         const value = slider.value;
         const percent = (value - slider.min) / (slider.max - slider.min);
@@ -194,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
             value : `${value}${slider.hasAttribute('data-percentage') ? '%' : ' ha'}`;
         valueDisplay.style.left = `${thumbOffset}px`;
     }
-
+ 
     function handleOptionCardClick(card, optionCards) {
         if (card.classList.contains('multi-select')) {
             card.classList.toggle('selected');
@@ -222,7 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         updateNavigationButtons();
     }
-
+ 
     function initializeSimpleFormQuestions() {
         ['investor', 'community'].forEach(formType => {
             const question0 = document.querySelector(`#${formType}Question0`);
@@ -244,17 +240,16 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-    
-
+ 
     function initializeQuestion(questionNumber) {
         const container = document.querySelector(`#question${questionNumber}`);
         if (!container) return;
-
+ 
         const optionCards = container.querySelectorAll('.option-card');
         optionCards.forEach(card => {
             card.addEventListener('click', () => handleOptionCardClick(card, optionCards));
         });
-
+ 
         if (questionNumber === 0) {
             const neinOption = container.querySelector('.option-card[data-value="nein"]');
             const hasSelected = container.querySelector('.option-card.selected');
@@ -262,7 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 neinOption.classList.add('selected');
             }
         }
-
+ 
         const slider = container.querySelector('.slider');
         if (slider) {
             const valueDisplay = container.querySelector('.slider-value');
@@ -272,7 +267,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             updateSliderValue(slider, valueDisplay);
         }
-
+ 
         if (questionNumber === 7 || questionNumber === totalQuestions) {
             const inputs = container.querySelectorAll('input');
             inputs.forEach(input => {
@@ -280,7 +275,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     }
-
+ 
     function showQuestion(questionNumber) {
         document.querySelectorAll('.question-container').forEach(q => {
             q.classList.remove('active');
@@ -294,7 +289,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         updateNavigationButtons();
     }
-
+ 
     function updateNavigationButtons() {
         const prevButton = document.querySelector('#prevButton');
         const nextButton = document.querySelector('#nextButton');
@@ -302,130 +297,134 @@ document.addEventListener('DOMContentLoaded', () => {
         if (prevButton) {
             prevButton.disabled = currentQuestion === 0;
         }
-
+ 
         if (nextButton) {
             const isLastQuestion = currentQuestion === totalQuestions;
             nextButton.textContent = isLastQuestion ? 'Absenden' : 'Weiter';
             nextButton.disabled = !isQuestionAnswered(currentQuestion);
         }
     }
-
+ 
     function isQuestionAnswered(questionNumber) {
         const container = document.querySelector(`#question${questionNumber}`);
         if (!container) return false;
-    
-        if (questionNumber === 1) {
-            const selectedOption = container.querySelector('.option-card.selected');
-            return selectedOption && selectedOption.getAttribute('data-value') === 'ja';
-        }
-    
-        if (questionNumber === 7) {
-            const locationEntries = container.querySelectorAll('.location-entry');
-            return Array.from(locationEntries).every(entry => {
-                const requiredInputs = entry.querySelectorAll('input[required]');
+ 
+        switch(questionNumber) {
+            case 1: // Land ownership
+            case 2: // Land type
+            case 3: // Infrastructure
+            case 4: // Power substation
+            case 5: // Power lines
+                return container.querySelector('.option-card.selected') !== null;
+ 
+            case 6: // Total area
+                return container.querySelector('.slider')?.value !== '';
+ 
+            case 7: // Location details
+                const locationEntries = container.querySelectorAll('.location-entry');
+                return Array.from(locationEntries).every(entry => {
+                    const requiredInputs = entry.querySelectorAll('input[required]');
+                    return Array.from(requiredInputs).every(input => input.value.trim() !== '');
+                });
+ 
+            case 8: // Contact information
+            case 9: // Additional contact info
+            case 10: // Planning status
+            case 11: // Location details
+            case 12: // Contact form
+            case 13: // Contact preferences
+                const requiredInputs = container.querySelectorAll('input[required], select[required]');
                 return Array.from(requiredInputs).every(input => input.value.trim() !== '');
-            });
+ 
+            default:
+                const selectedOption = container.querySelector('.option-card.selected');
+                const slider = container.querySelector('.slider');
+                
+                if (selectedOption) return true;
+                if (slider) return true;
+                
+                return false;
         }
-
-        if (questionNumber === 8) {
-            const requiredInputs = container.querySelectorAll('input[required]');
-            return Array.from(requiredInputs).every(input => input.value.trim() !== '');
-        }
-
-        const selectedOption = container.querySelector('.option-card.selected');
-        const slider = container.querySelector('.slider:not(.conditional-question .slider)');
-        
-        if (selectedOption) return true;
-        if (slider) return true;
-        
-        return false;
     }
-
+ 
     function removeLocationEntry(button) {
         button.closest('.location-entry').remove();
         updateNavigationButtons();
     }
-
+ 
     function submitForm() {
-        // Get all location entries
-        const locationEntries = document.querySelectorAll('.location-entry');
-        
-        // Initialize arrays to store values for each field
-        const bundeslandValues = [];
-        const landkreisValues = [];
-        const gemarkungValues = [];
-        const flurValues = [];
-        const flurstueckValues = [];
-        const flaecheValues = [];
-        const amtValues = [];
-        
-        // Collect values from each location entry
-        locationEntries.forEach(entry => {
-            bundeslandValues.push(entry.querySelector('input[name="bundesland[]"]')?.value || '');
-            landkreisValues.push(entry.querySelector('input[name="landkreis[]"]')?.value || '');
-            gemarkungValues.push(entry.querySelector('input[name="gemarkung[]"]')?.value || '');
-            flurValues.push(entry.querySelector('input[name="flur[]"]')?.value || '');
-            flurstueckValues.push(entry.querySelector('input[name="flurstueck[]"]')?.value || '');
-            flaecheValues.push(entry.querySelector('input[name="flaeche[]"]')?.value || '');
-            amtValues.push(entry.querySelector('input[name="amt[]"]')?.value || '');
-        });
-        
-        // Map field names to Salesforce IDs
-        const salesforceFields = {
-            'bundesland': '00NMz000003o2Cz',
-            'landkreis': '00NMz000003o2Eb',
-            'gemarkung': '00NMz000003o2GD',
-            'flur': '00NMz000003o2Hp',
-            'flurstueck': '00NMz000003o2JR',
-            'amt': '00NMz000003o2L3'
-        };
-
-        // Update location fields
-        document.getElementById(salesforceFields.bundesland).value = bundeslandValues.join('; ');
-        document.getElementById(salesforceFields.landkreis).value = landkreisValues.join('; ');
-        document.getElementById(salesforceFields.gemarkung).value = gemarkungValues.join('; ');
-        document.getElementById(salesforceFields.flur).value = flurValues.join('; ');
-        document.getElementById(salesforceFields.flurstueck).value = flurstueckValues.join('; ');
-        document.getElementById(salesforceFields.amt).value = amtValues.join('; ');
-
-        // Get and join selected land types with proper formatting
+        // Handle ownership status (Question 1)
+        const q1Value = document.querySelector('#question1 .option-card.selected')?.getAttribute('data-value');
+        document.getElementById('00NMz0000040bQH').value = q1Value || '';
+    
+        // Handle land types (Question 2)
         const selectedTypes = Array.from(document.querySelectorAll('#question2 .option-card.selected'))
             .map(card => card.getAttribute('data-value'))
-            .join('; ');
-        
-        // Set the formatted string to the Salesforce field
-        document.getElementById('00NMz000003nXif').value = selectedTypes.length ? `${selectedTypes}` : '';
-        
-        // Update other form fields
-        const q3Answer = document.querySelector('#question3 .option-card.selected')?.getAttribute('data-value') === 'ja';
-        document.getElementById('00NMz000003nXkH').value = q3Answer ? '1' : '0';
-        document.getElementById('00NMz000003nXlt').value = q3Answer ? 
-            (document.querySelector('#question3a .slider')?.value || '') : '';
-            
-        document.getElementById('00NMz000003nXnV').value = 
-            document.querySelector('#question4 .slider')?.value || '';
-            
-        const q5Answer = document.querySelector('#question5 .option-card.selected')?.getAttribute('data-value') === 'ja';
-        document.getElementById('00NMz000003nXp7').value = q5Answer ? '1' : '0';
-        document.getElementById('00NMz000003nXad').value = q5Answer ? 
-            (document.querySelector('#question5a select')?.value || '') : '';
-            
-        const q6Answer = document.querySelector('#question6 .option-card.selected')?.getAttribute('data-value') === 'ja';
-        document.getElementById('00NMz000003nXsL').value = q6Answer ? '1' : '0';
-        document.getElementById('00NMz000003nXh4').value = q6Answer ? 
-            (document.querySelector('#question6a .slider')?.value || '') : '';
-
-        // Update contact information
-        document.getElementById('email').value = 
-            document.querySelector('#question8 input[type="email"]').value;
-            
-        document.getElementById('name').value = 
-            document.querySelector('#question8 input[type="text"]').value;
-        
+            .join(';');
+        document.getElementById('00NMz0000040bRt').value = selectedTypes;
+    
+        // Handle infrastructure proximity (Question 3)
+        const selectedInfra = Array.from(document.querySelectorAll('#question3 .option-card.selected'))
+            .map(card => card.getAttribute('data-value'))
+            .join(';');
+        document.getElementById('00NMz0000040bWj').value = selectedInfra;
+        if (selectedInfra) {
+            document.getElementById('00NMz0000040bYL').value = 
+                document.querySelector('#infrastrukturSlider .slider')?.value || '';
+        }
+    
+        // Handle power substation (Question 4)
+        const q4Answer = document.querySelector('#question4 .option-card.selected')?.getAttribute('data-value') === '1';
+        document.getElementById('00NMz0000040bZx').value = q4Answer ? '1' : '0';
+        document.getElementById('00NMz0000040bbZ').value = q4Answer ? 
+            document.querySelector('#trafoDistance select')?.value || '' : '';
+    
+        // Handle power lines (Question 5)
+        const q5Answer = document.querySelector('#question5 .option-card.selected')?.getAttribute('data-value') === '1';
+        document.getElementById('00NMz0000040bdB').value = q5Answer ? '1' : '0';
+        document.getElementById('00NMz0000040ben').value = q5Answer ? 
+            document.querySelector('#powerLineVoltage select')?.value || '' : '';
+    
+        // Handle total area (Question 6)
+        const areaValue = document.querySelector('#question6 .slider')?.value;
+        document.getElementById('00NMz0000040bgP').value = areaValue || '';
+    
+        // Handle contiguous area (Question 7)
+        const q7Answer = document.querySelector('#question7 .option-card.selected')?.getAttribute('data-value') === '1';
+        document.getElementById('00NMz0000040bjd').value = q7Answer ? '1' : '0';
+        document.getElementById('00NMz0000040bmr').value = q7Answer ? 
+            document.querySelector('#parcelCount select')?.value || '' : '';
+    
+        // Handle current usage (Question 8)
+        const q8Value = document.querySelector('#question8 .option-card.selected')?.getAttribute('data-value');
+        document.getElementById('00NMz0000040boT').value = q8Value || '';
+        if (q8Value === 'Verpachtet') {
+            document.getElementById('00NMz0000040aag').value = 
+                document.querySelector('#leaseDetails input[type="date"]')?.value || '';
+            document.getElementById('00NMz0000040bq5').value = 
+                document.querySelector('#leaseDetails .option-card.selected')?.getAttribute('data-value') === '1' ? '1' : '0';
+        }
+    
+        // Handle terrain and features (Question 9)
+        document.getElementById('00NMz0000040brh').value = 
+            document.querySelector('#question9 select')?.value || '';
+        const selectedFeatures = Array.from(document.querySelectorAll('#question9 .option-card.selected'))
+            .map(card => card.getAttribute('data-value'))
+            .join(';');
+        document.getElementById('00NMz0000040btJ').value = selectedFeatures;
+    
+        // Handle planning status (Question 10)
+        document.getElementById('00NMz0000040buv').value = 
+            document.querySelector('#question10 .option-card.selected')?.getAttribute('data-value') === '1' ? '1' : '0';
+        document.getElementById('00NMz0000040bwX').value = 
+            document.querySelector('#question10 select')?.value || '';
+        document.getElementById('00NMz0000040by9').value = 
+            document.querySelector('#question10 .option-card.selected:last-child')?.getAttribute('data-value') === '1' ? '1' : '0';
+    
         // Submit the form
         document.getElementById('landForm').submit();
     }
-
+ 
     // Event Listeners for navigation
     document.querySelector('#prevButton')?.addEventListener('click', () => {
         if (currentQuestion > 0) {
@@ -433,7 +432,7 @@ document.addEventListener('DOMContentLoaded', () => {
             showQuestion(currentQuestion);
         }
     });
-
+ 
     document.querySelector('#nextButton')?.addEventListener('click', () => {
         if (currentQuestion < totalQuestions) {
             currentQuestion++;
@@ -442,10 +441,10 @@ document.addEventListener('DOMContentLoaded', () => {
             submitForm();
         }
     });
-
+ 
     // Initialize first question
     showQuestion(0);
-
+ 
     // Add form submission handlers for the simple forms
     const simpleFormSubmitHandler = (event) => {
         event.preventDefault();
@@ -459,15 +458,15 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Bitte füllen Sie alle erforderlichen Felder aus.');
             return;
         }
-
+ 
         // Submit the form
         form.submit();
     };
-
+ 
     // Add submit handlers to both simple forms
     document.querySelector('#investorForm form')?.addEventListener('submit', simpleFormSubmitHandler);
     document.querySelector('#communityForm form')?.addEventListener('submit', simpleFormSubmitHandler);
-
+ 
     // Handle window resize for sliders
     window.addEventListener('resize', () => {
         const currentContainer = document.querySelector(`#question${currentQuestion}`);
@@ -477,7 +476,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (slider && valueDisplay) {
                 updateSliderValue(slider, valueDisplay);
             }
-
+ 
             const visibleConditionals = currentContainer.querySelectorAll('.conditional-question.visible');
             visibleConditionals.forEach(conditional => {
                 const conditionalSlider = conditional.querySelector('.slider');
@@ -488,4 +487,4 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
-});
+ });

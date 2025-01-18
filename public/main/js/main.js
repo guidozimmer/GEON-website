@@ -23,12 +23,10 @@ document.addEventListener('DOMContentLoaded', function () {
     languageSwitcher.initializeLanguage();
     document.getElementById('langEN').addEventListener('click', () => {
         languageSwitcher.switchLanguage('EN');
-        initializeCookieConsent('en'); // Reinitialize cookie consent for English
     });
 
     document.getElementById('langDE').addEventListener('click', () => {
         languageSwitcher.switchLanguage('DE');
-        initializeCookieConsent('de'); // Reinitialize cookie consent for German
     });
 
 
