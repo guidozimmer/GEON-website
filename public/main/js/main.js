@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+let cookieConsentInstance;
 
 // Add listener for contact nav link
 const setupContactNavListener = () => {
@@ -64,8 +65,8 @@ function initializeCookieConsent(language = 'en') {
     if (contactSection) {
         contactSection.style.display = 'none';
     }
-    
-    let cookieConsentInstance = CookieConsent.run({
+
+    cookieConsentInstance = CookieConsent.run({
         onFirstConsent: ({cookie}) => {
             toggleContactForm(cookie);
         },
