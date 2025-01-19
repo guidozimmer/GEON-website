@@ -37,3 +37,8 @@ document.addEventListener('DOMContentLoaded', function () {
         redirectToCode(event, 'code'); // Pass the event and the input ID
     });
 });
+
+
+
+
+
