@@ -228,6 +228,8 @@ export function createLanguageSwitcher() {
 
         { id: 'ourOfferTitlePt1', variable: 'ourOfferTitlePt1' },
         { id: 'ourOfferTitlePt2', variable: 'ourOfferTitlePt2' },
+        { id: 'ourOfferTitlePt3', variable: 'ourOfferTitlePt3' },
+
 
         { id: 'entryCode', variable: 'entryCode' },
 

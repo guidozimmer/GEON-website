@@ -631,17 +631,6 @@
     padding-bottom: 1rem;
 }
 
-.question-title:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
-    background: var(--geon-primary);
-    border-radius: 2px;
-}
 
 /* Input group improvements */
 .input-group {

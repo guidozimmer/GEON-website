@@ -29,6 +29,11 @@ li {
 
 .logo {
     font-size: 24px !important;
+    margin-left: 15px;
+}
+
+.logo > img {
+    vertical-align: baseline;
 }
 
 .dropdown-item:hover {
@@ -92,12 +97,12 @@ li {
 
 #privacyPolicy h3 {
     font-family: Acumin-Bold !important;
-    font-size: var(--very-small-font) !important;
+    font-size: var(--small-font) !important;
     margin-top: 25px !important;
 }
 
 #privacyPolicy h4 {
-    font-family: Acumin-Light !important;
+    font-family: Acumin-Bold !important;
     font-size: calc(var(--very-small-font) * 0.9) !important;
 }
 

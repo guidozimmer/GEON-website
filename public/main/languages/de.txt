@@ -202,7 +202,10 @@ investorsTitle = Investoren
 communityTitle = Gemeinden
 
 ourOfferTitlePt1 = Unser Angebot
-ourOfferTitlePt2 = GEON entwickelt Photovoltaikprojekte in Deutschland – immer in enger Zusammenarbeit mit allen Beteiligten. Ob Sie Grundstückseigentümer sind, eine Gemeinde vertreten oder als Investor agieren: Wählen Sie Ihren Bereich und entdecken Sie, wie wir gemeinsam die Energiewende gestalten können.
+ourOfferTitlePt2 = Sie sind Grundstückseigentümer und möchten Ihre Fläche wertsteigernd zur Photovoltaiknutzung verpachten?  GEON bietet Ihnen die Möglichkeit, deutlich höhere Erträge als bei herkömmlicher Landnutzung zu erzielen. Unsere Pachtverträge für Solaranlagen garantieren Ihnen verlässliche Einnahmen über mindestens 25 Jahre, während Sie weiterhin Eigentümer Ihres Grundstücks bleiben. 
+ourOfferTitlePt3 = GEON übernimmt den gesamten Prozess von der Planung bis zur Umsetzung und macht es Ihnen damit einfach, Teil der Energiewende in Deutschland zu werden.
+
+
 
 entryCode = Haben sie einen Zugangscode?
 
