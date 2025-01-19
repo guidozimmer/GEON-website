@@ -239,294 +239,227 @@
         </div>
         </div>
     
-        <!-- Original Complex Form Section -->
-        <div class="form-section" id="landOwnerForm" style="display: none;">
-            <!-- Hidden Salesforce Form -->
+
+        <!-- Updated Land Owner Form -->
+        <div class="form-section" id="landOwnerForm">
             <form id="landForm" action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DWz000001Nbvx" method="POST">
                 <input type="hidden" name="orgid" value="00DWz000001Nbvx">
                 <input type="hidden" name="retURL" value="http://geongroup.de/dev/public/main">
                 <input type="hidden" name="subject" value="Fläche anbieten">
-                
-                <!-- Hidden fields for Salesforce -->
-                <input type="hidden" id="email" name="email">
-                <input type="hidden" id="name" name="name">
-                <input type="hidden" id="00NMz000003nXif" name="00NMz000003nXif">
-                <input type="hidden" id="00NMz000003nXkH" name="00NMz000003nXkH">
-                <input type="hidden" id="00NMz000003nXlt" name="00NMz000003nXlt">
-                <input type="hidden" id="00NMz000003nXnV" name="00NMz000003nXnV">
-                <input type="hidden" id="00NMz000003nXp7" name="00NMz000003nXp7">
-                <input type="hidden" id="00NMz000003nXad" name="00NMz000003nXad">
-                <input type="hidden" id="00NMz000003nXsL" name="00NMz000003nXsL">
-                <input type="hidden" id="00NMz000003nXh4" name="00NMz000003nXh4">
-                <input type="hidden" id="00NMz000003o2Cz" name="00NMz000003o2Cz">
-                <input type="hidden" id="00NMz000003o2Eb" name="00NMz000003o2Eb">
-                <input type="hidden" id="00NMz000003o2GD" name="00NMz000003o2GD">
-                <input type="hidden" id="00NMz000003o2Hp" name="00NMz000003o2Hp">
-                <input type="hidden" id="00NMz000003o2JR" name="00NMz000003o2JR">
-                <input type="hidden" id="00NMz000003o2L3" name="00NMz000003o2L3">
-            </form>
 
-            <div id="question0" class="question-container">
-                <div class="question-title" id="landPt1"></div>
-                
-                <div class="options-container">
-                    <h3>
-                        <div class="intro-text">
-                            <p id="landPt2"></p>
-                            <p id="landPt3"></p>
-                            <p id="landPt4"></p>
-                        </div>
-                    </h3>
-            
-                    <div class="option-card" data-value="nein" style="display: none;" id="landPt5"></div>
-                </div>
-            
-                <!-- Data Protection (moved here) -->
-                <div class="data-protection">
-                    <input type="checkbox" id="landowner-data-protection" required>
-                    <label for="landowner-data-protection">
-                        Ich stimme der Verarbeitung meiner Daten gemäß <a href="/privacy-policy">Datenschutzerklärung</a> zu*
-                    </label>
-                </div>
-            </div>
-
-            <!-- Question 1 - Land ownership -->
-            <div id="question1" class="question-container">
-                <div class="question-title">Sind Sie Eigentümer der Fläche(n)?</div>
-                <div class="options-container">
-                    <div class="option-card" data-value="ja">Ja</div>
-                    <div class="option-card" data-value="nein">Nein</div>
-                </div>
-            </div>
-
-            <!-- Question 2 - Land type -->
-            <div id="question2" class="question-container">
-                <div class="question-title">Um welche Art von Fläche handelt es sich? möglich)</div>
-                <div class="options-container">
-                    <div class="option-card multi-select" data-value="Ackerland">Ackerland</div>
-                    <div class="option-card multi-select" data-value="Grünland">Grünland</div>
-                    <div class="option-card multi-select" data-value="Brachfläche">Brachfläche</div>
-                    <div class="option-card multi-select" data-value="Konversionsfläche">Konversionsfläche</div>
-                    <div class="option-card multi-select" data-value="Sonstiges" data-shows="question2a">Sonstiges</div>
-                </div>
-
-                <div id="question2a" class="conditional-question">
-                    <div class="question-title">Bitte spezifizieren Sie:</div>
-                    <input type="text" class="text-input">
-                </div>
-            </div>
-
-            <!-- Question 3 - Infrastructure proximity -->
-            <div id="question3" class="question-container">
-                <div class="question-title">Befindet sich die Fläche in der Nähe einer Autobahn oder Bahnstrecke?</div>
-                <div class="options-container">
-                    <div class="option-card multi-select" data-value="Autobahn" data-shows="question3a">Autobahn (bis 500 m)</div>
-                    <div class="option-card multi-select" data-value="Bahnstrecke" data-shows="question3a">Bahnstrecke (bis 500 m)</div>
-                </div>
-
-                <div id="question3a" class="conditional-question">
-                    <div class="question-title">Wie viel Prozent der Fläche liegt im entsprechenden 500 m Korridor?</div>
-                    <div class="slider-container">
-                        <div class="slider-wrapper">
-                            <input type="range" class="slider" min="0" max="100" value="50" data-percentage="true">
-                            <div class="slider-value">50%</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Question 4 - Power substation -->
-            <div id="question4" class="question-container">
-                <div class="question-title">Befindet sich ein Umspannwerk oder sonstiger Stomnetzanschluss in der Nähe?</div>
-                <div class="options-container">
-                    <div class="option-card" data-value="ja" data-shows="question4a">Ja</div>
-                    <div class="option-card" data-value="nein">Nein</div>
-                </div>
-
-                <div id="question4a" class="conditional-question">
-                    <div class="question-title">Wie weit ist die ungefähre Entfernung?</div>
-                    <div class="select-wrapper">
-                        <select>
-                            <option value="">Bitte wählen</option>
-                            <option value="bis 1km">bis 1 km</option>
-                            <option value="1-3km">1-3 km</option>
-                            <option value="3-5km">3-5 km</option>
-                            <option value=">5km">>5 km</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Question 5 - Power lines -->
-            <div id="question5" class="question-container">
-                <div class="question-title">Verlaufen Freileitungen auf oder neben dem Grundstück?</div>
-                <div class="options-container">
-                    <div class="option-card" data-value="ja" data-shows="question5a">Ja</div>
-                    <div class="option-card" data-value="nein">Nein</div>
-                </div>
-
-                <div id="question5a" class="conditional-question">
-                    <div class="question-title">Ist die Spannungsebene bekannt?</div>
-                    <div class="select-wrapper">
-                        <select>
-                            <option value="">Bitte wählen</option>
-                            <option value="Nein">Nein</option>
-                            <option value="20kV">20 kV</option>
-                            <option value="60kV">60 kV</option>
-                            <option value="110kV">110 kV</option>
-                            <option value="220kV">220 kV</option>
-                            <option value="380kV">380 kV</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Question 6 - Area size -->
-            <div id="question6" class="question-container">
-                <div class="question-title">Wie groß ist Ihre Fläche insgesamt?*</div>
-                <div class="slider-container">
-                    <div class="slider-wrapper">
-                        <input type="range" class="slider" min="1" max="300" value="150">
-                        <div class="slider-value">150 ha</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Question 7 - Contiguous area -->
-            <div id="question7" class="question-container">
-                <div class="question-title">Handelt es sich um eine zusammenhängende Fläche?*</div>
-                <div class="options-container">
-                    <div class="option-card" data-value="ja">Ja</div>
-                    <div class="option-card" data-value="nein" data-shows="question7a">Nein, es handelt sich um mehrere Teilflächen</div>
-                </div>
-
-                <div id="question7a" class="conditional-question">
-                    <div class="question-title">Wie viele Teilflächen sind es?</div>
-                    <div class="select-wrapper">
-                        <select>
-                            <option value="">Bitte wählen</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5+">5+</option>
-                        </select>
-                        <div class="select-arrow"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Question 8 - Current usage -->
-            <div id="question8" class="question-container">
-                <div class="question-title">Wie ist die aktuelle Nutzung der Fläche?*</div>
-                <div class="options-container">
-                    <div class="option-card" data-value="Verpachtet" data-shows="question8a">Verpachtet</div>
-                    <div class="option-card" data-value="Nicht verpachtet">Nicht verpachtet</div>
-                    <div class="option-card" data-value="Selbst bewirtschaftet">Selbst bewirtschaftet</div>
-                </div>
-
-                <div id="question8a" class="conditional-question">
-                    <div class="question-title">Wann endet der Pachtvertrag?</div>
-                    <div class="date-slider-container">
-                        <div class="year-slider">
-                            <div class="slider-wrapper">
-                                <input type="range" class="slider" min="2025" max="2050" value="2025" data-year="true">
-                                <div class="slider-value">2025</div>
+                <div id="question0" class="question-container">
+                    <div class="question-title" id="landPt1"></div>
+                    
+                    <div class="options-container">
+                        <h3>
+                            <div class="intro-text">
+                                <p id="landPt2"></p>
+                                <p id="landPt3"></p>
+                                <p id="landPt4"></p>
                             </div>
-                        </div>
-                        <div class="month-slider">
-                            <div class="slider-wrapper">
-                                <input type="range" class="slider" min="1" max="12" value="1" data-month="true">
-                                <div class="slider-value">Januar</div>
-                            </div>
-                        </div>
+                        </h3>
+                
+                        <div class="option-card" data-value="nein" style="display: none;" id="landPt5"></div>
                     </div>
                 
-                    <div class="question-title">Ist eine vorzeitige Beendigung möglich?</div>
+                    <!-- Add data protection checkbox -->
+                    <div class="data-protection">
+                        <input type="checkbox" id="landowner-data-protection" required>
+                        <label for="landowner-data-protection">
+                            Ich stimme der Verarbeitung meiner Daten gemäß <a href="./subSites/privacyPolicy/index.html">Datenschutzerklärung</a> zu*
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 1: Land Ownership -->
+                <div id="question1" class="question-container">
+                    <div class="question-title">Sind Sie Eigentümer der Fläche(n)?</div>
                     <div class="options-container">
                         <div class="option-card" data-value="ja">Ja</div>
                         <div class="option-card" data-value="nein">Nein</div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Question 9 - Terrain slope -->
-            <div id="question9" class="question-container">
-                <div class="question-title">Geländeneigung</div>
-                <div class="options-container">
-                    <div class="option-card" data-value="Flach">Eben (0-3%)</div>
-                    <div class="option-card" data-value="Leicht">Leicht geneigt (3-10%)</div>
-                    <div class="option-card" data-value="Stark">Stark geneigt (>10%)</div>
-                </div>
-            </div>
-
-            <!-- Question 10 - Special features -->
-            <div id="question10" class="question-container">
-                <div class="question-title">Gibt es besondere Merkmale? (Mehrfachauswahl möglich)</div>
-                <div class="options-container">
-                    <div class="option-card multi-select" data-value="Wald">Wald in unmittelbarer Nähe</div>
-                    <div class="option-card multi-select" data-value="Gewässer">Gewässer auf dem Grundstück</div>
-                    <div class="option-card multi-select" data-value="Schutzgebiet">Schutzgebiete bekannt</div>
-                    <div class="option-card multi-select" data-value="Hochspannung">Hochspannungsleitung</div>
-                    <div class="option-card multi-select" data-value="Gasleitung">Gasleitung</div>
-                </div>
-            </div>
-
-            <!-- Question 11 - Municipality informed -->
-            <div id="question11" class="question-container">
-                <div class="question-title">Haben Sie die Gemeinde bereits informiert?</div>
-                <div class="options-container">
-                    <div class="option-card" data-value="ja">Ja</div>
-                    <div class="option-card" data-value="nein">Nein</div>
-                </div>
-            </div>
-
-            <!-- Question 12 - PV priority area -->
-            <div id="question12" class="question-container">
-                <div class="question-title">Ist ein Vorranggebiet für PV bekannt?</div>
-                <div class="options-container">
-                    <div class="option-card" data-value="ja">Ja</div>
-                    <div class="option-card" data-value="nein">Nein</div>
-                    <div class="option-card" data-value="unbekannt">Unbekannt</div>
-                </div>
-            </div>
-
-            <!-- Question 13 - Other inquiries -->
-            <div id="question13" class="question-container">
-                <div class="question-title">Gab es bereits Anfragen von anderen Projektierern?</div>
-                <div class="options-container">
-                    <div class="option-card" data-value="ja">Ja</div>
-                    <div class="option-card" data-value="nein">Nein</div>
-                </div>
-            </div>
-
-            <!-- Question 14 - Contact preference -->
-            <div id="question14" class="question-container">
-                <div class="question-title">Wie möchten Sie kontaktiert werden?</div>
-                <div class="options-container">
-                    <div class="option-card multi-select" data-value="Telefon" data-shows="question14a">Telefon</div>
-                    <div class="option-card multi-select" data-value="E-Mail">E-Mail</div>
-                </div>
-            
-                <div id="question14a" class="conditional-question">
-                    <div class="question-title">Wann sind Sie am besten erreichbar?</div>
-                    <div class="select-wrapper">
-                        <select>
-                            <option value="">Bitte wählen</option>
-                            <option value="Vormittags">Vormittags</option>
-                            <option value="Nachmittags">Nachmittags</option>
-                            <option value="Ganztägig">Ganztags</option>
-                        </select>
+                <!-- Question 2: Land Type -->
+                <div id="question2" class="question-container">
+                    <div class="question-title">Um welche Art von Fläche handelt es sich?</div>
+                    <div class="options-container">
+                        <div class="option-card multi-select" data-value="Ackerland">Ackerland</div>
+                        <div class="option-card multi-select" data-value="Grünland">Grünland</div>
+                        <div class="option-card multi-select" data-value="Brachfläche">Brachfläche</div>
+                        <div class="option-card multi-select" data-value="Konversionsfläche">Konversionsfläche</div>
+                        <div class="option-card multi-select" data-value="Sonstiges">Sonstiges</div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Navigation Buttons -->
-            <div class="navigation-buttons">
-                <button type="button" id="prevButton" class="nav-button">Zurück</button>
-                <button type="button" id="nextButton" class="nav-button">Weiter</button>
-            </div>
-            
-    
+                <!-- Question 3: Total Area -->
+                <div id="question3" class="question-container">
+                    <div class="question-title">Wie groß ist Ihre Fläche insgesamt?</div>
+                    <div class="slider-container">
+                        <div class="slider-wrapper">
+                            <input type="range" class="slider" min="1" max="300" value="150">
+                            <div class="slider-value">150 ha</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 4: Contiguous Area -->
+                <div id="question4" class="question-container">
+                    <div class="question-title">Handelt es sich um eine zusammenhängende Fläche?</div>
+                    <div class="options-container">
+                        <div class="option-card" data-value="ja">Ja</div>
+                        <div class="option-card" data-value="nein" data-shows="question4a">Nein, es handelt sich um mehrere Teilflächen</div>
+                    </div>
+
+                    <div id="question4a" class="conditional-question">
+                        <div class="question-title">Wie viele Teilflächen sind es?</div>
+                        <div class="select-wrapper">
+                            <select>
+                                <option value="">Bitte wählen</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5+">5+</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 5: Current Land Use -->
+                <div id="question5" class="question-container">
+                    <div class="question-title">Wie ist die aktuelle Nutzung der Fläche?</div>
+                    <div class="options-container">
+                        <div class="option-card" data-value="Verpachtet" data-shows="question5a">Verpachtet</div>
+                        <div class="option-card" data-value="Nicht verpachtet">Nicht verpachtet</div>
+                        <div class="option-card" data-value="Selbst bewirtschaftet">Selbst bewirtschaftet</div>
+                    </div>
+
+                    <div id="question5a" class="conditional-question">
+                        <div class="question-title">Wann endet der Pachtvertrag?</div>
+                        <div class="date-slider-container">
+                            <div class="year-slider">
+                                <div class="slider-wrapper">
+                                    <input type="range" class="slider" min="2025" max="2050" value="2025" data-year="true">
+                                    <div class="slider-value">2025</div>
+                                </div>
+                            </div>
+                            <div class="month-slider">
+                                <div class="slider-wrapper">
+                                    <input type="range" class="slider" min="1" max="12" value="1" data-month="true">
+                                    <div class="slider-value">Januar</div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="question-title">Ist eine vorzeitige Beendigung möglich?</div>
+                        <div class="options-container">
+                            <div class="option-card" data-value="ja">Ja</div>
+                            <div class="option-card" data-value="nein">Nein</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 6: Infrastructure Proximity -->
+                <div id="question6" class="question-container">
+                    <div class="question-title">Befindet sich die Fläche in der Nähe einer Autobahn oder Bahnstrecke?</div>
+                    <div class="options-container">
+                        <div class="option-card multi-select" data-value="Autobahn" data-shows="question6a">Autobahn (bis 500 m)</div>
+                        <div class="option-card multi-select" data-value="Bahnstrecke" data-shows="question6a">Bahnstrecke (bis 500 m)</div>
+                    </div>
+
+                    <div id="question6a" class="conditional-question">
+                        <div class="question-title">Wie viel Prozent der Fläche liegt im entsprechenden 500 m Korridor?</div>
+                        <div class="slider-container">
+                            <div class="slider-wrapper">
+                                <input type="range" class="slider" min="0" max="100" value="100" data-percentage="true">
+                                <div class="slider-value">100%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 7: High Voltage Lines -->
+                <div id="question7" class="question-container">
+                    <div class="question-title">Befindet sich eine Hochspannungsleitung in der Nähe?</div>
+                    <div class="options-container">
+                        <div class="option-card" data-value="ja" data-shows="question7a">Ja</div>
+                        <div class="option-card" data-value="nein">Nein</div>
+                        <div class="option-card" data-value="unbekannt">Unbekannt</div>
+                    </div>
+
+                    <div id="question7a" class="conditional-question">
+                        <div class="question-title">Wie weit ist die ungefähre Entfernung?</div>
+                        <div class="select-wrapper">
+                            <select>
+                                <option value="">Bitte wählen</option>
+                                <option value="bis 1km">bis 1 km</option>
+                                <option value="1-5km">1-5 km</option>
+                                <option value=">5km">>5 km</option>
+                            </select>
+                        </div>
+
+                        <div class="question-title">Ist die Spannungsebene bekannt?</div>
+                        <div class="select-wrapper">
+                            <select>
+                                <option value="">Bitte wählen</option>
+                                <option value="Nein">Nein</option>
+                                <option value="20kV">20 kV</option>
+                                <option value="60kV">60 kV</option>
+                                <option value="110kV">110 kV</option>
+                                <option value="220kV">220 kV</option>
+                                <option value="380kV">380 kV</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 8: Substation -->
+                <div id="question8" class="question-container">
+                    <div class="question-title">Befindet sich ein Umspannwerk in der Nähe?</div>
+                    <div class="options-container">
+                        <div class="option-card" data-value="ja" data-shows="question8a">Ja</div>
+                        <div class="option-card" data-value="nein">Nein</div>
+                        <div class="option-card" data-value="unbekannt">Unbekannt</div>
+                    </div>
+
+                    <div id="question8a" class="conditional-question">
+                        <div class="question-title">Wie weit ist die ungefähre Entfernung?</div>
+                        <div class="select-wrapper">
+                            <select>
+                                <option value="">Bitte wählen</option>
+                                <option value="bis 1km">bis 1 km</option>
+                                <option value="1-5km">1-5 km</option>
+                                <option value=">5km">>5 km</option>
+                            </select>
+                        </div>
+
+                        <div class="question-title">Bezeichnung des Umspannwerks, falls bekannt</div>
+                        <div class="input-field">
+                            <input type="text" placeholder="Umspannwerk Name (optional)">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 9: Special Features -->
+                <div id="question9" class="question-container">
+                    <div class="question-title">Gibt es besondere Merkmale? (Mehrfachauswahl möglich)</div>
+                    <div class="options-container">
+                        <div class="option-card multi-select" data-value="Wald">Wald in unmittelbarer Nähe</div>
+                        <div class="option-card multi-select" data-value="Gewässer">Gewässer auf dem Grundstück</div>
+                        <div class="option-card multi-select" data-value="Schutzgebiet">Schutzgebiete bekannt</div>
+                        <div class="option-card multi-select" data-value="Hochspannung">Hochspannungsleitung</div>
+                        <div class="option-card multi-select" data-value="Gasleitung">Gasleitung</div>
+                        <div class="option-card multi-select" data-value="Jagdgebiet">Jagdgebiet</div>
+                        <div class="option-card" data-value="keine">Keine besondere Merkmale</div>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="navigation-buttons">
+                    <button type="button" id="prevButton" class="nav-button">Zurück</button>
+                    <button type="button" id="nextButton" class="nav-button">Weiter</button>
+                </div>
+            </form>
         </div>
 
         <!-- For Community Form -->
@@ -960,6 +893,8 @@
     <script src="./js/main.js" type="module"></script>
     <script src="./js/mail.js"></script>
     <script src="./js/ourOffer.js"></script>
+    <script src="./js/cookieconsent-init.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 

@@ -261,3 +261,5 @@ export function initializeCookieConsent(language = 'en') {
         }
     }
 };
+
+initializeCookieConsent();

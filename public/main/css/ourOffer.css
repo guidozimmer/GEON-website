@@ -395,6 +395,8 @@
     position: relative;
     max-width: 300px;
     margin: 0 auto;
+    margin-bottom: 50px;
+    margin-top: -40px;
 }
 
 .select-wrapper select {
@@ -874,5 +876,6 @@
         width: 100%;
     }
 }
+
 
 
