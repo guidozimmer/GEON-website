@@ -24,6 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add Location Button Handler
     document.getElementById('addLocationButton')?.addEventListener('click', addLocationFields);
 
+    landOwnerForm.style.display = 'none';
+
     initializeSimpleFormQuestions();
     
     // Function to hide all forms
@@ -646,18 +648,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    function updateMonthSlider(slider, valueDisplay) {
-        const months = [
-            'Januar', 'Februar', 'März', 'April', 'Mai', 'Juni',
-            'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'
-        ];
-        const value = parseInt(slider.value);
-        valueDisplay.textContent = months[value - 1];
-        
-        const percent = (value - slider.min) / (slider.max - slider.min);
-        const sliderWidth = slider.offsetWidth;
-        valueDisplay.style.left = `${percent * sliderWidth}px`;
-    }
     
     function initializeMonthYearSliders() {
         const monthSlider = document.querySelector('.month-slider .slider');
