@@ -2,10 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentQuestion = 0;
     const totalQuestions = 14;
     let locationCount = 1;
-    const COMMUNITY_TOTAL_QUESTIONS = 5;
-    let communityCurrentQuestion = 0;
-    const INVESTOR_TOTAL_QUESTIONS = 6;
-    let investorCurrentQuestion = 0;
     
     // Get all squares and forms
     const landOwnerSquare = document.getElementById('landOwnerSquare');
@@ -48,360 +44,36 @@ document.addEventListener('DOMContentLoaded', () => {
     investorSquare.addEventListener('click', () => {
         if (investorForm.style.display === 'block') {
             hideAllForms();
-            resetInvestorForm();
         } else {
             hideAllForms();
             investorForm.style.display = 'block';
             investorSquare.classList.add('active');
-            showInvestorQuestion(0);
+            
+            const q0 = investorForm.querySelector('#investorQuestion0');
+            const contactForm = investorForm.querySelector('#investorContactForm');
+            if (q0 && contactForm) {
+                q0.style.display = 'block';
+                contactForm.style.display = 'none';
+            }
         }
     });
     
     communitySquare.addEventListener('click', () => {
         if (communityForm.style.display === 'block') {
             hideAllForms();
-            resetCommunityForm();
         } else {
             hideAllForms();
             communityForm.style.display = 'block';
             communitySquare.classList.add('active');
-            showCommunityQuestion(0);
-        }
-    });
-
-    function resetInvestorForm() {
-        investorCurrentQuestion = 0;
-        
-        // Reset all selections and inputs
-        document.querySelectorAll('#investorForm .option-card').forEach(card => {
-            card.classList.remove('selected');
-        });
-        
-        document.querySelectorAll('#investorForm input').forEach(input => {
-            if (input.type === 'range') {
-                input.value = input.defaultValue;
-                const valueDisplay = input.parentElement.querySelector('.slider-value');
-                if (valueDisplay) {
-                    updateSliderValue(input, valueDisplay);
-                }
-            } else {
-                input.value = '';
-            }
-        });
-        
-        showInvestorQuestion(0);
-    }
-    
-    function showInvestorQuestion(questionNumber) {
-        document.querySelectorAll('#investorForm .question-container').forEach(q => {
-            q.classList.remove('active');
-        });
-        
-        const currentQuestionEl = document.querySelector(`#investorForm #question${questionNumber}`);
-        if (currentQuestionEl) {
-            currentQuestionEl.classList.add('active');
-            initializeInvestorQuestion(questionNumber);
-        }
-        
-        // Show data protection on last question
-        const dataProtection = document.querySelector('#investorForm .data-protection');
-        if (dataProtection) {
-            dataProtection.style.display = questionNumber === INVESTOR_TOTAL_QUESTIONS ? 'block' : 'none';
-        }
-        
-        updateInvestorNavigationButtons();
-    }
-    
-    function initializeInvestorQuestion(questionNumber) {
-        const container = document.querySelector(`#investorForm #question${questionNumber}`);
-        if (!container) return;
-    
-        const optionCards = container.querySelectorAll('.option-card');
-        optionCards.forEach(card => {
-            card.addEventListener('click', () => handleInvestorOptionCardClick(card, optionCards));
-        });
-    
-        // Initialize slider if present
-        const slider = container.querySelector('.slider');
-        if (slider) {
-            const valueDisplay = container.querySelector('.slider-value');
-            slider.addEventListener('input', () => {
-                updateSliderValue(slider, valueDisplay);
-                updateInvestorNavigationButtons();
-            });
-            updateSliderValue(slider, valueDisplay);
-        }
-    
-        // Initialize input validation for required fields
-        if (questionNumber === 1 || questionNumber === 2) {
-            const inputs = container.querySelectorAll('input[required]');
-            inputs.forEach(input => {
-                input.addEventListener('input', updateInvestorNavigationButtons);
-            });
-        }
-    }
-    
-    function handleInvestorOptionCardClick(card, optionCards) {
-        if (card.classList.contains('multi-select')) {
-            card.classList.toggle('selected');
-        } else {
-            optionCards.forEach(c => c.classList.remove('selected'));
-            card.classList.add('selected');
-        }
-        
-        updateInvestorNavigationButtons();
-    }
-    
-    function isInvestorQuestionAnswered(questionNumber) {
-        const container = document.querySelector(`#investorForm #question${questionNumber}`);
-        if (!container) return false;
-    
-        switch(questionNumber) {
-            case 1: // Personal Information
-            case 2: // Business Address
-                const requiredInputs = container.querySelectorAll('input[required]');
-                return Array.from(requiredInputs).every(input => input.value.trim() !== '');
-                
-            case 3: // Technology Preferences
-            case 6: // Project Status
-                return container.querySelector('.option-card.selected') !== null;
-                
-            case 4: // Investment Volume
-                return container.querySelector('.option-card.selected') !== null;
-                
-            case 5: // IRR
-                return container.querySelector('.slider')?.value !== '';
-                
-            default:
-                return true; // Question 0 (introduction)
-        }
-    }
-    
-    function updateInvestorNavigationButtons() {
-        const prevButton = document.querySelector('#investorForm #prevButton');
-        const nextButton = document.querySelector('#investorForm #nextButton');
-        
-        if (prevButton) {
-            prevButton.disabled = investorCurrentQuestion === 0;
-        }
-    
-        if (nextButton) {
-            const isLastQuestion = investorCurrentQuestion === INVESTOR_TOTAL_QUESTIONS;
-            nextButton.textContent = isLastQuestion ? 'Absenden' : 'Weiter';
-            nextButton.disabled = !isInvestorQuestionAnswered(investorCurrentQuestion);
-        }
-    }
-    
-    function submitInvestorForm() {
-        // Get all form data
-        const formData = new FormData();
-        
-        // Add all input values
-        document.querySelectorAll('#investorForm input:not([type="checkbox"])').forEach(input => {
-            if (input.value) {
-                formData.append(input.name, input.value);
-            }
-        });
-        
-        // Add selected options
-        document.querySelectorAll('#investorForm .option-card.selected').forEach(card => {
-            const value = card.getAttribute('data-value');
-            if (value) {
-                formData.append('selected_options[]', value);
-            }
-        });
-        
-        // Submit the form
-        document.querySelector('#investorForm form').submit();
-    }
-    
-    // Add event listeners for navigation
-    document.querySelector('#investorForm #prevButton')?.addEventListener('click', () => {
-        if (investorCurrentQuestion > 0) {
-            investorCurrentQuestion--;
-            showInvestorQuestion(investorCurrentQuestion);
-        }
-    });
-    
-    document.querySelector('#investorForm #nextButton')?.addEventListener('click', () => {
-        if (investorCurrentQuestion < INVESTOR_TOTAL_QUESTIONS) {
-            investorCurrentQuestion++;
-            showInvestorQuestion(investorCurrentQuestion);
-        } else {
-            submitInvestorForm();
-        }
-    });
-
-
-    function resetCommunityForm() {
-        communityCurrentQuestion = 0;
-        
-        // Reset all selections and inputs
-        document.querySelectorAll('#communityForm .option-card').forEach(card => {
-            card.classList.remove('selected');
-        });
-        
-        document.querySelectorAll('#communityForm .conditional-question').forEach(q => {
-            q.classList.remove('visible');
-        });
-        
-        document.querySelectorAll('#communityForm input').forEach(input => {
-            input.value = '';
-        });
-        
-        showCommunityQuestion(0);
-    }
-    
-    function showCommunityQuestion(questionNumber) {
-        document.querySelectorAll('#communityForm .question-container').forEach(q => {
-            q.classList.remove('active');
-        });
-        
-        const currentQuestionEl = document.querySelector(`#communityForm #question${questionNumber}`);
-        if (currentQuestionEl) {
-            currentQuestionEl.classList.add('active');
-            initializeCommunityQuestion(questionNumber);
-        }
-        
-        // Show data protection on last question
-        const dataProtection = document.querySelector('#communityForm .data-protection');
-        if (dataProtection) {
-            dataProtection.style.display = questionNumber === COMMUNITY_TOTAL_QUESTIONS ? 'block' : 'none';
-        }
-        
-        updateCommunityNavigationButtons();
-    }
-    
-    function initializeCommunityQuestion(questionNumber) {
-        const container = document.querySelector(`#communityForm #question${questionNumber}`);
-        if (!container) return;
-    
-        const optionCards = container.querySelectorAll('.option-card');
-        optionCards.forEach(card => {
-            card.addEventListener('click', () => handleCommunityOptionCardClick(card, optionCards));
-        });
-    
-        // Initialize any required input validation
-        if (questionNumber === 1 || questionNumber === 2) {
-            const inputs = container.querySelectorAll('input[required]');
-            inputs.forEach(input => {
-                input.addEventListener('input', updateCommunityNavigationButtons);
-            });
-        }
-    }
-    
-    function handleCommunityOptionCardClick(card, optionCards) {
-        if (card.classList.contains('multi-select')) {
-            card.classList.toggle('selected');
-            const conditionalId = card.getAttribute('data-shows');
-            if (conditionalId) {
-                const container = card.closest('.question-container');
-                const anySelected = Array.from(container.querySelectorAll('.multi-select'))
-                    .some(c => c.classList.contains('selected'));
-                const conditional = document.getElementById(conditionalId);
-                if (conditional) {
-                    conditional.style.display = anySelected ? 'block' : 'none';
-                }
-            }
-        } else {
-            // Single select handling
-            optionCards.forEach(c => c.classList.remove('selected'));
-            card.classList.add('selected');
             
-            const conditionalId = card.getAttribute('data-shows');
-            if (conditionalId) {
-                const conditional = document.getElementById(conditionalId);
-                if (conditional) {
-                    conditional.style.display = card.classList.contains('selected') ? 'block' : 'none';
-                }
+            const q0 = communityForm.querySelector('#communityQuestion0');
+            const contactForm = communityForm.querySelector('#communityContactForm');
+            if (q0 && contactForm) {
+                q0.style.display = 'block';
+                contactForm.style.display = 'none';
             }
-        }
-        
-        updateCommunityNavigationButtons();
-    }
-    
-    function isCommunityQuestionAnswered(questionNumber) {
-        const container = document.querySelector(`#communityForm #question${questionNumber}`);
-        if (!container) return false;
-    
-        switch(questionNumber) {
-            case 1: // Municipal Information
-            case 2: // Contact Information
-                const requiredInputs = container.querySelectorAll('input[required]');
-                return Array.from(requiredInputs).every(input => input.value.trim() !== '');
-                
-            case 3: // Own Land
-                const hasSelection = container.querySelector('.option-card.selected') !== null;
-                if (hasSelection && container.querySelector('.option-card.selected').getAttribute('data-value') === 'ja') {
-                    // Check if at least one land type is selected
-                    return container.querySelector('#question3a .option-card.selected') !== null;
-                }
-                return hasSelection;
-                
-            case 4: // Project Types
-            case 5: // Interests
-                return container.querySelector('.option-card.selected') !== null;
-                
-            default:
-                return true; // Question 0 (introduction)
-        }
-    }
-    
-    function updateCommunityNavigationButtons() {
-        const prevButton = document.querySelector('#communityForm #prevButton');
-        const nextButton = document.querySelector('#communityForm #nextButton');
-        
-        if (prevButton) {
-            prevButton.disabled = communityCurrentQuestion === 0;
-        }
-    
-        if (nextButton) {
-            const isLastQuestion = communityCurrentQuestion === COMMUNITY_TOTAL_QUESTIONS;
-            nextButton.textContent = isLastQuestion ? 'Absenden' : 'Weiter';
-            nextButton.disabled = !isCommunityQuestionAnswered(communityCurrentQuestion);
-        }
-    }
-    
-    function submitCommunityForm() {
-        // Get all form data
-        const formData = new FormData();
-        
-        // Add all input values
-        document.querySelectorAll('#communityForm input:not([type="checkbox"]):not([type="radio"])').forEach(input => {
-            if (input.value) {
-                formData.append(input.name, input.value);
-            }
-        });
-        
-        // Add selected options
-        document.querySelectorAll('#communityForm .option-card.selected').forEach(card => {
-            const value = card.getAttribute('data-value');
-            if (value) {
-                formData.append('selected_options[]', value);
-            }
-        });
-        
-        // Submit the form
-        document.querySelector('#communityForm form').submit();
-    }
-    
-    // Add event listeners for navigation
-    document.querySelector('#communityForm #prevButton')?.addEventListener('click', () => {
-        if (communityCurrentQuestion > 0) {
-            communityCurrentQuestion--;
-            showCommunityQuestion(communityCurrentQuestion);
         }
     });
-    
-    document.querySelector('#communityForm #nextButton')?.addEventListener('click', () => {
-        if (communityCurrentQuestion < COMMUNITY_TOTAL_QUESTIONS) {
-            communityCurrentQuestion++;
-            showCommunityQuestion(communityCurrentQuestion);
-        } else {
-            submitCommunityForm();
-        }
-    });
-
 
     function addLocationFields() {
         locationCount++;
@@ -530,7 +202,6 @@ document.addEventListener('DOMContentLoaded', () => {
         valueDisplay.style.left = `${thumbOffset}px`;
     }
 
-    
 
     // In the handleOptionCardClick function
     function handleOptionCardClick(card, optionCards) {
@@ -846,9 +517,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Submit the form
         document.getElementById('landForm').submit();
     }
-
-
-    
  
     // Event Listeners for navigation
     document.querySelector('#prevButton')?.addEventListener('click', () => {
