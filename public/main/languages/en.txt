@@ -124,15 +124,12 @@ mainSquare3 = "Option 3"
 mainSquare3Desc = "Description for Option 3"
 
 
-landPt1 = Transform Your Property into a Sustainable Revenue Stream
-landPt2 = Are you a landowner looking to maximize the value of your property? GEON, a leading German solar project developer, offers you the opportunity to generate significantly higher returns than traditional land use – with zero operational responsibility on your part.
-landPt3 = Our solar lease agreements provide guaranteed steady income for 25+ years while you maintain full ownership of your land. GEON handles everything from planning to implementation, making it simple for you to participate in Germany's renewable energy future.
-landPt4 = We're seeking:
-landPt5 = Open areas of 1 hectare or larger
-landPt6 = Properties with good grid connection possibilities
-landPt7 = Both agricultural and industrial land
-landPt8 = Ready to explore your land's solar potential? Contact us today for a free, no-obligation assessment. Join the many satisfied landowners who have already partnered with GEON to secure their financial legacy while contributing to a sustainable future.
-landPt9 = No
+landPt1 = Transform Your Land into a Sustainable Income Source
+landPt2 = Are you a landowner looking to maximize the value of your property? GEON, a leading German solar project developer, offers you the opportunity to generate significantly higher returns than traditional land use by leasing your land for photovoltaic projects – with zero operational responsibility on your part. Our solar lease agreements provide guaranteed steady income for 25+ years while you maintain full ownership of your land.
+landPt3 = GEON handles everything from planning to implementation, making it simple for you to participate in Germany's renewable energy future.
+landPt4 = I consent to the processing of my data in accordance with the 
+landPt5 = Privacy Policy
+landPt6 = " "
 landPt10 = 1. Are you the property owner?
 landPt11 = Yes
 landPt12 = No
@@ -219,9 +216,14 @@ investorPt22 = Submit
 
 
 
-landTitle = Fläche anbieten
-investorsTitle = Investors
-communityTitle = Communities
+landTitlePt1 = Fläche anbieten
+landTitlePt2 = Transform Your Land into a Sustainable Income Source
+
+investorsTitlePt1 = Investors
+investorsTitlePt2 = Investment Opportunities for Solar Power and Battery Storage Projects in Germany
+
+communityTitlePt1 = Communities
+communityTitlePt2 = Shaping the Energy Transition Together: Your Municipality as an Active Partner
 
 
 ourOfferTitlePt1 = Our Offer

@@ -155,6 +155,8 @@ export function createLanguageSwitcher() {
         { id: 'landPt3', variable: 'landPt3' },
         { id: 'landPt4', variable: 'landPt4' },
         { id: 'landPt5', variable: 'landPt5' },
+        { id: 'landPt6', variable: 'landPt6' },
+
         { id: 'landPt10', variable: 'landPt10' },
         { id: 'landPt11', variable: 'landPt11' },
         { id: 'landPt12', variable: 'landPt12' },
@@ -222,13 +224,18 @@ export function createLanguageSwitcher() {
         { id: 'investorPt21', variable: 'investorPt21' },
         { id: 'investorPt22', variable: 'investorPt22' },
         
-        { id: 'landTitle', variable: 'landTitle' },
-        { id: 'communityTitle', variable: 'communityTitle' },
-        { id: 'investorsTitle', variable: 'investorsTitle' },
+        { id: 'landTitlePt1', variable: 'landTitlePt1' },
+        { id: 'landTitlePt2', variable: 'landTitlePt2' },
+
+        { id: 'communityTitlePt1', variable: 'communityTitlePt1' },
+        { id: 'communityTitlePt2', variable: 'communityTitlePt2' },
+
+        { id: 'investorsTitlePt1', variable: 'investorsTitlePt1' },
+        { id: 'investorsTitlePt2', variable: 'investorsTitlePt2' },
+
 
         { id: 'ourOfferTitlePt1', variable: 'ourOfferTitlePt1' },
         { id: 'ourOfferTitlePt2', variable: 'ourOfferTitlePt2' },
-        { id: 'ourOfferTitlePt3', variable: 'ourOfferTitlePt3' },
 
 
         { id: 'entryCode', variable: 'entryCode' },

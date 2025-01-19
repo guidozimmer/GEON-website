@@ -124,10 +124,11 @@ mainSquare3 = "Option 3"
 mainSquare3Desc = "Beschreibung für Option 3"
 
 landPt1 = "Verwandeln Sie Ihr Grundstück in eine nachhaltige Einnahmequelle"
-landPt2 = "Sie sind Grundstückseigentümer und möchten Ihre Fläche optimal nutzen? GEON, ein führender deutscher Solarprojektentwickler, bietet Ihnen die Möglichkeit, deutlich höhere Erträge als bei herkömmlicher Landnutzung zu erzielen – und das ganz ohne eigenen Arbeitsaufwand."
-landPt3 = "Unsere Pachtverträge für Solaranlagen garantieren Ihnen verlässliche Einnahmen über mindestens 25 Jahre, während Sie weiterhin Eigentümer Ihres Grundstücks bleiben. GEON kümmert sich um den gesamten Prozess von der Planung bis zur Umsetzung und macht es Ihnen damit einfach, Teil der Energiewende in Deutschland zu werden."
-landPt4 = "Möchten Sie das Solarpotenzial Ihres Grundstücks erkunden? Kontaktieren Sie uns für eine kostenlose, unverbindliche Bewertung. Schließen Sie sich den vielen zufriedenen Grundstückseigentümern an, die mit GEON bereits den Weg in eine nachhaltige Zukunft gehen und dabei ihre finanzielle Absicherung stärken."
-landPt5 = "Nein"
+landPt2 = Sie sind Grundstückseigentümer und möchten Ihre Fläche wertsteigernd zur Photovoltaiknutzung verpachten?  GEON bietet Ihnen die Möglichkeit, deutlich höhere Erträge als bei herkömmlicher Landnutzung zu erzielen. Unsere Pachtverträge für Solaranlagen garantieren Ihnen verlässliche Einnahmen über mindestens 25 Jahre, während Sie weiterhin Eigentümer Ihres Grundstücks bleiben. 
+landPt3 = GEON übernimmt den gesamten Prozess von der Planung bis zur Umsetzung und macht es Ihnen damit einfach, Teil der Energiewende in Deutschland zu werden.
+landPt4 = Ich stimme der Verarbeitung meiner Daten gemäß
+landPt5 = " Datenschutzerklärung"
+landPt6 = " zu"
 landPt10 = 1. Sind sie Eigentümer der Flächen
 landPt11 = Ja
 landPt12 = Nein
@@ -197,13 +198,18 @@ investorPt20 = Email*
 investorPt21 = Telefon
 investorPt22 = Absenden
 
-landTitle = Fläche anbieten
-investorsTitle = Investoren
-communityTitle = Gemeinden
+landTitlePt1 = Fläche anbieten
+landTitlePt2 = Verwandeln Sie Ihr Grundstück in eine nachhaltige Einnahmequelle
+
+investorsTitlePt1 = Investoren
+investorsTitlePt2 = Investitionsmöglichkeiten in Solar- und Speicherprojekte in Deutschland
+
+communityTitlePt1 = Gemeinden
+communityTitlePt2 = Gemeinsam die Energiewende gestalten: Ihre Gemeinde als aktiver Partner
+
 
 ourOfferTitlePt1 = Unser Angebot
-ourOfferTitlePt2 = Sie sind Grundstückseigentümer und möchten Ihre Fläche wertsteigernd zur Photovoltaiknutzung verpachten?  GEON bietet Ihnen die Möglichkeit, deutlich höhere Erträge als bei herkömmlicher Landnutzung zu erzielen. Unsere Pachtverträge für Solaranlagen garantieren Ihnen verlässliche Einnahmen über mindestens 25 Jahre, während Sie weiterhin Eigentümer Ihres Grundstücks bleiben. 
-ourOfferTitlePt3 = GEON übernimmt den gesamten Prozess von der Planung bis zur Umsetzung und macht es Ihnen damit einfach, Teil der Energiewende in Deutschland zu werden.
+ourOfferTitlePt2 = GEON entwickelt Photovoltaik- und Batteriespeicherprojekte in Deutschland – immer in enger Zusammenarbeit mit allen Beteiligten. Ob Sie Grundstückseigentümer sind, eine Gemeinde vertreten oder als Investor agieren: Wählen Sie Ihren Bereich und entdecken Sie, wie wir gemeinsam die Energiewende gestalten können.
 
 
 
