@@ -879,3 +879,59 @@
 
 
 
+/* Small Devices (Portrait Tablets and Small Phones, up to 768px) */
+@media only screen and (max-width: 480px) {
+    .ourOffer {
+        padding: 150px 5px !important;
+    }
+}
+
+
+/* Small Devices (Portrait Tablets and Small Phones, up to 768px) */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    .ourOffer {
+        padding: 150px 5px !important;
+    }
+}
+
+
+/* Medium Devices (Tablets in Landscape, 768px to 1024px) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .ourOffer {
+        padding: 150px 25px !important;
+    }
+}   
+
+
+/* Large Devices (Desktops, 1024px to 1200px) */
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+
+}
+
+
+
+
+
+/* Extra Large Devices (Large Desktops, 1200px to 1600px) */
+@media only screen and (min-width: 1201px) and (max-width: 1600px) {
+
+}
+  
+
+/* Ultra Large Devices (Very Large Screens, 1600px and up) */
+@media only screen and (min-width: 1601px) {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

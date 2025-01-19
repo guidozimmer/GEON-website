@@ -625,29 +625,41 @@ document.addEventListener('DOMContentLoaded', () => {
             updateNavigationButtons();
         }
     
-    function initializeSimpleFormQuestions() {
-        ['investor', 'community'].forEach(formType => {
-            const question0 = document.querySelector(`#${formType}Question0`);
-            const contactForm = document.querySelector(`#${formType}ContactForm`);
-            
-            if (question0 && contactForm) {
-                question0.querySelectorAll('.option-card').forEach(card => {
-                    card.addEventListener('click', () => {
-                        const optionCards = question0.querySelectorAll('.option-card');
-                        optionCards.forEach(c => c.classList.remove('selected'));
-                        card.classList.add('selected');
-                        
-                        if (card.getAttribute('data-value') === 'ja') {
-                            question0.style.display = 'none';
-                            contactForm.style.display = 'block';
-                        }
+        function initializeSimpleFormQuestions() {
+            ['investor', 'community'].forEach(formType => {
+                const question0 = document.querySelector(`#${formType}Question0`);
+                const contactForm = document.querySelector(`#${formType}ContactForm`);
+                
+                if (question0 && contactForm) {
+                    question0.querySelectorAll('.option-card').forEach(card => {
+                        card.addEventListener('click', () => {
+                            const optionCards = question0.querySelectorAll('.option-card');
+                            optionCards.forEach(c => c.classList.remove('selected'));
+                            card.classList.add('selected');
+                            
+                            if (card.getAttribute('data-value') === 'ja') {
+                                question0.style.display = 'none';
+                                contactForm.style.display = 'block';
+                            }
+                        });
                     });
-                });
-            }
-        });
+                }
+            });
+        }   
+
+
+    function updateMonthSlider(slider, valueDisplay) {
+        const months = [
+            'Januar', 'Februar', 'März', 'April', 'Mai', 'Juni',
+            'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'
+        ];
+        const value = parseInt(slider.value);
+        valueDisplay.textContent = months[value - 1];
+        
+        const percent = (value - slider.min) / (slider.max - slider.min);
+        const sliderWidth = slider.offsetWidth;
+        valueDisplay.style.left = `${percent * sliderWidth}px`;
     }
-
-
     
     function initializeMonthYearSliders() {
         const monthSlider = document.querySelector('.month-slider .slider');

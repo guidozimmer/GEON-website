@@ -156,7 +156,9 @@ export function createLanguageSwitcher() {
         { id: 'landPt4', variable: 'landPt4' },
         { id: 'landPt5', variable: 'landPt5' },
         { id: 'landPt6', variable: 'landPt6' },
-
+        { id: 'landPt7', variable: 'landPt7' },
+        { id: 'landPt8', variable: 'landPt8' },
+        { id: 'landPt9', variable: 'landPt9' },
         { id: 'landPt10', variable: 'landPt10' },
         { id: 'landPt11', variable: 'landPt11' },
         { id: 'landPt12', variable: 'landPt12' },
@@ -201,6 +203,25 @@ export function createLanguageSwitcher() {
         { id: 'landPt51', variable: 'landPt51' },
         { id: 'landPt52', variable: 'landPt52' },
         { id: 'landPt53', variable: 'landPt53' },
+        { id: 'landPt54', variable: 'landPt54' },
+        { id: 'landPt55', variable: 'landPt55' },
+        { id: 'landPt56', variable: 'landPt56' },
+        { id: 'landPt57', variable: 'landPt57' },
+        { id: 'landPt58', variable: 'landPt58' },
+        { id: 'landPt59', variable: 'landPt59' },
+        { id: 'landPt60', variable: 'landPt60' },
+        { id: 'landPt61', variable: 'landPt61' },
+        { id: 'landPt62', variable: 'landPt62' },
+        { id: 'landPt63', variable: 'landPt63' },
+        { id: 'landPt64', variable: 'landPt64' },
+        { id: 'landPt65', variable: 'landPt65' },
+        { id: 'landPt66', variable: 'landPt66' },
+        { id: 'landPt67', variable: 'landPt67' },
+        { id: 'landPt68', variable: 'landPt68' },
+        { id: 'landPt69', variable: 'landPt69' },
+        { id: 'landPt70', variable: 'landPt70' },
+        { id: 'landPt71', variable: 'landPt71' },
+        { id: 'landPt72', variable: 'landPt72' },
         
         { id: 'communityPt1', variable: 'communityPt1' },
         { id: 'communityPt2', variable: 'communityPt2' },
@@ -239,6 +260,10 @@ export function createLanguageSwitcher() {
 
 
         { id: 'entryCode', variable: 'entryCode' },
+
+        { id: 'yes', variable: 'yes' },
+        { id: 'no', variable: 'no' },
+
 
       ];
 

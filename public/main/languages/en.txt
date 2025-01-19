@@ -130,50 +130,72 @@ landPt3 = GEON handles everything from planning to implementation, making it sim
 landPt4 = I consent to the processing of my data in accordance with the 
 landPt5 = Privacy Policy
 landPt6 = " "
-landPt10 = 1. Are you the property owner?
-landPt11 = Yes
-landPt12 = No
-landPt13 = 2. What type of land is it? (Multiple selections possible)
-landPt14 = Agricultural land
-landPt15 = Fallow land
-landPt16 = Grassland
-landPt17 = Other
-landPt18 = 3. Is the area or part of it located along a highway or railway line (up to 500m away)?
-landPt19 = Yes
-landPt20 = No
-landPt21 = 3a. What percentage lies within a 500m corridor parallel to the highway or railway?
-landPt22 = 50%
-landPt23 = 4. How large is the area?
-landPt24 = 150 ha
-landPt25 = 5. Is the area contiguous?
-landPt26 = Yes
-landPt27 = No
-landPt28 = 5a. How many separate parcels are there?
-landPt29 = Please select
-landPt30 = 1
-landPt31 = 2
-landPt32 = 3
-landPt33 = 3+
-landPt34 = 6. Is the land currently leased?
-landPt35 = Yes
-landPt36 = No
-landPt37 = 6a. When does the lease expire?
-landPt38 = 2023
-landPt39 = 7. Where is the property located?
-landPt40 = State
-landPt41 = District
-landPt42 = Local authority
-landPt43 = Land parcel
-landPt44 = Plot number
-landPt45 = Area in ha
-landPt46 = Office
-landPt47 = Add another property
-landPt48 = 8. Contact Information
-landPt49 = Name*
-landPt50 = Email*
-landPt51 = Phone number
-landPt52 = Back
-landPt53 = Next
+landPt7 = Are you the owner of the land?
+
+
+
+
+landPt8 = What type of land is it?
+landPt9 = Arable land
+landPt10 = Grassland
+landPt11 = Fallow land
+landPt12 = Conversion area
+landPt13 = Other
+landPt14 = What is the total size of your land area?
+landPt15 = Is it a contiguous area?
+landPt17 = No, it consists of multiple parcels
+landPt18 = How many parcels are there?
+landPt19 = Please select
+landPt20 = 2
+landPt21 = 3
+landPt22 = 4
+landPt23 = 5+
+landPt24 = How is the land currently being used?*
+landPt25 = Leased
+landPt26 = Not leased
+landPt27 = Owner-operated
+landPt28 = When does the lease end?
+landPt29 = Is early termination possible?
+landPt32 = Is the land located near an autobahn or railway line? (Multiple selections possible)
+landPt33 = Autobahn (within 500 m)
+landPt34 = Railway line (within 500 m)
+landPt35 = What percentage of the land is within the corresponding 500 m corridor?
+landPt36 = Are there overhead power lines on or near the property?
+landPt39 = Don't know
+landPt40 = What is the approximate distance?
+landPt41 = Please Select
+landPt42 = up to 1 km
+landPt43 = 1-5 km
+landPt44 = >5 km
+landPt45 = Do you know the voltage level?
+landPt46 = Please Select
+landPt48 = 20 kV
+landPt49 = 60 kV
+landPt50 = 110 kV
+landPt51 = 220 kV
+landPt52 = 380 kV
+landPt53 = Is there a substation or other power grid connection nearby?
+landPt56 = Don't know
+landPt57 = What is the approximate distance?
+landPt58 = Please select
+landPt59 = bis 1 km
+landPt60 = 1-5 km
+landPt61 = >5 km
+landPt62 = Designation of the substation, if known.
+landPt63 = Are there any special features? 
+landPt64 = Forest in immediate vicinity
+landPt65 = Water body on the property
+landPt66 = Known protected areas
+landPt67 = High-voltage power line
+landPt68 = Gas pipeline
+landPt69 = Hunting area
+landPt70 = No special features
+landPt71 = Go Back
+landPt72 = Continue
+
+
+
+
 
 communityPt1 = Shaping the Energy Transition Together: Your Municipality as an Active Partner
 communityPt2 = As a municipality, you play a key role in the energy transition. GEON supports you in actively shaping this role while developing sustainable revenue streams for your community.
@@ -235,7 +257,8 @@ entryCode = Do you have an entry code?
 
 
 
-
+yes = Yes
+no = No
 
 
 
