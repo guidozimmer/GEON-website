@@ -611,13 +611,12 @@
 
 /* Improved question containers */
 .question-container {
-    margin-bottom: 3.5rem;
     padding: 2.5rem;
+    padding-bottom: 0;
     border-radius: 20px;
     background: #ffffff;
     transition: all 0.3s ease;
     display: none;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
 }
 
 /* Enhanced title styling */
@@ -886,3 +885,5 @@
         width: 100%;
     }
 }
+
+

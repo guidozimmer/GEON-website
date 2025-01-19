@@ -265,13 +265,10 @@
             </form>
 
             <div id="question0" class="question-container">
-                <!-- Title -->
                 <div class="question-title" id="landPt1"></div>
                 
-                <!-- Content Container -->
                 <div class="options-container">
                     <h3>
-                        <!-- Introduction -->
                         <div class="intro-text">
                             <p id="landPt2"></p>
                             <p id="landPt3"></p>
@@ -279,8 +276,15 @@
                         </div>
                     </h3>
             
-                    <!-- Action Button -->
                     <div class="option-card" data-value="nein" style="display: none;" id="landPt5"></div>
+                </div>
+            
+                <!-- Data Protection (moved here) -->
+                <div class="data-protection">
+                    <input type="checkbox" id="landowner-data-protection" required>
+                    <label for="landowner-data-protection">
+                        Ich stimme der Verarbeitung meiner Daten gemäß <a href="/privacy-policy">Datenschutzerklärung</a> zu*
+                    </label>
                 </div>
             </div>
 
@@ -498,10 +502,10 @@
             <div id="question14" class="question-container">
                 <div class="question-title">Wie möchten Sie kontaktiert werden?</div>
                 <div class="options-container">
-                    <div class="option-card" data-value="Telefon" data-shows="question14a">Telefon</div>
-                    <div class="option-card" data-value="E-Mail">E-Mail</div>
+                    <div class="option-card multi-select" data-value="Telefon" data-shows="question14a">Telefon</div>
+                    <div class="option-card multi-select" data-value="E-Mail">E-Mail</div>
                 </div>
-
+            
                 <div id="question14a" class="conditional-question">
                     <div class="question-title">Wann sind Sie am besten erreichbar?</div>
                     <div class="select-wrapper">
@@ -513,14 +517,6 @@
                         </select>
                     </div>
                 </div>
-            </div>
-
-            <!-- Data Protection -->
-            <div class="data-protection">
-                <input type="checkbox" id="data-protection-checkbox" required>
-                <label for="data-protection-checkbox">
-                    Ich stimme der Verarbeitung meiner Daten gemäß <a href="/privacy-policy">Datenschutzerklärung</a> zu*
-                </label>
             </div>
 
             <!-- Navigation Buttons -->
@@ -552,9 +548,17 @@
                                 <p id="communityPt5"></p>
                             </div>
                         </h3>
+                    </div>
                 
+                    <!-- Data Protection (moved here) -->
+                    <div class="data-protection">
+                        <input type="checkbox" id="community-data-protection" required>
+                        <label for="community-data-protection">
+                            Ich stimme der Verarbeitung meiner Daten gemäß <a href="/privacy-policy">Datenschutzerklärung</a> zu*
+                        </label>
                     </div>
                 </div>
+
 
                 <!-- Question 1 - Municipal Information -->
                 <div id="question1" class="question-container">
@@ -655,13 +659,6 @@
                     </div>
                 </div>
 
-                <!-- Data Protection -->
-                <div class="data-protection">
-                    <input type="checkbox" id="data-protection-checkbox" required>
-                    <label for="data-protection-checkbox">
-                        Ich stimme der Verarbeitung meiner Daten gemäß <a href="/privacy-policy">Datenschutzerklärung</a> zu*
-                    </label>
-                </div>
 
                 <!-- Navigation Buttons -->
                 <div class="navigation-buttons">
@@ -690,9 +687,18 @@
                                 <p id="investorPt3"></p>
                             </div>
                         </h3>
+                    </div>
                 
+                    <!-- Data Protection (moved here) -->
+                    <div class="data-protection">
+                        <input type="checkbox" id="investor-data-protection" required>
+                        <label for="investor-data-protection">
+                            Ich stimme der Verarbeitung meiner Daten gemäß <a href="/privacy-policy">Datenschutzerklärung</a> zu*
+                        </label>
                     </div>
                 </div>
+
+
 
                 <!-- Question 1 - Personal Information -->
                 <div id="question1" class="question-container">
@@ -790,13 +796,6 @@
                     </div>
                 </div>
 
-                <!-- Data Protection -->
-                <div class="data-protection">
-                    <input type="checkbox" id="data-protection-checkbox" required>
-                    <label for="data-protection-checkbox">
-                        Ich stimme der Verarbeitung meiner Daten gemäß <a href="/privacy-policy">Datenschutzerklärung</a> zu*
-                    </label>
-                </div>
 
                 <!-- Navigation Buttons -->
                 <div class="navigation-buttons">

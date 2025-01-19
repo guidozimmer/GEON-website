@@ -34,6 +34,11 @@ li {
 
 .logo {
     font-size: 30px !important;
+    margin-left: 15px;
+}
+
+.logo > img {
+    vertical-align:baseline;
 }
 
 

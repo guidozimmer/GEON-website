@@ -15,6 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const landOwnerForm = document.getElementById('landOwnerForm');
     const investorForm = document.getElementById('investorForm');
     const communityForm = document.getElementById('communityForm');
+
+    // Add these to your initialization code
+    document.querySelector('#landowner-data-protection')?.addEventListener('change', updateNavigationButtons);
+    document.querySelector('#community-data-protection')?.addEventListener('change', updateCommunityNavigationButtons);
+    document.querySelector('#investor-data-protection')?.addEventListener('change', updateInvestorNavigationButtons);
     
     // Add Location Button Handler
     document.getElementById('addLocationButton')?.addEventListener('click', addLocationFields);
@@ -53,6 +58,17 @@ document.addEventListener('DOMContentLoaded', () => {
             hideAllForms();
             investorForm.style.display = 'block';
             investorSquare.classList.add('active');
+            
+            // Ensure question0 is visible and active
+            const question0 = document.querySelector('#investorForm #question0');
+            if (question0) {
+                question0.classList.add('active');
+                // Make sure data protection is visible
+                const dataProtection = question0.querySelector('.data-protection');
+                if (dataProtection) {
+                    dataProtection.style.display = 'block';
+                }
+            }
             showInvestorQuestion(0);
         }
     });
@@ -65,6 +81,17 @@ document.addEventListener('DOMContentLoaded', () => {
             hideAllForms();
             communityForm.style.display = 'block';
             communitySquare.classList.add('active');
+            
+            // Ensure question0 is visible and active
+            const question0 = document.querySelector('#communityForm #question0');
+            if (question0) {
+                question0.classList.add('active');
+                // Make sure data protection is visible
+                const dataProtection = question0.querySelector('.data-protection');
+                if (dataProtection) {
+                    dataProtection.style.display = 'block';
+                }
+            }
             showCommunityQuestion(0);
         }
     });
@@ -101,12 +128,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentQuestionEl) {
             currentQuestionEl.classList.add('active');
             initializeInvestorQuestion(questionNumber);
-        }
-        
-        // Show data protection on last question
-        const dataProtection = document.querySelector('#investorForm .data-protection');
-        if (dataProtection) {
-            dataProtection.style.display = questionNumber === INVESTOR_TOTAL_QUESTIONS ? 'block' : 'none';
         }
         
         updateInvestorNavigationButtons();
@@ -157,14 +178,16 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!container) return false;
     
         switch(questionNumber) {
+            case 0: // Introduction
+                return container.querySelector('#investor-data-protection').checked;
+            
             case 1: // Personal Information
             case 2: // Business Address
                 const requiredInputs = container.querySelectorAll('input[required]');
                 return Array.from(requiredInputs).every(input => input.value.trim() !== '');
                 
             case 3: // Technology Preferences
-            case 6: // Project Status
-                return container.querySelector('.option-card.selected') !== null;
+                return container.querySelectorAll('.option-card.selected').length > 0;
                 
             case 4: // Investment Volume
                 return container.querySelector('.option-card.selected') !== null;
@@ -172,10 +195,14 @@ document.addEventListener('DOMContentLoaded', () => {
             case 5: // IRR
                 return container.querySelector('.slider')?.value !== '';
                 
+            case 6: // Project Status
+                return container.querySelectorAll('.option-card.selected').length > 0;
+                
             default:
-                return true; // Question 0 (introduction)
+                return false;
         }
     }
+    
     
     function updateInvestorNavigationButtons() {
         const prevButton = document.querySelector('#investorForm #prevButton');
@@ -263,12 +290,6 @@ document.addEventListener('DOMContentLoaded', () => {
             initializeCommunityQuestion(questionNumber);
         }
         
-        // Show data protection on last question
-        const dataProtection = document.querySelector('#communityForm .data-protection');
-        if (dataProtection) {
-            dataProtection.style.display = questionNumber === COMMUNITY_TOTAL_QUESTIONS ? 'block' : 'none';
-        }
-        
         updateCommunityNavigationButtons();
     }
     
@@ -325,6 +346,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!container) return false;
     
         switch(questionNumber) {
+            case 0: // Introduction
+                return container.querySelector('#community-data-protection').checked;
+            
             case 1: // Municipal Information
             case 2: // Contact Information
                 const requiredInputs = container.querySelectorAll('input[required]');
@@ -333,17 +357,16 @@ document.addEventListener('DOMContentLoaded', () => {
             case 3: // Own Land
                 const hasSelection = container.querySelector('.option-card.selected') !== null;
                 if (hasSelection && container.querySelector('.option-card.selected').getAttribute('data-value') === 'ja') {
-                    // Check if at least one land type is selected
-                    return container.querySelector('#question3a .option-card.selected') !== null;
+                    return container.querySelectorAll('#question3a .option-card.selected').length > 0;
                 }
                 return hasSelection;
                 
             case 4: // Project Types
             case 5: // Interests
-                return container.querySelector('.option-card.selected') !== null;
+                return container.querySelectorAll('.option-card.selected').length > 0;
                 
             default:
-                return true; // Question 0 (introduction)
+                return false;
         }
     }
     
@@ -584,6 +607,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateNavigationButtons();
     }
 
+        // For landowner form
         function showQuestion(questionNumber) {
             document.querySelectorAll('.question-container').forEach(q => {
                 q.classList.remove('active');
@@ -595,8 +619,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 initializeQuestion(questionNumber);
             }
             
-            // Only show data protection on last question
-            const dataProtection = document.querySelector('.data-protection');
+            // Specific to landowner form data protection
+            const dataProtection = document.querySelector('#landOwnerForm .data-protection');
             if (dataProtection) {
                 dataProtection.style.display = questionNumber === totalQuestions ? 'block' : 'none';
             }
@@ -727,11 +751,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
  
-    function isQuestionAnswered(questionNumber) {
+    function isQuestionAnswered(questionNumber) {  // for landowner form
         const container = document.querySelector(`#question${questionNumber}`);
         if (!container) return false;
- 
+    
         switch(questionNumber) {
+            case 0: // Introduction and Data Protection
+                const dataProtectionAccepted = container.querySelector('#landowner-data-protection').checked;
+                return dataProtectionAccepted;
             case 1: // Land ownership
             case 2: // Land type
             case 3: // Infrastructure
