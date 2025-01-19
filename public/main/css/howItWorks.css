@@ -30,7 +30,7 @@
 }
 
 .howItWorksHeading > h3 {
-    font-size: var(--small-font) !important;
+    font-size: var(--medium-font) !important;
     font-family: Acumin-Regular !important;
     color: black !important;
 }

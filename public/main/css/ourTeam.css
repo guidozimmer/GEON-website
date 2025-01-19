@@ -16,7 +16,7 @@
 
 .ourTeam h3 {
     font-weight: normal;
-    font-size: 16px;
+    font-size: var(--medium-font);
     line-height: 1.6;
     max-width: 1200px;
     margin: 0 auto 40px auto;
