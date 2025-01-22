@@ -536,22 +536,17 @@ document.addEventListener('DOMContentLoaded', () => {
  
     function updateSliderValue(slider, valueDisplay) {
         const value = slider.value;
-        if (slider.hasAttribute('data-month')) {
-            const months = [
-                'Januar', 'Februar', 'März', 'April', 'Mai', 'Juni',
-                'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'
-            ];
-            valueDisplay.textContent = months[parseInt(value) - 1];
+        if (slider.hasAttribute('data-percentage')) {
+            valueDisplay.textContent = `${value}%`;
+        } else if (slider.hasAttribute('data-year')) {
+            valueDisplay.textContent = value;
         } else {
-            const suffix = slider.hasAttribute('data-year') ? '' : 
-                          slider.hasAttribute('data-percentage') ? '%' : ' ha';
-            valueDisplay.textContent = `${value}${suffix}`;
+            valueDisplay.textContent = `${value} ha`;
         }
     
-        // Calculate position
+        const sliderRect = slider.getBoundingClientRect();
         const percent = (value - slider.min) / (slider.max - slider.min);
-        const sliderWidth = slider.offsetWidth;
-        const thumbOffset = percent * sliderWidth;
+        const thumbOffset = Math.round(percent * sliderRect.width);
         valueDisplay.style.left = `${thumbOffset}px`;
     }
 
@@ -559,6 +554,50 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // In the handleOptionCardClick function
     function handleOptionCardClick(card, optionCards) {
+        if (card.closest('#question9')) {
+            if (card.getAttribute('data-value') === 'keine') {
+                // Clicking "Keine besondere Merkmale"
+                if (!card.classList.contains('selected')) {
+                    optionCards.forEach(c => c.classList.remove('selected'));
+                    card.classList.add('selected');
+                } else {
+                    card.classList.remove('selected');
+                }
+            } else {
+                // Clicking other options
+                const keineOption = card.closest('.question-container').querySelector('.option-card[data-value="keine"]');
+                if (keineOption) keineOption.classList.remove('selected');
+                card.classList.toggle('selected');
+            }
+            updateNavigationButtons();
+            return;
+        }
+
+        if (card.closest('#question6')) {
+            if (card.getAttribute('data-value') === 'Nein') {
+                optionCards.forEach(c => c.classList.remove('selected'));
+                card.classList.add('selected');
+                const conditional = document.getElementById('question6a');
+                if (conditional) {
+                    conditional.style.display = 'none';
+                }
+            } else {
+                const neinOption = card.closest('.question-container').querySelector('.option-card[data-value="Nein"]');
+                if (neinOption) neinOption.classList.remove('selected');
+                
+                card.classList.toggle('selected');
+                const anyInfraSelected = Array.from(optionCards)
+                    .some(c => c.classList.contains('selected') && c.getAttribute('data-value') !== 'Nein');
+                
+                const conditional = document.getElementById('question6a');
+                if (conditional) {
+                    conditional.style.display = anyInfraSelected ? 'block' : 'none';
+                }
+            }
+            updateNavigationButtons();
+            return;
+        }
+    
         if (card.classList.contains('multi-select')) {
             card.classList.toggle('selected');
             const conditionalId = card.getAttribute('data-shows');
@@ -572,26 +611,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         } else {
-            // Single select handling
             const container = card.closest('.question-container');
-            
-            // Remove selected from all other cards in this container
             container.querySelectorAll('.option-card').forEach(c => {
                 c.classList.remove('selected');
             });
-            
-            // Add selected to the clicked card
             card.classList.add('selected');
             
-            // Handle conditional questions
             const conditionalId = card.getAttribute('data-shows');
-            
-            // Hide all conditional questions in this container
             container.querySelectorAll('.conditional-question').forEach(cq => {
                 cq.style.display = 'none';
             });
             
-            // Show the conditional question if it exists and the card is selected
             if (conditionalId) {
                 const conditional = document.getElementById(conditionalId);
                 if (conditional) {
@@ -719,25 +749,63 @@ document.addEventListener('DOMContentLoaded', () => {
         if (questionNumber === 5) {
             const verpachtetCard = container.querySelector('.option-card[data-value="Verpachtet"]');
             if (verpachtetCard) {
-                // Ensure the conditional question is visible when "Verpachtet" is selected
                 verpachtetCard.addEventListener('click', () => {
                     const conditionalQuestion = container.querySelector('#question5a');
                     if (conditionalQuestion) {
                         conditionalQuestion.style.display = 'block';
+                        
+                        // Initialize early termination options
+                        const earlyTerminationCards = conditionalQuestion.querySelectorAll('.option-card');
+                        earlyTerminationCards.forEach(card => {
+                            // Remove any existing click listeners
+                            card.replaceWith(card.cloneNode(true));
+                        });
+                        
+                        // Re-add click listeners
+                        conditionalQuestion.querySelectorAll('.option-card').forEach(card => {
+                            card.addEventListener('click', (event) => {
+                                event.stopPropagation();  // Prevent event from bubbling up
+                                event.preventDefault();   // Prevent default behavior
+                                
+                                // Handle the selection
+                                conditionalQuestion.querySelectorAll('.option-card').forEach(c => 
+                                    c.classList.remove('selected')
+                                );
+                                card.classList.add('selected');
+                                updateNavigationButtons();
+                            });
+                        });
                     }
                 });
             }
-    
-            // Add event listeners to early termination options
-            const earlyTerminationCards = container.querySelectorAll('#question5a .option-card');
-            earlyTerminationCards.forEach(card => {
+            
+            // Handle other options (not Verpachtet)
+            const otherCards = container.querySelectorAll('.option-card:not([data-value="Verpachtet"])');
+            otherCards.forEach(card => {
                 card.addEventListener('click', () => {
-                    earlyTerminationCards.forEach(c => c.classList.remove('selected'));
-                    card.classList.add('selected');
-                    updateNavigationButtons();
+                    const conditionalQuestion = container.querySelector('#question5a');
+                    if (conditionalQuestion) {
+                        conditionalQuestion.style.display = 'none';
+                        conditionalQuestion.querySelectorAll('.option-card').forEach(c => 
+                            c.classList.remove('selected')
+                        );
+                    }
                 });
             });
         }
+
+
+        if (questionNumber === 6) {
+            const slider = container.querySelector('#question6a .slider');
+            const valueDisplay = container.querySelector('#question6a .slider-value');
+            if (slider && valueDisplay) {
+                updateSliderValue(slider, valueDisplay);
+            }
+        }
+        
+
+
+
  
         if (questionNumber === 7) {
             const distanceSelect = container.querySelector('#question7a .select-wrapper select:first-child');
@@ -825,50 +893,38 @@ document.addEventListener('DOMContentLoaded', () => {
             return false;
         }
     
-        console.log(`Checking question ${questionNumber}`);
     
         switch(questionNumber) {
             case 0: // First question (usually an introduction or general question)
-                console.log('Question 0 always returns true');
-                return true;
+                return container.querySelector('#landowner-data-protection')?.checked || false;
             
             case 1: // Land ownership
                 const selectedCard = container.querySelector('.option-card.selected');
-                console.log('Question 1 selected card:', selectedCard);
                 
                 if (!selectedCard) {
-                    console.log('No card selected in question 1');
                     return false;
                 }
                 
-                console.log('Selected card value:', selectedCard.getAttribute('data-value'));
                 return true;
             
             case 2: // Land type
                 const selectedTypes = container.querySelectorAll('.option-card.selected');
-                console.log('Question 2 selected cards:', selectedTypes);
                 return selectedTypes.length > 0;
             
             case 3: // Total area (slider)
                 const slider = container.querySelector('.slider');
-                console.log('Question 3 slider:', slider);
-                console.log('Slider value:', slider ? slider.value : 'No slider found');
                 return slider && slider.value !== '' && parseInt(slider.value) > 0;
             
             case 4: // Contiguous Area
                 const contiguousCard = container.querySelector('.option-card.selected');
-                console.log('Question 4 selected card:', contiguousCard);
                 
                 if (!contiguousCard) {
-                    console.log('No card selected in question 4');
                     return false;
                 }
                 
                 // If "Nein" is selected, check the additional dropdown
                 if (contiguousCard.getAttribute('data-value') === 'nein') {
                     const conditionalSelect = container.querySelector('#question4a select');
-                    console.log('Conditional select:', conditionalSelect);
-                    console.log('Conditional select value:', conditionalSelect ? conditionalSelect.value : 'No select found');
                     return conditionalSelect && conditionalSelect.value !== '';
                 }
                 
@@ -876,37 +932,29 @@ document.addEventListener('DOMContentLoaded', () => {
             
             case 5: // Current Land Use
                 const landUseCard = container.querySelector('.option-card.selected');
-                console.log('Question 5 selected card:', landUseCard);
                 
                 if (!landUseCard) {
-                    console.log('No card selected in question 5');
                     return false;
                 }
                 
                 // If "Verpachtet" is selected, check additional conditions
                 if (landUseCard.getAttribute('data-value') === 'Verpachtet') {
                     const yearSlider = container.querySelector('.year-slider .slider');
-                    const monthSlider = container.querySelector('.month-slider .slider');
-                    const earlyTerminationCards = container.querySelectorAll('#question5a .option-card.selected');
+                    const earlyTerminationCard = container.querySelector('#question5a .option-card.selected');
                     
-                    console.log('Year slider:', yearSlider);
-                    console.log('Month slider:', monthSlider);
-                    console.log('Early termination cards:', earlyTerminationCards);
                     
-                    return yearSlider && monthSlider && 
+                    // Check if year is selected and early termination option is selected
+                    return yearSlider && 
                            yearSlider.value !== '' && 
-                           monthSlider.value !== '' &&
-                           earlyTerminationCards.length > 0;
+                           earlyTerminationCard !== null;
                 }
                 
                 return true;
             
             case 6: // Infrastructure Proximity
                 const infraCards = container.querySelectorAll('.option-card.selected');
-                console.log('Question 6 selected cards:', infraCards);
                 
                 if (infraCards.length === 0) {
-                    console.log('No card selected in question 6');
                     return false;
                 }
                 
@@ -916,8 +964,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 if (hasInfraSelected) {
                     const percentageSlider = container.querySelector('#question6a .slider');
-                    console.log('Percentage slider:', percentageSlider);
-                    console.log('Percentage slider value:', percentageSlider ? percentageSlider.value : 'No slider found');
                     return percentageSlider && percentageSlider.value !== '';
                 }
                 
@@ -925,10 +971,8 @@ document.addEventListener('DOMContentLoaded', () => {
             
             case 7: // High Voltage Lines
                 const highVoltageCard = container.querySelector('.option-card.selected');
-                console.log('Question 7 selected card:', highVoltageCard);
                 
                 if (!highVoltageCard) {
-                    console.log('No card selected in question 7');
                     return false;
                 }
                 
@@ -936,9 +980,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (highVoltageCard.getAttribute('data-value') === 'ja') {
                     const distanceSelect = container.querySelector('#question7a .select-wrapper select:first-child');
                     const voltageSelect = container.querySelector('#question7a .select-wrapper select:last-child');
-                    
-                    console.log('Distance select:', distanceSelect);
-                    console.log('Voltage select:', voltageSelect);
                     
                     return distanceSelect && voltageSelect && 
                            distanceSelect.value !== '' && 
@@ -949,18 +990,14 @@ document.addEventListener('DOMContentLoaded', () => {
             
             case 8: // Substation
                 const substationCard = container.querySelector('.option-card.selected');
-                console.log('Question 8 selected card:', substationCard);
                 
                 if (!substationCard) {
-                    console.log('No card selected in question 8');
                     return false;
                 }
                 
                 // If "Ja" is selected, check additional select
                 if (substationCard.getAttribute('data-value') === 'ja') {
                     const distanceSelect = container.querySelector('#question8a .select-wrapper select');
-                    console.log('Distance select:', distanceSelect);
-                    console.log('Distance select value:', distanceSelect ? distanceSelect.value : 'No select found');
                     return distanceSelect && distanceSelect.value !== '';
                 }
                 
@@ -968,7 +1005,6 @@ document.addEventListener('DOMContentLoaded', () => {
             
             case 9: // Special Features
                 const specialFeatureCards = container.querySelectorAll('.option-card.selected');
-                console.log('Question 9 selected cards:', specialFeatureCards);
                 return specialFeatureCards.length > 0;
             
             default:

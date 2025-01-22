@@ -337,12 +337,6 @@
                                     <div class="slider-value">2025</div>
                                 </div>
                             </div>
-                            <div class="month-slider">
-                                <div class="slider-wrapper">
-                                    <input type="range" class="slider" min="1" max="12" value="1" data-month="true">
-                                    <div class="slider-value">Januar</div>
-                                </div>
-                            </div>
                         </div>
                     
                         <div class="question-title" id="landPt8">Ist eine vorzeitige Beendigung möglich?</div>
@@ -359,13 +353,14 @@
                     <div class="options-container">
                         <div class="option-card multi-select" data-value="Autobahn" data-shows="question6a" id="landPt8">Autobahn (bis 500 m)</div>
                         <div class="option-card multi-select" data-value="Bahnstrecke" data-shows="question6a" id="landPt8">Bahnstrecke (bis 500 m)</div>
+                        <div class="option-card multi-select" data-value="Nein" data-shows="question6a" id="no">Nein</div>
                     </div>
 
                     <div id="question6a" class="conditional-question">
                         <div class="question-title" id="landPt8">Wie viel Prozent der Fläche liegt im entsprechenden 500 m Korridor?</div>
                         <div class="slider-container">
                             <div class="slider-wrapper">
-                                <input type="range" class="slider" min="0" max="100" value="100" data-percentage="true">
+                                <input type="range" class="slider" min="0" max="100" value="0" data-percentage="true">
                                 <div class="slider-value">100%</div>
                             </div>
                         </div>
@@ -446,6 +441,48 @@
                         <div class="option-card multi-select" data-value="Jagdgebiet" id="landPt8">Jagdgebiet</div>
                         <div class="option-card" data-value="keine" id="landPt8">Keine besondere Merkmale</div>
                     </div>
+                </div>
+
+
+                <div id="question7" class="question-container">
+                    <div id="landPt39" class="question-title"></div>
+                    <div id="locationFieldsContainer">
+                        <div class="location-entry">
+                            <div class="input-group">
+                                <div class="input-field">
+                                    <label for="bundesland" id="landPt40"></label>
+                                    <input type="text" name="bundesland[]" required>
+                                </div>
+                                <div class="input-field">
+                                    <label for="landkreis" id="landPt41"></label>
+                                    <input type="text" name="landkreis[]" required>
+                                </div>
+                                <div class="input-field">
+                                    <label for="gemarkung" id="landPt42"></label>
+                                    <input type="text" name="gemarkung[]" required>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <div class="input-field">
+                                    <label for="flur" id="landPt43"></label>
+                                    <input type="text" name="flur[]" required>
+                                </div>
+                                <div class="input-field">
+                                    <label for="flurstueck" id="landPt44"></label>
+                                    <input type="text" name="flurstueck[]" required>
+                                </div>
+                                <div class="input-field">
+                                    <label for="flaeche" id="landPt45"></label>
+                                    <input type="number" name="flaeche[]" required>
+                                </div>
+                                <div class="input-field">
+                                    <label for="amt" id="landPt46"></label>
+                                    <input type="text" name="amt[]" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" id="addLocationButton" class="add-location-btn" id="landPt47"></button>
                 </div>
 
                 <!-- Navigation Buttons -->
