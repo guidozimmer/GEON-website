@@ -475,6 +475,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
         
         container.appendChild(newLocation);
+        initializeLocationEntries();
         updateNavigationButtons();
         
         // Add event listeners to new inputs
@@ -488,12 +489,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
  
-    function hideConditionalQuestion(conditionalId) {
-        const conditional = document.querySelector(`#${conditionalId}`);
-        if (conditional) {
-            conditional.classList.remove('visible');
-        }
+    function initializeLocationEntries() {
+        document.querySelectorAll('.location-entry input').forEach(input => {
+            input.addEventListener('input', updateNavigationButtons);
+        });
     }
+    
  
     function showConditionalQuestion(conditionalId) {
         const conditional = document.querySelector(`#${conditionalId}`);
@@ -852,6 +853,17 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
+        if (questionNumber === 10) {
+            document.querySelectorAll('.remove-location').forEach(btn => {
+                btn.onclick = () => removeLocationEntry(btn);
+            });
+            
+            const addButton = document.getElementById('addLocationButton');
+            if (addButton) {
+                addButton.onclick = addLocationFields;
+            }
+        }
+
         if (questionNumber === 11 || questionNumber === 12) {
             const inputs = container.querySelectorAll('input[required], select[required]');
             inputs.forEach(input => {
@@ -1036,13 +1048,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 const specialFeatureCards = container.querySelectorAll('.option-card.selected');
                 return specialFeatureCards.length > 0;
 
-            case 10: // Location Fields
-                const locationInputs = container.querySelectorAll('.location-entry input[required]');
-                return Array.from(locationInputs).every(input => input.value.trim() !== '');
-
+            case 10: 
+                // Always allow progression past location fields
+                return true;
+            
+            
             case 11:
-                return Array.from(container.querySelectorAll('input[required], select[required]'))
-                    .every(field => field.value && field.value !== '');
+                // Check select and required fields
+                const anredeSelect = container.querySelector('#anrede');
+                const requiredInputs11 = container.querySelectorAll('input[required]');
+                return anredeSelect.value !== '' && 
+                        Array.from(requiredInputs11).every(input => input.value.trim() !== '');
             
             case 12:
                 return Array.from(container.querySelectorAll('input[required]'))
@@ -1087,125 +1103,140 @@ document.addEventListener('DOMContentLoaded', () => {
 
  
     function submitForm() {
-        // Handle ownership status (Question 1)
-        const q1Value = document.querySelector('#question1 .option-card.selected')?.getAttribute('data-value');
-        document.getElementById('00NMz0000040bQH').value = q1Value || '';
+        const form = document.querySelector('#landForm');
+        if (!form) return;
     
-        // Handle land types (Question 2)
+        // Create hidden fields
+        const requiredFields = [
+            '00NMz0000040bRt', '00NMz0000040bgP', '00NMz0000040bjd', '00NMz0000040bmr',
+            '00NMz0000040boT', '00NMz0000040aag', '00NMz0000040bq5', '00NMz0000040bWj',
+            '00NMz0000040bYL', '00NMz0000040bZx', '00NMz0000040bbZ', '00NMz0000040ben',
+            '00NMz0000044iTB', '00NMz0000044ckM', '00NMz0000044ijJ', '00NMz0000040btJ',
+            '00NMz0000040bzl', '00NMz0000040c1N', '00NMz0000040c2z', '00NMz0000040c4b',
+            '00NMz0000040c6D', '00NMz0000040c7p', '00NMz0000040c9R', '00NMz0000040cB3',
+            '00NMz0000040cCf', '00NMz0000040cFt', '00NMz0000040cHV', '00NMz0000040bzm',
+            '00NMz0000040cJ7', '00NMz0000040cKj', '00NMz0000040cML', '00NMz0000040cNx',
+            '00NMz0000040b26', '00NMz0000040cRB', '00NMz0000040cUP', '00NMz0000040cW1'
+        ];
+    
+        // For the hidden fields creation
+        requiredFields.forEach(id => {
+            if (!form.querySelector(`[id="${id}"]`)) {
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                input.id = id;
+                input.name = id;
+                form.appendChild(input);
+            }
+        });
+
+        // For the setValue function
+        const setValue = (id, value) => {
+            const element = form.querySelector(`[id="${id}"]`);
+            if (element) element.value = value;
+        };
+    
+        // Land type
         const selectedTypes = Array.from(document.querySelectorAll('#question2 .option-card.selected'))
-            .map(card => card.getAttribute('data-value'))
-            .join(';');
-        document.getElementById('00NMz0000040bRt').value = selectedTypes;
+            .map(card => card.getAttribute('data-value'));
+        setValue('00NMz0000040bRt', selectedTypes.join(';'));
     
-        // Handle infrastructure proximity (Question 3)
-        const selectedInfra = Array.from(document.querySelectorAll('#question3 .option-card.selected'))
-            .map(card => card.getAttribute('data-value'))
-            .join(';');
-        document.getElementById('00NMz0000040bWj').value = selectedInfra;
-        if (selectedInfra) {
-            document.getElementById('00NMz0000040bYL').value = 
-                document.querySelector('#infrastrukturSlider .slider')?.value || '';
+        // Total area
+        setValue('00NMz0000040bgP', document.querySelector('#question3 .slider')?.value || '');
+    
+        // Contiguous area
+        const isContiguous = document.querySelector('#question4 .option-card.selected')?.getAttribute('data-value') === 'ja';
+        setValue('00NMz0000040bjd', isContiguous ? '1' : '0');
+    
+        // Number of parcels
+        const parcels = document.querySelector('#question4a select')?.value;
+        setValue('00NMz0000040bmr', parcels || '');
+    
+        // Land usage
+        const usage = document.querySelector('#question5 .option-card.selected')?.getAttribute('data-value');
+        setValue('00NMz0000040boT', usage || '');
+    
+        // Lease end date
+        if (usage === 'Verpachtet') {
+            const yearValue = document.querySelector('.year-slider .slider')?.value;
+            setValue('00NMz0000040aag', yearValue || '');
         }
     
-        // Handle power substation (Question 4)
-        const q4Answer = document.querySelector('#question4 .option-card.selected')?.getAttribute('data-value') === '1';
-        document.getElementById('00NMz0000040bZx').value = q4Answer ? '1' : '0';
-        document.getElementById('00NMz0000040bbZ').value = q4Answer ? 
-            document.querySelector('#trafoDistance select')?.value || '' : '';
+        // Early termination
+        const earlyTermination = document.querySelector('#question5a .option-card.selected')?.getAttribute('data-value') === 'ja';
+        setValue('00NMz0000040bq5', earlyTermination ? '1' : '0');
     
-        // Handle power lines (Question 5)
-        const q5Answer = document.querySelector('#question5 .option-card.selected')?.getAttribute('data-value') === '1';
-        document.getElementById('00NMz0000040bdB').value = q5Answer ? '1' : '0';
-        document.getElementById('00NMz0000040ben').value = q5Answer ? 
-            document.querySelector('#powerLineVoltage select')?.value || '' : '';
+        // Infrastructure within 500m
+        const selectedInfra = Array.from(document.querySelectorAll('#question6 .option-card.selected'))
+            .map(card => card.getAttribute('data-value'));
+        setValue('00NMz0000040bWj', selectedInfra.join(';'));
     
-        // Handle total area (Question 6)
-        const areaValue = document.querySelector('#question6 .slider')?.value;
-        document.getElementById('00NMz0000040bgP').value = areaValue || '';
+        // Infrastructure percentage
+        setValue('00NMz0000040bYL', document.querySelector('#question6a .slider')?.value || '');
     
-        // Handle contiguous area (Question 7)
-        const q7Answer = document.querySelector('#question7 .option-card.selected')?.getAttribute('data-value') === '1';
-        document.getElementById('00NMz0000040bjd').value = q7Answer ? '1' : '0';
-        document.getElementById('00NMz0000040bmr').value = q7Answer ? 
-            document.querySelector('#parcelCount select')?.value || '' : '';
+        // Power line
+        const hasPowerLine = document.querySelector('#question7 .option-card.selected')?.getAttribute('data-value') === 'ja';
+        setValue('00NMz0000040bZx', hasPowerLine ? '1' : '0');
+        setValue('00NMz0000040bbZ', hasPowerLine ? document.querySelector('#question7a select:first-child')?.value : '');
+        setValue('00NMz0000040ben', hasPowerLine ? document.querySelector('#question7a select:last-child')?.value : '');
     
-        // Handle current usage (Question 8)
-        const q8Value = document.querySelector('#question8 .option-card.selected')?.getAttribute('data-value');
-        document.getElementById('00NMz0000040boT').value = q8Value || '';
-        if (q8Value === 'Verpachtet') {
-            document.getElementById('00NMz0000040aag').value = 
-                document.querySelector('#leaseDetails input[type="date"]')?.value || '';
-            document.getElementById('00NMz0000040bq5').value = 
-                document.querySelector('#leaseDetails .option-card.selected')?.getAttribute('data-value') === '1' ? '1' : '0';
-        }
+        // Substation
+        const hasSubstation = document.querySelector('#question8 .option-card.selected')?.getAttribute('data-value') === 'ja';
+        setValue('00NMz0000044iTB', hasSubstation ? 'Ja' : 'Nein');
+        setValue('00NMz0000044ckM', hasSubstation ? document.querySelector('#question8a select')?.value : '');
+        setValue('00NMz0000044ijJ', document.querySelector('#question8a input[type="text"]')?.value || '');
     
-        // Handle terrain and features (Question 9)
-        document.getElementById('00NMz0000040brh').value = 
-            document.querySelector('#question9 select')?.value || '';
+        // Special features
         const selectedFeatures = Array.from(document.querySelectorAll('#question9 .option-card.selected'))
-            .map(card => card.getAttribute('data-value'))
-            .join(';');
-        document.getElementById('00NMz0000040btJ').value = selectedFeatures;
+            .map(card => card.getAttribute('data-value'));
+        setValue('00NMz0000040btJ', selectedFeatures.join(';'));
     
-        // Handle planning status (Question 10)
-        document.getElementById('00NMz0000040buv').value = 
-            document.querySelector('#question10 .option-card.selected')?.getAttribute('data-value') === '1' ? '1' : '0';
-        document.getElementById('00NMz0000040bwX').value = 
-            document.querySelector('#question10 select')?.value || '';
-        document.getElementById('00NMz0000040by9').value = 
-            document.querySelector('#question10 .option-card.selected:last-child')?.getAttribute('data-value') === '1' ? '1' : '0';
+        // Location fields
+        setValue('00NMz0000040bzl', document.querySelector('#bundesland')?.value || '');
+        setValue('00NMz0000040c1N', document.querySelector('#landkreis')?.value || '');
+        setValue('00NMz0000040c2z', document.querySelector('#gemeinde')?.value || '');
+        setValue('00NMz0000040c4b', document.querySelector('#gemarkung')?.value || '');
+        setValue('00NMz0000040c6D', document.querySelector('#flur')?.value || '');
+        setValue('00NMz0000040c7p', document.querySelector('#flurstueck')?.value || '');
+        setValue('00NMz0000040c9R', document.querySelector('#flaeche')?.value || '');
+        setValue('00NMz0000040cB3', document.querySelector('#amt')?.value || '');
     
-
-        // Handle contact information (Question 11)
-    document.getElementById('anrede').value = document.querySelector('#question11 #anrede').value;
-    document.getElementById('titel').value = document.querySelector('#question11 #titel').value;
-    document.getElementById('vorname').value = document.querySelector('#question11 #vorname').value;
-    document.getElementById('nachname').value = document.querySelector('#question11 #nachname').value;
-    document.getElementById('firma').value = document.querySelector('#question11 #firma').value;
-    document.getElementById('strasse').value = document.querySelector('#question11 #strasse').value;
-    document.getElementById('plz').value = document.querySelector('#question11 #plz').value;
-    document.getElementById('ort').value = document.querySelector('#question11 #ort').value;
-    document.getElementById('land').value = document.querySelector('#question11 #land').value;
-    document.getElementById('telefon').value = document.querySelector('#question11 #telefon').value;
-    document.getElementById('email').value = document.querySelector('#question11 #email').value;
-
-    // Input validation for contact information
-    const requiredFields = ['anrede', 'vorname', 'nachname', 'strasse', 'plz', 'ort', 'land', 'telefon', 'email'];
-    const missingFields = requiredFields.filter(fieldId => {
-        const field = document.querySelector(`#question11 #${fieldId}`);
-        return !field || !field.value.trim();
-    });
-
-    if (missingFields.length > 0) {
-        alert('Bitte füllen Sie alle erforderlichen Felder aus.');
-        return;
+        // Contact information
+        setValue('00NMz0000040cCf', document.querySelector('#anrede')?.value || '');
+        setValue('00NMz0000040cFt', document.querySelector('#titel')?.value || '');
+        setValue('00NMz0000040cHV', document.querySelector('#vorname')?.value || '');
+        setValue('00NMz0000040bzm', document.querySelector('#nachname')?.value || '');
+        setValue('00NMz0000040cJ7', document.querySelector('#firma')?.value || '');
+        setValue('00NMz0000040cKj', document.querySelector('#strasse')?.value || '');
+        setValue('00NMz0000040cML', document.querySelector('#plz')?.value || '');
+        setValue('00NMz0000040cNx', document.querySelector('#ort')?.value || '');
+        setValue('00NMz0000040b26', document.querySelector('#land')?.value || '');
+        setValue('00NMz0000040cRB', document.querySelector('#telefon')?.value || '');
+    
+        // Email field (special case - different ID)
+        const emailInput = document.createElement('input');
+        emailInput.type = 'hidden';
+        emailInput.name = 'email';
+        emailInput.value = document.querySelector('#question12 #email')?.value || '';
+        form.appendChild(emailInput);
+    
+        // Contact preference
+        const contactMethod = document.querySelector('#question13 .option-card[data-value="phone"].selected') ? 'Telefon' : 
+                             document.querySelector('#question13 .option-card[data-value="email"].selected') ? 'E-Mail' : '';
+        setValue('00NMz0000040cUP', contactMethod);
+    
+        // Best time to call
+        const bestTime = document.querySelector('#question13a .option-card.selected')?.getAttribute('data-value');
+        const timeMap = {
+            'morning': 'Vormittags',
+            'afternoon': 'Nachmittags',
+            'allday': 'Ganztägig'
+        };
+        setValue('00NMz0000040cW1', bestTime ? timeMap[bestTime] : '');
+    
+        // Submit form
+        form.submit();
     }
-
-    // Email validation
-    const emailField = document.querySelector('#question11 #email');
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(emailField.value)) {
-        alert('Bitte geben Sie eine gültige E-Mail-Adresse ein.');
-        return;
-    }
-
-    // Phone number validation
-    const phoneField = document.querySelector('#question11 #telefon');
-    const phonePattern = /^[\d\s\-\+\(\)]+$/;
-    if (!phonePattern.test(phoneField.value)) {
-        alert('Bitte geben Sie eine gültige Telefonnummer ein.');
-        return;
-    }
-
-
-
-
-
-        // Submit the form
-        document.getElementById('landForm').submit();
-    }
-
-
     
  
     // Event Listeners for navigation
