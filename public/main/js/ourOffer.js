@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     let currentQuestion = 0;
-    const totalQuestions = 14;
+    const totalQuestions = 11;
     let locationCount = 1;
     const COMMUNITY_TOTAL_QUESTIONS = 5;
     let communityCurrentQuestion = 0;
@@ -433,9 +433,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const container = document.getElementById('locationFieldsContainer');
         const newLocation = document.createElement('div');
         newLocation.className = 'location-entry';
+
+        
         
         newLocation.innerHTML = `
-            <button type="button" class="remove-location">✕</button>
+                <button type="button" class="remove-location">
+                    <img src="./img/x.svg" alt="Remove">
+                </button>
             <div class="input-group">
                 <div class="input-field">
                     <label for="bundesland${locationCount}">Bundesland</label>
@@ -477,13 +481,10 @@ document.addEventListener('DOMContentLoaded', () => {
         newLocation.querySelectorAll('input').forEach(input => {
             input.addEventListener('input', updateNavigationButtons);
         });
-        
-        // Add event listener to remove button
+
         const removeButton = newLocation.querySelector('.remove-location');
         if (removeButton) {
-            removeButton.addEventListener('click', function() {
-                removeLocationEntry(this);
-            });
+            removeButton.addEventListener('click', () => removeLocationEntry(removeButton));
         }
     }
  
@@ -1006,6 +1007,10 @@ document.addEventListener('DOMContentLoaded', () => {
             case 9: // Special Features
                 const specialFeatureCards = container.querySelectorAll('.option-card.selected');
                 return specialFeatureCards.length > 0;
+
+            case 10: // Location Fields
+                const locationInputs = container.querySelectorAll('.location-entry input[required]');
+                return Array.from(locationInputs).every(input => input.value.trim() !== '');
             
             default:
                 console.log(`No specific validation for question ${questionNumber}`);
@@ -1014,10 +1019,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    function removeLocationEntry(button) {
-        button.closest('.location-entry').remove();
-        updateNavigationButtons();
-    }
+    
+        const removeLocationEntry = (button) => {
+            const locationEntry = button.closest('.location-entry');
+            if (locationEntry) {
+                locationEntry.remove();
+                updateNavigationButtons();
+            }
+        };
 
 
 

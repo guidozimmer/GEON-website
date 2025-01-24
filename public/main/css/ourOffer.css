@@ -927,6 +927,58 @@
 
 
 
+#question10 {
+    padding: 20px;
+}
+
+#locationFieldsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.location-entry {
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.remove-location {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.remove-location img {
+    width: 30px;
+    height: 30px;
+}
+
+.input-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.add-location-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#landPt45 {
+    white-space: nowrap;
+ }
 
 
 

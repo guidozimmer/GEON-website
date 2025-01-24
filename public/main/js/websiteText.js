@@ -222,6 +222,15 @@ export function createLanguageSwitcher() {
         { id: 'landPt70', variable: 'landPt70' },
         { id: 'landPt71', variable: 'landPt71' },
         { id: 'landPt72', variable: 'landPt72' },
+        { id: 'landPt73', variable: 'landPt73' },
+        { id: 'landPt74', variable: 'landPt74' },
+        { id: 'landPt75', variable: 'landPt75' },
+        { id: 'landPt76', variable: 'landPt76' },
+        { id: 'landPt77', variable: 'landPt77' },
+        { id: 'landPt78', variable: 'landPt78' },
+        { id: 'landPt79', variable: 'landPt79' },
+        { id: 'landPt80', variable: 'landPt80' },
+
         
         { id: 'communityPt1', variable: 'communityPt1' },
         { id: 'communityPt2', variable: 'communityPt2' },

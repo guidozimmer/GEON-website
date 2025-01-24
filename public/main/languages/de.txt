@@ -195,7 +195,14 @@ landPt69 = Jagdgebiet
 landPt70 = Keine besondere Merkmale
 landPt71 = Zurück
 landPt72 = Weiter
-
+landPt73 = 7. Wo liegt die Fläche?
+landPt74 = Bundesland
+landPt75 = Landkreis
+landPt76 = Gemarkung
+landPt77 = Flur
+landPt78 = Flurstück
+landPt79 = Fläche in ha
+landPt80 = Amt
 
 communityPt1 = "Gemeinsam die Energiewende gestalten: Ihre Gemeinde als aktiver Partner"
 communityPt2 = "Als Gemeinde haben Sie eine Schlüsselrolle in der Energiewende. GEON unterstützt Sie dabei, diese Rolle aktiv zu gestalten und nachhaltige Einnahmequellen für Ihre Gemeinde zu erschließen."
