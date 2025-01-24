@@ -474,7 +474,7 @@
                                 </div>
                                 <div class="input-field">
                                     <label for="flaeche" id="landPt79"></label>
-                                    <input type="number" name="flaeche[]" required>
+                                    <input type="number" name="flaeche[]" min="0" required>
                                 </div>
                                 <div class="input-field">
                                     <label for="amt" id="landPt80"></label>
@@ -484,6 +484,111 @@
                         </div>
                     </div>
                     <button type="button" id="addLocationButton" class="add-location-btn" id="landPt47"></button>
+                </div>
+
+
+                <!-- Question 11 - Personal Information -->
+                <div id="question11" class="question-container">
+                    <div class="question-title">Persönliche Informationen</div>
+                    
+                    <div class="options-container">
+                        <div class="input-group">
+                            <div class="input-field" style="max-width: none; margin: 0;">
+                                <label for="anrede">Anrede*</label>
+                                <div class="select-wrapper" style="max-width: none; margin: 0;">
+                                    <select id="anrede" name="anrede" required>
+                                        <option value="">Bitte wählen</option>
+                                        <option value="Herr">Herr</option>
+                                        <option value="Frau">Frau</option>
+                                        <option value="Divers">Divers</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="input-field">
+                                <label for="titel">Titel</label>
+                                <input type="text" id="titel" name="titel">
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <div class="input-field">
+                                <label for="vorname">Vorname*</label>
+                                <input type="text" id="vorname" name="vorname" required>
+                            </div>
+                            <div class="input-field">
+                                <label for="nachname">Nachname*</label>
+                                <input type="text" id="nachname" name="nachname" required>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <div class="input-field">
+                                <label for="firma">Firma</label>
+                                <input type="text" id="firma" name="firma">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 12 - Contact Details -->
+                <div id="question12" class="question-container">
+                    <div class="question-title">Kontaktdaten</div>
+                    
+                    <div class="options-container">
+                        <div class="input-group">
+                            <div class="input-field">
+                                <label for="strasse">Straße und Hausnummer*</label>
+                                <input type="text" id="strasse" name="strasse" required>
+                            </div>
+                            <div class="input-field">
+                                <label for="plz">PLZ*</label>
+                                <input type="text" id="plz" name="plz" required>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <div class="input-field">
+                                <label for="ort">Ort*</label>
+                                <input type="text" id="ort" name="ort" required>
+                            </div>
+                            <div class="input-field">
+                                <label for="land">Land*</label>
+                                <input type="text" id="land" name="land" required value="Deutschland">
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <div class="input-field">
+                                <label for="telefon">Telefon*</label>
+                                <input type="tel" id="telefon" name="telefon" required>
+                            </div>
+                            <div class="input-field">
+                                <label for="email">E-Mail*</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                
+                <!-- Question 13 - Contact Preference -->
+                <div id="question13" class="question-container">
+                    <div class="question-title">Wie möchten Sie kontaktiert werden?</div>
+                    
+                    <div class="options-container">
+                        <div class="option-card multi-select" data-value="phone" data-shows="question13a">Telefon</div>
+                        <div class="option-card multi-select" data-value="email">E-Mail</div>
+                    </div>
+
+                    <div id="question13a" class="conditional-question" style="display: none;">
+                        <div class="question-title">Wann sind Sie am besten erreichbar?</div>
+                        <div class="options-container">
+                            <div class="option-card multi-select" data-value="morning">Morgens</div>
+                            <div class="option-card multi-select" data-value="afternoon">Nachmittags</div>
+                            <div class="option-card multi-select" data-value="allday">Den ganzen Tag</div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Navigation Buttons -->

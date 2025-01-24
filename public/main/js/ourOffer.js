@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     let currentQuestion = 0;
-    const totalQuestions = 11;
+    const totalQuestions = 13;
     let locationCount = 1;
     const COMMUNITY_TOTAL_QUESTIONS = 5;
     let communityCurrentQuestion = 0;
@@ -598,6 +598,23 @@ document.addEventListener('DOMContentLoaded', () => {
             updateNavigationButtons();
             return;
         }
+
+        if (card.closest('#question13')) {
+            const phoneCard = card.closest('.question-container').querySelector('.option-card[data-value="phone"]');
+            const conditionalQuestion = document.getElementById('question13a');
+            
+            if (card === phoneCard) {
+                card.classList.toggle('selected');
+                conditionalQuestion.style.display = card.classList.contains('selected') ? 'block' : 'none';
+                if (!card.classList.contains('selected')) {
+                    conditionalQuestion.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
+                }
+            } else {
+                card.classList.toggle('selected');
+            }
+            updateNavigationButtons();
+            return;
+        }
     
         if (card.classList.contains('multi-select')) {
             card.classList.toggle('selected');
@@ -835,6 +852,17 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
+        if (questionNumber === 11 || questionNumber === 12) {
+            const inputs = container.querySelectorAll('input[required], select[required]');
+            inputs.forEach(input => {
+                input.addEventListener('input', updateNavigationButtons);
+                input.addEventListener('change', updateNavigationButtons);
+                
+                // Trigger initial validation
+                input.dispatchEvent(new Event('input'));
+            });
+        }
+
         initializeMonthYearSliders();
     }
 
@@ -1011,11 +1039,37 @@ document.addEventListener('DOMContentLoaded', () => {
             case 10: // Location Fields
                 const locationInputs = container.querySelectorAll('.location-entry input[required]');
                 return Array.from(locationInputs).every(input => input.value.trim() !== '');
+
+            case 11:
+                return Array.from(container.querySelectorAll('input[required], select[required]'))
+                    .every(field => field.value && field.value !== '');
+            
+            case 12:
+                return Array.from(container.querySelectorAll('input[required]'))
+                    .every(field => field.value && field.value !== '');
+            
+            case 13:
+                const hasContactMethod = container.querySelector('.option-card.selected') !== null;
+                if (hasContactMethod) {
+                    const phoneSelected = container.querySelector('.option-card[data-value="phone"].selected') !== null;
+                    if (phoneSelected) {
+                        return container.querySelector('#question13a .option-card.selected') !== null;
+                    }
+                    return true;
+                }
+                return false;
+            
             
             default:
                 console.log(`No specific validation for question ${questionNumber}`);
                 return true;
         }
+
+           // Add event listeners to all required fields in question 11
+            document.querySelectorAll('#question11 input[required], #question11 select[required]').forEach(field => {
+                field.addEventListener('input', updateNavigationButtons);
+                field.addEventListener('change', updateNavigationButtons);
+            });
     }
 
 
@@ -1101,6 +1155,52 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('00NMz0000040by9').value = 
             document.querySelector('#question10 .option-card.selected:last-child')?.getAttribute('data-value') === '1' ? '1' : '0';
     
+
+        // Handle contact information (Question 11)
+    document.getElementById('anrede').value = document.querySelector('#question11 #anrede').value;
+    document.getElementById('titel').value = document.querySelector('#question11 #titel').value;
+    document.getElementById('vorname').value = document.querySelector('#question11 #vorname').value;
+    document.getElementById('nachname').value = document.querySelector('#question11 #nachname').value;
+    document.getElementById('firma').value = document.querySelector('#question11 #firma').value;
+    document.getElementById('strasse').value = document.querySelector('#question11 #strasse').value;
+    document.getElementById('plz').value = document.querySelector('#question11 #plz').value;
+    document.getElementById('ort').value = document.querySelector('#question11 #ort').value;
+    document.getElementById('land').value = document.querySelector('#question11 #land').value;
+    document.getElementById('telefon').value = document.querySelector('#question11 #telefon').value;
+    document.getElementById('email').value = document.querySelector('#question11 #email').value;
+
+    // Input validation for contact information
+    const requiredFields = ['anrede', 'vorname', 'nachname', 'strasse', 'plz', 'ort', 'land', 'telefon', 'email'];
+    const missingFields = requiredFields.filter(fieldId => {
+        const field = document.querySelector(`#question11 #${fieldId}`);
+        return !field || !field.value.trim();
+    });
+
+    if (missingFields.length > 0) {
+        alert('Bitte füllen Sie alle erforderlichen Felder aus.');
+        return;
+    }
+
+    // Email validation
+    const emailField = document.querySelector('#question11 #email');
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(emailField.value)) {
+        alert('Bitte geben Sie eine gültige E-Mail-Adresse ein.');
+        return;
+    }
+
+    // Phone number validation
+    const phoneField = document.querySelector('#question11 #telefon');
+    const phonePattern = /^[\d\s\-\+\(\)]+$/;
+    if (!phonePattern.test(phoneField.value)) {
+        alert('Bitte geben Sie eine gültige Telefonnummer ein.');
+        return;
+    }
+
+
+
+
+
         // Submit the form
         document.getElementById('landForm').submit();
     }

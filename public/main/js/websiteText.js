@@ -273,6 +273,9 @@ export function createLanguageSwitcher() {
         { id: 'yes', variable: 'yes' },
         { id: 'no', variable: 'no' },
 
+        { id: 'addLocationButton', variable: 'addLocationButton' },
+
+
 
       ];
 
