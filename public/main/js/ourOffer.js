@@ -1112,7 +1112,7 @@ document.addEventListener('DOMContentLoaded', () => {
             '00NMz0000040boT', '00NMz0000040aag', '00NMz0000040bq5', '00NMz0000040bWj',
             '00NMz0000040bYL', '00NMz0000040bZx', '00NMz0000040bbZ', '00NMz0000040ben',
             '00NMz0000044iTB', '00NMz0000044ckM', '00NMz0000044ijJ', '00NMz0000040btJ',
-            '00NMz0000040bzl', '00NMz0000040c1N', '00NMz0000040c2z', '00NMz0000040c4b',
+            '00NMz0000040bzl', '00NMz0000040c1N', '00NMz0000040c4b',
             '00NMz0000040c6D', '00NMz0000040c7p', '00NMz0000040c9R', '00NMz0000040cB3',
             '00NMz0000040cCf', '00NMz0000040cFt', '00NMz0000040cHV', '00NMz0000040bzm',
             '00NMz0000040cJ7', '00NMz0000040cKj', '00NMz0000040cML', '00NMz0000040cNx',
@@ -1191,15 +1191,21 @@ document.addEventListener('DOMContentLoaded', () => {
             .map(card => card.getAttribute('data-value'));
         setValue('00NMz0000040btJ', selectedFeatures.join(';'));
     
-        // Location fields
-        setValue('00NMz0000040bzl', document.querySelector('#bundesland')?.value || '');
-        setValue('00NMz0000040c1N', document.querySelector('#landkreis')?.value || '');
-        setValue('00NMz0000040c2z', document.querySelector('#gemeinde')?.value || '');
-        setValue('00NMz0000040c4b', document.querySelector('#gemarkung')?.value || '');
-        setValue('00NMz0000040c6D', document.querySelector('#flur')?.value || '');
-        setValue('00NMz0000040c7p', document.querySelector('#flurstueck')?.value || '');
-        setValue('00NMz0000040c9R', document.querySelector('#flaeche')?.value || '');
-        setValue('00NMz0000040cB3', document.querySelector('#amt')?.value || '');
+        // Location fields 
+        const locationEntry = document.querySelector('.location-entry');
+        if (locationEntry) {
+            setValue('00NMz0000040bzl', locationEntry.querySelector('input[name="bundesland[]"]')?.value || '');
+            setValue('00NMz0000040c1N', locationEntry.querySelector('input[name="landkreis[]"]')?.value || '');
+            setValue('00NMz0000040c4b', locationEntry.querySelector('input[name="gemarkung[]"]')?.value || '');
+            setValue('00NMz0000040c6D', locationEntry.querySelector('input[name="flur[]"]')?.value || '');
+            setValue('00NMz0000040c7p', locationEntry.querySelector('input[name="flurstueck[]"]')?.value || '');
+            setValue('00NMz0000040c9R', locationEntry.querySelector('input[name="flaeche[]"]')?.value || '');
+            setValue('00NMz0000040cB3', locationEntry.querySelector('input[name="amt[]"]')?.value || '');
+        }
+        
+        // Fix for spannungsebene selector
+        const spannungsniveau = document.querySelector('#question7a .select-wrapper:last-child select')?.value;
+        setValue('00NMz0000040ben', spannungsniveau || '');
     
         // Contact information
         setValue('00NMz0000040cCf', document.querySelector('#anrede')?.value || '');
@@ -1233,7 +1239,14 @@ document.addEventListener('DOMContentLoaded', () => {
             'allday': 'Ganztägig'
         };
         setValue('00NMz0000040cW1', bestTime ? timeMap[bestTime] : '');
-    
+        
+        console.log('Form values being sent to Salesforce:');
+        requiredFields.forEach(id => {
+            const element = form.querySelector(`[id="${id}"]`);
+            console.log(`${id}: ${element?.value || 'empty'}`);
+        });
+        console.log('email:', emailInput.value);
+        
         // Submit form
         form.submit();
     }
