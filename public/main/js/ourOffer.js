@@ -1138,8 +1138,10 @@ document.addEventListener('DOMContentLoaded', () => {
     
         // Land type
         const selectedTypes = Array.from(document.querySelectorAll('#question2 .option-card.selected'))
-            .map(card => card.getAttribute('data-value'));
-        setValue('00NMz0000040bRt', selectedTypes.join(';'));
+            .map(card => card.getAttribute('data-value'))
+            .filter(value => value && value !== 'Nein')
+            .join(';');
+        setValue('00NMz0000040bRt', selectedTypes);
     
         // Total area
         setValue('00NMz0000040bgP', document.querySelector('#question3 .slider')?.value || '');
@@ -1167,10 +1169,16 @@ document.addEventListener('DOMContentLoaded', () => {
         setValue('00NMz0000040bq5', earlyTermination ? '1' : '0');
     
         // Infrastructure within 500m
-        const selectedInfra = Array.from(document.querySelectorAll('#question6 .option-card.selected'))
-            .map(card => card.getAttribute('data-value'));
-        setValue('00NMz0000040bWj', selectedInfra.join(';'));
-    
+        const infraTypes = Array.from(document.querySelectorAll('#question6 .option-card.selected'))
+            .map(card => {
+                if(card.getAttribute('data-value') === 'Autobahn') return 'Autobahn (bis 500 m)';
+                if(card.getAttribute('data-value') === 'Bahnstrecke') return 'Bahnstrecke (bis 500 m)';
+                return '';
+            })
+            .filter(Boolean)
+            .join(';');
+        setValue('00NMz0000040bWj', infraTypes);
+
         // Infrastructure percentage
         setValue('00NMz0000040bYL', document.querySelector('#question6a .slider')?.value || '');
     
@@ -1188,20 +1196,30 @@ document.addEventListener('DOMContentLoaded', () => {
     
         // Special features
         const selectedFeatures = Array.from(document.querySelectorAll('#question9 .option-card.selected'))
-            .map(card => card.getAttribute('data-value'));
-        setValue('00NMz0000040btJ', selectedFeatures.join(';'));
+            .map(card => card.getAttribute('data-value'))
+            .filter(value => value && value !== 'Nein')
+            .join(';');
+        setValue('00NMz0000040btJ', selectedFeatures);
     
         // Location fields 
-        const locationEntry = document.querySelector('.location-entry');
-        if (locationEntry) {
-            setValue('00NMz0000040bzl', locationEntry.querySelector('input[name="bundesland[]"]')?.value || '');
-            setValue('00NMz0000040c1N', locationEntry.querySelector('input[name="landkreis[]"]')?.value || '');
-            setValue('00NMz0000040c4b', locationEntry.querySelector('input[name="gemarkung[]"]')?.value || '');
-            setValue('00NMz0000040c6D', locationEntry.querySelector('input[name="flur[]"]')?.value || '');
-            setValue('00NMz0000040c7p', locationEntry.querySelector('input[name="flurstueck[]"]')?.value || '');
-            setValue('00NMz0000040c9R', locationEntry.querySelector('input[name="flaeche[]"]')?.value || '');
-            setValue('00NMz0000040cB3', locationEntry.querySelector('input[name="amt[]"]')?.value || '');
-        }
+        const allLocations = Array.from(document.querySelectorAll('.location-entry')).map(entry => ({
+            bundesland: entry.querySelector('input[name="bundesland[]"]')?.value,
+            landkreis: entry.querySelector('input[name="landkreis[]"]')?.value,
+            gemarkung: entry.querySelector('input[name="gemarkung[]"]')?.value,
+            flur: entry.querySelector('input[name="flur[]"]')?.value,
+            flurstueck: entry.querySelector('input[name="flurstueck[]"]')?.value,
+            flaeche: entry.querySelector('input[name="flaeche[]"]')?.value,
+            amt: entry.querySelector('input[name="amt[]"]')?.value
+        }));
+
+        setValue('00NMz0000040bzl', allLocations.map(l => l.bundesland).filter(Boolean).join(';'));
+        setValue('00NMz0000040c1N', allLocations.map(l => l.landkreis).filter(Boolean).join(';'));
+        setValue('00NMz0000040c4b', allLocations.map(l => l.gemarkung).filter(Boolean).join(';'));
+        setValue('00NMz0000040c6D', allLocations.map(l => l.flur).filter(Boolean).join(';'));
+        setValue('00NMz0000040c7p', allLocations.map(l => l.flurstueck).filter(Boolean).join(';'));
+        setValue('00NMz0000040c9R', allLocations.map(l => l.flaeche).filter(Boolean).join(';'));
+        setValue('00NMz0000040cB3', allLocations.map(l => l.amt).filter(Boolean).join(';'));
+        
         
         // Fix for spannungsebene selector
         const spannungsniveau = document.querySelector('#question7a .select-wrapper:last-child select')?.value;
@@ -1227,9 +1245,15 @@ document.addEventListener('DOMContentLoaded', () => {
         form.appendChild(emailInput);
     
         // Contact preference
-        const contactMethod = document.querySelector('#question13 .option-card[data-value="phone"].selected') ? 'Telefon' : 
-                             document.querySelector('#question13 .option-card[data-value="email"].selected') ? 'E-Mail' : '';
-        setValue('00NMz0000040cUP', contactMethod);
+        const contactPreferences = Array.from(document.querySelectorAll('#question13 .option-card.selected'))
+            .map(card => {
+                if(card.getAttribute('data-value') === 'phone') return 'Telefon';
+                if(card.getAttribute('data-value') === 'email') return 'E-Mail';
+                return '';
+            })
+            .filter(Boolean)
+            .join(';');
+        setValue('00NMz0000040cUP', contactPreferences);
     
         // Best time to call
         const bestTime = document.querySelector('#question13a .option-card.selected')?.getAttribute('data-value');
