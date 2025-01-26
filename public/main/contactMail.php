@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $phone = htmlspecialchars($_POST['phoneNumber']);
     $locations = json_decode($_POST['locations'], true);
 
-    $to = "raphael.v.zimmer@gmail.com";
+    $to = "guido.zimmer@geongroup.de";
     $subject = "Neue Flächenanfrage von $name";
 
     // Create beautiful HTML email

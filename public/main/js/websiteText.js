@@ -73,6 +73,11 @@ export function createLanguageSwitcher() {
         { id: 'ourOfferPt8', variable: 'ourOfferPt8' },
 
         // How It Works Section
+        { id: 'howItWorksIntroPt1', variable: 'howItWorksIntroPt1' },
+        { id: 'howItWorksIntroPt2', variable: 'howItWorksIntroPt2' },
+        { id: 'lasth3', variable: 'howItWorksIntroPt3' },
+
+        
         { id: 'howItWorksPt1', variable: 'howItWorksPt1' },
         { id: 'howItWorksPt2', variable: 'howItWorksPt2' },
         { id: 'howItWorksPt3', variable: 'howItWorksPt3' },
@@ -88,13 +93,14 @@ export function createLanguageSwitcher() {
         { id: 'howItWorksPt13', variable: 'howItWorksPt13' },
 
         // Contact Section
-        { id: 'conatctPt1', variable: 'conatctPt1' },
-        { id: 'conatctPt2', variable: 'nameTitle' },
-        { id: 'conatctPt3', variable: 'emailTitle' },
-        { id: 'conatctPt4', variable: 'phoneTitle' },
-        { id: 'conatctPt5', variable: 'messageTitle' },
-        { id: 'conatctPt6', variable: 'contactPt6' },
-        { id: 'w-c-s-fc_p-1-dm-id', variable: 'contactPt7' },
+        { id: 'contactPt1', variable: 'contactPt1' },
+        { id: 'contactPt2', variable: 'contactPt2' },
+        { id: 'contactPt3', variable: 'contactPt3' },
+        { id: 'contactPt4', variable: 'contactPt4' },
+        { id: 'contactPt5', variable: 'contactPt5' },
+        { id: 'contactPt6', variable: 'contactPt6' },
+        { id: 'contactPt7', variable: 'contactPt7' },
+        { id: 'contactPt8', variable: 'contactPt8' },
 
         // Cookie Dialog
         { id: 'cm__title', variable: 'cookieTitle' },

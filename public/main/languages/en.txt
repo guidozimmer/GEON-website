@@ -40,6 +40,10 @@ ourOfferPt6 = "Help establish lucrative, forward-looking projects in your region
 ourOfferPt7 = "Investors"
 ourOfferPt8 = "Invest in sustainable energy projects."
 
+howItWorksIntroPt1 = The planning and execution of a photovoltaic project require a meticulous and structured approach.
+howItWorksIntroPt2 = From selecting the appropriate site to obtaining all necessary permits and finally commissioning the system—every step is critical to the project's success
+howItWorksIntroPt3 = Below, we outline the individual phases of our PV project planning process and demonstrate how this approach enables us to successfully implement projects, making a significant contribution to achieving climate neutrality.
+
 howItWorksPt1 = "How It Works"
 howItWorksPt2 = "Site Analysis and Land Securing"
 howItWorksPt3 = "The process begins with identifying suitable properties considering solar exposure, grid connection, soil conditions, and planning regulations. After pre-selection, negotiations with landowners for lease or purchase agreements take place."
@@ -54,13 +58,14 @@ howItWorksPt11 = "Coordination of all trades from land preparation to assembly a
 howItWorksPt12 = "Operation and Electricity Marketing"
 howItWorksPt13 = "Development of a marketing strategy for the electricity produced – whether through PPAs (Power Purchase Agreements), EEG remuneration, or direct marketing. Establishment of professional plant management for future operations."
 
-conatctPt1 = "Get in Touch"
-conatctPt2 = "FULL NAME*"
-conatctPt3 = "E-MAIL*"
-conatctPt4 = "PHONE NUMBER"
-conatctPt5 = "WHAT DO YOU HAVE IN MIND?*"
-contactPt6 = "Submit"
-contactPt7 = "Reach us at"
+contactPt1 = Contact
+contactPt2 = 
+contactPt3 = 
+contactPt4 = Full Name
+contactPt5 = Phone Number
+contactPt6 = Message
+contactPt7 = Submit Message
+contactPt8 = GEON is a small, dedicated team of highly qualified experts with extensive experience in photovoltaics and renewable energy. With in-depth knowledge of technical challenges, legal frameworks in Germany, and financing solutions, we successfully implement projects. Our advanced IT systems, incorporating AI components, allow us to automate all business processes, making our compact team exceptionally efficient and forward-thinking.
 
 codePlaceholder = "Enter code here..."
 namePlaceholder = "Please enter full name...*"
@@ -317,7 +322,7 @@ investorPt32 = Operational
 
 
 
-landTitlePt1 = Fläche anbieten
+landTitlePt1 = Offer Your Land
 landTitlePt2 = Transform Your Land into a Sustainable Income Source
 
 investorsTitlePt1 = Investors
@@ -330,7 +335,7 @@ communityTitlePt2 = Shaping the Energy Transition Together: Your Municipality as
 ourOfferTitlePt1 = Our Offer
 ourOfferTitlePt2 = GEON develops photovoltaic projects across Germany – always in close collaboration with all stakeholders. Whether you're a landowner, represent a municipality, or act as an investor: Select your area below to discover how we can shape the energy transition together. 
 
-entryCode = Do you have an entry code?
+entryCode = Do you have an access code?
 
 
 

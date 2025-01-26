@@ -13,8 +13,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     /////////////// FADER ///////////////
-    const values = ["1.142 Solarprojekte", "48.249 ha Flächen", "48 GW<sub>p</sub> Leistung", "96 GW Batterieleistung", "Machen wir etwas daraus!"];
-    startNumberFade("numberDisplay", values);
+    const DEValues = ["1.142 Solarprojekte", "48.249 ha Flächen", "48 GW<sub>p</sub> Leistung", "96 GW Batterieleistung", "Machen wir etwas daraus!"];
+    const ENValues = ["1,142 Photovoltaic Projects", "48,249 ha of Land", "48 GW<sub>p</sub> Solar Capacity", "96 GW Battery Storage", "Let’s make it happen!"];
+    startNumberFade("numberDisplay", DEValues, ENValues);
 
     /////////////// COOKIE CONSENT INITIALIZATION ///////////////
 
