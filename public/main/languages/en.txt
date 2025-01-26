@@ -125,7 +125,7 @@ mainSquare3Desc = "Description for Option 3"
 
 
 landPt1 = Transform Your Land into a Sustainable Income Source
-landPt2 = Are you a landowner looking to maximize the value of your property? GEON, a leading German solar project developer, offers you the opportunity to generate significantly higher returns than traditional land use by leasing your land for photovoltaic projects – with zero operational responsibility on your part. Our solar lease agreements provide guaranteed steady income for 25+ years while you maintain full ownership of your land.
+landPt2 = test you a landowner looking to maximize the value of your property? GEON, a leading German solar project developer, offers you the opportunity to generate significantly higher returns than traditional land use by leasing your land for photovoltaic projects – with zero operational responsibility on your part. Our solar lease agreements provide guaranteed steady income for 25+ years while you maintain full ownership of your land.
 landPt3 = GEON handles everything from planning to implementation, making it simple for you to participate in Germany's renewable energy future.
 landPt4 = I consent to the processing of my data in accordance with the 
 landPt5 = Privacy Policy
