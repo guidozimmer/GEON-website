@@ -77,7 +77,6 @@
     border-radius: 16px;
     background: #ffffff;
     transition: all 0.3s ease;
-    display: none;
 }
 
 .question-container.active {
