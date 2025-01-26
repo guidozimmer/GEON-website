@@ -204,18 +204,6 @@ landPt80 = Amt
 
 communitySquareTitle = "Gemeinden"
 communitySquareDesc = "Gemeinsam die Energiewende gestalten: Ihre Gemeinde als aktiver Partner"
-communityTitle = "Gemeinsam die Energiewende gestalten: Ihre Gemeinde als aktiver Partner"
-communityIntro1 = "Als Gemeinde haben Sie eine Schlüsselrolle in der Energiewende. GEON unterstützt Sie dabei, diese Rolle aktiv zu gestalten und nachhaltige Einnahmequellen für Ihre Gemeinde zu erschließen."
-communityIntro2 = "Unsere Zusammenarbeit kann dabei zwei Wege nehmen: Einerseits brauchen wir Ihre Unterstützung bei der baurechtlichen Umsetzung unserer Projekte. Andererseits unterstützen wir Sie bei der Qualifizierung und Entwicklung Ihrer gemeindeeigenen Flächen. Für einen optimalen Start stellt GEON Ihnen auf Wunsch eine kostenlose Potenzialanalyse Ihrer Gemeinde zur Verfügung."
-communityIntro3 = "Als erfahrener Projektentwickler begleiten wir Sie von der systematischen Flächenanalyse bis zur rechtssicheren Umsetzung. Dabei setzen wir auf eine partnerschaftliche Zusammenarbeit und berücksichtigen die spezifischen Bedürfnisse Ihrer Gemeinde."
-communityIntro4 = "Entdecken Sie die Möglichkeiten der erneuerbaren Energien für Ihre Kommune. Gemeinsam entwickeln wir zukunftsfähige Lösungen, die Ihrer Gemeinde langfristig zugutekommen. Vereinbaren Sie ein persönliches Gespräch – wir freuen uns auf den Austausch."
-
-communityFormTitle1 = "Gemeindeinformationen"
-communityFormTitle2 = "Ansprechpartner"
-communityFormTitle3 = "Verfügt Ihre Gemeinde über eigene Flächen?"
-communityFormTitle4 = "Um welche Art Flächen handelt es sich?"
-communityFormTitle5 = "Gewünschte Projektarten"
-communityFormTitle6 = "Wir interessieren uns für"
 
 communityPt1 = Gemeinsam die Energiewende gestalten: Ihre Gemeinde als aktiver Partner
 communityPt2 = Als Gemeinde haben Sie eine Schlüsselrolle in der Energiewende. GEON unterstützt Sie dabei, diese Rolle aktiv zu gestalten und nachhaltige Einnahmequellen für Ihre Gemeinde zu erschließen.

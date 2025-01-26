@@ -197,27 +197,15 @@ landPt72 = Continue
 
 communitySquareTitle = "Communities"
 communitySquareDesc = "Shaping the Energy Transition Together: Your Municipality as an Active Partner"
-communityTitle = "Shaping the Energy Transition Together: Your Municipality as an Active Partner"
-communityIntro1 = "testeststAs a municipality, you play a key role in the energy transition. GEON supports you in actively shaping this role while developing sustainable revenue streams for your community."
-communityIntro2 = "Our partnership offers you multiple paths: While we need your support in implementing our projects according to building regulations, we also assist you in qualifying and developing your municipality-owned land. To ensure an optimal start, GEON offers you a complimentary potential analysis of your municipality."
-communityIntro3 = "As an experienced project developer, we guide you from systematic land analysis to legally compliant implementation. We focus on collaborative partnership and consider your municipality's specific needs."
-communityIntro4 = "Discover the possibilities of renewable energy for your municipality. Together, we develop future-proof solutions that benefit your community in the long term. Schedule a personal consultation - we look forward to the exchange."
 
-communityFormTitle1 = "Municipality Information"
-communityFormTitle2 = "Contact Person"
-communityFormTitle3 = "Does your municipality own land?"
-communityFormTitle4 = "What type of land is it?"
-communityFormTitle5 = "Desired Project Types"
-communityFormTitle6 = "We are interested in"
-
-communityPt1 = "Shaping the Energy Transition Together: Your Municipality as an Active Partner"
-communityPt2 = "Municipalities are at the forefront of the renewable energy transition. GEON can help you embrace this opportunity while creating sustainable revenue streams for your community."
-communityPt3 = "We offer a dual partnership approach: While we rely on your expertise in local planning and building regulations for our projects, we also help you identify and develop suitable municipal land for renewable energy. To kickstart this partnership, GEON offers a complimentary assessment of your municipality's renewable energy potential."
-communityPt4 = "Discover the financial benefits of renewable energy for your community."
+communityPt1 = Shaping the Energy Transition Together: Your Municipality as an Active Partner
+communityPt2 = Municipalities are at the forefront of the renewable energy transition. GEON can help you embrace this opportunity while creating sustainable revenue streams for your community.
+communityPt3 = We offer a dual partnership approach: While we rely on your expertise in local planning and building regulations for our projects, we also help you identify and develop suitable municipal land for renewable energy. To kickstart this partnership, GEON offers a complimentary assessment of your municipality's renewable energy potential.
+communityPt4 = Discover the financial benefits of renewable energy for your community.
 communityPt5 = ""
 communityPt6 = "I agree to the processing of my data according to the "
 communityPt7 = "Privacy Policy*"
-communityPt8 = ""
+communityPt8 = " "
 communityPt9 = "Municipality Information:"
 communityPt10 = "Municipality Name*"
 communityPt11 = "Federal State*"
