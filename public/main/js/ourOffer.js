@@ -98,6 +98,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    
+
+
+    
+
     function resetInvestorForm() {
         investorCurrentQuestion = 0;
         
@@ -206,20 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     
-    function updateInvestorNavigationButtons() {
-        const prevButton = document.querySelector('#investorForm #prevButton');
-        const nextButton = document.querySelector('#investorForm #nextButton');
-        
-        if (prevButton) {
-            prevButton.disabled = investorCurrentQuestion === 0;
-        }
-    
-        if (nextButton) {
-            const isLastQuestion = investorCurrentQuestion === INVESTOR_TOTAL_QUESTIONS;
-            nextButton.textContent = isLastQuestion ? 'Absenden' : 'Weiter';
-            nextButton.disabled = !isInvestorQuestionAnswered(investorCurrentQuestion);
-        }
-    }
+
     
     function submitInvestorForm() {
         // Get all form data
@@ -372,20 +364,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    function updateCommunityNavigationButtons() {
-        const prevButton = document.querySelector('#communityForm #prevButton');
-        const nextButton = document.querySelector('#communityForm #nextButton');
-        
-        if (prevButton) {
-            prevButton.disabled = communityCurrentQuestion === 0;
-        }
-    
-        if (nextButton) {
-            const isLastQuestion = communityCurrentQuestion === COMMUNITY_TOTAL_QUESTIONS;
-            nextButton.textContent = isLastQuestion ? 'Absenden' : 'Weiter';
-            nextButton.disabled = !isCommunityQuestionAnswered(communityCurrentQuestion);
-        }
-    }
+
     
     function submitCommunityForm() {
         // Get all form data
@@ -433,13 +412,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const container = document.getElementById('locationFieldsContainer');
         const newLocation = document.createElement('div');
         newLocation.className = 'location-entry';
-
-        
         
         newLocation.innerHTML = `
-                <button type="button" class="remove-location">
-                    <img src="./img/x.svg" alt="Remove">
-                </button>
+            <img src="./img/x.svg" alt="Remove" class="remove-location">
             <div class="input-group">
                 <div class="input-field">
                     <label for="bundesland${locationCount}">Bundesland</label>
@@ -465,7 +440,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
                 <div class="input-field">
                     <label for="flaeche${locationCount}">Fläche in ha</label>
-                    <input type="number" id="flaeche${locationCount}" name="flaeche[]" required>
+                    <input type="number" id="flaeche${locationCount}" name="flaeche[]" min="0" required>
                 </div>
                 <div class="input-field">
                     <label for="amt${locationCount}">Amt</label>
@@ -475,18 +450,16 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
         
         container.appendChild(newLocation);
-        initializeLocationEntries();
-        updateNavigationButtons();
         
-        // Add event listeners to new inputs
+        // Add event listeners
+        const removeImg = newLocation.querySelector('.remove-location');
+        if (removeImg) {
+            removeImg.addEventListener('click', () => removeLocationEntry(removeImg));
+        }
+        
         newLocation.querySelectorAll('input').forEach(input => {
             input.addEventListener('input', updateNavigationButtons);
         });
-
-        const removeButton = newLocation.querySelector('.remove-location');
-        if (removeButton) {
-            removeButton.addEventListener('click', () => removeLocationEntry(removeButton));
-        }
     }
  
     function initializeLocationEntries() {
@@ -857,11 +830,9 @@ document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.remove-location').forEach(btn => {
                 btn.onclick = () => removeLocationEntry(btn);
             });
-            
-            const addButton = document.getElementById('addLocationButton');
-            if (addButton) {
-                addButton.onclick = addLocationFields;
-            }
+
+            // Add Location Button Handler
+            document.getElementById('addLocationButton')?.addEventListener('click', addLocationFields); 
         }
 
         if (questionNumber === 11 || questionNumber === 12) {
@@ -905,8 +876,11 @@ document.addEventListener('DOMContentLoaded', () => {
     
         if (nextButton) {
             const isLastQuestion = currentQuestion === totalQuestions;
-            nextButton.textContent = isLastQuestion ? 'Absenden' : 'Weiter';
-            
+
+            nextButton.textContent = document.querySelector('#languageDropdownTrigger').textContent === 'English' 
+            ? (isLastQuestion ? 'Submit' : 'Continue')
+            : (isLastQuestion ? 'Absenden' : 'Weiter');
+
             // Only for question 1, check if "Nein" is selected
             if (currentQuestion === 1) {
                 const selectedCard = document.querySelector('#question1 .option-card.selected');
@@ -918,7 +892,44 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function updateCommunityNavigationButtons() {
+        const prevButton = document.querySelector('.communityPrev');
+        const nextButton = document.querySelector('.communityNext');
 
+        
+        if (prevButton) {
+            prevButton.disabled = communityCurrentQuestion === 0;
+        }
+    
+        if (nextButton) {
+            const isLastQuestion = communityCurrentQuestion === COMMUNITY_TOTAL_QUESTIONS;
+            
+            nextButton.textContent = document.querySelector('#languageDropdownTrigger').textContent === 'English' 
+                ? (isLastQuestion ? 'Submit' : 'Continue')
+                : (isLastQuestion ? 'Absenden' : 'Weiter');
+
+            nextButton.disabled = !isCommunityQuestionAnswered(communityCurrentQuestion);
+        }
+    }
+
+    function updateInvestorNavigationButtons() {
+        const prevButton = document.querySelector('.investorPrev');
+        const nextButton = document.querySelector('.investorNet');
+        
+        if (prevButton) {
+            prevButton.disabled = investorCurrentQuestion === 0;
+        }
+    
+        if (nextButton) {
+            const isLastQuestion = investorCurrentQuestion === INVESTOR_TOTAL_QUESTIONS;
+
+            nextButton.textContent = document.querySelector('#languageDropdownTrigger').textContent === 'English' 
+            ? (isLastQuestion ? 'Submit' : 'Continue')
+            : (isLastQuestion ? 'Absenden' : 'Weiter');
+
+            nextButton.disabled = !isInvestorQuestionAnswered(investorCurrentQuestion);
+        }
+    }
 
 
 
@@ -1081,22 +1092,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 return true;
         }
 
-           // Add event listeners to all required fields in question 11
-            document.querySelectorAll('#question11 input[required], #question11 select[required]').forEach(field => {
-                field.addEventListener('input', updateNavigationButtons);
-                field.addEventListener('change', updateNavigationButtons);
-            });
     }
 
 
-    
-        const removeLocationEntry = (button) => {
-            const locationEntry = button.closest('.location-entry');
-            if (locationEntry) {
-                locationEntry.remove();
-                updateNavigationButtons();
-            }
-        };
+            
+            const removeLocationEntry = (element) => {
+                const locationEntry = element.closest('.location-entry');
+                if (locationEntry) {
+                    locationEntry.remove();
+                    updateNavigationButtons();
+                }
+            };
 
 
 

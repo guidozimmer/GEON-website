@@ -112,8 +112,6 @@ formQuestion6 = "6. Wo liegt die Fläche?"
 formLabel6_1 = "Bundesland"
 formLabel6_2 = "Kreis"
 
-formButtonBack = "Zurück"
-formButtonNext = "Weiter"
 formButtonSubmit = "Absenden"
 
 mainSquare1 = "Fläche anbieten"
@@ -204,17 +202,60 @@ landPt78 = Flurstück
 landPt79 = Fläche in ha
 landPt80 = Amt
 
+communitySquareTitle = "Gemeinden"
+communitySquareDesc = "Gemeinsam die Energiewende gestalten: Ihre Gemeinde als aktiver Partner"
+communityTitle = "Gemeinsam die Energiewende gestalten: Ihre Gemeinde als aktiver Partner"
+communityIntro1 = "Als Gemeinde haben Sie eine Schlüsselrolle in der Energiewende. GEON unterstützt Sie dabei, diese Rolle aktiv zu gestalten und nachhaltige Einnahmequellen für Ihre Gemeinde zu erschließen."
+communityIntro2 = "Unsere Zusammenarbeit kann dabei zwei Wege nehmen: Einerseits brauchen wir Ihre Unterstützung bei der baurechtlichen Umsetzung unserer Projekte. Andererseits unterstützen wir Sie bei der Qualifizierung und Entwicklung Ihrer gemeindeeigenen Flächen. Für einen optimalen Start stellt GEON Ihnen auf Wunsch eine kostenlose Potenzialanalyse Ihrer Gemeinde zur Verfügung."
+communityIntro3 = "Als erfahrener Projektentwickler begleiten wir Sie von der systematischen Flächenanalyse bis zur rechtssicheren Umsetzung. Dabei setzen wir auf eine partnerschaftliche Zusammenarbeit und berücksichtigen die spezifischen Bedürfnisse Ihrer Gemeinde."
+communityIntro4 = "Entdecken Sie die Möglichkeiten der erneuerbaren Energien für Ihre Kommune. Gemeinsam entwickeln wir zukunftsfähige Lösungen, die Ihrer Gemeinde langfristig zugutekommen. Vereinbaren Sie ein persönliches Gespräch – wir freuen uns auf den Austausch."
+
+communityFormTitle1 = "Gemeindeinformationen"
+communityFormTitle2 = "Ansprechpartner"
+communityFormTitle3 = "Verfügt Ihre Gemeinde über eigene Flächen?"
+communityFormTitle4 = "Um welche Art Flächen handelt es sich?"
+communityFormTitle5 = "Gewünschte Projektarten"
+communityFormTitle6 = "Wir interessieren uns für"
+
 communityPt1 = "Gemeinsam die Energiewende gestalten: Ihre Gemeinde als aktiver Partner"
 communityPt2 = "Als Gemeinde haben Sie eine Schlüsselrolle in der Energiewende. GEON unterstützt Sie dabei, diese Rolle aktiv zu gestalten und nachhaltige Einnahmequellen für Ihre Gemeinde zu erschließen."
-communityPt3 = "Unsere Zusammenarbeit kann dabei zwei Wege nehmen: Einerseits brauchen wir Ihre Unterstützung bei der baurechtlichen Umsetzung unserer Projekte. Andererseits unterstützen wir Sie bei der Qualifizierung und Entwicklung Ihrer gemeindeeigenen Flächen. Für einen optimalen Start stellt GEON Ihnen auf Wunsch eine kostenlose Potenzialanalyse Ihrer Gemeinde zur Verfügung."
-communityPt4 = "Als erfahrener Projektentwickler begleiten wir Sie von der systematischen Flächenanalyse bis zur rechtssicheren Umsetzung. Dabei setzen wir auf eine partnerschaftliche Zusammenarbeit und berücksichtigen die spezifischen Bedürfnisse Ihrer Gemeinde."
-communityPt5 = "Entdecken Sie die Möglichkeiten der erneuerbaren Energien für Ihre Kommune. Gemeinsam entwickeln wir zukunftsfähige Lösungen, die Ihrer Gemeinde langfristig zugutekommen. Vereinbaren Sie ein persönliches Gespräch – wir freuen uns auf den Austausch."
-communityPt6 = "Potenzialanalyse anfordern →"
-communityPt11 = Kontakt aufnehmen
-communityPt12 = Name*
-communityPt13 = Email*
-communityPt14 = Telefon
-communityPt15 = Absenden
+communityPt3 = "Unsere Zusammenarbeit kann dabei zwei Wege nehmen: Einerseits brauchen wir Ihre Unterstützung bei der baurechtlichen Umsetzung unserer Projekte. Andererseits unterstützen wir Sie bei der Qualifizierung und Entwicklung Ihrer gemeindeeigenen Flächen. Für einen optimalen Start stellt GEON Ihnen auf Wunsch eine Potenzialanalyse Ihrer Gemeinde zur Verfügung."
+communityPt4 = "Entdecken Sie die finanziellen Vorzüge der erneuerbaren Energien für Ihre Gemeinde."
+communityPt5 = ""
+communityPt6 = "Ich stimme der Verarbeitung meiner Daten gemäß "
+communityPt7 = "Datenschutzerklärung"
+communityPt8 = " zu*"
+communityPt9 = "Gemeindeinformationen"
+communityPt10 = "Bundesland*"
+communityPt11 = "Gemeinde*"
+communityPt12 = "Amt"
+communityPt13 = "Straße und Hausnummer"
+communityPt14 = "PLZ"
+communityPt15 = "Ort"
+communityPt16 = "Ansprechpartner"
+communityPt17 = "Vorname*"
+communityPt18 = "Nachname*"
+communityPt19 = "Position in der Gemeinde"
+communityPt20 = "Telefonnummer*"
+communityPt21 = "E-Mail-Adresse*"
+communityPt22 = "Verfügt Ihre Gemeinde über eigene Flächen?"
+communityPt23 = "Nein"
+communityPt24 = "Um welche Art Flächen handelt es sich?"
+communityPt25 = "Ackerland"
+communityPt26 = "Grünland"
+communityPt27 = "Brachfläche"
+communityPt28 = "Konversionsfläche"
+communityPt29 = "Sonstiges"
+communityPt30 = "Gewünschte Projektarten"
+communityPt31 = "Freiflächen-Photovoltaik"
+communityPt32 = "Batteriespeicher"
+communityPt33 = "Wir interessieren uns für"
+communityPt34 = "Potenzialanalyse"
+communityPt35 = "Verpachtung der gemeindeeigenen Flächen"
+communityPt36 = "Direkte Beteiligung der Gemeinde an den Projekten"
+communityPt37 = "Bürgerbeteiligungsmodell"
+communityPt38 = "Investorenmodell, kommunale Beteiligung in Anlehnung an §6 EEG 2021"
+
 
 
 investorPt1 = "In Deutschlands Energiezukunft investieren"
@@ -248,7 +289,10 @@ entryCode = Haben sie einen Zugangscode?
 yes = Ja
 no = Nein
 
-
-
-
+landOwnerPrev = "Zurück"
+landOwnerNext = "Weiter"
+communityPrev = "Zurück"
+communityNext = "Weiter"
+investorPrev = "Zurück"
+investorNext = "Weiter"
 

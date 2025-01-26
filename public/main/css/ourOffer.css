@@ -946,22 +946,19 @@
 
 .remove-location {
     position: absolute;
-    top: 10px;
     right: 10px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.remove-location img {
+    top: 10px;
     width: 30px;
     height: 30px;
-    pointer-events: none;
+    cursor: pointer;
 }
+ 
+ .remove-location img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+ }
 
 .input-group {
     display: grid;
@@ -985,7 +982,17 @@
  }
 
 
-
+ .input-field label[for="strasse"],
+ .input-field label[for="position"],
+ .input-field label[for^="strasse"] {
+     white-space: nowrap;
+ }
+ 
+ @media only screen and (max-width: 768px) {
+     .input-field label {
+         white-space: normal;
+     }
+ }
 
 
 

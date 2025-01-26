@@ -24,7 +24,7 @@ export function createLanguageSwitcher() {
       });
 
         // Text elements to update
-        const textElementsToUpdate = [
+      const textElementsToUpdate = [
         // Hero Section
         { id: 'heroHeadingPt1', variable: 'heroHeadingPt1' },
         { id: 'heroHeadingPt2', variable: 'heroHeadingPt2' },
@@ -146,10 +146,6 @@ export function createLanguageSwitcher() {
         { id: 'formLabel6_1', variable: 'formLabel6_1' },
         { id: 'formLabel6_2', variable: 'formLabel6_2' },
 
-        { id: 'prevButton', variable: 'formButtonBack' },
-        { id: 'nextButton', variable: 'formButtonNext' },
-
-
         { id: 'landPt1', variable: 'landPt1' },
         { id: 'landPt2', variable: 'landPt2' },
         { id: 'landPt3', variable: 'landPt3' },
@@ -232,17 +228,57 @@ export function createLanguageSwitcher() {
         { id: 'landPt80', variable: 'landPt80' },
 
         
+        { id: 'communityTitle', variable: 'communityTitle' },
+        { id: 'communityIntro1', variable: 'communityIntro1' },
+        { id: 'communityIntro2', variable: 'communityIntro2' },
+        { id: 'communityIntro3', variable: 'communityIntro3' },
+        { id: 'communityIntro4', variable: 'communityIntro4' },
+        { id: 'communityFormTitle1', variable: 'communityFormTitle1' },
+        { id: 'communityFormTitle2', variable: 'communityFormTitle2' },
+        { id: 'communityFormTitle3', variable: 'communityFormTitle3' },
+        { id: 'communityFormTitle4', variable: 'communityFormTitle4' },
+        { id: 'communityFormTitle5', variable: 'communityFormTitle5' },
+        { id: 'communityFormTitle6', variable: 'communityFormTitle6' },
         { id: 'communityPt1', variable: 'communityPt1' },
         { id: 'communityPt2', variable: 'communityPt2' },
         { id: 'communityPt3', variable: 'communityPt3' },
         { id: 'communityPt4', variable: 'communityPt4' },
         { id: 'communityPt5', variable: 'communityPt5' },
         { id: 'communityPt6', variable: 'communityPt6' },
+        { id: 'communityPt7', variable: 'communityPt7' },
+        { id: 'communityPt8', variable: 'communityPt8' },
+        { id: 'communityPt9', variable: 'communityPt9' },
+        { id: 'communityPt10', variable: 'communityPt10' },
         { id: 'communityPt11', variable: 'communityPt11' },
         { id: 'communityPt12', variable: 'communityPt12' },
         { id: 'communityPt13', variable: 'communityPt13' },
         { id: 'communityPt14', variable: 'communityPt14' },
         { id: 'communityPt15', variable: 'communityPt15' },
+        { id: 'communityPt16', variable: 'communityPt16' },
+        { id: 'communityPt17', variable: 'communityPt17' },
+        { id: 'communityPt18', variable: 'communityPt18' },
+        { id: 'communityPt19', variable: 'communityPt19' },
+        { id: 'communityPt20', variable: 'communityPt20' },
+        { id: 'communityPt21', variable: 'communityPt21' },
+        { id: 'communityPt22', variable: 'communityPt22' },
+        { id: 'communityPt23', variable: 'communityPt23' },
+        { id: 'communityPt24', variable: 'communityPt24' },
+        { id: 'communityPt25', variable: 'communityPt25' },
+        { id: 'communityPt26', variable: 'communityPt26' },
+        { id: 'communityPt27', variable: 'communityPt27' },
+        { id: 'communityPt28', variable: 'communityPt28' },
+        { id: 'communityPt29', variable: 'communityPt29' },
+        { id: 'communityPt30', variable: 'communityPt30' },
+        { id: 'communityPt31', variable: 'communityPt31' },
+        { id: 'communityPt32', variable: 'communityPt32' },
+        { id: 'communityPt33', variable: 'communityPt33' },
+        { id: 'communityPt34', variable: 'communityPt34' },
+        { id: 'communityPt35', variable: 'communityPt35' },
+        { id: 'communityPt36', variable: 'communityPt36' },
+        { id: 'communityPt37', variable: 'communityPt37' },
+        { id: 'communityPt38', variable: 'communityPt38' },
+        
+        
         
         { id: 'investorPt1', variable: 'investorPt1' },
         { id: 'investorPt2', variable: 'investorPt2' },
@@ -257,9 +293,6 @@ export function createLanguageSwitcher() {
         { id: 'landTitlePt1', variable: 'landTitlePt1' },
         { id: 'landTitlePt2', variable: 'landTitlePt2' },
 
-        { id: 'communityTitlePt1', variable: 'communityTitlePt1' },
-        { id: 'communityTitlePt2', variable: 'communityTitlePt2' },
-
         { id: 'investorsTitlePt1', variable: 'investorsTitlePt1' },
         { id: 'investorsTitlePt2', variable: 'investorsTitlePt2' },
 
@@ -272,6 +305,11 @@ export function createLanguageSwitcher() {
 
         { id: 'yes', variable: 'yes' },
         { id: 'no', variable: 'no' },
+
+        { id: 'communityTitlePt1', variable: 'communityTitlePt1' },
+        { id: 'communityTitlePt2', variable: 'communityTitlePt2' },
+
+
 
         { id: 'addLocationButton', variable: 'addLocationButton' },
 
@@ -307,6 +345,16 @@ export function createLanguageSwitcher() {
           },
       ];
 
+      const classToUpdate = [
+        { class: 'landOwnerPrev', variable: 'landOwnerPrev' },
+        { class: 'landOwnerNext', variable: 'landOwnerNext' },
+        { class: 'communityPrev', variable: 'communityPrev' },
+        { class: 'communityNext', variable: 'communityNext' },
+        { class: 'investorPrev', variable: 'investorPrev' },
+        { class: 'investorNext', variable: 'investorNext' },
+
+      ]
+
       // Update text content
       textElementsToUpdate.forEach(element => {
           const el = document.getElementById(element.id);
@@ -325,6 +373,15 @@ export function createLanguageSwitcher() {
               }
           }
       });
+
+      classToUpdate.forEach(item => {
+        const elements = document.getElementsByClassName(item.class);
+        Array.from(elements).forEach(el => {
+          if (variables[item.variable]) {
+            el.textContent = variables[item.variable];
+          }
+        });
+       });
   }
 
   // Public method to switch language

@@ -570,8 +570,6 @@
                     </div>
                 </div>
 
-
-
                 <!-- Question 13 - Contact Preference -->
                 <div id="question13" class="question-container">
                     <div class="question-title">Wie möchten Sie kontaktiert werden?</div>
@@ -593,8 +591,8 @@
 
                 <!-- Navigation Buttons -->
                 <div class="navigation-buttons">
-                    <button type="button" id="prevButton" class="nav-button" id="landPt8">Zurück</button>
-                    <button type="button" id="nextButton" class="nav-button" id="landPt8">Weiter</button>
+                    <button type="button" id="prevButton" class="nav-button landOwnerPrev"></button>
+                    <button type="button" id="nextButton" class="nav-button landOwnerNext"></button>
                 </div>
             </form>
         </div>
@@ -605,8 +603,8 @@
                 <input type="hidden" name="orgid" value="00DWz000001Nbvx">
                 <input type="hidden" name="retURL" value="http://geongroup.de/dev/public/main">
                 <input type="hidden" name="subject" value="Gemeinden">
-
-
+        
+        
                 <div id="question0" class="question-container active">
                     <div class="question-title" id="communityPt1"></div>
                     
@@ -625,119 +623,121 @@
                     <div class="data-protection">
                         <input type="checkbox" id="community-data-protection" required>
                         <label for="community-data-protection">
-                            Ich stimme der Verarbeitung meiner Daten gemäß <a href="/privacy-policy">Datenschutzerklärung</a> zu*
+                            <span id="communityPt6"></span><a href="/privacy-policy"><span id="communityPt7"></span></a><span id="communityPt8"></span>
                         </label>
                     </div>
                 </div>
-
-
+        
+        
                 <!-- Question 1 - Municipal Information -->
                 <div id="question1" class="question-container">
-                    <div class="question-title">Gemeindeinformationen</div>
+                    <div class="question-title" id="communityPt9"></div>
                     <div class="input-group">
                         <div class="input-field">
-                            <label for="bundesland">Bundesland*</label>
+                            <label for="bundesland" id="communityPt10"></label>
                             <input type="text" id="bundesland" name="bundesland" required>
                         </div>
                         <div class="input-field">
-                            <label for="gemeinde">Gemeinde*</label>
+                            <label for="gemeinde" id="communityPt11"></label>
                             <input type="text" id="gemeinde" name="gemeinde" required>
                         </div>
                         <div class="input-field">
-                            <label for="amt">Amt</label>
+                            <label for="amt" id="communityPt12"></label>
                             <input type="text" id="amt" name="amt">
                         </div>
                         <div class="input-field">
-                            <label for="strasse">Straße und Hausnummer</label>
+                            <label for="strasse" id="communityPt13"></label>
                             <input type="text" id="strasse" name="strasse">
                         </div>
                         <div class="input-field">
-                            <label for="plz">PLZ</label>
+                            <label for="plz" id="communityPt14"></label>
                             <input type="text" id="plz" name="plz">
                         </div>
                         <div class="input-field">
-                            <label for="ort">Ort</label>
+                            <label for="ort" id="communityPt15"></label>
                             <input type="text" id="ort" name="ort">
                         </div>
                     </div>
                 </div>
-
+        
                 <!-- Question 2 - Contact Information -->
                 <div id="question2" class="question-container">
-                    <div class="question-title">Ansprechpartner</div>
+                    <div class="question-title" id="communityPt16"></div>
                     <div class="input-group">
                         <div class="input-field">
-                            <label for="vorname">Vorname*</label>
+                            <label for="vorname" id="communityPt17"></label>
                             <input type="text" id="vorname" name="vorname" required>
                         </div>
                         <div class="input-field">
-                            <label for="nachname">Nachname*</label>
+                            <label for="nachname" id="communityPt18"></label>
                             <input type="text" id="nachname" name="nachname" required>
                         </div>
                         <div class="input-field">
-                            <label for="position">Position in der Gemeinde</label>
+                            <label for="position" id="communityPt19"></label>
                             <input type="text" id="position" name="position">
                         </div>
                         <div class="input-field">
-                            <label for="telefon">Telefonnummer*</label>
+                            <label for="telefon" id="communityPt20"></label>
                             <input type="tel" id="telefon" name="telefon" required>
                         </div>
                         <div class="input-field">
-                            <label for="email">E-Mail-Adresse*</label>
+                            <label for="email" id="communityPt21"></label>
                             <input type="email" id="email" name="email" required>
                         </div>
                     </div>
                 </div>
-
+        
                 <!-- Question 3 - Own Land -->
                 <div id="question3" class="question-container">
-                    <div class="question-title">Verfügt Ihre Gemeinde über eigene Flächen?</div>
+                    <div class="question-title" id="communityPt22"></div>
                     <div class="options-container">
-                        <div class="option-card" data-value="ja" data-shows="question3a">Ja</div>
-                        <div class="option-card" data-value="nein">Nein</div>
+                        <div class="option-card" data-value="ja" data-shows="question3a" id="yes"></div>
+                        <div class="option-card" data-value="nein" id="no"></div>
                     </div>
-
+        
                     <div id="question3a" class="conditional-question">
-                        <div class="question-title">Um welche Art Flächen handelt es sich?</div>
+                        <div class="question-title" id="communityPt24"></div>
                         <div class="options-container">
-                            <div class="option-card multi-select" data-value="Ackerland">Ackerland</div>
-                            <div class="option-card multi-select" data-value="Grünland">Grünland</div>
-                            <div class="option-card multi-select" data-value="Brachfläche">Brachfläche</div>
-                            <div class="option-card multi-select" data-value="Konversionsfläche">Konversionsfläche</div>
-                            <div class="option-card multi-select" data-value="Sonstiges">Sonstiges</div>
+                            <div class="option-card multi-select" data-value="Ackerland" id="communityPt25"></div>
+                            <div class="option-card multi-select" data-value="Grünland" id="communityPt26"></div>
+                            <div class="option-card multi-select" data-value="Brachfläche" id="communityPt27"></div>
+                            <div class="option-card multi-select" data-value="Konversionsfläche" id="communityPt28"></div>
+                            <div class="option-card multi-select" data-value="Sonstiges" id="communityPt29"></div>
                         </div>
                     </div>
                 </div>
-
+        
                 <!-- Question 4 - Project Types -->
                 <div id="question4" class="question-container">
-                    <div class="question-title">Gewünschte Projektarten</div>
+                    <div class="question-title" id="communityPt30"></div>
                     <div class="options-container">
-                        <div class="option-card multi-select" data-value="Freiflächen-Photovoltaik">Freiflächen-Photovoltaik</div>
-                        <div class="option-card multi-select" data-value="Batteriespeicher">Batteriespeicher</div>
+                        <div class="option-card multi-select" data-value="Freiflächen-Photovoltaik" id="communityPt31"></div>
+                        <div class="option-card multi-select" data-value="Batteriespeicher" id="communityPt32"></div>
                     </div>
                 </div>
-
+        
                 <!-- Question 5 - Interests -->
                 <div id="question5" class="question-container">
-                    <div class="question-title">Wir interessieren uns für</div>
+                    <div class="question-title" id="communityPt33"></div>
                     <div class="options-container">
-                        <div class="option-card multi-select" data-value="Potenzialanalyse">Potenzialanalyse</div>
-                        <div class="option-card multi-select" data-value="Verpachtung">Verpachtung der gemeindeeigenen Flächen</div>
-                        <div class="option-card multi-select" data-value="Beteiligung">Direkte Beteiligung der Gemeinde an den Projekten</div>
-                        <div class="option-card multi-select" data-value="Bürgerbeteiligung">Bürgerbeteiligungsmodell</div>
-                        <div class="option-card multi-select" data-value="Investorenmodell">Investorenmodell, kommunale Beteiligung in Anlehnung an §6 EEG 2021</div>
+                        <div class="option-card multi-select" data-value="Potenzialanalyse" id="communityPt34"></div>
+                        <div class="option-card multi-select" data-value="Verpachtung" id="communityPt35"></div>
+                        <div class="option-card multi-select" data-value="Beteiligung" id="communityPt36"></div>
+                        <div class="option-card multi-select" data-value="Bürgerbeteiligung" id="communityPt37"></div>
+                        <div class="option-card multi-select" data-value="Investorenmodell" id="communityPt38"></div>
                     </div>
                 </div>
-
-
+        
+        
                 <!-- Navigation Buttons -->
                 <div class="navigation-buttons">
-                    <button type="button" id="prevButton" class="nav-button">Zurück</button>
-                    <button type="button" id="nextButton" class="nav-button">Weiter</button>
+                    <button type="button" id="prevButton" class="nav-button communityPrev"></button>
+                    <button type="button" id="nextButton" class="nav-button communityNext"></button>
                 </div>
+
             </form>
         </div>
+        
 
         <!-- For Investor Form -->
         <div class="form-section" id="investorForm" style="display: none;">
@@ -768,8 +768,6 @@
                         </label>
                     </div>
                 </div>
-
-
 
                 <!-- Question 1 - Personal Information -->
                 <div id="question1" class="question-container">
@@ -870,8 +868,8 @@
 
                 <!-- Navigation Buttons -->
                 <div class="navigation-buttons">
-                    <button type="button" id="prevButton" class="nav-button">Zurück</button>
-                    <button type="button" id="nextButton" class="nav-button">Weiter</button>
+                    <button type="button" id="prevButton" class="nav-button investorPrev"></button>
+                    <button type="button" id="nextButton" class="nav-button investorNext"></button>
                 </div>
             </form>
         </div>

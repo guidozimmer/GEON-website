@@ -195,23 +195,62 @@ landPt72 = Continue
 
 
 
+communitySquareTitle = "Communities"
+communitySquareDesc = "Shaping the Energy Transition Together: Your Municipality as an Active Partner"
+communityTitle = "Shaping the Energy Transition Together: Your Municipality as an Active Partner"
+communityIntro1 = "As a municipality, you play a key role in the energy transition. GEON supports you in actively shaping this role while developing sustainable revenue streams for your community."
+communityIntro2 = "Our partnership offers you multiple paths: While we need your support in implementing our projects according to building regulations, we also assist you in qualifying and developing your municipality-owned land. To ensure an optimal start, GEON offers you a complimentary potential analysis of your municipality."
+communityIntro3 = "As an experienced project developer, we guide you from systematic land analysis to legally compliant implementation. We focus on collaborative partnership and consider your municipality's specific needs."
+communityIntro4 = "Discover the possibilities of renewable energy for your municipality. Together, we develop future-proof solutions that benefit your community in the long term. Schedule a personal consultation - we look forward to the exchange."
 
+communityFormTitle1 = "Municipality Information"
+communityFormTitle2 = "Contact Person"
+communityFormTitle3 = "Does your municipality own land?"
+communityFormTitle4 = "What type of land is it?"
+communityFormTitle5 = "Desired Project Types"
+communityFormTitle6 = "We are interested in"
 
-communityPt1 = Shaping the Energy Transition Together: Your Municipality as an Active Partner
-communityPt2 = As a municipality, you play a key role in the energy transition. GEON supports you in actively shaping this role while developing sustainable revenue streams for your community.
-communityPt3 = Our partnership offers your municipality:
-communityPt4 = Direct revenue through solar benefit sharing for your municipal budget
-communityPt5 = Professional site analysis to identify suitable areas
-communityPt6 = Expertise in development planning for solar projects
-communityPt7 = Local value creation and climate protection
-communityPt8 = As an experienced project developer, we guide you from systematic land analysis to legally compliant implementation. We focus on collaborative partnership and consider your municipality's specific needs.
-communityPt9 = Let's explore your municipality's potential together. Schedule a personal consultation for a no-obligation initial discussion.
-communityPt10 = Request Potential Analysis →
-communityPt11 = Contact Us
-communityPt12 = Name*
-communityPt13 = Email*
-communityPt14 = Phone
-communityPt15 = Submit
+communityPt1 = "Shaping the Energy Transition Together: Your Municipality as an Active Partner"
+communityPt2 = "Municipalities are at the forefront of the renewable energy transition. GEON can help you embrace this opportunity while creating sustainable revenue streams for your community."
+communityPt3 = "We offer a dual partnership approach: While we rely on your expertise in local planning and building regulations for our projects, we also help you identify and develop suitable municipal land for renewable energy. To kickstart this partnership, GEON offers a complimentary assessment of your municipality's renewable energy potential."
+communityPt4 = "Discover the financial benefits of renewable energy for your community."
+communityPt5 = ""
+communityPt6 = "I agree to the processing of my data according to the "
+communityPt7 = "Privacy Policy*"
+communityPt8 = ""
+communityPt9 = "Municipality Information:"
+communityPt10 = "Municipality Name*"
+communityPt11 = "Federal State*"
+communityPt12 = "Population"
+communityPt13 = "Street and Number"
+communityPt14 = "Postal Code"
+communityPt15 = "City"
+communityPt16 = "Contact Person:"
+communityPt17 = "First Name*"
+communityPt18 = "Last Name*"
+communityPt19 = "Position in Municipality"
+communityPt20 = "Phone Number*"
+communityPt21 = "Email Address*"
+communityPt22 = "Does your community own any land?"
+communityPt23 = ""
+communityPt24 = "What type of land is it?"
+communityPt25 = "Arable Land"
+communityPt26 = "Grassland"
+communityPt27 = "Fallow Land"
+communityPt28 = "Conversion Area"
+communityPt29 = "Other"
+communityPt30 = "Desired project types:"
+communityPt31 = "Ground-Mounted Photovoltaics"
+communityPt32 = "Battery Storage"
+communityPt33 = "We are interested in:"
+communityPt34 = "Potential Analysis"
+communityPt35 = "Leasing of Municipality-Owned Land"
+communityPt36 = "Direct Community Participation in the Projects"
+communityPt37 = "Citizen Participation Model"
+communityPt38 = "Investor Model with Municipal Participation in Accordance with §6 EEG 2021"
+
+ourOfferPrev = prev
+ourOfferPrev = next
 
 investorPt1 = Are you an investor?
 investorPt2 = GEON offers qualified investors access to a diverse pipeline of utility-scale solar projects across Germany. As a specialized photovoltaic project developer, we provide investment opportunities at every development stage - from early-phase projects with high value-creation potential to fully developed projects ready for construction.
@@ -261,9 +300,9 @@ yes = Yes
 no = No
 
 
-
-
-
-
-
-
+landOwnerPrev = "Go Back"
+landOwnerNext = "Continue"
+communityPrev = "Go Back"
+communityNext = "Continue"
+investorPrev = "Go Back"
+investorNext = "Continue"
