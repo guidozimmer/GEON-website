@@ -30,10 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Function to hide all forms
     function hideAllForms() {
-        landOwnerForm.style.display = 'none';
-        investorForm.style.display = 'none';
-        communityForm.style.display = 'none';
-        
         landOwnerSquare.classList.remove('active');
         investorSquare.classList.remove('active');
         communitySquare.classList.remove('active');
