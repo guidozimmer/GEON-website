@@ -59,8 +59,8 @@ howItWorksPt12 = "Operation and Electricity Marketing"
 howItWorksPt13 = "Development of a marketing strategy for the electricity produced – whether through PPAs (Power Purchase Agreements), EEG remuneration, or direct marketing. Establishment of professional plant management for future operations."
 
 contactPt1 = Contact
-contactPt2 = 
-contactPt3 = 
+contactPt2 = Do you have questions about our services or want to learn more about our work in photovoltaic project development? Share your ideas and requirements with us 
+contactPt3 = We are here to support you in successfully implementing your projects and contributing together to climate neutrality and the energy transition.
 contactPt4 = Full Name
 contactPt5 = Phone Number
 contactPt6 = Message

@@ -60,8 +60,8 @@ howItWorksPt12 = "Betriebsführung und Stromvermarktung "
 howItWorksPt13 = "Sobald die Anlage läuft, wird eine Strategie zur Vermarktung des produzierten Stroms entwickelt. Dabei kommen Optionen wie Power Purchase Agreements (PPA), die EEG-Vergütung oder die direkte Vermarktung in Frage. Zudem wird ein professionelles Anlagenmanagement eingerichtet, um den späteren Betrieb optimal zu steuern und zu überwachen."
 
 contactPt1 = Kontakt
-contactPt2 = Haben Sie Fragen zu unseren Dienstleistungen oder möchten Sie mehr über unsere Arbeit im Bereich der Photovoltaik-Projektentwicklung erfahren? Teilen Sie uns Ihre Anforderungen und Ideen mit – wir unterstützen Sie dabei, Ihre Projekte erfolgreich umzusetzen und gemeinsam einen Beitrag zur Klimaneutralität und zur Energiewende zu leisten.
-contactPt3 = Wir sind hier, um zu helfen! Füllen Sie einfach das folgende Formular aus, und wir melden uns so schnell wie möglich bei Ihnen. Wir freuen uns darauf, von Ihnen zu hören!
+contactPt2 = Haben Sie Fragen zu unseren Dienstleistungen oder möchten Sie mehr über unsere Arbeit im Bereich der Photovoltaik-Projektentwicklung erfahren? Teilen Sie uns Ihre Anforderungen und Ideen mit
+contactPt3 = Wir unterstützen Sie dabei, Ihre Projekte erfolgreich umzusetzen und gemeinsam einen Beitrag zur Klimaneutralität und zur Energiewende zu leisten.
 contactPt4 = Vollständiger Name
 contactPt5 = Telefonnummer
 contactPt6 = Nachricht
