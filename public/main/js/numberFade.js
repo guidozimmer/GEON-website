@@ -14,8 +14,12 @@ export function startNumberFade(elementId, DEValues, ENValues, interval = 2000) 
         return document.querySelector('#languageDropdownTrigger').textContent === 'Deutsch' ? DEValues : ENValues;
     }
 
-    numberDisplay.innerHTML = getCurrentValues()[currentIndex];
-    numberDisplay.style.opacity = "1";
+    // Ensure initial content is set with a slight delay to avoid any race conditions
+    setTimeout(() => {
+        numberDisplay.innerHTML = getCurrentValues()[currentIndex];
+        numberDisplay.style.opacity = "1";
+    }, 100);
+    
     numberDisplay.style.transition = "opacity 1s ease-in-out";
     videoElement.style.opacity = "1";
     videoElement.style.transition = "opacity 1s ease-in-out";
@@ -39,8 +43,9 @@ export function startNumberFade(elementId, DEValues, ENValues, interval = 2000) 
                 videoElement.style.opacity = "1";
             }
 
-            const _ = numberDisplay.offsetHeight;
-            numberDisplay.style.opacity = "1";
+            requestAnimationFrame(() => {
+                numberDisplay.style.opacity = "1";
+            });
 
             const nextInterval = currentIndex === values.length - 1 ? interval * 3 : interval;
 
@@ -51,5 +56,6 @@ export function startNumberFade(elementId, DEValues, ENValues, interval = 2000) 
         }, 1000);
     }
 
+    // Start the fade animation after ensuring initial content is set
     setTimeout(fadeNumber, interval);
 }
