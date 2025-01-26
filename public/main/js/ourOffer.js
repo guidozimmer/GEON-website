@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('#landowner-data-protection')?.addEventListener('change', updateNavigationButtons);
     document.querySelector('#community-data-protection')?.addEventListener('change', updateCommunityNavigationButtons);
     document.querySelector('#investor-data-protection')?.addEventListener('change', updateInvestorNavigationButtons);
+
     
     // Add Location Button Handler
     document.getElementById('addLocationButton')?.addEventListener('click', addLocationFields);
@@ -30,7 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Function to hide all forms
     function hideAllForms() {
-
+        landOwnerForm.style.display = 'none';
+        investorForm.style.display = 'none';
+        communityForm.style.display = 'none';
         
         landOwnerSquare.classList.remove('active');
         investorSquare.classList.remove('active');
