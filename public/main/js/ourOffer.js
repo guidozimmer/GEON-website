@@ -30,6 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Function to hide all forms
     function hideAllForms() {
+        landOwnerForm.style.display = 'none';
+        investorForm.style.display = 'none';
+        communityForm.style.display = 'none';
+        
         landOwnerSquare.classList.remove('active');
         investorSquare.classList.remove('active');
         communitySquare.classList.remove('active');
@@ -656,7 +660,6 @@ document.addEventListener('DOMContentLoaded', () => {
                             card.classList.add('selected');
                             
                             if (card.getAttribute('data-value') === 'ja') {
-                                question0.style.display = 'none';
                                 contactForm.style.display = 'block';
                             }
                         });
