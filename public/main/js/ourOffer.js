@@ -914,7 +914,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateInvestorNavigationButtons() {
         const prevButton = document.querySelector('.investorPrev');
-        const nextButton = document.querySelector('.investorNet');
+        const nextButton = document.querySelector('.investorNext');
         
         if (prevButton) {
             prevButton.disabled = investorCurrentQuestion === 0;

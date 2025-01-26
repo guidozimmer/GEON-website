@@ -378,17 +378,7 @@
     max-width: 300px;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .main-squares-container {
-        grid-template-columns: 1fr;
-        max-width: 400px;
-    }
-    
-    .input-group {
-        grid-template-columns: 1fr;
-    }
-}
+
 
 .select-wrapper {
     position: relative;
@@ -589,17 +579,6 @@
     opacity: 0.9;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .community-form .option-container {
-        flex-direction: column;
-    }
-    
-    .community-form .option-card {
-        width: 100%;
-        text-align: center;
-    }
-}
 
 .form-section {
     max-width: 1200px;
@@ -841,8 +820,21 @@
     transition: all 0.3s ease;
 }
 
+
+
+
+
+
+/* Small Devices (Portrait Tablets and Small Phones, up to 768px) */
+@media only screen and (max-width: 480px) {
+    .ourOffer {
+        padding: 150px 5px !important;
+    }
+}
+
+
 /* Responsive improvements */
-@media (max-width: 768px) {
+@media only screen and (max-width: 900px) {
     .form-section {
         padding: 2rem;
         margin: 2rem 1rem;
@@ -874,53 +866,125 @@
     .nav-button {
         width: 100%;
     }
-}
-
-
-
-/* Small Devices (Portrait Tablets and Small Phones, up to 768px) */
-@media only screen and (max-width: 480px) {
+    
     .ourOffer {
-        padding: 150px 5px !important;
+        padding: 50px 10px !important;
+    }
+
+    .community-form .option-container {
+        flex-direction: column;
+    }
+    
+    .community-form .option-card {
+        width: 100%;
+        text-align: center;
+    }
+
+    .main-squares-container {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+    
+    .input-group {
+        grid-template-columns: 1fr;
+    }
+
+    #ourOfferHeading > h3 {
+        font-size: var(--very-small-font) !important;
+        margin-bottom: 50px;
     }
 }
 
 
+
+
+@media only screen and (min-width: 900px) and (max-width: 1190px) {
+    .ourOffer {
+        padding: 150px 25px !important;
+    }
+
+
+}   
+
+
+
+/* Small Devices (Portrait Tablets and Small Phones, up to 768px) */
+@media only screen and (max-width: 481px) {
+    .intro-text > h6 {
+        font-size: var(--very-small-font) !important;
+        margin-bottom: 50px;
+    }
+
+    .question-title {
+        font-size: var(--small-font) !important;
+    }
+
+    .square-content > h3 {
+        font-size: var(--small-font) !important;
+    }
+}
+
+
+
 /* Small Devices (Portrait Tablets and Small Phones, up to 768px) */
 @media only screen and (min-width: 481px) and (max-width: 768px) {
-    .ourOffer {
-        padding: 150px 5px !important;
+    .intro-text > h6 {
+        font-size: var(--very-small-font) !important;
+        margin-bottom: 50px;
+    }
+
+    .question-title {
+        font-size: var(--small-font) !important;
+    }
+    
+    .square-content > h3 {
+        font-size: var(--small-font) !important;
     }
 }
 
 
 /* Medium Devices (Tablets in Landscape, 768px to 1024px) */
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
-    .ourOffer {
-        padding: 150px 25px !important;
+    .intro-text > h6 {
+        font-size: var(--small-font) !important;
+        margin-bottom: 50px;
     }
 }   
 
 
 /* Large Devices (Desktops, 1024px to 1200px) */
 @media only screen and (min-width: 1025px) and (max-width: 1200px) {
-
+    .intro-text > h6 {
+        font-size: var(--small-font) !important;
+        margin-bottom: 50px;
+    }
 }
-
-
-
-
 
 /* Extra Large Devices (Large Desktops, 1200px to 1600px) */
 @media only screen and (min-width: 1201px) and (max-width: 1600px) {
-
+    .intro-text > h6 {
+        font-size: var(--small-font) !important;
+        margin-bottom: 50px;
+    }
 }
-  
 
-/* Ultra Large Devices (Very Large Screens, 1600px and up) */
-@media only screen and (min-width: 1601px) {
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
