@@ -848,3 +848,23 @@ body {
 .popup-close-btn:hover {
   background-color: #3483eb;
 }
+
+
+@media only screen and (max-width: 600px) {
+  .g-recaptcha {
+    display: flex;
+    justify-content: center;
+  }
+
+  .sumbit-btn-cage {
+    display: flex;
+    justify-content: center;
+  }
+
+  .company-info-container {
+    display: flex;
+    justify-content: center;
+    margin-top: -50px;
+  }
+
+}
