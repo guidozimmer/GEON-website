@@ -217,10 +217,10 @@ communityFormTitle4 = "Um welche Art Flächen handelt es sich?"
 communityFormTitle5 = "Gewünschte Projektarten"
 communityFormTitle6 = "Wir interessieren uns für"
 
-communityPt1 = "Gemeinsam die Energiewende gestalten: Ihre Gemeinde als aktiver Partner"
-communityPt2 = "Als Gemeinde haben Sie eine Schlüsselrolle in der Energiewende. GEON unterstützt Sie dabei, diese Rolle aktiv zu gestalten und nachhaltige Einnahmequellen für Ihre Gemeinde zu erschließen."
-communityPt3 = "Unsere Zusammenarbeit kann dabei zwei Wege nehmen: Einerseits brauchen wir Ihre Unterstützung bei der baurechtlichen Umsetzung unserer Projekte. Andererseits unterstützen wir Sie bei der Qualifizierung und Entwicklung Ihrer gemeindeeigenen Flächen. Für einen optimalen Start stellt GEON Ihnen auf Wunsch eine Potenzialanalyse Ihrer Gemeinde zur Verfügung."
-communityPt4 = "Entdecken Sie die finanziellen Vorzüge der erneuerbaren Energien für Ihre Gemeinde."
+communityPt1 = Gemeinsam die Energiewende gestalten: Ihre Gemeinde als aktiver Partner
+communityPt2 = Als Gemeinde haben Sie eine Schlüsselrolle in der Energiewende. GEON unterstützt Sie dabei, diese Rolle aktiv zu gestalten und nachhaltige Einnahmequellen für Ihre Gemeinde zu erschließen.
+communityPt3 = Unsere Zusammenarbeit kann dabei zwei Wege nehmen: Einerseits brauchen wir Ihre Unterstützung bei der baurechtlichen Umsetzung unserer Projekte. Andererseits unterstützen wir Sie bei der Qualifizierung und Entwicklung Ihrer gemeindeeigenen Flächen. Für einen optimalen Start stellt GEON Ihnen auf Wunsch eine Potenzialanalyse Ihrer Gemeinde zur Verfügung.
+communityPt4 = Entdecken Sie die finanziellen Vorzüge der erneuerbaren Energien für Ihre Gemeinde.
 communityPt5 = ""
 communityPt6 = "Ich stimme der Verarbeitung meiner Daten gemäß "
 communityPt7 = "Datenschutzerklärung"
