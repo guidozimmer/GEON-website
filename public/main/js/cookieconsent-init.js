@@ -4,7 +4,7 @@ let cookieConsentInstance;
 
 // Add listener for contact nav link
 const setupContactNavListener = () => {
-    const contactNav = document.getElementById('contactNav');
+    const contactNav = document.getElementById('contactNavId');
     const contactSection = document.getElementById('contact');
     
     if (contactNav) {

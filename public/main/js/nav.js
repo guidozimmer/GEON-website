@@ -1,7 +1,7 @@
 export function setupDropdown() {
     const offerDropdown = document.getElementById('offerDropdown');
     const dropdownMenu = new bootstrap.Dropdown(offerDropdown);
-    const contactNav = document.getElementById('contactNav');
+    const contactNav = document.getElementById('contactNavId');
 
     // Hover to show dropdown
     offerDropdown.addEventListener('mouseenter', function () {

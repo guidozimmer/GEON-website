@@ -41,9 +41,7 @@ ourOfferPt7 = "Investoren"
 ourOfferPt8 = "Investieren Sie in nachhaltige Energieprojekte."
 
 
-howItWorksIntroPt1 = Die Planung und Realisierung eines Photovoltaik-Projekts erfordert eine sorgfältige und strukturierte Vorgehensweise.
-howItWorksIntroPt2 = Von der Auswahl des geeigneten Standorts über die Einholung aller notwendigen Genehmigungen bis hin zur finalen Inbetriebnahme - jeder Schritt ist entscheidend für den Erfolg des Projekts.
-howItWorksIntroPt3 = Im Folgenden erläutern wir die einzelnen Phasen unseres PV-Projektplanungsprozesses und zeigen, wie wir durch diesen Ansatz Projekte erfolgreich umsetzen, um einen wesentlichen Beitrag zur Klimaneutralität zu leisten.
+howItWorksIntro = Die Planung und Realisierung eines Photovoltaik-Projekts erfordert eine sorgfältige und strukturierte Vorgehensweise. Von der Auswahl des geeigneten Standorts über die Einholung aller notwendigen Genehmigungen bis hin zur finalen Inbetriebnahme - jeder Schritt ist entscheidend für den Erfolg des Projekts. Im Folgenden erläutern wir die einzelnen Phasen unseres PV-Projektplanungsprozesses und zeigen, wie wir durch diesen Ansatz Projekte erfolgreich umsetzen, um einen wesentlichen Beitrag zur Klimaneutralität zu leisten. 
 
 howItWorksPt1 = "So funktioniert's"
 howItWorksPt2 = "Standortanalyse und Landsicherung "
@@ -59,14 +57,14 @@ howItWorksPt11 = "In diesem Schritt entsteht die Anlage - die Gewerke werden koo
 howItWorksPt12 = "Betriebsführung und Stromvermarktung "
 howItWorksPt13 = "Sobald die Anlage läuft, wird eine Strategie zur Vermarktung des produzierten Stroms entwickelt. Dabei kommen Optionen wie Power Purchase Agreements (PPA), die EEG-Vergütung oder die direkte Vermarktung in Frage. Zudem wird ein professionelles Anlagenmanagement eingerichtet, um den späteren Betrieb optimal zu steuern und zu überwachen."
 
-contactPt1 = Kontakt
-contactPt2 = Haben Sie Fragen zu unseren Dienstleistungen oder möchten Sie mehr über unsere Arbeit im Bereich der Photovoltaik-Projektentwicklung erfahren? Teilen Sie uns Ihre Anforderungen und Ideen mit
-contactPt3 = Wir unterstützen Sie dabei, Ihre Projekte erfolgreich umzusetzen und gemeinsam einen Beitrag zur Klimaneutralität und zur Energiewende zu leisten.
+contactPt1 = Unser Team
+contactPt2 = Haben Sie Fragen zu unseren Dienstleistungen oder möchten Sie mehr über unsere Arbeit im Bereich der Photovoltaik-Projektentwicklung erfahren? Teilen Sie uns Ihre Anforderungen und Ideen mit. Wir unterstützen Sie dabei, Ihre Projekte erfolgreich umzusetzen und gemeinsam einen Beitrag zur Klimaneutralität und zur Energiewende zu leisten.
 contactPt4 = Vollständiger Name
 contactPt5 = Telefonnummer
 contactPt6 = Nachricht
 contactPt7 = Nachricht Senden
 contactPt8 = GEON besteht aus einem kleinen, engagierten Team hochqualifizierter Experten mit umfassender Erfahrung in Photovoltaik und erneuerbaren Energien. Mit fundierten Wissen über technische Herausforderungen, rechtliche Rahmenbedingungen in Deutschland und Finanzierungslösungen setzen wir erfolgreich Projekte um. Unsere modernen IT-Systeme mit KI-Komponenten ermöglichen es uns, sämtliche Geschäftsprozesse zu automatisieren und machen unser kompaktes Team dadurch besonders effizient und zukunftsorientiert.
+contactPt9 = Kontakt
 
 codePlaceholder = "Code hier eingeben..."
 namePlaceholder = "Bitte vollständigen Namen eingeben...*"

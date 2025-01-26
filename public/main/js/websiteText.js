@@ -35,7 +35,7 @@ export function createLanguageSwitcher() {
         { id: 'aboutUsNav', variable: 'aboutUsNav' },
         { id: 'offerDropdown', variable: 'ourOfferNav' },
         { id: 'howItWorksNav', variable: 'howItWorksNav' },
-        { id: 'contactNav', variable: 'contactNav' },
+        { id: 'contactNavId', variable: 'contactNav' },
         { id: 'languageDropdownTrigger', variable: 'languageNav' },
 
         // Code Section
@@ -73,9 +73,7 @@ export function createLanguageSwitcher() {
         { id: 'ourOfferPt8', variable: 'ourOfferPt8' },
 
         // How It Works Section
-        { id: 'howItWorksIntroPt1', variable: 'howItWorksIntroPt1' },
-        { id: 'howItWorksIntroPt2', variable: 'howItWorksIntroPt2' },
-        { id: 'lasth3', variable: 'howItWorksIntroPt3' },
+        { id: 'howItWorksIntro', variable: 'howItWorksIntro' },
 
         
         { id: 'howItWorksPt1', variable: 'howItWorksPt1' },
@@ -95,12 +93,12 @@ export function createLanguageSwitcher() {
         // Contact Section
         { id: 'contactPt1', variable: 'contactPt1' },
         { id: 'contactPt2', variable: 'contactPt2' },
-        { id: 'contactPt3', variable: 'contactPt3' },
         { id: 'contactPt4', variable: 'contactPt4' },
         { id: 'contactPt5', variable: 'contactPt5' },
         { id: 'contactPt6', variable: 'contactPt6' },
         { id: 'contactPt7', variable: 'contactPt7' },
         { id: 'contactPt8', variable: 'contactPt8' },
+        { id: 'contactPt9', variable: 'contactPt9' },
 
         // Cookie Dialog
         { id: 'cm__title', variable: 'cookieTitle' },
