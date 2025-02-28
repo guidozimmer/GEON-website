@@ -144,23 +144,6 @@
     margin: 20px 0;
 }
 
-.company-info {
-    margin-top: 100px;
-}
-
-
-.company-info h2 {
-    font-size: 24px;
-    font-weight: normal;
-    margin: 0 0 20px 0;
-}
-
-.company-info p {
-    font-size: 16px;
-    line-height: 1.6;
-    margin: 0 0 -2px 0;
-}
-
 .full-width-image {
     width: 100%;
     padding: 0;
