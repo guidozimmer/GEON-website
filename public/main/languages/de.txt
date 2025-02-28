@@ -64,7 +64,7 @@ contactPt5 = Telefonnummer
 contactPt6 = Nachricht
 contactPt7 = Nachricht Senden
 contactPt8 = GEON besteht aus einem kleinen, engagierten Team hochqualifizierter Experten mit umfassender Erfahrung in Photovoltaik und erneuerbaren Energien. Mit fundierten Wissen über technische Herausforderungen, rechtliche Rahmenbedingungen in Deutschland und Finanzierungslösungen setzen wir erfolgreich Projekte um. Unsere modernen IT-Systeme mit KI-Komponenten ermöglichen es uns, sämtliche Geschäftsprozesse zu automatisieren und machen unser kompaktes Team dadurch besonders effizient und zukunftsorientiert.
-contactPt9 = Kontakt
+contactPt9 = Wie können wir ihnen helfen?
 
 codePlaceholder = "Code hier eingeben..."
 namePlaceholder = "Bitte vollständigen Namen eingeben...*"

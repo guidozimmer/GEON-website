@@ -71,13 +71,19 @@
 .contact-container {
     max-width: 1200px;
     margin: 0 auto;
-    display: flex;
+    display: grid;
     justify-content: space-between;
     gap: 40px;
+
+    grid-template-columns: 1fr 1fr;
 }
 
 .contact-form {
     flex: 1;
+}
+
+.contactText {
+    margin-top: 50px;
 }
 
 .contact-form h2 {
@@ -136,6 +142,10 @@
 
 .g-recaptcha {
     margin: 20px 0;
+}
+
+.company-info {
+    margin-top: 100px;
 }
 
 
@@ -222,11 +232,6 @@
         margin-top: 100px;
     }
 }
-
-
-
-
-
 
 
 
