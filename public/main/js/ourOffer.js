@@ -1149,7 +1149,7 @@ document.addEventListener('DOMContentLoaded', () => {
             '00NMz0000040bYL', '00NMz0000040bZx', '00NMz0000040bbZ', '00NMz0000040ben',
             '00NMz0000044iTB', '00NMz0000044ckM', '00NMz0000044ijJ', '00NMz0000040btJ',
             '00NMz0000040bzl', '00NMz0000040c1N', '00NMz0000040c4b',
-            '00NMz0000040c6D', '00NMz0000040c7p', '00NMz0000040c9R', '00NMz0000040cB3',
+            '00NMz0000040c6D', '00NMz0000040c7p', '00NMz0000040c9R', '00NMz0000040cB3', '00NMz0000040c2z',
             '00NMz0000040cCf', '00NMz0000040cFt', '00NMz0000040cHV', '00NMz0000040bzm',
             '00NMz0000040cJ7', '00NMz0000040cKj', '00NMz0000040cML', '00NMz0000040cNx',
             '00NMz0000040b26', '00NMz0000040cRB', '00NMz0000040cUP', '00NMz0000040cW1'
@@ -1245,7 +1245,8 @@ document.addEventListener('DOMContentLoaded', () => {
             flur: entry.querySelector('input[name="flur[]"]')?.value,
             flurstueck: entry.querySelector('input[name="flurstueck[]"]')?.value,
             flaeche: entry.querySelector('input[name="flaeche[]"]')?.value,
-            amt: entry.querySelector('input[name="amt[]"]')?.value
+            amt: entry.querySelector('input[name="amt[]"]')?.value,
+            gemeinde: entry.querySelector('input[name="gemeinde[]"]')?.value
         }));
 
         setValue('00NMz0000040bzl', allLocations.map(l => l.bundesland).filter(Boolean).join(';'));
@@ -1255,7 +1256,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setValue('00NMz0000040c7p', allLocations.map(l => l.flurstueck).filter(Boolean).join(';'));
         setValue('00NMz0000040c9R', allLocations.map(l => l.flaeche).filter(Boolean).join(';'));
         setValue('00NMz0000040cB3', allLocations.map(l => l.amt).filter(Boolean).join(';'));
-        
+        setValue('00NMz0000040c2z', allLocations.map(l => l.gemeinde).filter(Boolean).join(';'));
         
         // Fix for spannungsebene selector
         const spannungsniveau = document.querySelector('#question7a .select-wrapper:last-child select')?.value;
