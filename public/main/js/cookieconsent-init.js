@@ -2,8 +2,11 @@ import "../cookies/cookieconsent.umd.js";
 
 let cookieConsentInstance;
 
+console.log("Line 5");
+
 // Add listener for contact nav link
 const setupContactNavListener = () => {
+    console.log("Line 9");
     const contactNav = document.getElementById('contactNavId');
     const contactSection = document.getElementById('contact');
     
@@ -20,6 +23,7 @@ const setupContactNavListener = () => {
 
 
 const toggleContactForm = (cookie) => {
+    console.log("Line 26");
     const contactSection = document.getElementById('contact');
 
     if (!contactSection) {
@@ -42,6 +46,7 @@ const toggleContactForm = (cookie) => {
 
 // Single export declaration for initializeCookieConsent
 export function initializeCookieConsent(language = 'en') {
+    console.log("Line 49");
     const contactSection = document.getElementById('contact');
     
     if (contactSection) {
