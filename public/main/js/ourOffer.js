@@ -520,10 +520,40 @@ document.addEventListener('DOMContentLoaded', () => {
             valueDisplay.textContent = `${value} ha`;
         }
     
-        const sliderRect = slider.getBoundingClientRect();
-        const percent = (value - slider.min) / (slider.max - slider.min);
-        const thumbOffset = Math.round(percent * sliderRect.width);
-        valueDisplay.style.left = `${thumbOffset}px`;
+        // Calculate position directly based on slider value
+        const sliderWidth = slider.getBoundingClientRect().width;
+        const thumbWidth = 16; // Approximate width of the thumb
+        const range = slider.max - slider.min;
+        const valuePos = ((value - slider.min) / range) * (sliderWidth - thumbWidth);
+        
+        // Apply position directly without transitions
+        valueDisplay.style.transition = 'none';
+        valueDisplay.style.left = `${valuePos}px`;
+        
+        // Force reflow to ensure transition is disabled before any other changes
+        valueDisplay.offsetHeight;
+    }
+    
+    function updateMonthSlider(slider, valueDisplay) {
+        const months = [
+            'Januar', 'Februar', 'März', 'April', 'Mai', 'Juni',
+            'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'
+        ];
+        const value = parseInt(slider.value);
+        valueDisplay.textContent = months[value - 1];
+        
+        // Calculate position directly based on slider value
+        const sliderWidth = slider.getBoundingClientRect().width;
+        const thumbWidth = 16; // Approximate width of the thumb
+        const range = slider.max - slider.min;
+        const valuePos = ((value - slider.min) / range) * (sliderWidth - thumbWidth);
+        
+        // Apply position directly without transitions
+        valueDisplay.style.transition = 'none';
+        valueDisplay.style.left = `${valuePos}px`;
+        
+        // Force reflow to ensure transition is disabled
+        valueDisplay.offsetHeight;
     }
 
     
