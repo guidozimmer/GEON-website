@@ -1,4 +1,4 @@
-import "../cookies/cookieconsent.js";
+import "../cookies/cookieFormFunction.js";
 
 let cookieConsentInstance;
 
