@@ -2,11 +2,9 @@ import "../cookies/cookieFormFunction.js";
 
 let cookieConsentInstance;
 
-console.log("Line 5");
 
 // Add listener for contact nav link
 const setupContactNavListener = () => {
-    console.log("Line 9");
     const contactNav = document.getElementById('contactNavId');
     const contactSection = document.getElementById('contact');
     
@@ -23,7 +21,6 @@ const setupContactNavListener = () => {
 
 
 const toggleContactForm = (cookie) => {
-    console.log("Line 26");
     const contactSection = document.getElementById('contact');
 
     if (!contactSection) {
@@ -46,7 +43,6 @@ const toggleContactForm = (cookie) => {
 
 // Single export declaration for initializeCookieConsent
 export function initializeCookieConsent(language = 'en') {
-    console.log("Line 49");
     const contactSection = document.getElementById('contact');
     
     if (contactSection) {
@@ -128,8 +124,8 @@ export function initializeCookieConsent(language = 'en') {
                         acceptAllBtn: '<span id="cookieAcceptAll">Accept all</span>',
                         acceptNecessaryBtn: '<span id="cookieRejectAll">Reject all</span>',
                         footer: `
-                            <a id="cookiePrivacyLink" href="#test">Privacy Policy</a>
-                            <a id="cookieImpressumLink" href="#test">Impressum</a>
+                            <a id="cookiePrivacyLink" href="https://geongroup.de/subSites/privacyPolicy/index.html">Privacy Policy</a>
+                            <a id="cookieImpressumLink" href="https://geongroup.de/subSites/imprint/index.html">Impressum</a>
                         `
                     },
                     preferencesModal: {
@@ -194,8 +190,8 @@ export function initializeCookieConsent(language = 'en') {
                         acceptAllBtn: '<span id="cookieAcceptAll">Alle akzeptieren</span>',
                         acceptNecessaryBtn: '<span id="cookieRejectAll">Alle ablehnen</span>',
                         footer: `
-                            <a id="cookiePrivacyLink" href="https://geongroup.de/dev/public/main/subSites/privacyPolicy/index.html">Datenschutzerklärung</a>
-                            <a id="cookieImpressumLink" href="#test">Impressum</a>
+                            <a id="cookiePrivacyLink" href="#Line193">Datenschutzerklärung</a>
+                            <a id="cookieImpressumLink" href="#Line194">Impressum</a>
                         `
                     },
                     preferencesModal: {

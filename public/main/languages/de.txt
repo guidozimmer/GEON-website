@@ -81,7 +81,7 @@ cookieDesc = "Diese Website verwendet Analyse-Tools, um die Nutzung unserer Webs
 cookieManage = "Einstellungen verwalten"
 cookieAcceptAll = "Alle akzeptieren"
 cookieRejectAll = "Alle ablehnen"
-cookiePrivacy = "Datenschutzrichtlinie"
+cookiePrivacy = "Datenschutzerklärung"
 cookieImpressum = "Impressum"
 
 
@@ -346,3 +346,5 @@ communityNext = "Weiter"
 investorPrev = "Zurück"
 investorNext = "Weiter"
 
+privacyPolicy = Datenschutzerklärung
+imprint = Impressum

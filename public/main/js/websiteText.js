@@ -368,10 +368,10 @@ export function createLanguageSwitcher() {
         { id: 'communityTitlePt1', variable: 'communityTitlePt1' },
         { id: 'communityTitlePt2', variable: 'communityTitlePt2' },
 
-
-
         { id: 'addLocationButton', variable: 'addLocationButton' },
 
+        { id: 'privacyPolicy', variable: 'privacyPolicy' },
+        { id: 'imprint', variable: 'imprint' },
 
 
       ];

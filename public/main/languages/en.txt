@@ -349,3 +349,6 @@ communityPrev = "Go Back"
 communityNext = "Continue"
 investorPrev = "Go Back"
 investorNext = "Continue"
+
+privacyPolicy = Privacy Policy
+imprint = Imprint
