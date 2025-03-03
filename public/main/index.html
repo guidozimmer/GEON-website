@@ -606,9 +606,28 @@
         <div class="form-section" id="communityForm" style="display: none;">
             <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DWz000001Nbvx" method="POST">
                 <input type="hidden" name="orgid" value="00DWz000001Nbvx">
-                <input type="hidden" name="retURL" value="http://geongroup.de/dev/public/main">
+                <input type="hidden" name="retURL" value="http://geongroup.de">
                 <input type="hidden" name="subject" value="Gemeinden">
-        
+
+                <!-- Salesforce hidden fields -->
+                <input type="hidden" id="00NMz0000040bzl" name="00NMz0000040bzl"> <!-- bundesland -->
+                <input type="hidden" id="00NMz0000040c2z" name="00NMz0000040c2z"> <!-- gemeinde -->
+                <input type="hidden" id="00NMz0000040cB3" name="00NMz0000040cB3"> <!-- amt -->
+                <input type="hidden" id="00NMz0000040cKj" name="00NMz0000040cKj"> <!-- kontakt_strasse -->
+                <input type="hidden" id="00NMz0000040cML" name="00NMz0000040cML"> <!-- kontakt_plz -->
+                <input type="hidden" id="00NMz0000040cNx" name="00NMz0000040cNx"> <!-- kontakt_stadt -->
+                <input type="hidden" id="00NMz0000040cHV" name="00NMz0000040cHV"> <!-- kontakt_vorname -->
+                <input type="hidden" id="00NMz0000040bzm" name="00NMz0000040bzm"> <!-- kontakt_nachname -->
+                <input type="hidden" id="00NMz000004XcsD" name="00NMz000004XcsD"> <!-- Position In Gemeinde -->
+                <input type="hidden" id="phone" name="phone"> <!-- phone -->
+                <input type="hidden" id="email" name="email"> <!-- email -->
+                <input type="hidden" id="00NMz000004Xcx3" name="00NMz000004Xcx3"> <!-- Verfügt Gemeinde eigene Flächen -->
+                <input type="hidden" id="00NMz0000040bRt" name="00NMz0000040bRt"> <!-- land_typ -->
+                <input type="hidden" id="00NMz000004Xd1t" name="00NMz000004Xd1t"> <!-- Gewünschte Projektarten -->
+                
+                <!-- Interests field (as hidden input instead of multi-select) -->
+                <input type="hidden" id="00NMz000004Xd57" name="00NMz000004Xd57">
+
                 <div id="question0" class="question-container active">
                     <div class="question-title" id="communityPt1"></div>
                     
@@ -630,66 +649,65 @@
                         </label>
                     </div>
                 </div>
-        
-        
+
                 <!-- Question 1 - Municipal Information -->
                 <div id="question1" class="question-container">
                     <div class="question-title" id="communityPt9"></div>
                     <div class="input-group">
                         <div class="input-field">
                             <label for="bundesland" id="communityPt10"></label>
-                            <input type="text" id="bundesland" name="bundesland" required>
+                            <input type="text" id="bundesland_visible" name="bundesland_visible" required>
                         </div>
                         <div class="input-field">
                             <label for="gemeinde" id="communityPt11"></label>
-                            <input type="text" id="gemeinde" name="gemeinde" required>
+                            <input type="text" id="gemeinde_visible" name="gemeinde_visible" required>
                         </div>
                         <div class="input-field">
                             <label for="amt" id="communityPt12"></label>
-                            <input type="text" id="amt" name="amt">
+                            <input type="text" id="amt_visible" name="amt_visible">
                         </div>
                         <div class="input-field">
                             <label for="strasse" id="communityPt13"></label>
-                            <input type="text" id="strasse" name="strasse">
+                            <input type="text" id="strasse_visible" name="strasse_visible">
                         </div>
                         <div class="input-field">
                             <label for="plz" id="communityPt14"></label>
-                            <input type="text" id="plz" name="plz">
+                            <input type="text" id="plz_visible" name="plz_visible">
                         </div>
                         <div class="input-field">
                             <label for="ort" id="communityPt15"></label>
-                            <input type="text" id="ort" name="ort">
+                            <input type="text" id="ort_visible" name="ort_visible">
                         </div>
                     </div>
                 </div>
-        
+
                 <!-- Question 2 - Contact Information -->
                 <div id="question2" class="question-container">
                     <div class="question-title" id="communityPt16"></div>
                     <div class="input-group">
                         <div class="input-field">
                             <label for="vorname" id="communityPt17"></label>
-                            <input type="text" id="vorname" name="vorname" required>
+                            <input type="text" id="vorname_visible" name="vorname_visible" required>
                         </div>
                         <div class="input-field">
                             <label for="nachname" id="communityPt18"></label>
-                            <input type="text" id="nachname" name="nachname" required>
+                            <input type="text" id="nachname_visible" name="nachname_visible" required>
                         </div>
                         <div class="input-field">
                             <label for="position" id="communityPt19"></label>
-                            <input type="text" id="position" name="position">
+                            <input type="text" id="position_visible" name="position_visible">
                         </div>
                         <div class="input-field">
                             <label for="telefon" id="communityPt20"></label>
-                            <input type="tel" id="telefon" name="telefon" required>
+                            <input type="tel" id="telefon_visible" name="telefon_visible" required>
                         </div>
                         <div class="input-field">
                             <label for="email" id="communityPt21"></label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email_visible" name="email_visible" required>
                         </div>
                     </div>
                 </div>
-        
+
                 <!-- Question 3 - Own Land -->
                 <div id="question3" class="question-container">
                     <div class="question-title" id="communityPt22"></div>
@@ -697,7 +715,7 @@
                         <div class="option-card" data-value="ja" data-shows="question3a" id="yes"></div>
                         <div class="option-card" data-value="nein" id="no"></div>
                     </div>
-        
+
                     <div id="question3a" class="conditional-question">
                         <div class="question-title" id="communityPt24"></div>
                         <div class="options-container">
@@ -709,7 +727,7 @@
                         </div>
                     </div>
                 </div>
-        
+
                 <!-- Question 4 - Project Types -->
                 <div id="question4" class="question-container">
                     <div class="question-title" id="communityPt30"></div>
@@ -718,7 +736,7 @@
                         <div class="option-card multi-select" data-value="Batteriespeicher" id="communityPt32"></div>
                     </div>
                 </div>
-        
+
                 <!-- Question 5 - Interests -->
                 <div id="question5" class="question-container">
                     <div class="question-title" id="communityPt33"></div>
@@ -730,25 +748,57 @@
                         <div class="option-card multi-select" data-value="Investorenmodell" id="communityPt38"></div>
                     </div>
                 </div>
-        
-        
+
                 <!-- Navigation Buttons -->
                 <div class="navigation-buttons">
                     <button type="button" id="prevButton" class="nav-button communityPrev"></button>
                     <button type="button" id="nextButton" class="nav-button communityNext"></button>
                 </div>
-
             </form>
         </div>
-        
 
         <!-- For Investor Form -->
         <div class="form-section" id="investorForm" style="display: none;">
             <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DWz000001Nbvx" method="POST">
                 <input type="hidden" name="orgid" value="00DWz000001Nbvx">
-                <input type="hidden" name="retURL" value="http://geongroup.de/dev/public/main">
+                <input type="hidden" name="retURL" value="http://geongroup.de">
                 <input type="hidden" name="subject" value="Investoren">
-        
+                
+                <!-- Hidden Salesforce fields -->
+                <input type="hidden" id="00NMz0000040cHV" name="00NMz0000040cHV"> <!-- First Name -->
+                <input type="hidden" id="00NMz0000040bzm" name="00NMz0000040bzm"> <!-- Last Name -->
+                <input type="hidden" id="00NMz000004XZMU" name="00NMz000004XZMU"> <!-- Position -->
+                <input type="hidden" id="00NMz000004Xbo5" name="00NMz000004Xbo5"> <!-- Company -->
+                <input type="hidden" id="phone" name="phone"> <!-- Phone -->
+                <input type="hidden" id="email" name="email"> <!-- Email -->
+                <input type="hidden" id="00NMz0000040cKj" name="00NMz0000040cKj"> <!-- Street -->
+                <input type="hidden" id="00NMz0000040cML" name="00NMz0000040cML"> <!-- Postal Code -->
+                <input type="hidden" id="00NMz0000040cNx" name="00NMz0000040cNx"> <!-- City -->
+                <input type="hidden" id="00NMz0000040b26" name="00NMz0000040b26"> <!-- Country -->
+                
+                <!-- Multi-select hidden fields -->
+                <select id="00NMz000004XbrJ" name="00NMz000004XbrJ" multiple="multiple" style="display: none;">
+                    <option value="Photovoltaik-Projekte">Photovoltaik-Projekte</option>
+                    <option value="Batteriespeichersysteme">Batteriespeichersysteme</option>
+                    <option value="Kombinierte Anlagen (PV + Speicher)">Kombinierte Anlagen (PV + Speicher)</option>
+                </select>
+                
+                <select id="00NMz000004Xbsv" name="00NMz000004Xbsv" style="display: none;">
+                    <option value="">--None--</option>
+                    <option value="1-5 Mio.">1-5 Mio.</option>
+                    <option value="5-10 Mio.">5-10 Mio.</option>
+                    <option value="10-25 Mio.">10-25 Mio.</option>
+                    <option value="> 25 Mio.">> 25 Mio.</option>
+                </select>
+                
+                <input type="hidden" id="00NMz000004Xbw9" name="00NMz000004Xbw9"> <!-- IRR -->
+                
+                <select id="00NMz000004Xc4D" name="00NMz000004Xc4D" multiple="multiple" style="display: none;">
+                    <option value="In Entwicklung">In Entwicklung</option>
+                    <option value="Ready-to-build">Ready-to-build</option>
+                    <option value="In Betrieb">In Betrieb</option>
+                </select>
+
                 <div id="question0" class="question-container active">
                     <div class="question-title" id="investorPt1"></div>
                     
@@ -767,7 +817,7 @@
                         </label>
                     </div>
                 </div>
-        
+
                 <!-- Question 1 - Personal Information -->
                 <div id="question1" class="question-container">
                     <div class="question-title" id="investorPt6">Personal Information</div>
@@ -794,11 +844,11 @@
                         </div>
                         <div class="input-field">
                             <label for="email" id="investorPt12">Email Address*</label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email_visible" name="email_visible" required>
                         </div>
                     </div>
                 </div>
-        
+
                 <!-- Question 2 - Business Address -->
                 <div id="question2" class="question-container">
                     <div class="question-title" id="investorPt13">Business Address</div>
@@ -821,7 +871,7 @@
                         </div>
                     </div>
                 </div>
-        
+
                 <!-- Question 3 - Technology Preferences -->
                 <div id="question3" class="question-container">
                     <div class="question-title" id="investorPt18">Preferred Technology</div>
@@ -831,7 +881,7 @@
                         <div class="option-card multi-select" data-value="combined" id="investorPt21">Combined Systems (PV + Storage)</div>
                     </div>
                 </div>
-        
+
                 <!-- Question 4 - Investment Volume -->
                 <div id="question4" class="question-container">
                     <div class="question-title" id="investorPt22">Desired Investment Volume (in EUR)</div>
@@ -842,7 +892,7 @@
                         <div class="option-card" data-value="25+" id="investorPt26">&gt; 25 Mio.</div>
                     </div>
                 </div>
-        
+
                 <!-- Question 5 - IRR -->
                 <div id="question5" class="question-container">
                     <div class="question-title" id="investorPt27">Targeted Equity Return (IRR)</div>
@@ -853,7 +903,7 @@
                         </div>
                     </div>
                 </div>
-        
+
                 <!-- Question 6 - Project Status -->
                 <div id="question6" class="question-container">
                     <div class="question-title" id="investorPt29">Preferred Project Status</div>
@@ -863,8 +913,7 @@
                         <div class="option-card multi-select" data-value="operational" id="investorPt32">Operational</div>
                     </div>
                 </div>
-        
-        
+
                 <!-- Navigation Buttons -->
                 <div class="navigation-buttons">
                     <button type="button" id="prevButton" class="nav-button investorPrev"></button>

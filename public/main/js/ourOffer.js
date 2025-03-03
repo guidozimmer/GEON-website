@@ -213,30 +213,111 @@ document.addEventListener('DOMContentLoaded', () => {
     
     
 
-    
     function submitInvestorForm() {
-        // Get all form data
-        const formData = new FormData();
+        const form = document.querySelector('#investorForm form');
+        if (!form) return;
+    
+        // Map form values to Salesforce fields
         
-        // Add all input values
-        document.querySelectorAll('#investorForm input:not([type="checkbox"])').forEach(input => {
-            if (input.value) {
-                formData.append(input.name, input.value);
-            }
+        // Personal Information (Question 1)
+        document.getElementById('00NMz0000040cHV').value = document.querySelector('#investorForm #vorname').value || '';
+        document.getElementById('00NMz0000040bzm').value = document.querySelector('#investorForm #nachname').value || '';
+        document.getElementById('00NMz000004XZMU').value = document.querySelector('#investorForm #position').value || '';
+        document.getElementById('00NMz000004Xbo5').value = document.querySelector('#investorForm #unternehmen').value || '';
+        document.getElementById('phone').value = document.querySelector('#investorForm #telefon').value || '';
+        document.getElementById('email').value = document.querySelector('#investorForm #email_visible').value || '';
+    
+        // Business Address (Question 2)
+        document.getElementById('00NMz0000040cKj').value = document.querySelector('#investorForm #strasse').value || '';
+        document.getElementById('00NMz0000040cML').value = document.querySelector('#investorForm #plz').value || '';
+        document.getElementById('00NMz0000040cNx').value = document.querySelector('#investorForm #ort').value || '';
+        document.getElementById('00NMz0000040b26').value = document.querySelector('#investorForm #land').value || '';
+    
+        // Technology Preferences (Question 3)
+        const techSelect = document.getElementById('00NMz000004XbrJ');
+        // Reset all selections
+        Array.from(techSelect.options).forEach(option => {
+            option.selected = false;
         });
         
-        // Add selected options
-        document.querySelectorAll('#investorForm .option-card.selected').forEach(card => {
-            const value = card.getAttribute('data-value');
-            if (value) {
-                formData.append('selected_options[]', value);
+        // Map selected technologies
+        const selectedTechs = document.querySelectorAll('#investorForm #question3 .option-card.selected');
+        selectedTechs.forEach(tech => {
+            const value = tech.getAttribute('data-value');
+            if (value === 'pv') {
+                techSelect.querySelector('option[value="Photovoltaik-Projekte"]').selected = true;
+            } else if (value === 'battery') {
+                techSelect.querySelector('option[value="Batteriespeichersysteme"]').selected = true;
+            } else if (value === 'combined') {
+                techSelect.querySelector('option[value="Kombinierte Anlagen (PV + Speicher)"]').selected = true;
             }
         });
+    
+        // Investment Volume (Question 4)
+        const volumeSelect = document.getElementById('00NMz000004Xbsv');
+        // Reset selection
+        volumeSelect.value = '';
+        
+        const selectedVolume = document.querySelector('#investorForm #question4 .option-card.selected');
+        if (selectedVolume) {
+            const value = selectedVolume.getAttribute('data-value');
+            switch(value) {
+                case '1-5': 
+                    volumeSelect.value = '1-5 Mio.';
+                    break;
+                case '5-10': 
+                    volumeSelect.value = '5-10 Mio.';
+                    break;
+                case '10-25': 
+                    volumeSelect.value = '10-25 Mio.';
+                    break;
+                case '25+': 
+                    volumeSelect.value = '> 25 Mio.';
+                    break;
+            }
+        }
+    
+        // Equity Return/IRR (Question 5)
+        const irrValue = document.querySelector('#investorForm #question5 .slider').value || '';
+        document.getElementById('00NMz000004Xbw9').value = irrValue ? `${irrValue}%` : '';
+    
+        // Project Status (Question 6)
+        const statusSelect = document.getElementById('00NMz000004Xc4D');
+        // Reset all selections
+        Array.from(statusSelect.options).forEach(option => {
+            option.selected = false;
+        });
+        
+        // Map selected statuses
+        const selectedStatuses = document.querySelectorAll('#investorForm #question6 .option-card.selected');
+        selectedStatuses.forEach(status => {
+            const value = status.getAttribute('data-value');
+            if (value === 'development') {
+                statusSelect.querySelector('option[value="In Entwicklung"]').selected = true;
+            } else if (value === 'ready') {
+                statusSelect.querySelector('option[value="Ready-to-build"]').selected = true;
+            } else if (value === 'operational') {
+                statusSelect.querySelector('option[value="In Betrieb"]').selected = true;
+            }
+        });
+    
+        console.log('Investor Form values being sent to Salesforce:');
+        console.log('First Name:', document.getElementById('00NMz0000040cHV').value);
+        console.log('Last Name:', document.getElementById('00NMz0000040bzm').value);
+        console.log('Position:', document.getElementById('00NMz000004XZMU').value);
+        console.log('Company:', document.getElementById('00NMz000004Xbo5').value);
+        console.log('Phone:', document.getElementById('phone').value);
+        console.log('Email:', document.getElementById('email').value);
+        console.log('Street:', document.getElementById('00NMz0000040cKj').value);
+        console.log('Postal Code:', document.getElementById('00NMz0000040cML').value);
+        console.log('City:', document.getElementById('00NMz0000040cNx').value);
+        console.log('Country:', document.getElementById('00NMz0000040b26').value);
         
         // Submit the form
-        document.querySelector('#investorForm form').submit();
+        form.submit();
     }
-    
+
+
     // Add event listeners for navigation
     document.querySelector('#investorForm #prevButton')?.addEventListener('click', () => {
         if (investorCurrentQuestion > 0) {
@@ -366,28 +447,102 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
 
-    
     function submitCommunityForm() {
-        // Get all form data
-        const formData = new FormData();
+        const form = document.querySelector('#communityForm form');
+        if (!form) return;
+    
+        // Map form values to Salesforce fields
         
-        // Add all input values
-        document.querySelectorAll('#communityForm input:not([type="checkbox"]):not([type="radio"])').forEach(input => {
-            if (input.value) {
-                formData.append(input.name, input.value);
+        // Municipal Information (Question 1)
+        document.getElementById('00NMz0000040bzl').value = document.querySelector('#communityForm #bundesland_visible').value || '';
+        document.getElementById('00NMz0000040c2z').value = document.querySelector('#communityForm #gemeinde_visible').value || '';
+        document.getElementById('00NMz0000040cB3').value = document.querySelector('#communityForm #amt_visible').value || '';
+        document.getElementById('00NMz0000040cKj').value = document.querySelector('#communityForm #strasse_visible').value || '';
+        document.getElementById('00NMz0000040cML').value = document.querySelector('#communityForm #plz_visible').value || '';
+        document.getElementById('00NMz0000040cNx').value = document.querySelector('#communityForm #ort_visible').value || '';
+    
+        // Contact Information (Question 2)
+        document.getElementById('00NMz0000040cHV').value = document.querySelector('#communityForm #vorname_visible').value || '';
+        document.getElementById('00NMz0000040bzm').value = document.querySelector('#communityForm #nachname_visible').value || '';
+        document.getElementById('00NMz000004XcsD').value = document.querySelector('#communityForm #position_visible').value || '';
+        document.getElementById('phone').value = document.querySelector('#communityForm #telefon_visible').value || '';
+        document.getElementById('email').value = document.querySelector('#communityForm #email_visible').value || '';
+    
+        // Own Land (Question 3)
+        const hasOwnLand = document.querySelector('#communityForm #question3 .option-card.selected')?.getAttribute('data-value') === 'ja';
+        document.getElementById('00NMz000004Xcx3').value = hasOwnLand ? '1' : '0';
+    
+        // Land types if own land is available
+        if (hasOwnLand) {
+            const landTypes = Array.from(document.querySelectorAll('#communityForm #question3a .option-card.selected'))
+                .map(card => card.getAttribute('data-value'))
+                .filter(Boolean)
+                .join(';');
+            document.getElementById('00NMz0000040bRt').value = landTypes;
+        } else {
+            document.getElementById('00NMz0000040bRt').value = '';
+        }
+    
+        // Project Types (Question 4)
+        const projectTypes = Array.from(document.querySelectorAll('#communityForm #question4 .option-card.selected'))
+            .map(card => card.getAttribute('data-value'))
+            .filter(Boolean)
+            .join(';');
+        document.getElementById('00NMz000004Xd1t').value = projectTypes;
+    
+        // Interests (Question 5) - combine multiple selections into a semicolon-separated string
+        const interestsArray = [];
+        const selectedInterests = document.querySelectorAll('#communityForm #question5 .option-card.selected');
+        
+        selectedInterests.forEach(interest => {
+            const value = interest.getAttribute('data-value');
+            let sfValue = '';
+            
+            switch(value) {
+                case 'Potenzialanalyse':
+                    sfValue = 'Potentialanalyse';
+                    break;
+                case 'Verpachtung':
+                    sfValue = 'Verpachtung der gemeindeeigenen Flächen';
+                    break;
+                case 'Beteiligung':
+                    sfValue = 'Direkte Beteiligung der Gemeinde an den Projekten';
+                    break;
+                case 'Bürgerbeteiligung':
+                    sfValue = 'Bürgerbeteiligungsmodell';
+                    break;
+                case 'Investorenmodell':
+                    sfValue = 'Investorenmodell, kommunale Beteiligung in Anlehnung an §6 EEG 2021';
+                    break;
+            }
+            
+            if (sfValue) {
+                interestsArray.push(sfValue);
             }
         });
         
-        // Add selected options
-        document.querySelectorAll('#communityForm .option-card.selected').forEach(card => {
-            const value = card.getAttribute('data-value');
-            if (value) {
-                formData.append('selected_options[]', value);
-            }
-        });
+        // Create a semicolon-separated string of all selected interests
+        const interestsString = interestsArray.join(';');
+        document.getElementById('00NMz000004Xd57').value = interestsString;
+    
+        console.log('Community Form values being sent to Salesforce:');
+        console.log('Bundesland:', document.getElementById('00NMz0000040bzl').value);
+        console.log('Gemeinde:', document.getElementById('00NMz0000040c2z').value);
+        console.log('Amt:', document.getElementById('00NMz0000040cB3').value);
+        console.log('Straße:', document.getElementById('00NMz0000040cKj').value);
+        console.log('PLZ:', document.getElementById('00NMz0000040cML').value);
+        console.log('Stadt:', document.getElementById('00NMz0000040cNx').value);
+        console.log('Vorname:', document.getElementById('00NMz0000040cHV').value);
+        console.log('Nachname:', document.getElementById('00NMz0000040bzm').value);
+        console.log('Position:', document.getElementById('00NMz000004XcsD').value);
+        console.log('Phone:', document.getElementById('phone').value);
+        console.log('Email:', document.getElementById('email').value);
+        console.log('Hat eigene Flächen:', document.getElementById('00NMz000004Xcx3').value);
+        console.log('Land Typen:', document.getElementById('00NMz0000040bRt').value);
+        console.log('Projekt Typen:', document.getElementById('00NMz000004Xd1t').value);
         
         // Submit the form
-        document.querySelector('#communityForm form').submit();
+        form.submit();
     }
     
     // Add event listeners for navigation
@@ -1138,42 +1293,174 @@ document.addEventListener('DOMContentLoaded', () => {
     function submitForm() {
         const form = document.querySelector('#landForm');
         if (!form) return;
-        
-        // Add email field (this is the only field that actually works right now)
-        const emailValue = document.querySelector('#email')?.value || '';
-        let emailInput = form.querySelector('input[name="email"]');
-        if (!emailInput) {
-            emailInput = document.createElement('input');
-            emailInput.type = 'hidden';
-            emailInput.name = 'email';
-            form.appendChild(emailInput);
-        }
-        emailInput.value = emailValue;
-        
-        // Add a few key fields that should be easy to test
-        addField('00NMz0000040cHV', document.querySelector('#vorname')?.value || ''); // First name
-        addField('00NMz0000040bzm', document.querySelector('#nachname')?.value || ''); // Last name
-        addField('00NMz0000040cRB', document.querySelector('#telefon')?.value || ''); // Phone
-        
-        // Helper to add a field
-        function addField(name, value) {
-            let field = form.querySelector(`input[name="${name}"]`);
-            if (!field) {
-                field = document.createElement('input');
-                field.type = 'hidden';
-                field.name = name;
-                form.appendChild(field);
+    
+        // Create hidden fields
+        const requiredFields = [
+            '00NMz0000040bRt', '00NMz0000040bgP', '00NMz0000040bjd', '00NMz0000040bmr',
+            '00NMz0000040boT', '00NMz0000040aag', '00NMz0000040bq5', '00NMz0000040bWj',
+            '00NMz0000040bYL', '00NMz0000040bZx', '00NMz0000040bbZ', '00NMz0000040ben',
+            '00NMz0000044iTB', '00NMz0000044ckM', '00NMz0000044ijJ', '00NMz0000040btJ',
+            '00NMz0000040bzl', '00NMz0000040c1N', '00NMz0000040c4b',
+            '00NMz0000040c6D', '00NMz0000040c7p', '00NMz0000040c9R', '00NMz0000040cB3',
+            '00NMz0000040cCf', '00NMz0000040cFt', '00NMz0000040cHV', '00NMz0000040bzm',
+            '00NMz0000040cJ7', '00NMz0000040cKj', '00NMz0000040cML', '00NMz0000040cNx',
+            '00NMz0000040b26', '00NMz0000040cRB', '00NMz0000040cUP', '00NMz0000040cW1'
+        ];
+    
+        // For the hidden fields creation
+        requiredFields.forEach(id => {
+            if (!form.querySelector(`[id="${id}"]`)) {
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                input.id = id;
+                input.name = id;
+                form.appendChild(input);
             }
-            field.value = value;
+        });
+  
+        // For the setValue function
+        const setValue = (id, value) => {
+            const element = form.querySelector(`[id="${id}"]`);
+            if (element) element.value = value;
+        };
+    
+        // Land type
+        const selectedTypes = Array.from(document.querySelectorAll('#question2 .option-card.selected'))
+            .map(card => card.getAttribute('data-value'))
+            .filter(value => value && value !== 'Nein')
+            .join(';');
+        setValue('00NMz0000040bRt', selectedTypes);
+    
+        // Total area
+        setValue('00NMz0000040bgP', document.querySelector('#question3 .slider')?.value || '');
+    
+        // Contiguous area
+        const isContiguous = document.querySelector('#question4 .option-card.selected')?.getAttribute('data-value') === 'ja';
+        setValue('00NMz0000040bjd', isContiguous ? '1' : '0');
+    
+        // Number of parcels
+        const parcels = document.querySelector('#question4a select')?.value;
+        setValue('00NMz0000040bmr', parcels || '');
+    
+        // Land usage
+        const usage = document.querySelector('#question5 .option-card.selected')?.getAttribute('data-value');
+        setValue('00NMz0000040boT', usage || '');
+    
+        // Lease end date
+        if (usage === 'Verpachtet') {
+            const yearValue = document.querySelector('.year-slider .slider')?.value;
+            setValue('00NMz0000040aag', yearValue || '');
         }
+    
+        // Early termination
+        const earlyTermination = document.querySelector('#question5a .option-card.selected')?.getAttribute('data-value') === 'ja';
+        setValue('00NMz0000040bq5', earlyTermination ? '1' : '0');
+    
+        // Infrastructure within 500m
+        const infraTypes = Array.from(document.querySelectorAll('#question6 .option-card.selected'))
+            .map(card => {
+                if(card.getAttribute('data-value') === 'Autobahn') return 'Autobahn (bis 500 m)';
+                if(card.getAttribute('data-value') === 'Bahnstrecke') return 'Bahnstrecke (bis 500 m)';
+                return '';
+            })
+            .filter(Boolean)
+            .join(';');
+        setValue('00NMz0000040bWj', infraTypes);
+  
+        // Infrastructure percentage
+        setValue('00NMz0000040bYL', document.querySelector('#question6a .slider')?.value || '');
+    
+        // Power line
+        const hasPowerLine = document.querySelector('#question7 .option-card.selected')?.getAttribute('data-value') === 'ja';
+        setValue('00NMz0000040bZx', hasPowerLine ? '1' : '0');
+        setValue('00NMz0000040bbZ', hasPowerLine ? document.querySelector('#question7a select:first-child')?.value : '');
+        setValue('00NMz0000040ben', hasPowerLine ? document.querySelector('#question7a select:last-child')?.value : '');
+    
+        // Substation
+        const hasSubstation = document.querySelector('#question8 .option-card.selected')?.getAttribute('data-value') === 'ja';
+        setValue('00NMz0000044iTB', hasSubstation ? 'Ja' : 'Nein');
+        setValue('00NMz0000044ckM', hasSubstation ? document.querySelector('#question8a select')?.value : '');
+        setValue('00NMz0000044ijJ', document.querySelector('#question8a input[type="text"]')?.value || '');
+    
+        // Special features
+        const selectedFeatures = Array.from(document.querySelectorAll('#question9 .option-card.selected'))
+            .map(card => card.getAttribute('data-value'))
+            .filter(value => value && value !== 'Nein')
+            .join(';');
+        setValue('00NMz0000040btJ', selectedFeatures);
+    
+        // Location fields 
+        const allLocations = Array.from(document.querySelectorAll('.location-entry')).map(entry => ({
+            bundesland: entry.querySelector('input[name="bundesland[]"]')?.value,
+            landkreis: entry.querySelector('input[name="landkreis[]"]')?.value,
+            gemarkung: entry.querySelector('input[name="gemarkung[]"]')?.value,
+            flur: entry.querySelector('input[name="flur[]"]')?.value,
+            flurstueck: entry.querySelector('input[name="flurstueck[]"]')?.value,
+            flaeche: entry.querySelector('input[name="flaeche[]"]')?.value,
+            amt: entry.querySelector('input[name="amt[]"]')?.value
+        }));
+  
+        setValue('00NMz0000040bzl', allLocations.map(l => l.bundesland).filter(Boolean).join(';'));
+        setValue('00NMz0000040c1N', allLocations.map(l => l.landkreis).filter(Boolean).join(';'));
+        setValue('00NMz0000040c4b', allLocations.map(l => l.gemarkung).filter(Boolean).join(';'));
+        setValue('00NMz0000040c6D', allLocations.map(l => l.flur).filter(Boolean).join(';'));
+        setValue('00NMz0000040c7p', allLocations.map(l => l.flurstueck).filter(Boolean).join(';'));
+        setValue('00NMz0000040c9R', allLocations.map(l => l.flaeche).filter(Boolean).join(';'));
+        setValue('00NMz0000040cB3', allLocations.map(l => l.amt).filter(Boolean).join(';'));
         
-        // Submit using a real click on a real submit button
-        const submitButton = document.createElement('input');
-        submitButton.type = 'submit';
-        submitButton.style.display = 'none';
-        submitButton.name = 'submitButton'; // Not "submit" to avoid conflict
-        form.appendChild(submitButton);
-        submitButton.click();
+        
+        // Fix for spannungsebene selector
+        const spannungsniveau = document.querySelector('#question7a .select-wrapper:last-child select')?.value;
+        setValue('00NMz0000040ben', spannungsniveau || '');
+    
+        // Contact information
+        setValue('00NMz0000040cCf', document.querySelector('#anrede')?.value || '');
+        setValue('00NMz0000040cFt', document.querySelector('#titel')?.value || '');
+        setValue('00NMz0000040cHV', document.querySelector('#vorname')?.value || '');
+        setValue('00NMz0000040bzm', document.querySelector('#nachname')?.value || '');
+        setValue('00NMz0000040cJ7', document.querySelector('#firma')?.value || '');
+        setValue('00NMz0000040cKj', document.querySelector('#strasse')?.value || '');
+        setValue('00NMz0000040cML', document.querySelector('#plz')?.value || '');
+        setValue('00NMz0000040cNx', document.querySelector('#ort')?.value || '');
+        setValue('00NMz0000040b26', document.querySelector('#land')?.value || '');
+        setValue('00NMz0000040cRB', document.querySelector('#telefon')?.value || '');
+    
+        // Email field (special case - different ID)
+        const emailInput = document.createElement('input');
+        emailInput.type = 'hidden';
+        emailInput.name = 'email';
+        emailInput.value = document.querySelector('#question12 #email')?.value || '';
+        form.appendChild(emailInput);
+    
+        // Contact preference
+        const contactPreferences = Array.from(document.querySelectorAll('#question13 .option-card.selected'))
+            .map(card => {
+                if(card.getAttribute('data-value') === 'phone') return 'Telefon';
+                if(card.getAttribute('data-value') === 'email') return 'E-Mail';
+                return '';
+            })
+            .filter(Boolean)
+            .join(';');
+        setValue('00NMz0000040cUP', contactPreferences);
+    
+        // Best time to call
+        const bestTime = document.querySelector('#question13a .option-card.selected')?.getAttribute('data-value');
+        const timeMap = {
+            'morning': 'Vormittags',
+            'afternoon': 'Nachmittags',
+            'allday': 'Ganztägig'
+        };
+        setValue('00NMz0000040cW1', bestTime ? timeMap[bestTime] : '');
+        
+        console.log('Form values being sent to Salesforce:');
+        requiredFields.forEach(id => {
+            const element = form.querySelector(`[id="${id}"]`);
+            console.log(`${id}: ${element?.value || 'empty'}`);
+        });
+        console.log('email:', emailInput.value);
+        
+        // Submit form
+        form.submit();
     }
     
  
