@@ -1290,73 +1290,92 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
 
+
     function submitForm() {
+        console.log('Submitting landowner form to Salesforce...');
+        
         const form = document.querySelector('#landForm');
-        if (!form) return;
+        if (!form) {
+            console.error('Landowner form not found!');
+            return;
+        }
     
-        // Create hidden fields
-        const requiredFields = [
-            '00NMz0000040bRt', '00NMz0000040bgP', '00NMz0000040bjd', '00NMz0000040bmr',
-            '00NMz0000040boT', '00NMz0000040aag', '00NMz0000040bq5', '00NMz0000040bWj',
-            '00NMz0000040bYL', '00NMz0000040bZx', '00NMz0000040bbZ', '00NMz0000040ben',
-            '00NMz0000044iTB', '00NMz0000044ckM', '00NMz0000044ijJ', '00NMz0000040btJ',
-            '00NMz0000040bzl', '00NMz0000040c1N', '00NMz0000040c4b',
-            '00NMz0000040c6D', '00NMz0000040c7p', '00NMz0000040c9R', '00NMz0000040cB3',
-            '00NMz0000040cCf', '00NMz0000040cFt', '00NMz0000040cHV', '00NMz0000040bzm',
-            '00NMz0000040cJ7', '00NMz0000040cKj', '00NMz0000040cML', '00NMz0000040cNx',
-            '00NMz0000040b26', '00NMz0000040cRB', '00NMz0000040cUP', '00NMz0000040cW1'
-        ];
-    
-        // For the hidden fields creation
-        requiredFields.forEach(id => {
-            if (!form.querySelector(`[id="${id}"]`)) {
-                const input = document.createElement('input');
-                input.type = 'hidden';
-                input.id = id;
-                input.name = id;
+        console.log('Form action URL:', form.action);
+        
+        // CRITICAL: Handle checkbox fields properly
+        function setCheckboxValue(name, isChecked) {
+            let checkbox = form.querySelector(`input[name="${name}"]`);
+            if (!checkbox) {
+                checkbox = document.createElement('input');
+                checkbox.type = 'hidden'; // Changed to hidden
+                checkbox.name = name;
+                checkbox.id = name;
+                checkbox.value = isChecked ? '1' : '0'; // Set value directly
+                form.appendChild(checkbox);
+            } else {
+                checkbox.value = isChecked ? '1' : '0'; // Set value for existing element
+            }
+            console.log(`Set checkbox ${name} = ${isChecked}`);
+        }
+        
+        // CRITICAL: Handle select fields properly
+        function setSelectValue(name, value, options) {
+            let select = form.querySelector(`select[name="${name}"]`);
+            if (!select) {
+                // Create a hidden input instead of a select
+                let hiddenInput = document.createElement('input');
+                hiddenInput.type = 'hidden';
+                hiddenInput.name = name;
+                hiddenInput.id = name;
+                hiddenInput.value = value || '';
+                form.appendChild(hiddenInput);
+            } else {
+                select.value = value || '';
+            }
+            console.log(`Set select ${name} = ${value}`);
+        }
+        
+        // CRITICAL: Handle text fields properly
+        function setTextValue(name, value) {
+            let input = form.querySelector(`input[name="${name}"]`);
+            if (!input) {
+                input = document.createElement('input');
+                input.type = 'hidden'; // Change to hidden
+                input.name = name;
+                input.id = name;
                 form.appendChild(input);
             }
-        });
-  
-        // For the setValue function
-        const setValue = (id, value) => {
-            const element = form.querySelector(`[id="${id}"]`);
-            if (element) element.value = value;
-        };
+            input.value = value || '';
+            console.log(`Set text ${name} = ${value}`);
+        }
     
-        // Land type
+        // Land type (text field)
         const selectedTypes = Array.from(document.querySelectorAll('#question2 .option-card.selected'))
             .map(card => card.getAttribute('data-value'))
             .filter(value => value && value !== 'Nein')
             .join(';');
-        setValue('00NMz0000040bRt', selectedTypes);
+        setTextValue('00NMz0000040bRt', selectedTypes);
     
-        // Total area
-        setValue('00NMz0000040bgP', document.querySelector('#question3 .slider')?.value || '');
+        // Total area (text field)
+        setTextValue('00NMz0000040bgP', document.querySelector('#question3 .slider')?.value || '');
     
-        // Contiguous area
+        // Contiguous area (checkbox)
         const isContiguous = document.querySelector('#question4 .option-card.selected')?.getAttribute('data-value') === 'ja';
-        setValue('00NMz0000040bjd', isContiguous ? '1' : '0');
+        setCheckboxValue('00NMz0000040bjd', isContiguous);
     
-        // Number of parcels
+        // Number of parcels (select)
         const parcels = document.querySelector('#question4a select')?.value;
-        setValue('00NMz0000040bmr', parcels || '');
+        setSelectValue('00NMz0000040bmr', parcels, ['', '2', '3', '4', '5+']);
     
-        // Land usage
+        // Land usage (text field)
         const usage = document.querySelector('#question5 .option-card.selected')?.getAttribute('data-value');
-        setValue('00NMz0000040boT', usage || '');
+        setTextValue('00NMz000004YrKX', usage); // Note this is different than what you had
     
-        // Lease end date
-        if (usage === 'Verpachtet') {
-            const yearValue = document.querySelector('.year-slider .slider')?.value;
-            setValue('00NMz0000040aag', yearValue || '');
-        }
-    
-        // Early termination
+        // Early termination (checkbox)
         const earlyTermination = document.querySelector('#question5a .option-card.selected')?.getAttribute('data-value') === 'ja';
-        setValue('00NMz0000040bq5', earlyTermination ? '1' : '0');
+        setCheckboxValue('00NMz0000040bq5', earlyTermination);
     
-        // Infrastructure within 500m
+        // Infrastructure within 500m (text field)
         const infraTypes = Array.from(document.querySelectorAll('#question6 .option-card.selected'))
             .map(card => {
                 if(card.getAttribute('data-value') === 'Autobahn') return 'Autobahn (bis 500 m)';
@@ -1365,72 +1384,85 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .filter(Boolean)
             .join(';');
-        setValue('00NMz0000040bWj', infraTypes);
-  
-        // Infrastructure percentage
-        setValue('00NMz0000040bYL', document.querySelector('#question6a .slider')?.value || '');
+        setTextValue('00NMz0000040bWj', infraTypes);
     
-        // Power line
+        // Infrastructure percentage (text field)
+        setTextValue('00NMz0000040bYL', document.querySelector('#question6a .slider')?.value || '');
+    
+        // Power line (checkbox)
         const hasPowerLine = document.querySelector('#question7 .option-card.selected')?.getAttribute('data-value') === 'ja';
-        setValue('00NMz0000040bZx', hasPowerLine ? '1' : '0');
-        setValue('00NMz0000040bbZ', hasPowerLine ? document.querySelector('#question7a select:first-child')?.value : '');
-        setValue('00NMz0000040ben', hasPowerLine ? document.querySelector('#question7a select:last-child')?.value : '');
+        setCheckboxValue('00NMz0000040bZx', hasPowerLine);
     
-        // Substation
-        const hasSubstation = document.querySelector('#question8 .option-card.selected')?.getAttribute('data-value') === 'ja';
-        setValue('00NMz0000044iTB', hasSubstation ? 'Ja' : 'Nein');
-        setValue('00NMz0000044ckM', hasSubstation ? document.querySelector('#question8a select')?.value : '');
-        setValue('00NMz0000044ijJ', document.querySelector('#question8a input[type="text"]')?.value || '');
+        // Power line distance (select)
+        const powerLineDistance = hasPowerLine ? document.querySelector('#question7a select:first-child')?.value : '';
+        setSelectValue('00NMz0000040bbZ', powerLineDistance, ['', 'bis 1km', '1-3km', '3-5km', '>5km']);
     
-        // Special features
-        const selectedFeatures = Array.from(document.querySelectorAll('#question9 .option-card.selected'))
+        // Power line voltage (select)
+        const powerLineVoltage = hasPowerLine ? document.querySelector('#question7a select:last-child')?.value : '';
+        setSelectValue('00NMz0000040ben', powerLineVoltage, ['', 'Nein', '20 kV', '60 kV', '110 kV', '220 kV', '380 kV']);
+    
+        // Substation (select)
+        const substationValue = document.querySelector('#question8 .option-card.selected')?.getAttribute('data-value');
+        let substationOption = '';
+        if (substationValue === 'ja') substationOption = 'Ja';
+        if (substationValue === 'nein') substationOption = 'Nein';
+        if (substationValue === 'unbekannt') substationOption = 'Unbekannt';
+        setSelectValue('00NMz0000044iTB', substationOption, ['', 'Ja', 'Nein', 'Unbekannt']);
+    
+        // Substation distance (select)
+        const substationDistance = substationValue === 'ja' ? document.querySelector('#question8a select')?.value : '';
+        setSelectValue('00NMz0000044ckM', substationDistance, ['', 'bis 1 km', '1-5 km', '>5 km']);
+    
+        // Substation name (text)
+        const substationName = document.querySelector('#question8a input[type="text"]')?.value || '';
+        setTextValue('00NMz0000044ijJ', substationName);
+    
+        // Special features (text)
+        const specialFeatures = Array.from(document.querySelectorAll('#question9 .option-card.selected'))
             .map(card => card.getAttribute('data-value'))
             .filter(value => value && value !== 'Nein')
             .join(';');
-        setValue('00NMz0000040btJ', selectedFeatures);
+        setTextValue('00NMz0000040btJ', specialFeatures);
     
-        // Location fields 
+        // Location information
         const allLocations = Array.from(document.querySelectorAll('.location-entry')).map(entry => ({
             bundesland: entry.querySelector('input[name="bundesland[]"]')?.value,
             landkreis: entry.querySelector('input[name="landkreis[]"]')?.value,
+            gemeinde: entry.querySelector('input[name="gemeinde[]"]')?.value,
             gemarkung: entry.querySelector('input[name="gemarkung[]"]')?.value,
             flur: entry.querySelector('input[name="flur[]"]')?.value,
             flurstueck: entry.querySelector('input[name="flurstueck[]"]')?.value,
             flaeche: entry.querySelector('input[name="flaeche[]"]')?.value,
             amt: entry.querySelector('input[name="amt[]"]')?.value
         }));
-  
-        setValue('00NMz0000040bzl', allLocations.map(l => l.bundesland).filter(Boolean).join(';'));
-        setValue('00NMz0000040c1N', allLocations.map(l => l.landkreis).filter(Boolean).join(';'));
-        setValue('00NMz0000040c4b', allLocations.map(l => l.gemarkung).filter(Boolean).join(';'));
-        setValue('00NMz0000040c6D', allLocations.map(l => l.flur).filter(Boolean).join(';'));
-        setValue('00NMz0000040c7p', allLocations.map(l => l.flurstueck).filter(Boolean).join(';'));
-        setValue('00NMz0000040c9R', allLocations.map(l => l.flaeche).filter(Boolean).join(';'));
-        setValue('00NMz0000040cB3', allLocations.map(l => l.amt).filter(Boolean).join(';'));
-        
-        
-        // Fix for spannungsebene selector
-        const spannungsniveau = document.querySelector('#question7a .select-wrapper:last-child select')?.value;
-        setValue('00NMz0000040ben', spannungsniveau || '');
+    
+        // Set location fields
+        setTextValue('00NMz0000040bzl', allLocations.map(l => l.bundesland).filter(Boolean).join(';'));
+        setTextValue('00NMz0000040c2z', allLocations.map(l => l.gemeinde).filter(Boolean).join(';'));
+        setTextValue('00NMz0000040c4b', allLocations.map(l => l.gemarkung).filter(Boolean).join(';'));
+        setTextValue('00NMz0000040c6D', allLocations.map(l => l.flur).filter(Boolean).join(';'));
+        setTextValue('00NMz0000040c7p', allLocations.map(l => l.flurstueck).filter(Boolean).join(';'));
+        setTextValue('00NMz0000040c9R', allLocations.map(l => l.flaeche).filter(Boolean).join(';'));
+        setTextValue('00NMz0000040cB3', allLocations.map(l => l.amt).filter(Boolean).join(';'));
     
         // Contact information
-        setValue('00NMz0000040cCf', document.querySelector('#anrede')?.value || '');
-        setValue('00NMz0000040cFt', document.querySelector('#titel')?.value || '');
-        setValue('00NMz0000040cHV', document.querySelector('#vorname')?.value || '');
-        setValue('00NMz0000040bzm', document.querySelector('#nachname')?.value || '');
-        setValue('00NMz0000040cJ7', document.querySelector('#firma')?.value || '');
-        setValue('00NMz0000040cKj', document.querySelector('#strasse')?.value || '');
-        setValue('00NMz0000040cML', document.querySelector('#plz')?.value || '');
-        setValue('00NMz0000040cNx', document.querySelector('#ort')?.value || '');
-        setValue('00NMz0000040b26', document.querySelector('#land')?.value || '');
-        setValue('00NMz0000040cRB', document.querySelector('#telefon')?.value || '');
+        setTextValue('00NMz0000040cCf', document.querySelector('#anrede')?.value || '');
+        setTextValue('00NMz0000040cFt', document.querySelector('#titel')?.value || '');
+        setTextValue('00NMz0000040cHV', document.querySelector('#vorname')?.value || '');
+        setTextValue('00NMz0000040bzm', document.querySelector('#nachname')?.value || '');
+        setTextValue('00NMz0000040cJ7', document.querySelector('#firma')?.value || '');
+        setTextValue('00NMz0000040cKj', document.querySelector('#strasse')?.value || '');
+        setTextValue('00NMz0000040cML', document.querySelector('#plz')?.value || '');
+        setTextValue('00NMz0000040cNx', document.querySelector('#ort')?.value || '');
+        setTextValue('00NMz0000040b26', document.querySelector('#land')?.value || '');
+        setTextValue('00NMz0000040cRB', document.querySelector('#telefon')?.value || '');
     
-        // Email field (special case - different ID)
-        const emailInput = document.createElement('input');
-        emailInput.type = 'hidden';
-        emailInput.name = 'email';
-        emailInput.value = document.querySelector('#question12 #email')?.value || '';
-        form.appendChild(emailInput);
+        // Email field (special case)
+        const emailField = document.querySelector('#email_hidden') || document.createElement('input');
+        emailField.type = 'hidden';
+        emailField.name = 'email';
+        emailField.value = document.querySelector('#question12 #email')?.value || '';
+        form.appendChild(emailField);
     
         // Contact preference
         const contactPreferences = Array.from(document.querySelectorAll('#question13 .option-card.selected'))
@@ -1441,28 +1473,59 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .filter(Boolean)
             .join(';');
-        setValue('00NMz0000040cUP', contactPreferences);
+        setTextValue('00NMz0000040cUP', contactPreferences);
     
-        // Best time to call
+        // Best time to call (select)
         const bestTime = document.querySelector('#question13a .option-card.selected')?.getAttribute('data-value');
-        const timeMap = {
-            'morning': 'Vormittags',
-            'afternoon': 'Nachmittags',
-            'allday': 'Ganztägig'
-        };
-        setValue('00NMz0000040cW1', bestTime ? timeMap[bestTime] : '');
-        
-        console.log('Form values being sent to Salesforce:');
-        requiredFields.forEach(id => {
-            const element = form.querySelector(`[id="${id}"]`);
-            console.log(`${id}: ${element?.value || 'empty'}`);
-        });
-        console.log('email:', emailInput.value);
-        
-        // Submit form
-        form.submit();
-    }
+        let bestTimeOption = '';
+        if (bestTime === 'morning') bestTimeOption = 'Vormittags';
+        if (bestTime === 'afternoon') bestTimeOption = 'Nachmittags';
+        if (bestTime === 'allday') bestTimeOption = 'Ganztägig';
+        setSelectValue('00NMz0000040cW1', bestTimeOption, ['', 'Vormittags', 'Nachmittags', 'Ganztägig']);
     
+        // Add a debug field if needed
+        if (false) { // Set to true for debugging
+            const debugField = document.createElement('input');
+            debugField.type = 'hidden';
+            debugField.name = 'debug';
+            debugField.value = '1';
+            form.appendChild(debugField);
+            
+            const debugEmailField = document.createElement('input');
+            debugEmailField.type = 'hidden';
+            debugEmailField.name = 'debugEmail';
+            debugEmailField.value = 'guido.zimmer@geongroup.de'; // Use appropriate debug email
+            form.appendChild(debugEmailField);
+        }
+    
+        console.log('All fields set, submitting form...');
+        
+        // Fix for "form.submit is not a function" error
+        // This typically happens when there is an element named "submit" in the form
+        
+        // First, check if there's an element with name="submit"
+        const submitElement = form.querySelector('[name="submit"]');
+        if (submitElement) {
+            console.log('Found element with name "submit", temporarily removing it');
+            const parent = submitElement.parentNode;
+            const nextSibling = submitElement.nextSibling;
+            parent.removeChild(submitElement);
+            
+            // Now we can safely call form.submit()
+            form.submit();
+            
+            // If needed, restore the element
+            if (nextSibling) {
+                parent.insertBefore(submitElement, nextSibling);
+            } else {
+                parent.appendChild(submitElement);
+            }
+        } else {
+            // No conflict, can directly submit
+            form.submit();
+        }
+    }
+
  
     // Event Listeners for navigation
     document.querySelector('#prevButton')?.addEventListener('click', () => {
