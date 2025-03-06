@@ -205,31 +205,31 @@ landPt75 = Gas pipeline
 landPt76 = Hunting area
 landPt77 = No special features
 landPt78 = Where is your land located?
-landPt79 = Federal state
-landPt80 = District
-landPt81 = Municipality
-landPt82 = Cadastral district
-landPt83 = Land parcel
-landPt84 = Plot number
-landPt85 = Area in hectares
-landPt86 = Local authority
-landPt87 = Personal Information
-landPt88 = Form of address*:
+landPt79 = FEDERAL STATE
+landPt80 = DISTRICT
+landPt81 = MUNICIPALITY
+landPt82 = CADASTRAL DISTRICT
+landPt83 = LAND PARCEL
+landPt84 = PLOT NUMBER
+landPt85 = AREA IN HECTARES
+landPt86 = LOCAL AUTHORITY
+landPt87 = PERSONAL INFORMATION
+landPt88 = FORM OF ADDRESS*
 landPt89 = Please select
 landPt90 = Mr
 landPt91 = Ms
 landPt92 = Diverse
-landPt93 = Title
-landPt94 = First name*
-landPt95 = Last name*
-landPt96 = Company
-landPt97 = Contact Details
-landPt98 = Street and house number*
-landPt99 = Postal code*
-landPt100 = City*
-landPt101 = Country*
-landPt102 = Phone*
-landPt103 = Email*
+landPt93 = TITLE
+landPt94 = FIRST NAME*
+landPt95 = LAST NAME*
+landPt96 = COMPANY
+landPt97 = CONTACT DETAILS
+landPt98 = STREET AND HOUSE NUMBER*
+landPt99 = POSTAL CODE*
+landPt100 = CITY*
+landPt101 = COUNTRY*
+landPt102 = PHONE*
+landPt103 = EMAIL*
 landPt104 = How would you prefer to be contacted?
 landPt105 = Phone
 landPt106 = Email
@@ -332,6 +332,10 @@ communityTitlePt2 = Shaping the Energy Transition Together: Your Municipality as
 
 ourOfferTitlePt1 = Our Offer
 ourOfferTitlePt2 = "GEON develops photovoltaic projects across Germany – always in close collaboration with all stakeholders. Whether you're a landowner, represent a municipality, or act as an investor: Select your area below to discover how we can shape the energy transition together. "
+
+
+addLocationButton = Add Field
+
 
 entryCode = Do you have an access code?
 

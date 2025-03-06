@@ -636,33 +636,37 @@ document.addEventListener('DOMContentLoaded', () => {
             <img src="./img/x.svg" alt="Remove" class="remove-location">
             <div class="input-group">
                 <div class="input-field">
-                    <label for="bundesland${locationCount}">Bundesland</label>
+                    <label for="bundesland${locationCount}"">BUNDESLAND</label>
                     <input type="text" id="bundesland${locationCount}" name="bundesland[]" required>
                 </div>
                 <div class="input-field">
-                    <label for="landkreis${locationCount}">Landkreis</label>
+                    <label for="landkreis${locationCount}">LANDKREIS</label>
                     <input type="text" id="landkreis${locationCount}" name="landkreis[]" required>
                 </div>
                 <div class="input-field">
-                    <label for="gemarkung${locationCount}">Gemarkung</label>
+                    <label for="gemeinde${locationCount}">GEMEINDE</label>
+                    <input type="text" id="gemeinde${locationCount}" name="gemeinde[]" required>
+                </div>
+                <div class="input-field">
+                    <label for="gemarkung${locationCount}">GEMARKUNG</label>
                     <input type="text" id="gemarkung${locationCount}" name="gemarkung[]" required>
                 </div>
             </div>
             <div class="input-group">
                 <div class="input-field">
-                    <label for="flur${locationCount}">Flur</label>
+                    <label for="flur${locationCount}">FLUR</label>
                     <input type="text" id="flur${locationCount}" name="flur[]" required>
                 </div>
                 <div class="input-field">
-                    <label for="flurstueck${locationCount}">Flurstück</label>
+                    <label for="flurstueck${locationCount}">FLURSTÜCK</label>
                     <input type="text" id="flurstueck${locationCount}" name="flurstueck[]" required>
                 </div>
                 <div class="input-field">
-                    <label for="flaeche${locationCount}">Fläche in ha</label>
+                    <label for="flaeche${locationCount}">FLÄCHE IN HEKTAR</label>
                     <input type="number" id="flaeche${locationCount}" name="flaeche[]" min="0" required>
                 </div>
                 <div class="input-field">
-                    <label for="amt${locationCount}">Amt</label>
+                    <label for="amt${locationCount}">AMT</label>
                     <input type="text" id="amt${locationCount}" name="amt[]" required>
                 </div>
             </div>
@@ -681,6 +685,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
  
+    
     function initializeLocationEntries() {
         document.querySelectorAll('.location-entry input').forEach(input => {
             input.addEventListener('input', updateNavigationButtons);

@@ -373,6 +373,7 @@ export function createLanguageSwitcher() {
         { id: 'privacyPolicy', variable: 'privacyPolicy' },
         { id: 'imprint', variable: 'imprint' },
 
+        { id: 'test', variable: 'test' },
 
       ];
 
