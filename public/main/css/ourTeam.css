@@ -255,7 +255,7 @@
 }
 
 /* Extra Large Devices (Large Desktops, 1200px to 1600px) */
-@media only screen and (min-width: 1201px) and (max-width: 1600px) {
+@media only screen and (min-width: 1201px) and (max-width: 1651px) {
     .ourTeam > h3 {
         font-size: var(--small-font) !important;
         margin-bottom: 50px;

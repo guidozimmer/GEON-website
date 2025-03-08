@@ -779,7 +779,10 @@ body {
   margin-top: 50px !important;
 }
 
-
+#contactPt2 {
+  font-size: var(--medium-font);
+  line-height: 1.6;
+}
 
 
 
@@ -869,5 +872,49 @@ body {
     justify-content: center;
   }
 
+
+}
+
+
+@media only screen and (max-width: 480px) {
+  #contactPt2{
+    font-size: var(--very-small-font);
+  } 
+}
+
+/* Small Devices (Portrait Tablets and Small Phones, up to 768px) */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  #contactPt2{
+    font-size: var(--very-small-font);
+  } 
+}
+
+
+/* Medium Devices (Tablets in Landscape, 768px to 1024px) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  #contactPt2{
+    font-size: var(--small-font);
+  } 
+}   
+
+
+/* Large Devices (Desktops, 1024px to 1200px) */
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+  #contactPt2{
+    font-size: var(--small-font);
+  } 
+}
+
+
+/* Extra Large Devices (Large Desktops, 1200px to 1600px) */
+@media only screen and (min-width: 1201px) and (max-width: 1651px) {
+  #contactPt2{
+    font-size: var(--small-font);
+  } 
+}
+
+
+/* Ultra Large Devices (Very Large Screens, 1600px and up) */
+@media only screen and (min-width: 1651px) {
 
 }
