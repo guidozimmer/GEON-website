@@ -5,7 +5,7 @@
 }
 
 .ourTeam h1 {
-    font-size: 48px;
+    font-size: var(--medium-big-font);
     margin: 0 0 20px 0;
     font-weight: normal;
     text-align: left;

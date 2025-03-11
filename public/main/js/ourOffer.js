@@ -266,8 +266,8 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // IMPORTANT FIX: Use correct field ID for telephone and email
         addField('00NMz0000040cRB', document.querySelector('#investorForm #telefon')?.value || ''); // Telefonnummer
-        addField('00NMz0000040cSn', document.querySelector('#investorForm #email_visible')?.value || ''); // E-Mail
-        
+        addField('email', document.querySelector('#investorForm #email_visible')?.value || ''); // Email (standard field)
+
         // Business Address (Question 2)
         addField('00NMz0000040cKj', document.querySelector('#investorForm #strasse')?.value || ''); // Straße
         addField('00NMz0000040cML', document.querySelector('#investorForm #plz')?.value || ''); // PLZ
@@ -534,7 +534,7 @@ document.addEventListener('DOMContentLoaded', () => {
         addField('00NMz0000040cRB', document.querySelector('#communityForm #telefon_visible')?.value || ''); // Telefonnummer
         
         // IMPORTANT FIX: Use correct field ID for email
-        addField('00NMz0000040cSn', document.querySelector('#communityForm #email_visible')?.value || ''); // E-Mail
+        addField('email', document.querySelector('#communityForm #email_visible')?.value || ''); // Email (standard field)
         
         // Own Land (Question 3) - Using checkbox for "Verfügt die Gemeinde über eigene Flächen"
         const hasOwnLand = document.querySelector('#communityForm #question3 .option-card.selected')?.getAttribute('data-value') === 'ja';

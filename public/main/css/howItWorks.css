@@ -13,7 +13,7 @@
     grid-template-rows: 300px 150px 150px 150px 150px 150px 150px;
     background-color: var(--howItWorks-bg);
     gap: 20px;
-    padding: 150px 75px 50px 75px !important;
+    padding: 150px 225px 50px 225px !important;
 }
 
 .howItWorksHeading {
@@ -353,6 +353,7 @@
     .howItWorks {
         grid-template-columns: 25% 50%;
         grid-template-rows: 450px 300px 300px 300px 300px 300px 300px !important;
+        padding: 150px 75px 50px 75px !important;
     }
 
 
@@ -369,9 +370,7 @@
 
 
 /* Large Devices (Desktops, 1024px to 1200px) */
-@media only screen and (min-width: 1025px) and (max-width: 1200px) {
-
-
+@media only screen and (min-width: 1025px) and (max-width: 1400px) {
     .howItWorksStepsText {
         grid-column: 2 / span 2; /* Spans Columns 2 and 3 */
         text-align: left;
@@ -419,7 +418,7 @@
   
 
 /* Extra Large Devices (Large Desktops, 1200px to 1600px) */
-@media only screen and (min-width: 1201px) and (max-width: 1651px) {
+@media only screen and (min-width: 1401px) and (max-width: 1651px) {
     .howItWorksStepsText {
         font-size: var(--medium-font) !important;
         white-space: nowrap;

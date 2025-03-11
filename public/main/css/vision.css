@@ -8,14 +8,14 @@
     gap: 50px;
 
     padding: var(--info-box-padding);
+    padding-right: 225px;
+    padding-left: 225px;
     padding-top: 0;
 }
 
 #visionHeading {
     grid-column: 1 / span 3;
 }
-
-
 
 .visionHeading > h3 {
     font-size: var(--big-font) !important;

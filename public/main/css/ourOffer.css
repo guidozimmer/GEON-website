@@ -2,9 +2,7 @@
 .ourOffer {
     font-family: Acumin-Regular, Arial, sans-serif;
     margin: 0 auto;
-    padding: var(--info-box-padding);
-    padding-top: 100px;
-    padding-bottom: 50px !important;
+    padding: 100px 225px 50px 225px;
     background-color: var(--ourOffer-bg);
     text-align: center;
   }
@@ -642,16 +640,16 @@
     .intro-text > h6,
     .question-title,
     .square-content > h3 {
-      font-size: var(--very-small-font) !important;
-      margin-bottom: 50px;
+      font-size: var(--small-font) !important;
+      margin-bottom: 20px;
     }
   }
   @media only screen and (min-width: 481px) and (max-width: 768px) {
     .intro-text > h6,
     .question-title,
     .square-content > h3 {
-      font-size: var(--very-small-font) !important;
-      margin-bottom: 50px;
+      font-size: var(--small-font) !important;
+      margin-bottom: 20px;
     }
   }
   
